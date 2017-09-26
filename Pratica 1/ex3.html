@@ -5,16 +5,17 @@
     <meta charset="UTF-8">
   </head>
   <body>
-	<form action = "save.php" method = "get"> <!-- "post" -->
+	<form action = "save.php" method = "post"> <!-- "get" -->
 		<label>Name: 
 			<input type = "text" name ="name">
 		</label>
-		<label>Age:
-			<input type="radio" name="age" value="<18"><18
+		<label>Age:</label>
+		<div id ="ageOptions">
+			<input type="radio" name="age" value="<18">&lt;18
 			<input type="radio" name="age" value="19-35">19-35
 			<input type="radio" name="age" value="36-48">36-48
-			<input type="radio" name="age" value=">49">>49
-		</label>
+			<input type="radio" name="age" value=">49">&gt;49
+		</div>
 		<label>Profession: 
 			<input type="text" name="profession">
 		</label>
@@ -27,14 +28,15 @@
 				<option value="France">France</option>
 			</select>
 		</label>
-		<label>Interests:
+		<label>Interests:</label>
+		<div id ="interestOptions">
 			<input type="checkbox" name="interest" value="sports">Practicing sports
 			<input type="checkbox" name="interest" value="friends">Hanging out with friends
 			<input type="checkbox" name="interest" value="videogames">Playing video games
 			<input type="checkbox" name="interest" value="read">Reading
 			<input type="checkbox" name="interest" value="television">Watching TV
 			<input type="checkbox" name="interest" value="outside">Spend some time outside (ex. beach)
-		</label>
+		</div>
 		<label>How did you found about the site:
 			<textarea rows="5" cols="50">Ex. Found a preview in another site and found it interesting.</textarea>
 		</label>
@@ -42,3 +44,5 @@
 	</form>
   </body>
  </html>
+
+ <!-- TODO Question: should I agreggate every point in a div? -->
