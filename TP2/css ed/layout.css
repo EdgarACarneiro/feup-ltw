@@ -1,0 +1,12 @@
+body {
+	width: 60em;
+}
+
+#signup {
+	display: flex;
+	justify-content: flex-end;
+}
+
+#menu > ul {
+	display: flex;
+}

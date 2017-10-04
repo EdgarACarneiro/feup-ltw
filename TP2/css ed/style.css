@@ -1,10 +1,13 @@
 /* EXERCISE 1.1 */
 
 /* Main Colors */
-body > header {background-color: #046DD5;}
-aside {background-color: #2A2F33;}
-body > footer {background-color: #2A2F33;}
-article footer {background-color: #F4655F;}
+body > header 	{background-color: #046DD5;}
+aside 			{background-color: #2A2F33;}
+body > footer 	{background-color: #2A2F33;}
+article footer 	{background-color: #F4655F;}
+body 			{background-color: #EDEFF0;}
+#menu			{background-color: white;}
+#news 			{background-color: white;}
 
 /* Making checkbox and label invis */
 #hamburger, .hamburger {display:none/*visibility: hidden*/;}
@@ -32,7 +35,7 @@ article footer {background-color: #F4655F;}
 }
 
 header, h1, a, footer {
-	font-family: 'Montserrata', Arial, sans-serif;
+	font-family: 'Montserrata', sans-serif;
 }
 
 a {
@@ -64,6 +67,7 @@ body > header {
 
 #related {
 	padding:1em;
+	color:white;
 }
 
 #menu ul {
@@ -73,4 +77,14 @@ body > header {
 
 #menu ul > * {
 	padding: 1em;
+}
+
+#signup a:nth-child(1) {
+	padding-right: 1em;
+}
+
+#signup a:nth-child(2) {
+	border-style: solid;
+	border-width: 0 0 0 thin;
+	padding-left: 1em;
 }
