@@ -1,0 +1,104 @@
+/* EXERCISE 1.1 */
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+/* Main Colors */
+
+a {
+    text-decoration: none;
+}
+
+body>header a {
+    color: white;
+}
+
+body>header {
+    background-color: #046DD5;
+    padding: 1em;
+    color: white;
+}
+
+body>header>h1,
+body>header>h2 {
+    margin: 0;
+    padding: 0;
+}
+
+body>header>h2 {
+    font-size: 15px;
+}
+
+body>header>#signup {
+    display: flex;
+    align-content: right;
+}
+
+aside {
+    background-color: #2A2F33;
+}
+
+body>footer {
+    background-color: #2A2F33;
+}
+
+article footer {
+    background-color: #F4655F;
+}
+
+
+/* Making checkbox and label invis */
+
+#hamburger,
+.hamburger {
+    visibility: hidden;
+    display: none;
+}
+
+
+/* Removing ul maks */
+
+#menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Setting Menu Sections */
+
+#menu>ul>li {
+    text-align: center;
+    padding: 1em;
+    border-style: solid;
+    border-width: thick 0 0 0;
+}
+
+
+/* Menu Sections Colors */
+
+#menu li:first-of-type {
+    border-color: #E1493E;
+}
+
+#menu li:first-of-type+li {
+    border-color: #8ABA56;
+}
+
+#menu li:first-of-type+li+li {
+    border-color: #5B4282;
+}
+
+#menu li:first-of-type+li+li+li+li {
+    border-color: #FF8932;
+}
+
+#menu li:first-of-type+li+li+li+li+li {
+    border-color: #19B6E9;
+}
+
+#menu li:first-of-type+li+li+li+li+li+li {
+    border-color: #E84C8B;
+}
