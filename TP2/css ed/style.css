@@ -1,0 +1,76 @@
+/* EXERCISE 1.1 */
+
+/* Main Colors */
+body > header {background-color: #046DD5;}
+aside {background-color: #2A2F33;}
+body > footer {background-color: #2A2F33;}
+article footer {background-color: #F4655F;}
+
+/* Making checkbox and label invis */
+#hamburger, .hamburger {display:none/*visibility: hidden*/;}
+
+/* Removing ul maks */
+#menu ul {list-style-type: none;}
+
+/* Setting Menu Sections */
+#menu > ul > li{
+	text-align: center;
+	border-style: solid;
+	border-width: thick 0 0 0;
+}
+/* Menu Sections Colors */
+#menu li:nth-child(1) {border-color: #E1493E;}
+#menu li:nth-child(2) {border-color: #8ABA56;}
+#menu li:nth-child(3) {border-color: #5B4282;}
+#menu li:nth-child(4) {border-color: #FF8932;}
+#menu li:nth-child(5) {border-color: #19B6E9 ;}
+#menu li:nth-child(6) {border-color: #E84C8B;}
+
+/* Fonts applications */
+* {
+	font-family: 'Georgia', Arial, sans-serif;
+}
+
+header, h1, a, footer {
+	font-family: 'Montserrata', Arial, sans-serif;
+}
+
+a {
+	text-decoration: none;
+	color:white;
+}
+
+nav a {
+	color:black;
+}
+
+#news > article > p:first-letter {
+	font-size: 200%;
+}
+
+footer {
+	color:white;
+}
+
+/* Marging and Padding details */
+body {
+	margin: 1em;
+	padding: 0em;
+}
+
+body > header {
+	padding: 1em;
+}
+
+#related {
+	padding:1em;
+}
+
+#menu ul {
+	margin: 0;
+	padding: 0;
+}
+
+#menu ul > * {
+	padding: 1em;
+}
