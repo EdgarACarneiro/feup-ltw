@@ -21,10 +21,10 @@ article footer {background-color: #F4655F;}
 	border-width: thick 0 0 0;
 }
 /* Menu Sections Colors */
-#menu li:first-of-type {border-color: #E1493E;}
-#menu li:first-of-type + li {border-color: #8ABA56;}
-#menu li:first-of-type + li + li{border-color: #5B4282;}
-#menu li:first-of-type + li + li + li + li {border-color: #FF8932;}
-#menu li:first-of-type + li + li + li + li + li{border-color: #19B6E9 ;}
-#menu li:first-of-type + li + li + li + li + li + li{border-color: #E84C8B;}
+#menu li:nth-child(1) {border-color: #E1493E;}
+#menu li:nth-child(2) {border-color: #8ABA56;}
+#menu li:nth-child(3) {border-color: #5B4282;}
+#menu li:nth-child(4) {border-color: #FF8932;}
+#menu li:nth-child(5) {border-color: #19B6E9 ;}
+#menu li:nth-child(6) {border-color: #E84C8B;}
 
