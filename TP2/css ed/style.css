@@ -7,7 +7,7 @@ body > footer {background-color: #2A2F33;}
 article footer {background-color: #F4655F;}
 
 /* Making checkbox and label invis */
-#hamburger, .hamburger {visibility: hidden;}
+#hamburger, .hamburger {display:none/*visibility: hidden*/;}
 
 /* Removing ul maks */
 #menu ul {list-style-type: none;}
@@ -15,8 +15,6 @@ article footer {background-color: #F4655F;}
 /* Setting Menu Sections */
 #menu > ul > li{
 	text-align: center;
-	margin: 1em;
-	padding: 1em;
 	border-style: solid;
 	border-width: thick 0 0 0;
 }
@@ -28,3 +26,51 @@ article footer {background-color: #F4655F;}
 #menu li:nth-child(5) {border-color: #19B6E9 ;}
 #menu li:nth-child(6) {border-color: #E84C8B;}
 
+/* Fonts applications */
+* {
+	font-family: 'Georgia', Arial, sans-serif;
+}
+
+header, h1, a, footer {
+	font-family: 'Montserrata', Arial, sans-serif;
+}
+
+a {
+	text-decoration: none;
+	color:white;
+}
+
+nav a {
+	color:black;
+}
+
+#news > article > p:first-letter {
+	font-size: 200%;
+}
+
+footer {
+	color:white;
+}
+
+/* Marging and Padding details */
+body {
+	margin: 1em;
+	padding: 0em;
+}
+
+body > header {
+	padding: 1em;
+}
+
+#related {
+	padding:1em;
+}
+
+#menu ul {
+	margin: 0;
+	padding: 0;
+}
+
+#menu ul > * {
+	padding: 1em;
+}
