@@ -1,0 +1,24 @@
+body {
+	width: 60em;
+	margin: auto;
+}
+
+#menu li {
+	display: inline-flex;
+}
+
+#news {
+	position: relative;
+}
+
+#news h1 {
+	position: absolute;
+	padding-left: 1em;
+	width: 10em;
+}
+
+#news a {
+	color: white;
+	text-decoration: none;
+	text-shadow: #000 2px 1px 10px;
+}
