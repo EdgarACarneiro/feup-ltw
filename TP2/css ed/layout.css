@@ -1,6 +1,9 @@
 body {
 	width: 60em;
+	margin: auto;
 }
+
+/* Menu Flex Display */
 
 #signup {
 	display: flex;
@@ -9,4 +12,38 @@ body {
 
 #menu > ul {
 	display: flex;
+}
+
+/** Grid Display */
+
+body {
+  display: grid;
+  grid-template-columns: [begin] auto [sidebar] 20% [end];
+  grid-template-rows: [header] auto [menu] auto [news] auto [footer] auto [end];
+}
+
+body > header {
+	grid-column: begin / end;
+	grid-row: header / menu;
+}
+
+body > menu {
+	grid-column: begin / sidebar;
+	grid-row: menu / news;
+	justify-self: stretch;
+}
+
+body #related {
+	grid-column: sidebar / end;
+	grid-row: menu / end;
+}
+
+body #news {
+	grid-column: begin / sidebar;
+	grid-row: news / footer;
+}
+
+body > footer {
+	grid-column: begin / sidebar;
+	grid-row: footer / end;
 }
