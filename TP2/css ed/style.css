@@ -31,11 +31,11 @@ body 			{background-color: #EDEFF0;}
 
 /* Fonts applications */
 * {
-	font-family: 'Georgia', Arial, sans-serif;
+	font-family: 'Georgia', sans-serif;
 }
 
-header, h1, a, footer {
-	font-family: 'Montserrata', sans-serif;
+header, h1, a, footer, #author #date {
+	font-family: 'Montserrat', sans-serif;
 }
 
 a {
@@ -47,7 +47,7 @@ nav a {
 	color:black;
 }
 
-#news > article > p:first-letter {
+#news > article > p:first-of-type:first-letter {
 	font-size: 200%;
 }
 
@@ -63,6 +63,7 @@ body {
 
 body > header {
 	padding: 1em;
+	padding-bottom: 0.3em;
 }
 
 #related {
@@ -87,4 +88,54 @@ body > header {
 	border-style: solid;
 	border-width: 0 0 0 thin;
 	padding-left: 1em;
+}
+
+/* Details */
+body > footer {
+	margin-top: 1em;
+	margin-right: 1em;
+	padding-left: 1em;
+}
+
+#news {
+	margin-top: 1em;
+	margin-right: 1em;
+}
+
+#news p {
+	padding-left: 1em;
+}
+
+body > header > h1 {
+	font-weight: 600;
+	font-size: 1.6em;
+	margin-bottom: 0;
+}
+
+body > header > h2 {
+	font-size: 0.8em;
+	margin-top: 0.3em;
+}
+
+body > header > #signup{
+	font-size: 0.75em;
+	padding-right: 1em;
+}
+
+#menu {
+	font-size: 1em;
+	font-weight:500;
+}
+
+#news footer {
+	padding: 1em;
+	font-size: 0.8em;
+}
+
+span.tags a, a.comments {
+	text-decoration: underline;
+}
+
+#news header {
+	text-shadow: 5px 5px 5px black;
 }

@@ -1,0 +1,71 @@
+@media (max-width: 60em) {
+    
+    #related {
+      display: none;
+    }
+
+    body {
+  	  width: 100%;
+    }
+
+	body > #menu {
+		grid-column: begin / end;
+	}
+
+	body #news {
+		grid-column: begin / end;
+		margin-top: 0em;
+		margin-right: 0em;
+	}
+
+	body > footer {
+		grid-column: begin / end;
+		margin-right: 0em;
+	}
+}
+
+@media (max-width: 30em) {
+
+    body > header > h2 {
+    	display: none;
+    }
+
+    body > header > #signup {
+		grid-column: rightside / end;
+		text-align: left;
+		padding-bottom: 0.5em;
+    }
+
+    #menu ul{
+    	flex-direction: column;
+    	background-color: #EDEFF0;
+    }
+
+	#menu >ul >li {
+    	border-width: 0 0 0 thick;
+    	text-align: left;
+    	font-weight: 300;
+    	font-size: 0.75em;
+	}
+
+	#hamburger{
+		visibility: hidden;
+
+		position: relative;
+	}
+
+	.hamburger span:after {
+		display: block;
+
+		width: 100%;
+		background-color: #2A2F33;
+		margin: 0;
+		padding: 1.5em;
+
+		content: "\2630";
+	}
+
+	#hamburger:checked + label{
+	}
+
+}
