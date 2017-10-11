@@ -3,22 +3,27 @@ body {
 }
 
 body > header {
-	padding: 1em;
+	padding: 1.5em 1em 0 1em;
 	background-color: #046DD5;
 }
 
 body > header h1 {
 	margin: 0;
+	font-size: 1.5em;
 }
 
 body > header h2 {
 	margin: 2px;
-	font-size: 14px;
+	font-size: 0.8em;
 }
 
 #signup {
-	font-size: 12px;
-	font-weight: lighter;
+	float: right;
+	position: relative;
+	bottom: 1em;
+	font-size: 13px;
+	font-weight: thin;
+	padding-right: 1em;
 }
 
 #signup a:nth-child(1) {
@@ -38,7 +43,11 @@ body > header a {
 	margin: 0;
 }
 
-#menu input {
+#menu {
+	background-color: white;
+}
+
+#hamburger {
 	display: none;
 }
 
@@ -94,7 +103,7 @@ body > header a {
 	padding: 0 1em;
 }
 
-#news p::first-letter {
+#news p:first-of-type::first-letter {
 	font-size: 250%;
 }
 
