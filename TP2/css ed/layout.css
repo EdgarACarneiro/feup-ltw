@@ -4,18 +4,15 @@ body {
 }
 
 /* Menu Flex Display */
-
-#signup {
-	display: flex;
-	justify-content: flex-end;
-}
-
 #menu > ul {
 	display: flex;
 }
 
-/** Grid Display */
+#menu >ul >li {
+	flex-grow: 1;
+}
 
+/** Grid Display */
 body {
   display: grid;
   grid-template-columns: [begin] auto [sidebar] 20% [end];
@@ -47,3 +44,38 @@ body > footer {
 	grid-column: begin / sidebar;
 	grid-row: footer / end;
 }
+
+/* Titles over images */
+#news header {
+	position: absolute;
+	width: 12em;
+	margin-left: 2em;
+}
+
+#news img {
+	width: 100%;
+}
+
+/* Grid for Header */
+body > header {
+  display: grid;
+  grid-template-columns: [rightside] auto [leftside] auto [end];
+  grid-template-rows: [title] auto [subtitles] auto [end];
+}
+
+body > header > h1 {
+	grid-column: rightside / end;
+	grid-row: title/ subtitles;
+}
+
+body > header > h2 {
+	grid-column: rightside / leftside;
+	grid-row: subtitles/ end;
+}
+
+body > header > #signup {
+	grid-column: leftside / end;
+	grid-row: subtitles/ end;
+	text-align: right;
+}
+
