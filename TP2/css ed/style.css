@@ -135,3 +135,7 @@ body > header > #signup{
 span.tags a, a.comments {
 	text-decoration: underline;
 }
+
+#news header {
+	text-shadow: 5px 5px 5px black;
+}

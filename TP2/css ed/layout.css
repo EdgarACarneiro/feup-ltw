@@ -27,7 +27,6 @@ body > header {
 body > menu {
 	grid-column: begin / sidebar;
 	grid-row: menu / news;
-	justify-self: stretch;
 }
 
 body #related {
