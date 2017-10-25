@@ -2,6 +2,7 @@
 
 body {
     font-family: 'Montserrat', sans-serif;
+    width: 60em;
 }
 
 
@@ -31,9 +32,14 @@ body>header>h2 {
     font-size: 15px;
 }
 
-body>header>#signup {
-    display: flex;
-    align-content: right;
+body>header>#signup>a {
+    padding: 0 1em;
+    border-right-style: solid;
+    border-right-width: 1px;
+}
+
+body>header>#signup>a:last-child {
+    border-style: none;
 }
 
 aside {
