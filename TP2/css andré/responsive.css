@@ -1,0 +1,38 @@
+@media (max-width: 60em) {
+	body {
+		width: 100%;
+	}
+	aside {
+		display: none;
+	}
+	#news {
+		padding-right: 0;
+	}
+}
+
+@media (max-width: 30em) {
+	#menu label {
+		height: 1em;
+	}
+	#hamburger + label {
+		display: block;
+		width: 100%;
+		background-color: #eee;
+	}
+	#menu ul {
+		max-height: 0;
+		transition: height 2s;
+		flex-direction: column;
+		overflow: hidden;
+	}
+	#hamburger {
+		content: "\2630";
+	}
+	#hamburger:checked {
+		content: "\2715";
+	}
+	#hamburger:checked + label + ul {
+		max-height: auto;
+		display: flex;
+	}
+}
