@@ -1,6 +1,11 @@
 body>header>#signup {
+    flex-grow: 2;
     display: flex;
     justify-content: flex-end;
+}
+
+body>header>h1 {
+    width: 100%;
 }
 
 body {
@@ -13,6 +18,8 @@ body {
 body>header {
     grid-column-start: 1;
     grid-column-end: 3;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 body>#menu>ul {
@@ -42,8 +49,4 @@ body>section>article>header {
     position: absolute;
     width: 15%;
     padding: 1em 1em;
-}
-
-body>section>article>header>h1>a {
-    color: white;
 }

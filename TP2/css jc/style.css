@@ -3,6 +3,12 @@
 body {
     font-family: 'Montserrat', sans-serif;
     width: 60em;
+    background-color: #EDEFF0;
+}
+
+body>section>article {
+    background-color: white;
+    margin: 1em 0;
 }
 
 
@@ -68,6 +74,7 @@ article footer {
 
 #menu ul {
     list-style-type: none;
+    background-color: white;
     margin: 0;
     padding: 0;
 }
@@ -107,4 +114,36 @@ article footer {
 
 #menu li:first-of-type+li+li+li+li+li+li {
     border-color: #E84C8B;
+}
+
+#related {
+    padding: 1em;
+    color: white;
+}
+
+#related p {
+    font-weight: small;
+}
+
+p {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#related a {
+    color: white;
+}
+
+body>section>article>header>h1>a {
+    color: white;
+    text-shadow: 4px 4px 10px #000000;
+}
+
+body>section>article>p {
+    padding: 0 1em;
+}
+
+body>section>article>p:first-of-type::first-letter {
+    text-transform: uppercase;
+    font-size: 2em;
+    font-weight: bold;
 }
