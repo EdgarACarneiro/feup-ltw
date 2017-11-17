@@ -2,12 +2,15 @@
 <html lang="en">
 
 <head>
+	<META HTTP-EQUIV="CONTENT-LANGUAGE" CONTENT="en-US">
+    <META charset="UTF-8">
+	<META NAME="KEYWORDS" CONTENT="todo, to-do, list, todolist, to-dolist, to-do-list, todo-list, job, group, school, ltw, feup">
+    <META NAME="viewport" CONTENT="width=device-width, initial-scale=1">
+	<META HTTP-EQUIV="EXPIRES" CONTENT="Fri, 17 Nov 2017 23:59:59 GMT">
     <title>EzeeDo</title>
     <!-- Slogan p pagina principal: Ezee Plan. Ezee Do. Ezee Acomplish. -->
-    <meta charset="UTF-8">
     <link href="styles/style.css" rel="stylesheet">
     <link href="styles/fonts.css" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
