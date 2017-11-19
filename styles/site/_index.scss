@@ -1,0 +1,57 @@
+/**
+Main Colors: http://blog.visme.co/website-color-schemes/
+#2C3531
+#116466
+#D9B08C
+#FFCB9A
+#D1E8E2
+*/
+
+html {
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: #2C3531;
+}
+
+article {
+    background-color: #FFCB9A;
+    margin: $default-margin;
+}
+
+#top-bar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 3000;
+}
+
+main {
+    position: relative;
+    top: $nav-height;
+}
+
+.nav-bar ul {
+    #info {
+        flex-grow: 1;
+    }
+    #search {
+        flex-grow: 3;
+    }
+    #user {
+        flex-grow: 1;
+    }
+}
+
+.btn-bar {
+    width: 50%;
+}
+
+.feed-container {
+    margin: $default-margin;
+}
+
+footer {
+    background-color: #D1E8E2;
+}

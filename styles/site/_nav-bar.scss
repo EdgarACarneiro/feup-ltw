@@ -1,0 +1,15 @@
+.nav-bar {
+    background-color: #116466;
+    height: $nav-height;
+    ul {
+        height: $nav-height;
+        display: flex;
+        li {
+            display: flex;
+            align-items: center;
+            >* {
+                display: inline-block;
+            }
+        }
+    }
+}

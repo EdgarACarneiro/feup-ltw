@@ -1,3 +1,8 @@
+//Reset CSS 2.0
+@import "./site/reset_css";
+//Variables
+@import "./site/variables";
 // StyleSheets
-@import "./site/index.scss";
-@import "./site/variables.scss";
+@import "./site/btn";
+@import "./site/nav-bar";
+@import "./site/index";

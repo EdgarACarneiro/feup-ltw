@@ -1,0 +1,17 @@
+.btn-bar {
+    display: flex;
+    margin: 0 auto;
+    .btn-group {
+        margin: auto $btn-margin-between-btn;
+    }
+    .btn {
+        margin: auto $btn-margin-between-btn;
+    }
+}
+
+.btn {
+    height: $btn-height;
+    width: $btn-width;
+    line-height: $btn-height;
+    vertical-align: middle;
+}
