@@ -49,92 +49,99 @@
             </div>
         </div>
 
-        <section class="feed-container" id="feed">
-
-            <article>
-                <h2>Project Title</h2>
+        <section class="feed-container masonry" id="feed">
+            <div class="masonry-item">
                 <article>
-                    <h4>To-Do List 1 Title</h4>
+                    <h2>Project Title</h2>
+                    <article>
+                        <h4>To-Do List 1 Title</h4>
+                        <ul>
+                            <li>Fusce venenatis enim sed erat congue laoreet.</li>
+                            <li>Ut mollis augue ac sem fringilla, et molestie sapien laoreet.</li>
+                        </ul>
+                        <a href="addItem.php"><span class="fa fa-plus-circle">Add Item</a>
+                    </article>
+                    <article>
+                        <h4>To-Do List 2 Title</h4>
+                        <ul>
+                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                            <li>Ut feugiat velit nec feugiat bibendum.</li>
+                            <li>Fusce venenatis enim sed erat congue laoreet.</li>
+                        </ul>
+                        <a href="addItem.php"><span class="fa fa-plus-circle">Add Item</a>
+                    </article>
+                    <a href="addToDo.php"><span class="fa fa-plus-circle">Add To-Do List</a>
+                </article>
+            </div>
+
+            <div class="masonry-item">
+                <article>
+                    <h2>To-Do List Title</h2>
                     <ul>
+                        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                        <li>Ut feugiat velit nec feugiat bibendum.</li>
                         <li>Fusce venenatis enim sed erat congue laoreet.</li>
                         <li>Ut mollis augue ac sem fringilla, et molestie sapien laoreet.</li>
                     </ul>
                     <a href="addItem.php"><span class="fa fa-plus-circle">Add Item</a>
                 </article>
+            </div>
+
+            <div class="masonry-item">
                 <article>
-                    <h4>To-Do List 2 Title</h4>
+                    <h2>To-Do List Title</h2>
                     <ul>
-                        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                        <li>Ut feugiat velit nec feugiat bibendum.</li>
-                        <li>Fusce venenatis enim sed erat congue laoreet.</li>
-                    </ul>
-                    <a href="addItem.php"><span class="fa fa-plus-circle">Add Item</a>
-                </article>
-                <a href="addToDo.php"><span class="fa fa-plus-circle">Add To-Do List</a>
-            </article>
-
-            <article>
-                <h2>To-Do List Title</h2>
-                <ul>
-                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                    <li>Ut feugiat velit nec feugiat bibendum.</li>
-                    <li>Fusce venenatis enim sed erat congue laoreet.</li>
-                    <li>Ut mollis augue ac sem fringilla, et molestie sapien laoreet.</li>
-                </ul>
-                <a href="addItem.php"><span class="fa fa-plus-circle">Add Item</a>
-            </article>
-
-            <article>
-                <h2>To-Do List Title</h2>
-                <ul>
-                    <li>Ut mollis augue ac sem fringilla, et molestie sapien laoreet.</li>
-                </ul>
-                <a href="addItem.php"><span class="fa fa-plus-circle">Add Item</a>
-            </article>
-
-            <article>
-                <h2>Project Title</h2>
-                <article>
-                    <h4>To-Do List 1 Title</h4>
-                    <ul>
-                        <li>Fusce venenatis enim sed erat congue laoreet.</li>
                         <li>Ut mollis augue ac sem fringilla, et molestie sapien laoreet.</li>
-                        <li>Aliquam rutrum nisi non maximus sagittis.</li>
-                        <li>Quisque tempor massa id arcu ullamcorper, vitae efficitur odio facilisis.</li>
                     </ul>
                     <a href="addItem.php"><span class="fa fa-plus-circle">Add Item</a>
                 </article>
+            </div>
 
+            <div class="masonry-item">
                 <article>
-                    <h4>To-Do List 2 Title</h4>
-                    <ul>
-                        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                        <li>Ut feugiat velit nec feugiat bibendum.</li>
-                        <li>Fusce venenatis enim sed erat congue laoreet.</li>
-                    </ul>
-                    <a href="addItem.php"><span class="fa fa-plus-circle">Add Item</a>
-                </article>
+                    <h2>Project Title</h2>
+                    <article>
+                        <h4>To-Do List 1 Title</h4>
+                        <ul>
+                            <li>Fusce venenatis enim sed erat congue laoreet.</li>
+                            <li>Ut mollis augue ac sem fringilla, et molestie sapien laoreet.</li>
+                            <li>Aliquam rutrum nisi non maximus sagittis.</li>
+                            <li>Quisque tempor massa id arcu ullamcorper, vitae efficitur odio facilisis.</li>
+                        </ul>
+                        <a href="addItem.php"><span class="fa fa-plus-circle">Add Item</a>
+                    </article>
 
-                <article>
-                    <h4>To-Do List 3 Title</h4>
-                    <ul>
-                        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                        <li>Etiam eget metus sit amet nisl maximus tristique cursus ut lorem.</li>
-                        <li>Fusce venenatis enim sed erat congue laoreet.</li>
-                        <li>Integer at eros in felis dictum semper ut consequat turpis.</li>
-                    </ul>
-                    <a href="addItem.php"><span class="fa fa-plus-circle">Add Item</a>
-                </article>
+                    <article>
+                        <h4>To-Do List 2 Title</h4>
+                        <ul>
+                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                            <li>Ut feugiat velit nec feugiat bibendum.</li>
+                            <li>Fusce venenatis enim sed erat congue laoreet.</li>
+                        </ul>
+                        <a href="addItem.php"><span class="fa fa-plus-circle">Add Item</a>
+                    </article>
 
-                <a href="addToDo.php"><span class="fa fa-plus-circle">Add To-Do List</a>
-            </article>
+                    <article>
+                        <h4>To-Do List 3 Title</h4>
+                        <ul>
+                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                            <li>Etiam eget metus sit amet nisl maximus tristique cursus ut lorem.</li>
+                            <li>Fusce venenatis enim sed erat congue laoreet.</li>
+                            <li>Integer at eros in felis dictum semper ut consequat turpis.</li>
+                        </ul>
+                        <a href="addItem.php"><span class="fa fa-plus-circle">Add Item</a>
+                    </article>
+
+                    <a href="addToDo.php"><span class="fa fa-plus-circle">Add To-Do List</a>
+                </article>
+            </div>
         </section>
 
-        <footer>
-            &copy; 2017 EzeeDo
-        </footer>
-
     </main>
+
+    <footer>
+        &copy; 2017 EzeeDo
+    </footer>
 
 </body>
 

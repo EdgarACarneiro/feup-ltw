@@ -17,7 +17,6 @@ body {
 
 article {
     background-color: #FFCB9A;
-    margin: $default-margin;
 }
 
 #top-bar {
@@ -28,8 +27,7 @@ article {
 }
 
 main {
-    position: relative;
-    top: $nav-height;
+    margin-top: $nav-height;
 }
 
 .nav-bar ul {
@@ -49,7 +47,19 @@ main {
 }
 
 .feed-container {
-    margin: $default-margin;
+    margin: auto $default-margin;
+}
+
+.masonry {
+    column-count: 3;
+    column-gap: 15px;
+    column-fill: initial;
+}
+
+.masonry-item {
+    display: inline-block;
+    margin-bottom: $default-margin;
+    width: 100%;
 }
 
 footer {
