@@ -6,7 +6,6 @@
     <META charset="UTF-8">
     <META NAME="KEYWORDS" CONTENT="todo, to-do, list, todolist, to-dolist, to-do-list, todo-list, job, group, school, ltw, feup">
     <META NAME="viewport" CONTENT="width=device-width, initial-scale=1">
-    <META HTTP-EQUIV="EXPIRES" CONTENT="Fri, 17 Nov 2017 23:59:59 GMT">
     <title>EzeeDo</title>
     <!-- Slogan p pagina principal: Ezee Plan. Ezee Do. Ezee Acomplish. -->
     <link href="styles/style.css" rel="stylesheet">
@@ -17,7 +16,7 @@
     <nav id="top-bar" class="nav-bar">
         <ul>
             <li id="info">
-                <img src="logo">
+                <img src="logo" alt="The website logo">
                 <h1><a href="index.php">EzeeDo</a></h1>
             </li>
             <li id="search">
@@ -83,7 +82,7 @@
                         <li>Fusce venenatis enim sed erat congue laoreet.</li>
                         <li>Ut mollis augue ac sem fringilla, et molestie sapien laoreet.</li>
                     </ul>
-                    <a href="addItem.php"><span class="fa fa-plus-circle">Add Item</a>
+                    <a href="addItem.php"><span class="fa fa-plus-circle">Add Item</span></a>
                 </article>
             </div>
 
@@ -93,7 +92,7 @@
                     <ul>
                         <li>Ut mollis augue ac sem fringilla, et molestie sapien laoreet.</li>
                     </ul>
-                    <a href="addItem.php"><span class="fa fa-plus-circle">Add Item</a>
+                    <a href="addItem.php"><span class="fa fa-plus-circle">Add Item</span></a>
                 </article>
             </div>
 
