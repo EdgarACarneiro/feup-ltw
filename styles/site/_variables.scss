@@ -1,6 +1,12 @@
 // Default Measure
 $default-margin: 15px;
 $default-padding: 15px;
+$collapse-xs: 640px;
+$collapse-s: 768px;
+$collapse-m: 960px;
+$collapse-l: 1068px;
+$collapse-xl: 1280px;
+$collapse-xxl: 1440px;
 // Colors
 // Nav Bar
 $nav-height: 100px;
@@ -8,5 +14,9 @@ $nav-height: 100px;
 $footer-height: 1rem;
 // Button
 $btn-height: 50px;
-$btn-width: 300px;
-$btn-margin-between-btn: 50px;
+$btn-width: 150px;
+$btn-margin-between-btn: 30px;
+// Calendar
+$calendar-width: 350px;
+// Masonry
+$masonry-max-width: 1200px;

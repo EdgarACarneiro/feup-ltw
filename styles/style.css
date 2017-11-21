@@ -135,21 +135,35 @@ table {
 
 .btn-bar {
   display: flex;
+  justify-content: space-around;
   margin: 0 auto;
+  width: 50%;
 }
 
-.btn-bar .btn-group {
-  margin: auto 50px;
+@media (max-width: 960px) {
+  .btn-bar {
+    width: 70%;
+  }
 }
 
-.btn-bar .btn {
-  margin: auto 50px;
+@media (max-width: 768px) {
+  .btn-bar {
+    width: 80%;
+  }
+}
+
+@media (max-width: 640px) {
+  .btn-bar {
+    flex-flow: column;
+    width: 100%;
+  }
 }
 
 .btn {
   height: 50px;
-  width: 300px;
+  width: 150px;
   line-height: 50px;
+  margin: 0 15px;
   vertical-align: middle;
 }
 
@@ -182,6 +196,7 @@ Main Colors: http://blog.visme.co/website-color-schemes/
 */
 html {
   font-family: 'Montserrat', sans-serif;
+  min-width: 320px;
 }
 
 body {
@@ -199,10 +214,6 @@ article {
   z-index: 3000;
 }
 
-main {
-  margin-top: 100px;
-}
-
 .nav-bar ul #info {
   flex-grow: 1;
 }
@@ -215,18 +226,53 @@ main {
   flex-grow: 1;
 }
 
-.btn-bar {
-  width: 50%;
+.feed-container {
+  padding-top: 100px;
+  min-height: calc(100vh - 100px);
 }
 
-.feed-container {
-  margin: auto 15px;
+@media (min-width: 1280px) {
+  .feed-container {
+    width: calc(100% - 350px);
+  }
 }
 
 .masonry {
-  column-count: 3;
+  margin: 0 auto;
+  column-count: 4;
+  max-width: 1200px;
   column-gap: 15px;
   column-fill: initial;
+}
+
+@media (max-width: 1600px) {
+  .masonry {
+    margin: 0 15px;
+  }
+}
+
+@media (min-width: 1280px) and (max-width: 1440px) {
+  .masonry {
+    column-count: 3;
+  }
+}
+
+@media (max-width: 1068px) {
+  .masonry {
+    column-count: 3;
+  }
+}
+
+@media (max-width: 768px) {
+  .masonry {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 640px) {
+  .masonry {
+    column-count: 1;
+  }
 }
 
 .masonry-item {
@@ -237,6 +283,22 @@ main {
 
 footer {
   background-color: #D1E8E2;
+}
+
+.sidebar-calendar {
+  display: none;
+  position: fixed;
+  top: 100px;
+  right: 0;
+  background-color: white;
+  width: 350px;
+  height: calc(100vh - 100px);
+}
+
+@media (min-width: 1280px) {
+  .sidebar-calendar {
+    display: block;
+  }
 }
  
 

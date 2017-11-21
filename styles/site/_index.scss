@@ -9,6 +9,7 @@ Main Colors: http://blog.visme.co/website-color-schemes/
 
 html {
     font-family: 'Montserrat', sans-serif;
+    min-width: 320px;
 }
 
 body {
@@ -26,10 +27,6 @@ article {
     z-index: 3000;
 }
 
-main {
-    margin-top: $nav-height;
-}
-
 .nav-bar ul {
     #info {
         flex-grow: 1;
@@ -42,18 +39,35 @@ main {
     }
 }
 
-.btn-bar {
-    width: 50%;
-}
-
 .feed-container {
-    margin: auto $default-margin;
+    padding-top: $nav-height;
+    min-height: calc(100vh - #{$nav-height});
+    @media (min-width: #{$collapse-xl}) {
+        width: calc(100% - #{$calendar-width});
+    }
 }
 
 .masonry {
-    column-count: 3;
+    margin: 0 auto;
+    column-count: 4;
+    max-width: $masonry-max-width;
     column-gap: 15px;
     column-fill: initial;
+    @media (max-width: 1600px) {
+        margin: 0 $default-margin;
+    }
+    @media (min-width: #{$collapse-xl}) and (max-width: #{$collapse-xxl}) {
+        column-count: 3;
+    }
+    @media (max-width: #{$collapse-l}) {
+        column-count: 3;
+    }
+    @media (max-width: #{$collapse-s}) {
+        column-count: 2;
+    }
+    @media (max-width: #{$collapse-xs}) {
+        column-count: 1;
+    }
 }
 
 .masonry-item {
@@ -65,3 +79,5 @@ main {
 footer {
     background-color: #D1E8E2;
 }
+
+@import "calendar";

@@ -10,6 +10,7 @@
     <!-- Slogan p pagina principal: Ezee Plan. Ezee Do. Ezee Acomplish. -->
     <link href="styles/style.css" rel="stylesheet">
     <link href="styles/fonts.css" rel="stylesheet">
+    <link href="styles/fonts/font-awesome/sass/font-awesome.css" rel="stylesheet">
 </head>
 
 <body>
@@ -32,7 +33,12 @@
             </li>
         </ul>
     </nav>
-    <main>
+
+    <section class="sidebar-calendar">
+
+    </section>
+
+    <section class="feed-container" id="feed">
         <div class="btn-bar">
             <div class="btn btn-group">
                 <a href="projects.php">Projects</a>
@@ -48,7 +54,7 @@
             </div>
         </div>
 
-        <section class="feed-container masonry" id="feed">
+        <div class="masonry">
             <div class="masonry-item">
                 <article>
                     <h2>Project Title</h2>
@@ -134,13 +140,14 @@
                     <a href="addToDo.php"><span class="fa fa-plus-circle">Add To-Do List</a>
                 </article>
             </div>
-        </section>
+        </div>
 
-    </main>
+        </main>
 
-    <footer>
-        &copy; 2017 EzeeDo
-    </footer>
+        <footer>
+            &copy; 2017 EzeeDo
+        </footer>
+    </section>
 
 </body>
 
