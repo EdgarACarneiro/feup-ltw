@@ -1,3 +1,4 @@
+PRAGMA foreign_keys = false;
 
 CREATE TABLE User (
 	user_id INTEGER PRIMARY KEY,
@@ -12,7 +13,7 @@ CREATE TABLE Task (
 	title VARCHAR,
 	category VARCHAR,
 	priority INTEGER,
-	due_date DATE,
+	duedate DATE,
 	creator INTEGER REFERENCES User NOT NULL
 );
 
@@ -72,18 +73,18 @@ INSERT INTO User VALUES (
 	'CEO of Microsoft, joined in June 1980, becoming Microsoft’s 30th employee. Billionaire.'
 );
 
-INSERT INTO Task VALUES (1, 'Revolutionary', 'tech', NULL, NULL, 6);
+INSERT INTO Task VALUES (1, 'Revolutionary', 'tech', 2, '2017-12-15', 6);
 INSERT INTO Task VALUES (2, 'New Website', 'web', 1, '2018-06-13', 4);
 INSERT INTO Task VALUES (3, 'EzeeDo', 'ltw', 4, '2017-12-11', 1);
-INSERT INTO Task VALUES (4, 'RCOM', 'FEUP', NULL, NULL, 4);
+INSERT INTO Task VALUES (4, 'RCOM', 'FEUP', 2, '2017-12-16', 4);
 
-INSERT INTO Task VALUES (5, 'Profile Page', 'FEUP', 3, NULL, 3);
+INSERT INTO Task VALUES (5, 'Profile Page', 'FEUP', 3, '2017-12-09', 3);
 INSERT INTO TodoList VALUES (5, 3);
 
-INSERT INTO Task VALUES (6, 'Login Page', 'FEUP', 3, NULL, 3);
+INSERT INTO Task VALUES (6, 'Login Page', 'FEUP', 3, '2017-12-05', 3);
 INSERT INTO TodoList VALUES (6, 3);
 
-INSERT INTO Task VALUES (7, 'Main Page', 'FEUP', 3, NULL, 7);
+INSERT INTO Task VALUES (7, 'Main Page', 'FEUP', 3, '2017-12-08', 7);
 INSERT INTO TodoList VALUES (7, 3);
 
 INSERT INTO Task VALUES (8, 'Improve AI', 'Google', 8, NULL, 1);
@@ -103,8 +104,8 @@ INSERT INTO TodoList VALUES (12, NULL);
 
 
 INSERT INTO Item VALUES (1, 2, NULL, 4, 1, 'Implement communication protocol');
-INSERT INTO Item VALUES (2, NULL, 3, NULL, 1, 'Make UI user enjoyable');
-INSERT INTO Item VALUES (3, 1, NULL, 5, 1, 'Gather all the statistics for the report');
+INSERT INTO Item VALUES (2, NULL, NULL, NULL, 1, 'Make UI user enjoyable');
+INSERT INTO Item VALUES (3, 1, 1, 5, 1, 'Gather all the statistics for the report');
 INSERT INTO Item VALUES (4, 5, 6, 1, 2, 'Add a background for User profiles');
 INSERT INTO Item VALUES (5, NULL, 7, NULL, 2, 'Implment PHP reading from database for User information');
 INSERT INTO Item VALUES (6, NULL, NULL, NULL, 3, 'Get error message if email is repeated');
