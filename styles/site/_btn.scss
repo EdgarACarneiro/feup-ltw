@@ -1,11 +1,17 @@
 .btn-bar {
     display: flex;
+    justify-content: space-around;
     margin: 0 auto;
-    .btn-group {
-        margin: auto $btn-margin-between-btn;
+    width: 50%;
+    @media (max-width: #{$collapse-m}) {
+        width: 70%;
     }
-    .btn {
-        margin: auto $btn-margin-between-btn;
+    @media (max-width: #{$collapse-s}) {
+        width: 80%;
+    }
+    @media (max-width: #{$collapse-xs}) {
+        flex-flow: column;
+        width: 100%;
     }
 }
 
@@ -13,5 +19,6 @@
     height: $btn-height;
     width: $btn-width;
     line-height: $btn-height;
+    margin: 0 $default-margin;
     vertical-align: middle;
 }

@@ -9,6 +9,7 @@ Main Colors: http://blog.visme.co/website-color-schemes/
 
 html {
     font-family: 'Montserrat', sans-serif;
+    min-width: 320px;
 }
 
 body {
@@ -17,7 +18,6 @@ body {
 
 article {
     background-color: #FFCB9A;
-    margin: $default-margin;
 }
 
 #top-bar {
@@ -25,11 +25,6 @@ article {
     top: 0;
     width: 100%;
     z-index: 3000;
-}
-
-main {
-    position: relative;
-    top: $nav-height;
 }
 
 .nav-bar ul {
@@ -44,14 +39,45 @@ main {
     }
 }
 
-.btn-bar {
-    width: 50%;
+.feed-container {
+    padding-top: $nav-height;
+    min-height: calc(100vh - #{$nav-height});
+    @media (min-width: #{$collapse-xl}) {
+        width: calc(100% - #{$calendar-width});
+    }
 }
 
-.feed-container {
-    margin: $default-margin;
+.masonry {
+    margin: 0 auto;
+    column-count: 4;
+    max-width: $masonry-max-width;
+    column-gap: 15px;
+    column-fill: initial;
+    @media (max-width: 1600px) {
+        margin: 0 $default-margin;
+    }
+    @media (min-width: #{$collapse-xl}) and (max-width: #{$collapse-xxl}) {
+        column-count: 3;
+    }
+    @media (max-width: #{$collapse-l}) {
+        column-count: 3;
+    }
+    @media (max-width: #{$collapse-s}) {
+        column-count: 2;
+    }
+    @media (max-width: #{$collapse-xs}) {
+        column-count: 1;
+    }
+}
+
+.masonry-item {
+    display: inline-block;
+    margin-bottom: $default-margin;
+    width: 100%;
 }
 
 footer {
     background-color: #D1E8E2;
 }
+
+@import "calendar";

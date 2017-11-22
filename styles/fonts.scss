@@ -1,7 +1,4 @@
 @import "./_mixins";
-// Font Awesome
-// =========
-@import "./fonts/font-awesome/sass/font-awesome";
 // Font Montserrat
 // =========
 @include font-face(Montserrat, fonts/Montserrat/Montserrat-Thin, thin, normal, ttf);

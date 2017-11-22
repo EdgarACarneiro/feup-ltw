@@ -1,0 +1,12 @@
+.sidebar-calendar {
+    display: none;
+    position: fixed;
+    top: $nav-height;
+    right: 0;
+    background-color: white;
+    width: $calendar-width;
+    height: calc(100vh - #{$nav-height});
+    @media (min-width: #{$collapse-xl}) {
+        display: block;
+    }
+}
