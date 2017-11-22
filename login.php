@@ -34,11 +34,44 @@
         </ul>
     </nav>
 
-    <section class="sign in" id="TODO" >
+    <section class="sign-user">
+        <form action="logIn.php" method="post" id="sign-in">
+            <fieldset>
+                <legend>Log In:</legend>
+                E-mail: <input type="text" name="email">
+                Password: <input type="password" name="password">
+                <input type="submit" value="Send">
+            </fieldset>
+        </form>
 
+        <form action="registerUser.php" method="post" id="sign-up">
+            <fieldset>
+                <legend>Create an Account:</legend>
+                Username: <input type="text" name="username">
+                E-mail: <input type="text" name="email">
+                Password: <input type="password" name="password">
+                Repeat your Password: <input type="password" name="password-check">
+                <input type="submit" value="Send">
+            </fieldset>
+        </form>
+    </section>
+
+    <section id="site-description">
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut libero tincidunt, pharetra libero a, molestie felis. 
+            Etiam vehicula lacus vel imperdiet sagittis. Curabitur accumsan a lacus sed accumsan. 
+            Nulla nulla justo, bibendum sit amet aliquet faucibus, fringilla vel ex. 
+            Sed ac lacus sed sapien euismod tempus sit amet ac purus. 
+            Mauris ac sapien efficitur, tristique velit ut, semper lectus. 
+            Proin et congue ipsum. Vestibulum faucibus ex egestas, malesuada augue nec, vehicula purus. 
+            Sed et risus sit amet lectus rhoncus consequat. Nam sagittis sapien risus, vitae vestibulum risus bibendum quis. 
+            Aenean faucibus vulputate suscipit. Vivamus eleifend vel leo varius molestie. Donec semper nisl quis volutpat mollis.
+        </p>
     </section>
 
     <footer>
         &copy; 2017 EzeeDo
     </footer>
 </body>
+
+</html>
