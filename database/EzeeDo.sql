@@ -50,27 +50,38 @@ CREATE TABLE UserProject (
 
 
 -- POPULATE DATABASE
-INSERT INTO User VALUES (1, 'SherylSandberg', 'sheryl@gmail.com', 'facebook');
-INSERT INTO User VALUES (2, 'TimCook', 'timcook@hotmail.com', 'apple');
-INSERT INTO User VALUES (3, 'VirginiaRometty', 'virginia@gmail.com','ibm12345');
-INSERT INTO User VALUES (4, 'DennisCrowley', 'denniscrowley@gmail.com', 'foursquare');
-INSERT INTO User VALUES (5, 'KevinRyan', 'kevinryan@yahoo.com', 'giltgroupe');
-INSERT INTO User VALUES (6, 'LarryPage', 'larrytheboss@gmail.com', 'google');
-INSERT INTO User VALUES (7, 'SteveBallmer', 'steveballmer@hotmail.com', 'microsoft');
-
-INSERT INTO profile VALUES (1, 'COO of Facebook. Powerhouse driving the most successful company in Silicon Valley, and arguably in the world.');
-INSERT INTO profile VALUES (2, 'CEO of Apple. Decision maker in a company that has revolutionized the way humans see and use technology.');
-INSERT INTO profile VALUES (3, 'Chairwoman and CEO of IBM. First woman to ever lead the company. Skyrocketed to the top. 
-								I also serve on the committee of the most powerful schools in the country like Columbia Business School and Northwestern University.');
-INSERT INTO profile VALUES (4, 'Founder of Foursquare - one of the fastest growing companies in the last decade. 
-								The application is useful for finding places to go, and seeing tips on what is good or bad when you get to where you are going.');
-INSERT INTO profile VALUES (5, 'CEO of one of the biggest e-commerce sites in the world - Gilt Groupe. 
-								Founded several New York-based businesses, including Business Insider, and 10gen/MongoDB, 
-								and helped build DoubleClick from 1996 to 2005, first as president and later as CEO.');
-INSERT INTO profile VALUES (6, 'Co-founder and CEO of the most powerful company on the Internet today. 
-								My personal wealth is estimated to be $20.3 billion, ranking me #13 on the Forbes 400 list of richest Americans. 
-								Active investor in alternative energy companies, such as Tesla Motors.');
-INSERT INTO profile VALUES (7, 'CEO of Microsoft, joined in June 1980, becoming Microsoft’s 30th employee. Billionaire.');
+INSERT INTO User VALUES (
+	1, 'SherylSandberg', 'sheryl@gmail.com', 'facebook',
+	'COO of Facebook. Powerhouse driving the most successful company in Silicon Valley, and arguably in the world.'
+);
+INSERT INTO User VALUES (
+	2, 'TimCook', 'timcook@hotmail.com', 'apple',
+	'CEO of Apple. Decision maker in a company that has revolutionized the way humans see and use technology.'
+);
+INSERT INTO User VALUES (
+	3, 'VirginiaRometty', 'virginia@gmail.com','ibm12345',
+	'Chairwoman and CEO of IBM. First woman to ever lead the company. Skyrocketed to the top. I also serve on the committee of the most powerful schools in the country like Columbia Business School and Northwestern University.'
+);
+INSERT INTO User VALUES (
+	4, 'DennisCrowley', 'denniscrowley@gmail.com', 'foursquare',
+	'Founder of Foursquare - one of the fastest growing companies in the last decade. The application is useful for finding places to go, and seeing tips on what is good or bad when you get to where you are going.'
+);
+INSERT INTO User VALUES (
+	5, 'KevinRyan', 'kevinryan@yahoo.com', 'giltgroupe',
+	'CEO of one of the biggest e-commerce sites in the world - Gilt Groupe. 
+	Founded several New York-based businesses, including Business Insider, and 10gen/MongoDB, 
+	and helped build DoubleClick from 1996 to 2005, first as president and later as CEO.'
+);
+INSERT INTO User VALUES (
+	6, 'LarryPage', 'larrytheboss@gmail.com', 'google',
+	'Co-founder and CEO of the most powerful company on the Internet today. 
+	My personal wealth is estimated to be $20.3 billion, ranking me #13 on the Forbes 400 list of richest Americans. 
+	Active investor in alternative energy companies, such as Tesla Motors.'
+);
+INSERT INTO User VALUES (
+	7, 'SteveBallmer', 'steveballmer@hotmail.com', 'microsoft',
+	'CEO of Microsoft, joined in June 1980, becoming Microsoft’s 30th employee. Billionaire.'
+);
 
 INSERT INTO Project VALUES (1, 'Revolutionary', 'tech', NULL, NULL, 6);
 INSERT INTO Project VALUES (2, 'New Website', 'web development', 1, '2018-06-13', 4);
