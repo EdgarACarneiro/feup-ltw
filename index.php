@@ -143,11 +143,11 @@
         </div>
 
         </main>
-
-        <footer>
-            &copy; 2017 EzeeDo
-        </footer>
     </section>
+
+    <footer>
+            &copy; 2017 EzeeDo
+    </footer>
 
 </body>
 
