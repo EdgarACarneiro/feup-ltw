@@ -2,14 +2,17 @@
  *  Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
  */
-@import "./sass/path";
-@import "./sass/core";
-@import "./sass/larger";
-@import "./sass/fixed-width";
-@import "./sass/list";
-@import "./sass/bordered-pulled";
-@import "./sass/animated";
-@import "./sass/rotated-flipped";
-@import "./sass/stacked";
-@import "./sass/icons";
-@import "./sass/screen-reader";
+
+@import "variables";
+@import "mixins";
+@import "path";
+@import "core";
+@import "larger";
+@import "fixed-width";
+@import "list";
+@import "bordered-pulled";
+@import "animated";
+@import "rotated-flipped";
+@import "stacked";
+@import "icons";
+@import "screen-reader";
