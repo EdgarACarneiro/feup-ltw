@@ -300,6 +300,11 @@ footer {
     display: block;
   }
 }
+
+#sign-user {
+  background-color: #FF1212;
+  padding-top: 100px;
+}
  
 
  /*# sourceMappingURL= style.css.map */

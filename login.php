@@ -17,7 +17,7 @@
         <ul>
             <!-- Centrar isto -->
             <li id="info">
-                <img src="logo" alt="The website logo">
+                <img src="images/site/smallLogo.png" alt="The website logo">
                 <h1><a href="index.php">EzeeDo</a></h1>
             </li>
             <!-- Nao dar display a estes dois aqui -->
