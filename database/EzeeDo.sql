@@ -14,12 +14,8 @@ CREATE TABLE Task (
 	category VARCHAR,
 	priority INTEGER,
 	duedate DATE,
+	parent_task INTEGER REFERENCES Task,
 	creator INTEGER REFERENCES User NOT NULL
-);
-
-CREATE TABLE TodoList (
-	task_id INTEGER PRIMARY KEY REFERENCES Task NOT NULL,
-	project_id INTEGER REFERENCES Task
 );
 
 CREATE TABLE Item (
@@ -27,7 +23,7 @@ CREATE TABLE Item (
 	priority INTEGER,
 	dependency INTEGER REFERENCES Item,
 	assigneduser INTEGER REFERENCES User,
-	todolist INTEGER REFERENCES TodoList NOT NULL,
+	task INTEGER REFERENCES Task NOT NULL,
 	description VARCHAR NOT NULL
 );
 
