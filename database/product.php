@@ -25,4 +25,40 @@ function getTasksByCat($cat) {
     return $stmt->fetchAll();
 }
 
+function getTaskById($id) {
+    global $dbh;
+
+    $stmt = $dbh->prepare(
+        "SELECT * FROM Task
+        WHERE task_id = ?"
+    );
+
+    $stmt->execute(array($id));
+
+    return $stmt->fetch();
+}
+
+function getAllItems() {
+    global $dbh;
+    
+    $stmt = $dbh->prepare(
+        "SELECT * FROM Item"
+    );
+    $stmt->execute();
+
+    return $stmt->fetchAll();  
+}
+
+function getItemById($id) {
+    global $dbh;
+    
+    $stmt = $dbh->prepare(
+        "SELECT * FROM Item
+        WHERE item_id = ?"
+    );
+    $stmt->execute(array($id));
+
+    return $stmt->fetch();  
+}
+
 ?>
