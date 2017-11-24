@@ -14,8 +14,8 @@ CREATE TABLE Task (
 	category VARCHAR,
 	priority INTEGER,
 	duedate DATE,
-	parent_task INTEGER REFERENCES Task,
-	creator INTEGER REFERENCES User NOT NULL
+	creator INTEGER REFERENCES User NOT NULL,
+	parent_task INTEGER REFERENCES Task
 );
 
 CREATE TABLE Item (
@@ -69,35 +69,18 @@ INSERT INTO User VALUES (
 	'CEO of Microsoft, joined in June 1980, becoming Microsoft’s 30th employee. Billionaire.'
 );
 
-INSERT INTO Task VALUES (1, 'Revolutionary', 'tech', 2, '2017-12-15', 6);
-INSERT INTO Task VALUES (2, 'New Website', 'web', 1, '2018-06-13', 4);
-INSERT INTO Task VALUES (3, 'EzeeDo', 'ltw', 4, '2017-12-11', 1);
-INSERT INTO Task VALUES (4, 'RCOM', 'FEUP', 2, '2017-12-16', 4);
-
-INSERT INTO Task VALUES (5, 'Profile Page', 'FEUP', 3, '2017-12-09', 3);
-INSERT INTO TodoList VALUES (5, 3);
-
-INSERT INTO Task VALUES (6, 'Login Page', 'FEUP', 3, '2017-12-05', 3);
-INSERT INTO TodoList VALUES (6, 3);
-
-INSERT INTO Task VALUES (7, 'Main Page', 'FEUP', 3, '2017-12-08', 7);
-INSERT INTO TodoList VALUES (7, 3);
-
-INSERT INTO Task VALUES (8, 'Improve AI', 'Google', 8, NULL, 1);
-INSERT INTO TodoList VALUES (8, NULL);
-
-INSERT INTO Task VALUES (9, 'Prevent AI from killing humans', 'Google', 9, NULL, 2);
-INSERT INTO TodoList VALUES (9, 1);
-
-INSERT INTO Task VALUES (10, 'Supermarket List', 'shopping', 3, NULL, 1);
-INSERT INTO TodoList VALUES (10, NULL);
-
-INSERT INTO Task VALUES (11, 'Vacations', NULL, 6, NULL, 4);
-INSERT INTO TodoList VALUES (11, NULL);
-
-INSERT INTO Task VALUES (12, 'Get user Feedback', 'web', NULL, NULL, 2);
-INSERT INTO TodoList VALUES (12, NULL);
-
+INSERT INTO Task VALUES (1, 'Revolutionary', 'tech', 2, '2017-12-15', 6, NULL);
+INSERT INTO Task VALUES (2, 'New Website', 'web', 1, '2018-06-13', 4, NULL);
+INSERT INTO Task VALUES (3, 'EzeeDo', 'ltw', 4, '2017-12-11', 1, NULL);
+INSERT INTO Task VALUES (4, 'RCOM', 'FEUP', 2, '2017-12-16', 4, NULL);
+INSERT INTO Task VALUES (5, 'Profile Page', 'FEUP', 3, '2017-12-09', 3, 3);
+INSERT INTO Task VALUES (6, 'Login Page', 'FEUP', 3, '2017-12-05', 3, 3);
+INSERT INTO Task VALUES (7, 'Main Page', 'FEUP', 3, '2017-12-08', 7, 3);
+INSERT INTO Task VALUES (8, 'Improve AI', 'Google', 8, NULL, 1, NULL);
+INSERT INTO Task VALUES (9, 'Prevent AI from killing humans', 'Google', 9, NULL, 2, 1);
+INSERT INTO Task VALUES (10, 'Supermarket List', 'shopping', 3, NULL, 1, NULL);
+INSERT INTO Task VALUES (11, 'Vacations', NULL, 6, NULL, 4, NULL);
+INSERT INTO Task VALUES (12, 'Get user Feedback', 'web', NULL, NULL, 2, NULL);
 
 INSERT INTO Item VALUES (1, 2, NULL, 4, 1, 'Implement communication protocol');
 INSERT INTO Item VALUES (2, NULL, NULL, NULL, 1, 'Make UI user enjoyable');
