@@ -23,7 +23,7 @@ CREATE TABLE Item (
 	priority INTEGER,
 	dependency INTEGER REFERENCES Item,
 	assigneduser INTEGER REFERENCES User,
-	task INTEGER REFERENCES Task NOT NULL,
+	task_id INTEGER REFERENCES Task NOT NULL,
 	description VARCHAR NOT NULL
 );
 
