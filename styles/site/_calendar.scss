@@ -12,3 +12,45 @@
         display: block;
     }
 }
+
+.calendar-widget {
+    padding: $default-padding;
+    color: $payne-s-grey;
+    .header {
+        font-size: 1.5em;
+        height: 5em;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        #label-month {
+            font-size: 1.8em;
+        }
+        >div {
+            flex-grow: 1;
+            margin-left: 5px;
+        }
+        .fa {
+            color: $payne-s-grey;
+        }
+    }
+    #cal-frame {
+        td,
+        th {
+            width: calc((#{$calendar-width} - #{$default-margin} * 2) / 7);
+            height: calc((#{$calendar-width} - #{$default-margin} * 2) / 7);
+            text-align: center;
+            vertical-align: middle;
+            p {
+                line-height: 2;
+                border-radius: 50%;
+                height: 2em;
+                width: 2em;
+                margin: auto;
+            }
+        }
+        .calendar-today {
+            background-color: $riptide;
+            box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.14), 0 3px 10px 0 rgba(0, 0, 0, 0.2), 0 1px 10px 0px rgba(0, 0, 0, 0.12);
+        }
+    }
+}

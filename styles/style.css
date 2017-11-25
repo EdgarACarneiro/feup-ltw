@@ -373,6 +373,54 @@ footer {
   }
 }
 
+.calendar-widget {
+  padding: 1em;
+  color: #3C3E52;
+}
+
+.calendar-widget .header {
+  font-size: 1.5em;
+  height: 5em;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.calendar-widget .header #label-month {
+  font-size: 1.8em;
+}
+
+.calendar-widget .header > div {
+  flex-grow: 1;
+  margin-left: 5px;
+}
+
+.calendar-widget .header .fa {
+  color: #3C3E52;
+}
+
+.calendar-widget #cal-frame td,
+.calendar-widget #cal-frame th {
+  width: calc((350px - 1em * 2) / 7);
+  height: calc((350px - 1em * 2) / 7);
+  text-align: center;
+  vertical-align: middle;
+}
+
+.calendar-widget #cal-frame td p,
+.calendar-widget #cal-frame th p {
+  line-height: 2;
+  border-radius: 50%;
+  height: 2em;
+  width: 2em;
+  margin: auto;
+}
+
+.calendar-widget #cal-frame .calendar-today {
+  background-color: #80E3D1;
+  box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.14), 0 3px 10px 0 rgba(0, 0, 0, 0.2), 0 1px 10px 0px rgba(0, 0, 0, 0.12);
+}
+
 .sign-user {
   padding-top: 100px;
 }
