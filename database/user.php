@@ -9,6 +9,11 @@ function isLoginCorrect($username, $password) {
 
 function registerUser($username, $email, $password) {
   global $dbh;
+
+  if ($username == '' || (!filter_var($email, FILTER_VALIDATE_EMAIL))) {
+    return false;
+  }
+
   $stmt = $dbh->prepare('INSERT INTO User VALUES (?, ?, ?, NULL)');
   return $stmt->execute(array($username, $email, sha1($password)));
 }

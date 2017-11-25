@@ -1,18 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <META HTTP-EQUIV="CONTENT-LANGUAGE" CONTENT="en-US">
-    <META charset="UTF-8">
-    <META NAME="KEYWORDS" CONTENT="todo, to-do, list, todolist, to-dolist, to-do-list, todo-list, job, group, school, ltw, feup">
-    <META NAME="viewport" CONTENT="width=device-width, initial-scale=1">
-    <title>EzeeDo</title>
-    <!-- Slogan p pagina principal: Ezee Plan. Ezee Do. Ezee Acomplish. -->
-    <link href="styles/style.css" rel="stylesheet">
-    <link href="styles/fonts.css" rel="stylesheet">
-    <link href="styles/fonts/font-awesome/sass/font-awesome.css" rel="stylesheet">
-    <script src="scripts/calendar.js"></script>
-</head>
+<?php
+include_once('includes/session.php');
+include_once('templates/header.php');
+?>
 
 <body onload="initCalendar()">
     <nav id="top-bar" class="nav-bar">
@@ -201,13 +190,13 @@
         <div class="btn-bar">
             <div class="btn btn-group shadow-cards">
                 <a href="projects.php">Projects</a>
-                <a href="addProject.php">
+                <a href="action_add_task.php">
                     <i class="fa fa-plus circle-box"></i>
                 </a>
             </div>
             <div class="btn btn-group shadow-cards">
                 <a href="todoLists.php">To-Do Lists</a>
-                <a href="addToDo.php">
+                <a href="action_add_task.php">
                     <i class="fa fa-plus circle-box"></i>
                 </a>
             </div>
@@ -223,7 +212,7 @@
                             <li>Fusce venenatis enim sed erat congue laoreet.</li>
                             <li>Ut mollis augue ac sem fringilla, et molestie sapien laoreet.</li>
                         </ul>
-                        <a href="addItem.php">
+                        <a href="action_add_item.php">
                             <i class="fa fa-plus-circle"></i>Add Item</a>
                     </article>
                     <article>
@@ -233,10 +222,10 @@
                             <li>Ut feugiat velit nec feugiat bibendum.</li>
                             <li>Fusce venenatis enim sed erat congue laoreet.</li>
                         </ul>
-                        <a href="addItem.php">
+                        <a href="action_add_item.php">
                             <i class="fa fa-plus-circle"></i>Add Item</a>
                     </article>
-                    <a href="addToDo.php">
+                    <a href="action_add_task.php">
                         <i class="fa fa-plus-circle"></i>Add To-Do List</a>
                 </article>
             </div>
@@ -250,7 +239,7 @@
                         <li>Fusce venenatis enim sed erat congue laoreet.</li>
                         <li>Ut mollis augue ac sem fringilla, et molestie sapien laoreet.</li>
                     </ul>
-                    <a href="addItem.php">
+                    <a href="action_add_item.php">
                         <i class="fa fa-plus-circle"></i>Add Item</a>
                 </article>
             </div>
@@ -261,7 +250,7 @@
                     <ul>
                         <li>Ut mollis augue ac sem fringilla, et molestie sapien laoreet.</li>
                     </ul>
-                    <a href="addItem.php">
+                    <a href="action_add_item.php">
                         <i class="fa fa-plus-circle"></i>Add Item</a>
                 </article>
             </div>
@@ -277,7 +266,7 @@
                             <li>Aliquam rutrum nisi non maximus sagittis.</li>
                             <li>Quisque tempor massa id arcu ullamcorper, vitae efficitur odio facilisis.</li>
                         </ul>
-                        <a href="addItem.php">
+                        <a href="action_add_item.php">
                             <i class="fa fa-plus-circle"></i>Add Item</a>
                     </article>
 
@@ -288,7 +277,7 @@
                             <li>Ut feugiat velit nec feugiat bibendum.</li>
                             <li>Fusce venenatis enim sed erat congue laoreet.</li>
                         </ul>
-                        <a href="addItem.php">
+                        <a href="action_add_item.php">
                             <i class="fa fa-plus-circle"></i>Add Item</a>
                     </article>
 
@@ -300,11 +289,11 @@
                             <li>Fusce venenatis enim sed erat congue laoreet.</li>
                             <li>Integer at eros in felis dictum semper ut consequat turpis.</li>
                         </ul>
-                        <a href="addItem.php">
+                        <a href="action_add_item.php">
                             <i class="fa fa-plus-circle"></i>Add Item</a>
                     </article>
 
-                    <a href="addToDo.php">
+                    <a href="action_add_task.php">
                         <i class="fa fa-plus-circle"></i>Add To-Do List</a>
                 </article>
             </div>

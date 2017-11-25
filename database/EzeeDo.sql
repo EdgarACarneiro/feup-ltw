@@ -1,4 +1,4 @@
-PRAGMA foreign_keys = false;
+-- PRAGMA foreign_keys = false;
 
 CREATE TABLE User (
 	username VARCHAR PRIMARY KEY,
@@ -36,35 +36,35 @@ CREATE TABLE UserTask (
 
 -- POPULATE DATABASE
 INSERT INTO User VALUES (
-	'SherylSandberg', 'sheryl@gmail.com', 'facebook',
+	'SherylSandberg', 'sheryl@gmail.com', 'cbe648909034c0624c205fe219d3fbd10052c715', -- facebook
 	'COO of Facebook. Powerhouse driving the most successful company in Silicon Valley, and arguably in the world.'
 );
 INSERT INTO User VALUES (
-	'TimCook', 'timcook@hotmail.com', 'apple',
+	'TimCook', 'timcook@hotmail.com', 'd0be2dc421be4fcd0172e5afceea3970e2f3d940', -- apple
 	'CEO of Apple. Decision maker in a company that has revolutionized the way humans see and use technology.'
 );
 INSERT INTO User VALUES (
-	'VirginiaRometty', 'virginia@gmail.com','ibm12345',
+	'VirginiaRometty', 'virginia@gmail.com','02787ebebbea13ee3626505886387719ac010417', -- ibm12345
 	'Chairwoman and CEO of IBM. First woman to ever lead the company. Skyrocketed to the top. I also serve on the committee of the most powerful schools in the country like Columbia Business School and Northwestern University.'
 );
 INSERT INTO User VALUES (
-	'DennisCrowley', 'denniscrowley@gmail.com', 'foursquare',
+	'DennisCrowley', 'denniscrowley@gmail.com', '8dcf877727d58ec3f704d246396cdf612758d8f8', -- foursquare
 	'Founder of Foursquare - one of the fastest growing companies in the last decade. The application is useful for finding places to go, and seeing tips on what is good or bad when you get to where you are going.'
 );
 INSERT INTO User VALUES (
-	'KevinRyan', 'kevinryan@yahoo.com', 'giltgroupe',
+	'KevinRyan', 'kevinryan@yahoo.com', '2e15a2c5f0af679bfc38ffcb30d3c4f013405870', -- giltgroupe
 	'CEO of one of the biggest e-commerce sites in the world - Gilt Groupe. 
 	Founded several New York-based businesses, including Business Insider, and 10gen/MongoDB, 
 	and helped build DoubleClick from 1996 to 2005, first as president and later as CEO.'
 );
 INSERT INTO User VALUES (
-	'LarryPage', 'larrytheboss@gmail.com', 'google',
+	'LarryPage', 'larrytheboss@gmail.com', '759730a97e4373f3a0ee12805db065e3a4a649a5', -- google
 	'Co-founder and CEO of the most powerful company on the Internet today. 
 	My personal wealth is estimated to be $20.3 billion, ranking me #13 on the Forbes 400 list of richest Americans. 
 	Active investor in alternative energy companies, such as Tesla Motors.'
 );
 INSERT INTO User VALUES (
-	'SteveBallmer', 'steveballmer@hotmail.com', 'microsoft',
+	'SteveBallmer', 'steveballmer@hotmail.com', '64814a3b7fd8444a56ad3641fd3451c6deaf0757', -- microsoft
 	'CEO of Microsoft, joined in June 1980, becoming Microsoft’s 30th employee. Billionaire.'
 );
 
