@@ -1,4 +1,4 @@
-PRAGMA foreign_keys = false;
+-- PRAGMA foreign_keys = false;
 
 CREATE TABLE User (
 	username VARCHAR PRIMARY KEY,

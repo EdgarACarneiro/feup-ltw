@@ -47,9 +47,9 @@
         <form action="action_register.php" method="post" id="sign-up">
             <fieldset>
                 <legend>Create an Account:</legend>
-                Username: <input type="text" name="username">
-                E-mail: <input type="text" name="email">
-                Password: <input type="password" name="password">
+                Username: <input type="text" placeholder="username" name="username">
+                E-mail: <input type="text" placeholder="email" name="email">
+                Password: <input type="password" placeholder="password" name="password">
                 Repeat your Password: <input type="password" name="password-check">
                 <input type="submit" value="Send">
             </fieldset>
