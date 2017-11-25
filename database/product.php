@@ -73,17 +73,17 @@ function getTasksItems($task_id) {
     return $stmt->fetchAll();
 }
 
-function getUsersTasks($user_id) {
+function getUsersTasks($username) {
     global $dbh;
     
     $stmt = $dbh->prepare(
         "SELECT * FROM Task
         WHERE task_id in (
             SELECT task_id FROM UserTask
-            WHERE user_id = ?
+            WHERE username = ?
         )"
     );
-    $stmt->execute(array($user_id));
+    $stmt->execute(array($username));
 
     return $stmt->fetchAll();
 }

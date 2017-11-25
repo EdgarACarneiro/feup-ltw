@@ -1,8 +1,7 @@
 PRAGMA foreign_keys = false;
 
 CREATE TABLE User (
-	user_id INTEGER PRIMARY KEY,
-	username VARCHAR UNIQUE,
+	username VARCHAR PRIMARY KEY,
 	email VARCHAR UNIQUE,
 	password VARCHAR NOT NULL, -- Hashed
 	about VARCHAR
@@ -14,7 +13,7 @@ CREATE TABLE Task (
 	category VARCHAR,
 	priority INTEGER,
 	duedate DATE,
-	creator INTEGER REFERENCES User NOT NULL,
+	creator VARCHAR REFERENCES User NOT NULL,
 	parent_task INTEGER REFERENCES Task
 );
 
@@ -22,50 +21,50 @@ CREATE TABLE Item (
 	item_id INTEGER PRIMARY KEY,
 	priority INTEGER,
 	dependency INTEGER REFERENCES Item,
-	assigneduser INTEGER REFERENCES User,
+	assigneduser VARCHAR REFERENCES User,
 	task_id INTEGER REFERENCES Task NOT NULL,
 	description VARCHAR NOT NULL
 );
 
 CREATE TABLE UserTask (
-	user_id REFERENCES User,
+	username REFERENCES User,
 	task_id REFERENCES Task,
-	CONSTRAINT UserTask PRIMARY KEY (user_id, task_id)
+	CONSTRAINT UserTask PRIMARY KEY (username, task_id)
 );
 
 
 
 -- POPULATE DATABASE
 INSERT INTO User VALUES (
-	1, 'SherylSandberg', 'sheryl@gmail.com', 'facebook',
+	'SherylSandberg', 'sheryl@gmail.com', 'facebook',
 	'COO of Facebook. Powerhouse driving the most successful company in Silicon Valley, and arguably in the world.'
 );
 INSERT INTO User VALUES (
-	2, 'TimCook', 'timcook@hotmail.com', 'apple',
+	'TimCook', 'timcook@hotmail.com', 'apple',
 	'CEO of Apple. Decision maker in a company that has revolutionized the way humans see and use technology.'
 );
 INSERT INTO User VALUES (
-	3, 'VirginiaRometty', 'virginia@gmail.com','ibm12345',
+	'VirginiaRometty', 'virginia@gmail.com','ibm12345',
 	'Chairwoman and CEO of IBM. First woman to ever lead the company. Skyrocketed to the top. I also serve on the committee of the most powerful schools in the country like Columbia Business School and Northwestern University.'
 );
 INSERT INTO User VALUES (
-	4, 'DennisCrowley', 'denniscrowley@gmail.com', 'foursquare',
+	'DennisCrowley', 'denniscrowley@gmail.com', 'foursquare',
 	'Founder of Foursquare - one of the fastest growing companies in the last decade. The application is useful for finding places to go, and seeing tips on what is good or bad when you get to where you are going.'
 );
 INSERT INTO User VALUES (
-	5, 'KevinRyan', 'kevinryan@yahoo.com', 'giltgroupe',
+	'KevinRyan', 'kevinryan@yahoo.com', 'giltgroupe',
 	'CEO of one of the biggest e-commerce sites in the world - Gilt Groupe. 
 	Founded several New York-based businesses, including Business Insider, and 10gen/MongoDB, 
 	and helped build DoubleClick from 1996 to 2005, first as president and later as CEO.'
 );
 INSERT INTO User VALUES (
-	6, 'LarryPage', 'larrytheboss@gmail.com', 'google',
+	'LarryPage', 'larrytheboss@gmail.com', 'google',
 	'Co-founder and CEO of the most powerful company on the Internet today. 
 	My personal wealth is estimated to be $20.3 billion, ranking me #13 on the Forbes 400 list of richest Americans. 
 	Active investor in alternative energy companies, such as Tesla Motors.'
 );
 INSERT INTO User VALUES (
-	7, 'SteveBallmer', 'steveballmer@hotmail.com', 'microsoft',
+	'SteveBallmer', 'steveballmer@hotmail.com', 'microsoft',
 	'CEO of Microsoft, joined in June 1980, becoming Microsoft’s 30th employee. Billionaire.'
 );
 
@@ -112,28 +111,28 @@ INSERT INTO Item VALUES (27, NULL, 7, NULL, 9, 'Try a survey online about the si
 INSERT INTO Item VALUES (28, NULL, 7, NULL, 9, 'Bring people on to try the beta');
 INSERT INTO Item VALUES (29, NULL, 6, NULL, 9, 'Make online survey about how they would want a site like ours to look like');
 
-INSERT INTO UserTask VALUES (1, 2);
-INSERT INTO UserTask VALUES (1, 3);
-INSERT INTO UserTask VALUES (1, 4);
-INSERT INTO UserTask VALUES (1, 6);
-INSERT INTO UserTask VALUES (2, 1);
-INSERT INTO UserTask VALUES (2, 4);
-INSERT INTO UserTask VALUES (2, 5);
-INSERT INTO UserTask VALUES (3, 1);
-INSERT INTO UserTask VALUES (3, 3);
-INSERT INTO UserTask VALUES (3, 4);
-INSERT INTO UserTask VALUES (3, 7);
-INSERT INTO UserTask VALUES (4, 1);
-INSERT INTO UserTask VALUES (4, 7);
-INSERT INTO UserTask VALUES (5, 2);
-INSERT INTO UserTask VALUES (5, 6);
-INSERT INTO UserTask VALUES (6, 1);
-INSERT INTO UserTask VALUES (6, 2);
-INSERT INTO UserTask VALUES (6, 8);
-INSERT INTO UserTask VALUES (7, 9);
-INSERT INTO UserTask VALUES (8, 10);
-INSERT INTO UserTask VALUES (9, 11);
-INSERT INTO UserTask VALUES (9, 12);
+INSERT INTO UserTask VALUES ('SherylSandberg', 2);
+INSERT INTO UserTask VALUES ('SherylSandberg', 3);
+INSERT INTO UserTask VALUES ('SherylSandberg', 4);
+INSERT INTO UserTask VALUES ('SherylSandberg', 6);
+INSERT INTO UserTask VALUES ('TimCook', 1);
+INSERT INTO UserTask VALUES ('TimCook', 4);
+INSERT INTO UserTask VALUES ('TimCook', 5);
+INSERT INTO UserTask VALUES ('VirginiaRometty', 1);
+INSERT INTO UserTask VALUES ('VirginiaRometty', 3);
+INSERT INTO UserTask VALUES ('VirginiaRometty', 4);
+INSERT INTO UserTask VALUES ('VirginiaRometty', 7);
+INSERT INTO UserTask VALUES ('DennisCrowley', 1);
+INSERT INTO UserTask VALUES ('DennisCrowley', 7);
+INSERT INTO UserTask VALUES ('DennisCrowley', 2);
+INSERT INTO UserTask VALUES ('DennisCrowley', 6);
+INSERT INTO UserTask VALUES ('LarryPage', 1);
+INSERT INTO UserTask VALUES ('LarryPage', 2);
+INSERT INTO UserTask VALUES ('LarryPage', 8);
+INSERT INTO UserTask VALUES ('SteveBallmer', 9);
+INSERT INTO UserTask VALUES ('SteveBallmer', 10);
+INSERT INTO UserTask VALUES ('SteveBallmer', 11);
+INSERT INTO UserTask VALUES ('SteveBallmer', 12);
 
 
 
