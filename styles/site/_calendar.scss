@@ -3,7 +3,8 @@
     position: fixed;
     top: $nav-height;
     right: 0;
-    background: linear-gradient(to right, $payne-s-grey, $payne-s-grey-darker);
+    //background: linear-gradient(to right, $payne-s-grey, $payne-s-grey-darker);
+    background-color: $grey-light;
     width: $calendar-width;
     height: calc(100vh - #{$nav-height});
     z-index: 3000;

@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <nav id="top-bar" class="nav-bar shadow-boxes">
+    <nav id="top-bar" class="nav-bar">
         <ul>
             <li id="info">
                 <img src="images/site/smallLogo.png" alt="The website logo">
@@ -40,13 +40,13 @@
 
     <section class="feed-container" id="feed">
         <div class="btn-bar">
-            <div class="btn btn-group">
+            <div class="btn btn-group shadow-cards">
                 <a href="projects.php">Projects</a>
                 <a href="addProject.php">
                     <i class="fa fa-plus-circle"></i>
                 </a>
             </div>
-            <div class="btn btn-group">
+            <div class="btn btn-group shadow-cards">
                 <a href="todoLists.php">To-Do Lists</a>
                 <a href="addToDo.php">
                     <i class="fa fa-plus-circle"></i>
@@ -55,8 +55,8 @@
         </div>
 
         <div class="masonry">
-            <div class="masonry-item shadow-cards">
-                <article>
+            <div class="masonry-item shadow-cards rnd-cornes">
+                <article class="rnd-cornes">
                     <h2>Project Title</h2>
                     <article>
                         <h4>To-Do List 1 Title</h4>
@@ -79,8 +79,8 @@
                 </article>
             </div>
 
-            <div class="masonry-item shadow-cards">
-                <article>
+            <div class="masonry-item shadow-cards rnd-cornes">
+                <article class="rnd-cornes">
                     <h2>To-Do List Title</h2>
                     <ul>
                         <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
@@ -92,8 +92,8 @@
                 </article>
             </div>
 
-            <div class="masonry-item shadow-cards">
-                <article>
+            <div class="masonry-item shadow-cards rnd-cornes">
+                <article class="rnd-cornes">
                     <h2>To-Do List Title</h2>
                     <ul>
                         <li>Ut mollis augue ac sem fringilla, et molestie sapien laoreet.</li>
@@ -102,8 +102,8 @@
                 </article>
             </div>
 
-            <div class="masonry-item shadow-cards">
-                <article>
+            <div class="masonry-item shadow-cards rnd-cornes">
+                <article class="rnd-cornes">
                     <h2>Project Title</h2>
                     <article>
                         <h4>To-Do List 1 Title</h4>

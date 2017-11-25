@@ -1,7 +1,7 @@
 .btn-bar {
     display: flex;
     justify-content: space-around;
-    margin: 0 auto;
+    margin: 2.5em auto $default-margin auto;
     width: 50%;
     @media (max-width: #{$collapse-m}) {
         width: 70%;
@@ -21,6 +21,16 @@
     line-height: $btn-height;
     margin: 0 $default-margin;
     vertical-align: middle;
+    border-radius: calc(#{$btn-height} / 2);
+    background: linear-gradient($riptide, $medium-turquoise);
+    display: flex;
+    justify-content: space-around;
+    @media (max-width: #{$collapse-xs}) {
+        width: 100%;
+        border-radius: 0;
+        margin: 0;
+        //background: linear-gradient($riptide, $medium-turquoise);
+    }
 }
 
 .rnd-cornes {
@@ -32,5 +42,5 @@
 }
 
 .shadow-cards {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
 }

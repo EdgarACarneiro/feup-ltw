@@ -7,6 +7,10 @@ Main Colors: http://blog.visme.co/website-color-schemes/
 #D1E8E2
 */
 
+a {
+    text-decoration: none;
+}
+
 html {
     font-family: 'Montserrat', sans-serif;
     min-width: 320px;
@@ -14,10 +18,6 @@ html {
 
 body {
     background-color: $background;
-}
-
-article {
-    background-color: $cards;
 }
 
 #top-bar {
@@ -41,7 +41,7 @@ article {
 
 .feed-container {
     padding-top: $nav-height;
-    min-height: calc(100vh - #{$nav-height});
+    min-height: calc(100vh - #{$nav-height} - #{$footer-height});
     @media (min-width: #{$collapse-xl}) {
         width: calc(100% - #{$calendar-width});
     }
@@ -73,7 +73,11 @@ article {
 .masonry-item {
     display: inline-block;
     margin-bottom: $default-margin;
+    background-color: $cards;
     width: 100%;
+    >article {
+        padding: $default-padding;
+    }
 }
 
 footer {
