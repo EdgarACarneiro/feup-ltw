@@ -7,7 +7,7 @@
     <META NAME="KEYWORDS" CONTENT="todo, to-do, list, todolist, to-dolist, to-do-list, todo-list, job, group, school, ltw, feup">
     <META NAME="viewport" CONTENT="width=device-width, initial-scale=1">
     <title>EzeeDo</title>
-    <!-- Slogan p pagina principal: Ezee Plan. Ezee Do. Ezee Acomplish. -->
+    <!-- Slogan p/ pagina principal: Ezee Plan. Ezee Do. Ezee Acomplish. -->
     <link href="styles/style.css" rel="stylesheet">
     <link href="styles/fonts.css" rel="stylesheet">
 </head>
@@ -35,7 +35,7 @@
     </nav>
 
     <section class="sign-user">
-        <form action="logIn.php" method="post" id="sign-in">
+        <form action="action_login.php" method="post" id="sign-in">
             <fieldset>
                 <legend>Log In:</legend>
                 E-mail: <input type="text" name="email">
@@ -44,7 +44,7 @@
             </fieldset>
         </form>
 
-        <form action="registerUser.php" method="post" id="sign-up">
+        <form action="action_register.php" method="post" id="sign-up">
             <fieldset>
                 <legend>Create an Account:</legend>
                 Username: <input type="text" name="username">
