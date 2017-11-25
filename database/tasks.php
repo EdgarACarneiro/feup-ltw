@@ -12,7 +12,7 @@ function getAllTasks() {
     return $stmt->fetchAll();
 }
 
-function getTasksByCat($cat) {
+function getTasksByCategory($cat) {
     global $dbh;
 
     $stmt = $dbh->prepare(
