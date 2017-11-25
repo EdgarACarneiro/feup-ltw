@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <nav id="top-bar" class="nav-bar">
+    <nav id="top-bar" class="nav-bar shadow-boxes">
         <ul>
             <li id="info">
                 <img src="images/site/smallLogo.png" alt="The website logo">
@@ -55,7 +55,7 @@
         </div>
 
         <div class="masonry">
-            <div class="masonry-item">
+            <div class="masonry-item shadow-cards">
                 <article>
                     <h2>Project Title</h2>
                     <article>
@@ -79,7 +79,7 @@
                 </article>
             </div>
 
-            <div class="masonry-item">
+            <div class="masonry-item shadow-cards">
                 <article>
                     <h2>To-Do List Title</h2>
                     <ul>
@@ -92,7 +92,7 @@
                 </article>
             </div>
 
-            <div class="masonry-item">
+            <div class="masonry-item shadow-cards">
                 <article>
                     <h2>To-Do List Title</h2>
                     <ul>
@@ -102,7 +102,7 @@
                 </article>
             </div>
 
-            <div class="masonry-item">
+            <div class="masonry-item shadow-cards">
                 <article>
                     <h2>Project Title</h2>
                     <article>
@@ -146,7 +146,7 @@
     </section>
 
     <footer>
-            &copy; 2017 EzeeDo
+        &copy; 2017 EzeeDo
     </footer>
 
 </body>

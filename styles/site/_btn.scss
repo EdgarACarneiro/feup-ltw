@@ -22,3 +22,15 @@
     margin: 0 $default-margin;
     vertical-align: middle;
 }
+
+.rnd-cornes {
+    border-radius: $border-radius;
+}
+
+.shadow-boxes {
+    box-shadow: 0 8px 50px 10px rgba(0, 0, 0, 0.3);
+}
+
+.shadow-cards {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
