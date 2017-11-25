@@ -1,4 +1,5 @@
 <?php
+include_once('includes/session.php');
 include_once('templates/header.php');
 ?>
 
@@ -31,13 +32,13 @@ include_once('templates/header.php');
         <div class="btn-bar">
             <div class="btn btn-group shadow-cards">
                 <a href="projects.php">Projects</a>
-                <a href="addProject.php">
+                <a href="action_add_task.php">
                     <i class="fa fa-plus circle-box"></i>
                 </a>
             </div>
             <div class="btn btn-group shadow-cards">
                 <a href="todoLists.php">To-Do Lists</a>
-                <a href="addToDo.php">
+                <a href="action_add_task.php">
                     <i class="fa fa-plus circle-box"></i>
                 </a>
             </div>
@@ -53,7 +54,7 @@ include_once('templates/header.php');
                             <li>Fusce venenatis enim sed erat congue laoreet.</li>
                             <li>Ut mollis augue ac sem fringilla, et molestie sapien laoreet.</li>
                         </ul>
-                        <a href="addItem.php">
+                        <a href="action_add_item.php">
                             <i class="fa fa-plus-circle"></i>Add Item</a>
                     </article>
                     <article>
@@ -63,10 +64,10 @@ include_once('templates/header.php');
                             <li>Ut feugiat velit nec feugiat bibendum.</li>
                             <li>Fusce venenatis enim sed erat congue laoreet.</li>
                         </ul>
-                        <a href="addItem.php">
+                        <a href="action_add_item.php">
                             <i class="fa fa-plus-circle"></i>Add Item</a>
                     </article>
-                    <a href="addToDo.php">
+                    <a href="action_add_task.php">
                         <i class="fa fa-plus-circle"></i>Add To-Do List</a>
                 </article>
             </div>
@@ -80,7 +81,7 @@ include_once('templates/header.php');
                         <li>Fusce venenatis enim sed erat congue laoreet.</li>
                         <li>Ut mollis augue ac sem fringilla, et molestie sapien laoreet.</li>
                     </ul>
-                    <a href="addItem.php">
+                    <a href="action_add_item.php">
                         <i class="fa fa-plus-circle"></i>Add Item</a>
                 </article>
             </div>
@@ -91,7 +92,7 @@ include_once('templates/header.php');
                     <ul>
                         <li>Ut mollis augue ac sem fringilla, et molestie sapien laoreet.</li>
                     </ul>
-                    <a href="addItem.php">
+                    <a href="action_add_item.php">
                         <i class="fa fa-plus-circle"></i>Add Item</a>
                 </article>
             </div>
@@ -107,7 +108,7 @@ include_once('templates/header.php');
                             <li>Aliquam rutrum nisi non maximus sagittis.</li>
                             <li>Quisque tempor massa id arcu ullamcorper, vitae efficitur odio facilisis.</li>
                         </ul>
-                        <a href="addItem.php">
+                        <a href="action_add_item.php">
                             <i class="fa fa-plus-circle"></i>Add Item</a>
                     </article>
 
@@ -118,7 +119,7 @@ include_once('templates/header.php');
                             <li>Ut feugiat velit nec feugiat bibendum.</li>
                             <li>Fusce venenatis enim sed erat congue laoreet.</li>
                         </ul>
-                        <a href="addItem.php">
+                        <a href="action_add_item.php">
                             <i class="fa fa-plus-circle"></i>Add Item</a>
                     </article>
 
@@ -130,11 +131,11 @@ include_once('templates/header.php');
                             <li>Fusce venenatis enim sed erat congue laoreet.</li>
                             <li>Integer at eros in felis dictum semper ut consequat turpis.</li>
                         </ul>
-                        <a href="addItem.php">
+                        <a href="action_add_item.php">
                             <i class="fa fa-plus-circle"></i>Add Item</a>
                     </article>
 
-                    <a href="addToDo.php">
+                    <a href="action_add_task.php">
                         <i class="fa fa-plus-circle"></i>Add To-Do List</a>
                 </article>
             </div>
