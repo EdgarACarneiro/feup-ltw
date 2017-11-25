@@ -1,16 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <META HTTP-EQUIV="CONTENT-LANGUAGE" CONTENT="en-US">
-    <META charset="UTF-8">
-    <META NAME="KEYWORDS" CONTENT="todo, to-do, list, todolist, to-dolist, to-do-list, todo-list, job, group, school, ltw, feup">
-    <META NAME="viewport" CONTENT="width=device-width, initial-scale=1">
-    <title>EzeeDo</title>
-    <!-- Slogan p/ pagina principal: Ezee Plan. Ezee Do. Ezee Acomplish. -->
-    <link href="styles/style.css" rel="stylesheet">
-    <link href="styles/fonts.css" rel="stylesheet">
-</head>
+<?php
+include_once('templates/header.php');
+?>
 
 <body>
     <nav id="top-bar" class="nav-bar">
@@ -38,8 +28,8 @@
         <form action="action_login.php" method="post" id="sign-in">
             <fieldset>
                 <legend>Log In:</legend>
-                E-mail: <input type="text" name="email">
-                Password: <input type="password" name="password">
+                E-mail: <input type="text" placeholder="email" name="email">
+                Password: <input type="password" placeholder="password" name="password">
                 <input type="submit" value="Send">
             </fieldset>
         </form>
@@ -50,7 +40,7 @@
                 Username: <input type="text" placeholder="username" name="username">
                 E-mail: <input type="text" placeholder="email" name="email">
                 Password: <input type="password" placeholder="password" name="password">
-                Repeat your Password: <input type="password" name="password-check">
+                Repeat your Password: <input type="password" placeholder="password" name="password_check">
                 <input type="submit" value="Send">
             </fieldset>
         </form>

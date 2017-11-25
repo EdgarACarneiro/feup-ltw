@@ -2,7 +2,8 @@
 include_once('includes/init.php');
 include_once('database/user.php');
 
-if (registerUser($_POST['username'], $_POST['email'], $_POST['password'])) {
+if ($_POST['password'] == $_POST['password_check'] &&
+   (registerUser($_POST['username'], $_POST['email'], $_POST['password']))) {
   setCurrentUser($_POST['username']);
 }
 
