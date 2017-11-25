@@ -133,11 +133,27 @@ table {
   border-spacing: 0;
 }
 
+.fa {
+  color: #80E3D1;
+}
+
 .btn-bar {
   display: flex;
   justify-content: space-around;
   margin: 2.5em auto 1em auto;
   width: 50%;
+}
+
+@media (min-width: 1280px) and (max-width: 1440px) {
+  .btn-bar {
+    width: 60%;
+  }
+}
+
+@media (max-width: 960px) {
+  .btn-bar {
+    width: 60%;
+  }
 }
 
 @media (max-width: 960px) {
@@ -161,14 +177,14 @@ table {
 
 .btn {
   height: 2.5em;
-  width: 9em;
+  width: 13em;
   line-height: 2.5em;
   margin: 0 1em;
   vertical-align: middle;
   border-radius: calc(2.5em / 2);
   background: linear-gradient(#80E3D1, #53C5B9);
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 @media (max-width: 640px) {
@@ -179,16 +195,16 @@ table {
   }
 }
 
-.rnd-cornes {
-  border-radius: 1em;
+.btn :first-child {
+  margin-left: 1em;
 }
 
-.shadow-boxes {
-  box-shadow: 0 8px 50px 10px rgba(0, 0, 0, 0.3);
+.btn :last-child {
+  margin-right: 1em;
 }
 
-.shadow-cards {
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+.btn * {
+  color: #3C3E52;
 }
 
 .nav-bar {
@@ -210,14 +226,28 @@ table {
   display: inline-block;
 }
 
-/**
-Main Colors: http://blog.visme.co/website-color-schemes/
-#2C3531
-#116466
-#D9B08C
-#FFCB9A
-#D1E8E2
-*/
+.rnd-cornes {
+  border-radius: 1em;
+}
+
+.shadow-boxes {
+  box-shadow: 0 8px 50px 10px rgba(0, 0, 0, 0.3);
+}
+
+.shadow-cards {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  transition-duration: 0.4s;
+}
+
+div.shadow-cards:hover {
+  box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.14), 0 3px 10px 0 rgba(0, 0, 0, 0.2), 0 1px 10px 0px rgba(0, 0, 0, 0.12);
+  transition-duration: 0.4s;
+}
+
+.circle-box {
+  border-radius: 50%;
+}
+
 a {
   text-decoration: none;
 }
@@ -261,11 +291,23 @@ body {
   }
 }
 
+.btn-group > a {
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #3C3E52;
+  width: calc(100% - 2em);
+}
+
+.btn-group :last-child {
+  width: auto;
+  border-style: none;
+}
+
 .masonry {
   margin: 0 auto;
   column-count: 4;
   max-width: 1200px;
-  column-gap: 15px;
+  column-gap: 1em;
   column-fill: initial;
 }
 
@@ -301,7 +343,7 @@ body {
 
 .masonry-item {
   display: inline-block;
-  margin-bottom: 1em;
+  margin-top: 1em;
   background-color: #fafafa;
   width: 100%;
 }

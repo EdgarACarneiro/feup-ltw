@@ -43,13 +43,13 @@
             <div class="btn btn-group shadow-cards">
                 <a href="projects.php">Projects</a>
                 <a href="addProject.php">
-                    <i class="fa fa-plus-circle"></i>
+                    <i class="fa fa-plus circle-box"></i>
                 </a>
             </div>
             <div class="btn btn-group shadow-cards">
                 <a href="todoLists.php">To-Do Lists</a>
                 <a href="addToDo.php">
-                    <i class="fa fa-plus-circle"></i>
+                    <i class="fa fa-plus circle-box"></i>
                 </a>
             </div>
         </div>
@@ -64,7 +64,8 @@
                             <li>Fusce venenatis enim sed erat congue laoreet.</li>
                             <li>Ut mollis augue ac sem fringilla, et molestie sapien laoreet.</li>
                         </ul>
-                        <a href="addItem.php"><span class="fa fa-plus-circle">Add Item</a>
+                        <a href="addItem.php">
+                            <i class="fa fa-plus-circle"></i>Add Item</a>
                     </article>
                     <article>
                         <h4>To-Do List 2 Title</h4>
@@ -73,9 +74,11 @@
                             <li>Ut feugiat velit nec feugiat bibendum.</li>
                             <li>Fusce venenatis enim sed erat congue laoreet.</li>
                         </ul>
-                        <a href="addItem.php"><span class="fa fa-plus-circle">Add Item</a>
+                        <a href="addItem.php">
+                            <i class="fa fa-plus-circle"></i>Add Item</a>
                     </article>
-                    <a href="addToDo.php"><span class="fa fa-plus-circle">Add To-Do List</a>
+                    <a href="addToDo.php">
+                        <i class="fa fa-plus-circle"></i>Add To-Do List</a>
                 </article>
             </div>
 
@@ -88,7 +91,8 @@
                         <li>Fusce venenatis enim sed erat congue laoreet.</li>
                         <li>Ut mollis augue ac sem fringilla, et molestie sapien laoreet.</li>
                     </ul>
-                    <a href="addItem.php"><span class="fa fa-plus-circle">Add Item</span></a>
+                    <a href="addItem.php">
+                        <i class="fa fa-plus-circle"></i>Add Item</a>
                 </article>
             </div>
 
@@ -98,7 +102,8 @@
                     <ul>
                         <li>Ut mollis augue ac sem fringilla, et molestie sapien laoreet.</li>
                     </ul>
-                    <a href="addItem.php"><span class="fa fa-plus-circle">Add Item</span></a>
+                    <a href="addItem.php">
+                        <i class="fa fa-plus-circle"></i>Add Item</a>
                 </article>
             </div>
 
@@ -113,7 +118,8 @@
                             <li>Aliquam rutrum nisi non maximus sagittis.</li>
                             <li>Quisque tempor massa id arcu ullamcorper, vitae efficitur odio facilisis.</li>
                         </ul>
-                        <a href="addItem.php"><span class="fa fa-plus-circle">Add Item</a>
+                        <a href="addItem.php">
+                            <i class="fa fa-plus-circle"></i>Add Item</a>
                     </article>
 
                     <article>
@@ -123,7 +129,8 @@
                             <li>Ut feugiat velit nec feugiat bibendum.</li>
                             <li>Fusce venenatis enim sed erat congue laoreet.</li>
                         </ul>
-                        <a href="addItem.php"><span class="fa fa-plus-circle">Add Item</a>
+                        <a href="addItem.php">
+                            <i class="fa fa-plus-circle"></i>Add Item</a>
                     </article>
 
                     <article>
@@ -134,10 +141,12 @@
                             <li>Fusce venenatis enim sed erat congue laoreet.</li>
                             <li>Integer at eros in felis dictum semper ut consequat turpis.</li>
                         </ul>
-                        <a href="addItem.php"><span class="fa fa-plus-circle">Add Item</a>
+                        <a href="addItem.php">
+                            <i class="fa fa-plus-circle"></i>Add Item</a>
                     </article>
 
-                    <a href="addToDo.php"><span class="fa fa-plus-circle">Add To-Do List</a>
+                    <a href="addToDo.php">
+                        <i class="fa fa-plus-circle"></i>Add To-Do List</a>
                 </article>
             </div>
         </div>

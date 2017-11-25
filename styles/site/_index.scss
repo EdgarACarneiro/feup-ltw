@@ -1,11 +1,24 @@
-/**
-Main Colors: http://blog.visme.co/website-color-schemes/
-#2C3531
-#116466
-#D9B08C
-#FFCB9A
-#D1E8E2
-*/
+.rnd-cornes {
+    border-radius: $border-radius;
+}
+
+.shadow-boxes {
+    box-shadow: 0 8px 50px 10px rgba(0, 0, 0, 0.3);
+}
+
+.shadow-cards {
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    transition-duration: 0.4s;
+}
+
+div.shadow-cards:hover {
+    box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.14), 0 3px 10px 0 rgba(0, 0, 0, 0.2), 0 1px 10px 0px rgba(0, 0, 0, 0.12);
+    transition-duration: 0.4s;
+}
+
+.circle-box {
+    border-radius: 50%;
+}
 
 a {
     text-decoration: none;
@@ -47,11 +60,24 @@ body {
     }
 }
 
+.btn-group {
+    >a {
+        border-right-style: solid;
+        border-right-width: 2px;
+        border-right-color: $payne-s-grey;
+        width: calc(100% - 2em);
+    }
+     :last-child {
+        width: auto;
+        border-style: none;
+    }
+}
+
 .masonry {
     margin: 0 auto;
     column-count: 4;
     max-width: $masonry-max-width;
-    column-gap: 15px;
+    column-gap: $masonry-gap;
     column-fill: initial;
     @media (max-width: 1600px) {
         margin: 0 $default-margin;
@@ -72,7 +98,7 @@ body {
 
 .masonry-item {
     display: inline-block;
-    margin-bottom: $default-margin;
+    margin-top: $masonry-gap;
     background-color: $cards;
     width: 100%;
     >article {
