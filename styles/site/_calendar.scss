@@ -3,7 +3,6 @@
     position: fixed;
     top: $nav-height;
     right: 0;
-    //background: linear-gradient(to right, $payne-s-grey, $payne-s-grey-darker);
     background-color: $grey-light;
     width: $calendar-width;
     height: calc(100vh - #{$nav-height});
@@ -16,6 +15,8 @@
 .calendar-widget {
     padding: $default-padding;
     color: $payne-s-grey;
+    background-color: $grey-light;
+    box-shadow: 0 7px 10px -5px rgba(0, 0, 0, 0.2);
     .header {
         font-size: 1.5em;
         height: 5em;
@@ -51,6 +52,40 @@
         .calendar-today {
             background-color: $riptide;
             box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.14), 0 3px 10px 0 rgba(0, 0, 0, 0.2), 0 1px 10px 0px rgba(0, 0, 0, 0.12);
+        }
+    }
+}
+
+#nexts-tasks {
+    margin-top: $default-margin;
+    color: $payne-s-grey;
+    >h2 {
+        font-size: 1.5em;
+        margin-bottom: 0.3em;
+    }
+    #date-of-next-taks {
+        width: 5em;
+    }
+    >div:hover {
+        box-shadow: 0 -7px 10px -5px rgba(0, 0, 0, 0.2), 0 7px 10px -5px rgba(0, 0, 0, 0.2);
+    }
+    >div {
+        display: flex;
+        align-items: center;
+        vertical-align: middle;
+        padding: $default-padding;
+        background-color: #efefef;
+        ul {
+            display: flex;
+        }
+        ul:before {
+            content: "\f111";
+            font-family: 'FontAwesome';
+            font-size: 0.5em;
+            height: 3.5em;
+            margin-right: $default-margin;
+            margin-top: 0.5em;
+            color: $riptide;
         }
     }
 }

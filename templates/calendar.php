@@ -158,4 +158,16 @@
                 </tr>
             </table>
         </section>
+        <section id="nexts-tasks">
+            <h2>NEXTS TASKS</h2>
+            <div>
+                <div id="date-of-next-taks">
+                    <p>12/12/17</p>
+                </div>
+                <ul>
+                    <li><h4>To-Do List 1 Title</h4>
+                    <h5>Project Associated</h5></li>
+                </ul>
+            </div>
+        </section>
     </aside>

@@ -98,7 +98,7 @@ body {
 
 .masonry-item {
     display: inline-block;
-    margin-top: $masonry-gap;
+    margin: calc(#{$masonry-gap} / 2) 0;
     background-color: $cards;
     width: 100%;
     >article {
