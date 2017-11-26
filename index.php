@@ -98,18 +98,6 @@ include_once('templates/header.php');
                             <i class="fa fa-plus-circle"></i>Add Item</a>
                     </article>
 
-                    <article>
-                        <h4>To-Do List 3 Title</h4>
-                        <ul>
-                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                            <li>Etiam eget metus sit amet nisl maximus tristique cursus ut lorem.</li>
-                            <li>Fusce venenatis enim sed erat congue laoreet.</li>
-                            <li>Integer at eros in felis dictum semper ut consequat turpis.</li>
-                        </ul>
-                        <a href="action_add_item.php">
-                            <i class="fa fa-plus-circle"></i>Add Item</a>
-                    </article>
-
                     <a href="action_add_task.php">
                         <i class="fa fa-plus-circle"></i>Add To-Do List</a>
                 </article>

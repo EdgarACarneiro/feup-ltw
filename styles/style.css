@@ -447,6 +447,7 @@ footer {
   vertical-align: middle;
   padding: 1em;
   background-color: #efefef;
+  transition-duration: 0.4s;
 }
 
 #nexts-tasks > div ul {
