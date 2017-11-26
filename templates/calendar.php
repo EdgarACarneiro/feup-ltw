@@ -18,7 +18,7 @@
                     <th>FRI</th>
                     <th>SAT</th>
                 </tr>
-                <tr>
+                <tr id="row-1">
                     <td>
                         <p id="0"></p>
                     </td>
@@ -41,7 +41,7 @@
                         <p id="6"></p>
                     </td>
                 </tr>
-                <tr>
+                <tr id="row-2">
                     <td>
                         <p id="7"></p>
                     </td>
@@ -64,7 +64,7 @@
                         <p id="13"></p>
                     </td>
                 </tr>
-                <tr>
+                <tr id="row-3">
                     <td>
                         <p id="14"></p>
                     </td>
@@ -87,7 +87,7 @@
                         <p id="20"></p>
                     </td>
                 </tr>
-                <tr>
+                <tr id="row-4">
                     <td>
                         <p id="21"></p>
                     </td>
@@ -110,7 +110,7 @@
                         <p id="27"></p>
                     </td>
                 </tr>
-                <tr>
+                <tr id="row-5">
                     <td>
                         <p id="28"></p>
                     </td>
@@ -133,41 +133,78 @@
                         <p id="34"></p>
                     </td>
                 </tr>
-                <tr>
+                <tr id="row-6">
                     <td>
                         <p id="35"></p>
                     </td>
                     <td>
                         <p id="36"></p>
                     </td>
+                    <td></td>
                     <td>
-                        <p id="37"></p>
-                    </td>
-                    <td>
-                        <p id="38"></p>
-                    </td>
-                    <td>
-                        <p id="39"></p>
-                    </td>
-                    <td>
-                        <p id="40"></p>
-                    </td>
-                    <td>
-                        <p id="41"></p>
+                        <i class="fa fa-angle-up" aria-hidden="true" id="minimize" onclick="minimizeCalendar()"></i>
+                        <i class="fa fa-angle-down" aria-hidden="true" id="maximize" onclick="maximizeCalendar()" style="display: none;"></i>
                     </td>
                 </tr>
             </table>
         </section>
-        <section id="nexts-tasks">
+        <section id="next-tasks">
             <h2>NEXTS TASKS</h2>
-            <div>
-                <div id="date-of-next-taks">
-                    <p>12/12/17</p>
-                </div>
-                <ul>
-                    <li><h4>To-Do List 1 Title</h4>
-                    <h5>Project Associated</h5></li>
-                </ul>
-            </div>
+            <ul class="next-tasks">
+                <li class="next-tasks-item">
+                    <div class="date-of-next-taks">
+                        <p>12/12/17</p>
+                    </div>
+                    <ul>
+                        <li><h4>To-Do List 1 Title</h4>
+                        <h5>Project Associated</h5></li>
+                    </ul>
+                </li>
+                <li class="next-tasks-item">
+                    <div class="date-of-next-taks">
+                        <p>12/12/17</p>
+                    </div>
+                    <ul>
+                        <li><h4>To-Do List 1 Title</h4>
+                        <h5>Project Associated</h5></li>
+                    </ul>
+                </li>
+                <li class="next-tasks-item">
+                    <div class="date-of-next-taks">
+                        <p>12/12/17</p>
+                    </div>
+                    <ul>
+                        <li><h4>To-Do List 1 Title</h4>
+                        <h5>Project Associated</h5></li>
+                    </ul>
+                </li>
+                <li class="next-tasks-item">
+                    <div class="date-of-next-taks">
+                        <p>12/12/17</p>
+                    </div>
+                    <ul>
+                        <li><h4>To-Do List 1 Title</h4>
+                        <h5>Project Associated</h5></li>
+                    </ul>
+                </li>
+                <li class="next-tasks-item">
+                    <div class="date-of-next-taks">
+                        <p>12/12/17</p>
+                    </div>
+                    <ul>
+                        <li><h4>To-Do List 1 Title</h4>
+                        <h5>Project Associated</h5></li>
+                    </ul>
+                </li>
+                <li class="next-tasks-item">
+                    <div class="date-of-next-taks">
+                        <p>12/12/17</p>
+                    </div>
+                    <ul>
+                        <li><h4>To-Do List 1 Title</h4>
+                        <h5>Project Associated</h5></li>
+                    </ul>
+                </li>
+            </ul>
         </section>
     </aside>

@@ -16,6 +16,8 @@ var current_Day;
 var draw_Year;
 var draw_Month;
 
+var active_row_id;
+
 function drawCalendar() {
     document.getElementById("label-year").textContent = draw_Year;
     document.getElementById("label-month").textContent = months_labels[draw_Month];
@@ -30,12 +32,13 @@ function drawCalendar() {
         currentCell.textContent = i;
         if (i == current_Day && draw_Month == current_Month && draw_Year == current_Year) {
             currentCell.classList.add("calendar-today");
+            active_row_id = currentCell.parentElement.parentElement.id;
         } else {
             currentCell.classList.remove("calendar-today");
         }
         index++;
     }
-    for (; index < 42; index++) {
+    for (; index < 37; index++) {
         document.getElementById(index.toString()).textContent = "";
     }
 }
@@ -65,4 +68,36 @@ function prevMonth() {
         draw_Year--;
     }
     drawCalendar();
+}
+
+function minimizeCalendar() {
+    let current_row;
+    for (let i = 1; i < 6; i++) {
+        current_row = document.getElementById("cal-frame").children[0].children[i];
+        if (current_row.id != active_row_id) {
+            current_row.style.display = "none";
+        }
+    }
+    current_row = document.getElementById("cal-frame").children[0].children[6];
+    if (current_row.id != active_row_id) {
+        current_row.children[0].children[0].style.display = "none";
+        current_row.children[1].children[0].style.display = "none";
+    }
+    document.getElementById("minimize").style.display = "node";
+    document.getElementById("maximize").style.display = "inline-block";
+}
+
+function maximizeCalendar() {
+    let current_row;
+    for (let i = 1; i < 6; i++) {
+        current_row = document.getElementById("cal-frame").children[0].children[i];
+        current_row.style.display = "";
+    }
+    current_row = document.getElementById("cal-frame").children[0].children[6];
+    if (current_row.id != active_row_id) {
+        current_row.children[0].children[0].style.display = "";
+        current_row.children[1].children[0].style.display = "";
+    }
+    document.getElementById("minimize").style.visibility = "inline-block";
+    document.getElementById("maximize").style.visibility = "node";
 }

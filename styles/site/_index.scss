@@ -54,7 +54,7 @@ body {
 
 .feed-container {
     padding-top: $nav-height;
-    min-height: calc(100vh - #{$nav-height} - #{$footer-height});
+    min-height: calc(100vh - #{$nav-height} - #{$footer-height} - 1px);
     @media (min-width: #{$collapse-xl}) {
         width: calc(100% - #{$calendar-width});
     }

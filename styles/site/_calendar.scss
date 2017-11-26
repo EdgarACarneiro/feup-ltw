@@ -8,7 +8,8 @@
     height: calc(100vh - #{$nav-height});
     z-index: 3000;
     @media (min-width: #{$collapse-xl}) {
-        display: block;
+        display: flex;
+        flex-flow: column;
     }
 }
 
@@ -17,6 +18,10 @@
     color: $payne-s-grey;
     background-color: $grey-light;
     box-shadow: 0 7px 10px -5px rgba(0, 0, 0, 0.2);
+    transition-duration: 0.4s;
+    .fa {
+        color: $payne-s-grey;
+    }
     .header {
         font-size: 1.5em;
         height: 5em;
@@ -29,9 +34,6 @@
         >div {
             flex-grow: 1;
             margin-left: 5px;
-        }
-        .fa {
-            color: $payne-s-grey;
         }
     }
     #cal-frame {
@@ -56,20 +58,31 @@
     }
 }
 
-#nexts-tasks {
+#next-tasks {
     margin-top: $default-margin;
     color: $payne-s-grey;
+    flex-grow: 1;
+    display: flex;
+    flex-flow: column;
     >h2 {
         font-size: 1.5em;
         margin-bottom: 0.3em;
+        padding-left: 2em;
     }
-    #date-of-next-taks {
+    .date-of-next-taks {
         width: 5em;
     }
-    >div:hover {
-        box-shadow: 0 -7px 10px -5px rgba(0, 0, 0, 0.2), 0 7px 10px -5px rgba(0, 0, 0, 0.2);
+    .next-tasks {
+        flex-grow: 1;
+        overflow: overlay;
     }
-    >div {
+    .next-tasks-item:hover {
+        box-shadow: 0 -7px 10px -5px rgba(0, 0, 0, 0.2), 0 7px 10px -5px rgba(0, 0, 0, 0.2);
+        z-index: 5;
+        transition-duration: 0.4s;
+    }
+    .next-tasks-item {
+        position: relative;
         display: flex;
         align-items: center;
         vertical-align: middle;
