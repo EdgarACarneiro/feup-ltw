@@ -350,6 +350,16 @@ body {
 
 .masonry-item > article {
   padding: 1em;
+  background-color: #fafafa;
+  /* TO-DO Lists inside Projects */
+}
+
+.masonry-item > article > article {
+  padding: 1em;
+  display: inline-block;
+  margin: calc(1em / 2);
+  background-color: #e8e8e8;
+  width: calc(100% - 2.5em);
 }
 
 footer {

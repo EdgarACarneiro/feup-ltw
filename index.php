@@ -48,7 +48,7 @@ include_once('templates/header.php');
             <div class="masonry-item shadow-cards rnd-cornes">
                 <article class="rnd-cornes">
                     <h2>Project Title</h2>
-                    <article>
+                    <article class="rnd-cornes">
                         <h4>To-Do List 1 Title</h4>
                         <ul>
                             <li>Fusce venenatis enim sed erat congue laoreet.</li>
@@ -57,7 +57,7 @@ include_once('templates/header.php');
                         <a href="action_add_item.php">
                             <i class="fa fa-plus-circle"></i>Add Item</a>
                     </article>
-                    <article>
+                    <article class="rnd-cornes">
                         <h4>To-Do List 2 Title</h4>
                         <ul>
                             <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
@@ -75,7 +75,7 @@ include_once('templates/header.php');
             <div class="masonry-item shadow-cards rnd-cornes">
                 <article class="rnd-cornes">
                     <h2>Project Title</h2>
-                    <article>
+                    <article class="rnd-cornes">
                         <h4>To-Do List 1 Title</h4>
                         <ul>
                             <li>Fusce venenatis enim sed erat congue laoreet.</li>
@@ -87,7 +87,7 @@ include_once('templates/header.php');
                             <i class="fa fa-plus-circle"></i>Add Item</a>
                     </article>
 
-                    <article>
+                    <article class="rnd-cornes">
                         <h4>To-Do List 2 Title</h4>
                         <ul>
                             <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>

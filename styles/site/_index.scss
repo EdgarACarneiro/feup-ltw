@@ -101,8 +101,19 @@ body {
     margin: calc(#{$masonry-gap} / 2) 0;
     background-color: $cards;
     width: 100%;
+    
     >article {
         padding: $default-padding;
+        background-color: $cards;
+
+        /* TO-DO Lists inside Projects */
+        >article {
+            padding: $default-padding;
+            display: inline-block;
+            margin: calc(#{$masonry-gap} / 2);
+            background-color: $background;
+            width: calc(100% - 2.5em);
+        }
     }
 }
 
