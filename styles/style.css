@@ -488,8 +488,48 @@ footer {
   color: #80E3D1;
 }
 
+.main {
+  margin: 20%;
+  border-radius: 1em;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.site-description {
+  flex: 1;
+  padding: 2em;
+  border-radius: 1em 0 0 1em;
+  background: linear-gradient(#80E3D1, #53C5B9);
+}
+
 .sign-user {
-  padding-top: 100px;
+  flex: 1;
+  padding: 2em;
+  border-radius: 0 1em 1em 0;
+  background: linear-gradient(#3C3E52, #232539);
+}
+
+.switch-btn {
+  height: 2em;
+  width: 8em;
+  background: #4e5068;
+}
+
+.switch-btn .sign-in-btn, .switch-btn .sign-up-btn {
+  flex: auto;
+  background: none;
+  color: #FFFFFF;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.switch-btn .sign-in-btn {
+  border-radius: 1em 0 0 1em;
+}
+
+.switch-btn .sign-up-btn {
+  border-radius: 0 1em 1em 0;
 }
  
 

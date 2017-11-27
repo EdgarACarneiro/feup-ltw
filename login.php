@@ -24,39 +24,47 @@ include_once('templates/header.php');
         </ul>
     </nav>
 
-    <section class="sign-user">
-        <form action="action_login.php" method="post" id="sign-in">
-            <fieldset>
-                <legend>Log In:</legend>
-                E-mail: <input type="text" placeholder="email" name="email">
-                Password: <input type="password" placeholder="password" name="password">
-                <input type="submit" value="Send">
-            </fieldset>
-        </form>
+    <section class="main rnd-corners shadow-boxes" />
+        <div class="sign-user">
+            <div class="switch-btn btn rnd-corners">
+               <input type="button" class="sign-in-btn" value="Sign-in" onclick="">
+               <input type="button" class="sign-up-btn" value="Sign-up" onclick=""> 
+            </div>
 
-        <form action="action_register.php" method="post" id="sign-up">
-            <fieldset>
-                <legend>Create an Account:</legend>
-                Username: <input type="text" placeholder="username" name="username">
-                E-mail: <input type="text" placeholder="email" name="email">
-                Password: <input type="password" placeholder="password" name="password">
-                Repeat your Password: <input type="password" placeholder="password" name="password_check">
-                <input type="submit" value="Send">
-            </fieldset>
-        </form>
-    </section>
+            <form action="action_login.php" method="post" id="sign-in">
+                <fieldset>
+                    <legend>Log In:</legend>
+                    E-mail: <input type="text" placeholder="email" name="email">
+                    Password: <input type="password" placeholder="password" name="password">
+                    <input type="submit" value="Send">
+                </fieldset>
+            </form>
+        
 
-    <section id="site-description">
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut libero tincidunt, pharetra libero a, molestie felis. 
-            Etiam vehicula lacus vel imperdiet sagittis. Curabitur accumsan a lacus sed accumsan. 
-            Nulla nulla justo, bibendum sit amet aliquet faucibus, fringilla vel ex. 
-            Sed ac lacus sed sapien euismod tempus sit amet ac purus. 
-            Mauris ac sapien efficitur, tristique velit ut, semper lectus. 
-            Proin et congue ipsum. Vestibulum faucibus ex egestas, malesuada augue nec, vehicula purus. 
-            Sed et risus sit amet lectus rhoncus consequat. Nam sagittis sapien risus, vitae vestibulum risus bibendum quis. 
-            Aenean faucibus vulputate suscipit. Vivamus eleifend vel leo varius molestie. Donec semper nisl quis volutpat mollis.
-        </p>
+            <form action="action_register.php" method="post" id="sign-up">
+                <fieldset>
+                    <legend>Create an Account:</legend>
+                    Username: <input type="text" placeholder="username" name="username">
+                    E-mail: <input type="text" placeholder="email" name="email">
+                    Password: <input type="password" placeholder="password" name="password">
+                    Repeat your Password: <input type="password" placeholder="password" name="password_check">
+                    <input type="submit" value="Send">
+                </fieldset>
+            </form>
+        </div>
+
+        <div class="site-description">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut libero tincidunt, pharetra libero a, molestie felis. 
+                Etiam vehicula lacus vel imperdiet sagittis. Curabitur accumsan a lacus sed accumsan. 
+                Nulla nulla justo, bibendum sit amet aliquet faucibus, fringilla vel ex. 
+                Sed ac lacus sed sapien euismod tempus sit amet ac purus. 
+                Mauris ac sapien efficitur, tristique velit ut, semper lectus. 
+                Proin et congue ipsum. Vestibulum faucibus ex egestas, malesuada augue nec, vehicula purus. 
+                Sed et risus sit amet lectus rhoncus consequat. Nam sagittis sapien risus, vitae vestibulum risus bibendum quis. 
+                Aenean faucibus vulputate suscipit. Vivamus eleifend vel leo varius molestie. Donec semper nisl quis volutpat mollis.
+            </p>
+        </div>
     </section>
 
     <footer>

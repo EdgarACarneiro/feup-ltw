@@ -28,7 +28,7 @@
     margin: 0 $default-margin;
     vertical-align: middle;
     border-radius: calc(#{$btn-height} / 2);
-    background: linear-gradient($riptide, $medium-turquoise);
+    background: $gradient-turqoise;
     display: flex;
     justify-content: space-between;
     @media (max-width: #{$collapse-xs}) {
