@@ -1,27 +1,22 @@
 .main {
     //padding-top: $nav-height;
-    margin: 20%;
+    margin: calc(#{$nav-height} + 7%) 20% 7%;
     border-radius: $border-radius;
-
     display: flex;
     flex-direction: row-reverse;
 }
 
 .site-description {
     flex: 1;
-
     padding: 2em;
     border-radius: $border-radius 0 0 $border-radius;
-    
     background: $gradient-turqoise;
 }
 
 .sign-user {
     flex: 1;
-
     padding: 2em;
     border-radius: 0 $border-radius $border-radius 0;    
-    
     background: $gradient-grey; 
 }
 
@@ -30,21 +25,36 @@
     height: 2em;
     width: 8em;
     background: $payne-s-grey-lighter;
+    margin: 0;
+    float: right;
+    float: top;
 
     .sign-in-btn, .sign-up-btn {
         flex: auto; 
-        background: none;
-        color: $white;
         margin: 0;
         padding: 0;
         border: 0;
+        background: none;
+        color: $white;
+        font-size: 80%;
     }
 
     .sign-in-btn {
         border-radius: $border-radius 0 0 $border-radius;
+        background: $gradient-turqoise;
     }
 
     .sign-up-btn {
         border-radius: 0 $border-radius $border-radius 0;
     }
+}
+
+#sign-in, #sign-up {
+    padding-top: 3em;
+    color: $white;
+    display: inline-block;
+}
+
+#sign-in {
+    display: none;
 }

@@ -1,6 +1,7 @@
 <?php
 include_once('templates/header.php');
 ?>
+<script src="scripts/sign-in-up-switch.js"></script>
 
 <body>
     <nav id="top-bar" class="nav-bar">
@@ -27,13 +28,13 @@ include_once('templates/header.php');
     <section class="main rnd-corners shadow-boxes" />
         <div class="sign-user">
             <div class="switch-btn btn rnd-corners">
-               <input type="button" class="sign-in-btn" value="Sign-in" onclick="">
-               <input type="button" class="sign-up-btn" value="Sign-up" onclick=""> 
+               <input type="button" class="sign-in-btn" value="Sign-in" onclick="showSignIn()">
+               <input type="button" class="sign-up-btn" value="Sign-up" onclick="showSignUp()"> 
             </div>
 
             <form action="action_login.php" method="post" id="sign-in">
                 <fieldset>
-                    <legend>Log In:</legend>
+                    <legend>Log In</legend>
                     E-mail: <input type="text" placeholder="email" name="email">
                     Password: <input type="password" placeholder="password" name="password">
                     <input type="submit" value="Send">
@@ -43,7 +44,7 @@ include_once('templates/header.php');
 
             <form action="action_register.php" method="post" id="sign-up">
                 <fieldset>
-                    <legend>Create an Account:</legend>
+                    <legend>Create an Account</legend>
                     Username: <input type="text" placeholder="username" name="username">
                     E-mail: <input type="text" placeholder="email" name="email">
                     Password: <input type="password" placeholder="password" name="password">

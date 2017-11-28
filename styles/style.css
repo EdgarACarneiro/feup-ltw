@@ -489,7 +489,7 @@ footer {
 }
 
 .main {
-  margin: 20%;
+  margin: calc(100px + 7%) 20% 7%;
   border-radius: 1em;
   display: flex;
   flex-direction: row-reverse;
@@ -513,23 +513,38 @@ footer {
   height: 2em;
   width: 8em;
   background: #4e5068;
+  margin: 0;
+  float: right;
+  float: top;
 }
 
 .switch-btn .sign-in-btn, .switch-btn .sign-up-btn {
   flex: auto;
-  background: none;
-  color: #FFFFFF;
   margin: 0;
   padding: 0;
   border: 0;
+  background: none;
+  color: #FFFFFF;
+  font-size: 80%;
 }
 
 .switch-btn .sign-in-btn {
   border-radius: 1em 0 0 1em;
+  background: linear-gradient(#80E3D1, #53C5B9);
 }
 
 .switch-btn .sign-up-btn {
   border-radius: 0 1em 1em 0;
+}
+
+#sign-in, #sign-up {
+  padding-top: 3em;
+  color: #FFFFFF;
+  display: inline-block;
+}
+
+#sign-in {
+  display: none;
 }
  
 
