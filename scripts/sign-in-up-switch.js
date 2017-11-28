@@ -3,8 +3,8 @@ function showSignIn() {
 
     document.getElementById("sign-up").style.display = "none";
     document.getElementById("sign-in").style.display = "inline-block";
-    document.getElementsByClassName("sign-in-btn")[0].style.background = "none";
-    document.getElementsByClassName("sign-up-btn")[0].style.background = grad_color;
+    document.getElementsByClassName("sign-up-btn")[0].style.background = "none";
+    document.getElementsByClassName("sign-in-btn")[0].style.background = grad_color;
 }
 
 function showSignUp() {
@@ -12,6 +12,6 @@ function showSignUp() {
 
     document.getElementById("sign-in").style.display = "none";
     document.getElementById("sign-up").style.display = "inline-block";
-    document.getElementsByClassName("sign-up-btn")[0].style.background = "none";
-    document.getElementsByClassName("sign-in-btn")[0].style.background = grad_color;
+    document.getElementsByClassName("sign-in-btn")[0].style.background = "none";
+    document.getElementsByClassName("sign-up-btn")[0].style.background = grad_color;
 }
