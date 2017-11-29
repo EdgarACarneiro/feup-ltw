@@ -227,7 +227,7 @@ table {
 }
 
 .rnd-cornes {
-  border-radius: 1em;
+  border-radius: 0.2em;
 }
 
 .shadow-boxes {
@@ -304,40 +304,36 @@ body {
 }
 
 .masonry {
-  margin: 0 auto;
-  column-count: 4;
-  max-width: 1200px;
+  margin: 0 1em;
+  -webkit-column-count: 3;
+  -moz-column-count: 3;
+  column-count: 3;
+  -moz-column-fill: auto;
+  column-fill: auto;
+  max-width: 60em;
   column-gap: 1em;
   column-fill: initial;
 }
 
-@media (max-width: 1600px) {
+@media (min-width: 1374px), (min-width: 1008px) and (max-width: 1280px) {
   .masonry {
-    margin: 0 1em;
-  }
-}
-
-@media (min-width: 1280px) and (max-width: 1440px) {
-  .masonry {
-    column-count: 3;
-  }
-}
-
-@media (max-width: 1068px) {
-  .masonry {
-    column-count: 3;
+    margin: 0 auto;
   }
 }
 
 @media (max-width: 768px) {
   .masonry {
     column-count: 2;
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
   }
 }
 
 @media (max-width: 640px) {
   .masonry {
     column-count: 1;
+    -webkit-column-count: 1;
+    -moz-column-count: 1;
   }
 }
 
@@ -490,7 +486,7 @@ footer {
 
 .main {
   margin: calc(100px + 7%) 20% 7%;
-  border-radius: 1em;
+  border-radius: 0.2em;
   display: flex;
   flex-direction: row-reverse;
 }
@@ -498,14 +494,14 @@ footer {
 .site-description {
   flex: 1;
   padding: 2em;
-  border-radius: 1em 0 0 1em;
+  border-radius: 0.2em 0 0 0.2em;
   background: linear-gradient(#80E3D1, #53C5B9);
 }
 
 .sign-user {
   flex: 1;
   padding: 2em;
-  border-radius: 0 1em 1em 0;
+  border-radius: 0 0.2em 0.2em 0;
   background: linear-gradient(#3C3E52, #232539);
 }
 
@@ -529,11 +525,11 @@ footer {
 }
 
 .switch-btn .sign-in-btn {
-  border-radius: 1em 0 0 1em;
+  border-radius: 0.2em 0 0 0.2em;
 }
 
 .switch-btn .sign-up-btn {
-  border-radius: 0 1em 1em 0;
+  border-radius: 0 0.2em 0.2em 0;
   background: linear-gradient(#80E3D1, #53C5B9);
 }
 

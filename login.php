@@ -1,5 +1,9 @@
 <?php
-include_once('templates/header_login.php');
+include_once('includes/session.php');
+checkUserSession();
+echo "User: " . $_SESSION['username'];
+
+include_once('templates/header.php');
 include_once('includes/init.php');
 ?>
 <script src="scripts/sign-in-up-switch.js"></script>

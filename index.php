@@ -1,7 +1,10 @@
 <?php
 include_once('includes/init.php');
 include_once('includes/session.php');
-include_once('templates/header_index.php');
+checkUserSession();
+echo "User: " . $_SESSION['username'];
+
+include_once('templates/header.php');
 ?>
 
 <body onload="initCalendar()">

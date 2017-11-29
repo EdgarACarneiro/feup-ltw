@@ -8,6 +8,5 @@ if (isLoginCorrect($_POST['username'], $_POST['password'])) {
   die;
 }
 
-echo "WRONG USERNAME BITCH";
 header('Location: ' . $_SERVER['HTTP_REFERER']);
 ?>
