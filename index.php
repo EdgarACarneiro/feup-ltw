@@ -2,7 +2,6 @@
 include_once('includes/init.php');
 include_once('includes/session.php');
 checkUserSession();
-echo "User: " . $_SESSION['username'];
 
 include_once('templates/header.php');
 ?>
