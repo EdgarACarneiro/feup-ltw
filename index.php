@@ -51,66 +51,7 @@ include_once('templates/header.php');
         </div>
 
         <div class="masonry">
-            <div class="masonry-item shadow-cards rnd-cornes">
-                <article class="rnd-cornes">
-                    <h2>Project Title</h2>
-                    <article class="rnd-cornes">
-                        <h4>To-Do List 1 Title</h4>
-                        <ul>
-                            <li>Fusce venenatis enim sed erat congue laoreet.</li>
-                            <li>Ut mollis augue ac sem fringilla, et molestie sapien laoreet.</li>
-                        </ul>
-                        <a href="action_add_item.php">
-                            <i class="fa fa-plus-circle"></i>Add Item</a>
-                    </article>
-                    <article class="rnd-cornes">
-                        <h4>To-Do List 2 Title</h4>
-                        <ul>
-                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                            <li>Ut feugiat velit nec feugiat bibendum.</li>
-                            <li>Fusce venenatis enim sed erat congue laoreet.</li>
-                        </ul>
-                        <a href="action_add_item.php">
-                            <i class="fa fa-plus-circle"></i>Add Item</a>
-                    </article>
-                    <a href="action_add_task.php">
-                        <i class="fa fa-plus-circle"></i>Add To-Do List</a>
-                </article>
-            </div>
-
-            <div class="masonry-item shadow-cards rnd-cornes">
-                <article class="rnd-cornes">
-                    <h2>Project Title</h2>
-                    <article class="rnd-cornes">
-                        <h4>To-Do List 1 Title</h4>
-                        <ul>
-                            <li>Fusce venenatis enim sed erat congue laoreet.</li>
-                            <li>Ut mollis augue ac sem fringilla, et molestie sapien laoreet.</li>
-                            <li>Aliquam rutrum nisi non maximus sagittis.</li>
-                            <li>Quisque tempor massa id arcu ullamcorper, vitae efficitur odio facilisis.</li>
-                        </ul>
-                        <a href="action_add_item.php">
-                            <i class="fa fa-plus-circle"></i>Add Item</a>
-                    </article>
-
-                    <article class="rnd-cornes">
-                        <h4>To-Do List 2 Title</h4>
-                        <ul>
-                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                            <li>Ut feugiat velit nec feugiat bibendum.</li>
-                            <li>Fusce venenatis enim sed erat congue laoreet.</li>
-                        </ul>
-                        <a href="action_add_item.php">
-                            <i class="fa fa-plus-circle"></i>Add Item</a>
-                    </article>
-
-                    <a href="action_add_task.php">
-                        <i class="fa fa-plus-circle"></i>Add To-Do List</a>
-                </article>
-            </div>
-
             <?php include_once('list_tasks.php'); ?>
-
         </div>
 
         </main>
