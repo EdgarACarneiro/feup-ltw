@@ -1,6 +1,7 @@
 <?php
+include_once('includes/init.php');
 include_once('includes/session.php');
-include_once('templates/header.php');
+include_once('templates/header_index.php');
 ?>
 
 <body onload="initCalendar()">
@@ -17,7 +18,10 @@ include_once('templates/header.php');
             <li id="user">
                 <a href="index.php"><i class="fa fa-rss"></i></a>
                 <a href="profile.php"><i class="fa fa-user-circle"></i></a>
-                <input type="checkbox" id="more">
+                <form action="action_logout.php" method="post">
+                    <input type="submit" value="Logout">
+                </form>
+                <!--<input type="checkbox" id="more" onclick="action_logout.php">-->
                 <label class="more" for="more"></label>
                 <!-- 'More' é uma cena estilo a do hamburguer com log out, settings, entre outros -->
             </li>
