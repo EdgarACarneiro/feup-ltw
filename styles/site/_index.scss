@@ -74,25 +74,27 @@ body {
 }
 
 .masonry {
-    margin: 0 auto;
-    column-count: 4;
+    margin: 0 $default-margin;
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3;
+    -moz-column-fill: auto;
+    column-fill: auto;
     max-width: $masonry-max-width;
     column-gap: $masonry-gap;
     column-fill: initial;
-    @media (max-width: 1600px) {
-        margin: 0 $default-margin;
-    }
-    @media (min-width: #{$collapse-xl}) and (max-width: #{$collapse-xxl}) {
-        column-count: 3;
-    }
-    @media (max-width: #{$collapse-l}) {
-        column-count: 3;
+    @media (min-width: 1374px), (min-width: 1008px) and (max-width: #{$collapse-xl}) {
+        margin: 0 auto;
     }
     @media (max-width: #{$collapse-s}) {
         column-count: 2;
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
     }
     @media (max-width: #{$collapse-xs}) {
         column-count: 1;
+        -webkit-column-count: 1;
+        -moz-column-count: 1;
     }
 }
 
@@ -101,11 +103,9 @@ body {
     margin: calc(#{$masonry-gap} / 2) 0;
     background-color: $cards;
     width: 100%;
-    
     >article {
         padding: $default-padding;
         background-color: $cards;
-
         /* TO-DO Lists inside Projects */
         >article {
             padding: $default-padding;
