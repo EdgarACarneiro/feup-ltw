@@ -1,27 +1,20 @@
 <?php
+include_once("includes/utils.php");
+
 session_start();
 
 function setCurrentUser($username) {
   $_SESSION['username'] = $username;
 }
 
-// TODO check this function
-// NOTE header calls must be executed before any white space or html
 function checkUserSession() {
-  if (!isset($_SESSION["username"])) {
-    header("Location: login.php");
-  } else {
-    header("Location: index.php");
+
+  if (currentPHP() == "login.php" && isset($_SESSION['username'])) {
+    redirect("index.php");    
+  } else if (currentPHP() != "login.php" && (! isset($_SESSION['username'])) ) {
+    redirect("login.php");
   }
 
-  exit;
-}
-
-function redirect($url) {
-  ob_start();
-  header('Location: ' . $url);
-  ob_end_flush();
-  die();
 }
 
 ?>
