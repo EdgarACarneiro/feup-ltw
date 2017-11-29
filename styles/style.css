@@ -512,6 +512,7 @@ footer {
   margin: 0;
   float: right;
   float: top;
+  border-radius: 1em;
 }
 
 .switch-btn .sign-in-btn, .switch-btn .sign-up-btn {
@@ -526,11 +527,11 @@ footer {
 
 .switch-btn .sign-in-btn {
   border-radius: 0.2em 0 0 0.2em;
+  background: linear-gradient(#80E3D1, #53C5B9);
 }
 
 .switch-btn .sign-up-btn {
   border-radius: 0 0.2em 0.2em 0;
-  background: linear-gradient(#80E3D1, #53C5B9);
 }
 
 #sign-in, #sign-up {
@@ -539,7 +540,7 @@ footer {
   display: inline-block;
 }
 
-#sign-in {
+#sign-up {
   display: none;
 }
  

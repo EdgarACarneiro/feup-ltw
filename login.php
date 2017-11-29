@@ -31,7 +31,7 @@ include_once('includes/init.php');
 
     <section class="main rnd-corners shadow-boxes" />
         <div class="sign-user">
-            <div class="switch-btn btn rnd-corners">
+            <div class="switch-btn btn">
                <input type="button" class="sign-in-btn" value="Sign-in" onclick="showSignIn()">
                <input type="button" class="sign-up-btn" value="Sign-up" onclick="showSignUp()"> 
             </div>
