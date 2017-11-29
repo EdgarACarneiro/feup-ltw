@@ -1,5 +1,6 @@
 <?php
 include_once('templates/header.php');
+include_once('includes/init.php');
 ?>
 <script src="scripts/sign-in-up-switch.js"></script>
 
@@ -35,7 +36,7 @@ include_once('templates/header.php');
             <form action="action_login.php" method="post" id="sign-in">
                 <fieldset>
                     <legend>Log In</legend>
-                    E-mail: <input type="text" placeholder="email" name="email">
+                    Username: <input type="text" placeholder="username" name="username">
                     Password: <input type="password" placeholder="password" name="password">
                     <input type="submit" value="Send">
                 </fieldset>
