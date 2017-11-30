@@ -10,7 +10,7 @@ include_once('templates/header.php');
     <nav id="top-bar" class="nav-bar">
         <ul>
             <li id="info">
-                <img src="images/site/smallLogo.png" alt="The website logo">
+                <img id="logo-img" src="images/site/smallLogo.png" alt="The website logo">
                 <h1><a href="index.php">EzeeDo</a></h1>
             </li>
             <li id="search">

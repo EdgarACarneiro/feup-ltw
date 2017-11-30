@@ -16,6 +16,9 @@
 
 .nav-bar ul {
     #info {
+        #logo-img {
+            width: 60px;
+        }
         flex-grow: 1;
     }
     #search {
@@ -32,7 +35,6 @@
     font-size: 1rem;
     border-radius: $round-border-radius;
     border-color: $riptide;
-
     width: 15%;
     transition: width 0.5s;
 }
@@ -41,27 +43,24 @@
     width: 70%;
 }
 
-.fa-search {   
+.fa-search {
     position: relative;
     left: 1.6em;
 }
 
 #info {
-
     h1 {
         font-size: 2em;
         margin-left: 0;
-
         a {
-            color:white;
+            color: white;
         }
     }
-
-    > * {
+    >* {
         margin: auto;
     }
 }
 
-#user > * {
+#user>* {
     margin: auto;
 }

@@ -137,8 +137,9 @@ table {
   color: #80E3D1;
 }
 
-.fa.fa-rss, .fa.fa-user-circle {
-  font-size: xx-large;
+.fa.fa-rss,
+.fa.fa-user-circle {
+  font-size: x-large;
 }
 
 .fa.fa-search {
@@ -218,11 +219,11 @@ table {
 
 .nav-bar {
   background-color: #2b2e37;
-  height: 100px;
+  height: 75px;
 }
 
 .nav-bar ul {
-  height: 100px;
+  height: 75px;
   display: flex;
 }
 
@@ -237,6 +238,10 @@ table {
 
 .nav-bar ul #info {
   flex-grow: 1;
+}
+
+.nav-bar ul #info #logo-img {
+  width: 60px;
 }
 
 .nav-bar ul #search {
@@ -326,8 +331,8 @@ body {
 }
 
 .feed-container {
-  padding-top: 100px;
-  min-height: calc(100vh - 100px - 1rem - 1px);
+  padding-top: 75px;
+  min-height: calc(100vh - 75px - 1rem - 1px);
 }
 
 @media (min-width: 1280px) {
@@ -410,11 +415,11 @@ footer {
 .sidebar-calendar {
   display: none;
   position: fixed;
-  top: 100px;
+  top: 75px;
   right: 0;
   background-color: #e1e1e1;
   width: 350px;
-  height: calc(100vh - 100px);
+  height: calc(100vh - 75px);
   z-index: 3000;
 }
 
@@ -530,7 +535,7 @@ footer {
 }
 
 .main {
-  margin: calc(100px + 7%) 20% 7%;
+  margin: calc(75px + 7%) 20% 7%;
   border-radius: 0.2em;
   display: flex;
   flex-direction: row-reverse;
