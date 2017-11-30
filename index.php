@@ -21,11 +21,8 @@ include_once('templates/header.php');
                 <a href="index.php"><i class="fa fa-rss"></i></a>
                 <a href="profile.php"><i class="fa fa-user-circle"></i></a>
                 <form action="action_logout.php" method="post">
-                    <input type="submit" value="Logout">
+                    <button type="submit" class="logout-btn"><i class="fa fa-sign-out"></i>
                 </form>
-                <!--<input type="checkbox" id="more" onclick="action_logout.php">-->
-                <label class="more" for="more"></label>
-                <!-- 'More' é uma cena estilo a do hamburguer com log out, settings, entre outros -->
             </li>
         </ul>
     </nav>

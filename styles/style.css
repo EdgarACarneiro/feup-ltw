@@ -138,8 +138,16 @@ table {
 }
 
 .fa.fa-rss,
-.fa.fa-user-circle {
+.fa.fa-user-circle,
+.fa.fa-sign-out {
   font-size: x-large;
+  transition: font-size 0.1s;
+}
+
+.fa.fa-rss:hover,
+.fa.fa-user-circle:hover,
+.fa.fa-sign-out:hover {
+  font-size: xx-large;
 }
 
 .fa.fa-search {
@@ -286,6 +294,11 @@ table {
 
 #user > * {
   margin: auto;
+}
+
+.logout-btn {
+  background: none;
+  border: 0;
 }
 
 .rnd-corners {
@@ -565,7 +578,8 @@ footer {
   border-radius: 1em;
 }
 
-.switch-btn .sign-in-btn, .switch-btn .sign-up-btn {
+.switch-btn .sign-in-btn,
+.switch-btn .sign-up-btn {
   flex: auto;
   margin: 0;
   padding: 0;
@@ -584,7 +598,8 @@ footer {
   border-radius: 0 0.2em 0.2em 0;
 }
 
-#sign-in, #sign-up {
+#sign-in,
+#sign-up {
   padding-top: 3em;
   color: #FFFFFF;
   display: inline-block;

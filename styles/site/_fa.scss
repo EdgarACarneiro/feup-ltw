@@ -3,8 +3,16 @@
 }
 
 .fa.fa-rss,
-.fa.fa-user-circle {
+.fa.fa-user-circle,
+.fa.fa-sign-out {
     font-size: x-large;
+    transition: font-size 0.1s;
+}
+
+.fa.fa-rss:hover,
+.fa.fa-user-circle:hover,
+.fa.fa-sign-out:hover {
+    font-size: xx-large;
 }
 
 .fa.fa-search {
