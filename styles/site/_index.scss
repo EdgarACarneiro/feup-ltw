@@ -1,4 +1,4 @@
-.rnd-cornes {
+.rnd-corners {
     border-radius: $border-radius;
 }
 
@@ -38,18 +38,6 @@ body {
     top: 0;
     width: 100%;
     z-index: 3000;
-}
-
-.nav-bar ul {
-    #info {
-        flex-grow: 1;
-    }
-    #search {
-        flex-grow: 3;
-    }
-    #user {
-        flex-grow: 1;
-    }
 }
 
 .feed-container {

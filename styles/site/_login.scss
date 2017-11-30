@@ -28,6 +28,7 @@
     margin: 0;
     float: right;
     float: top;
+    border-radius: $round-border-radius;
 
     .sign-in-btn, .sign-up-btn {
         flex: auto; 
@@ -41,11 +42,11 @@
 
     .sign-in-btn {
         border-radius: $border-radius 0 0 $border-radius;
+        background: $gradient-turqoise;
     }
 
     .sign-up-btn {
         border-radius: 0 $border-radius $border-radius 0;
-        background: $gradient-turqoise;
     }
 }
 
@@ -55,6 +56,6 @@
     display: inline-block;
 }
 
-#sign-in {
+#sign-up {
     display: none;
 }

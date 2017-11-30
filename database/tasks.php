@@ -18,11 +18,38 @@ function getAllTasks() {
 
     $stmt = $dbh->prepare(
         "SELECT * FROM Task
-        ORDER BY duedate ASC, task_id DESC"
+        ORDER BY task_id DESC"
     );
     $stmt->execute();
 
     return $stmt->fetchAll();
+}
+
+// Projects are Tasks that have no parent Task
+function getParentTasks() {
+    global $dbh;
+
+    $stmt = $dbh->prepare(
+        "SELECT * FROM Task
+        WHERE parent_task IS NULL
+        ORDER BY task_id DESC"
+    );
+    $stmt->execute();
+
+    return $stmt->fetchAll();
+}
+
+function getChildTasks($parent_id) {
+    global $dbh;
+    
+    $stmt = $dbh->prepare(
+        "SELECT * FROM Task
+        WHERE parent_task = ?
+        ORDER BY task_id DESC"
+    );
+    $stmt->execute(array($parent_id));
+
+    return $stmt->fetchAll();  
 }
 
 function getTasksByCategory($cat) {

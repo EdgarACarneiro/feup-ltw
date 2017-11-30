@@ -31,7 +31,7 @@ include_once('includes/init.php');
 
     <section class="main rnd-corners shadow-boxes" />
         <div class="sign-user">
-            <div class="switch-btn btn rnd-corners">
+            <div class="switch-btn btn">
                <input type="button" class="sign-in-btn" value="Sign-in" onclick="showSignIn()">
                <input type="button" class="sign-up-btn" value="Sign-up" onclick="showSignUp()"> 
             </div>
@@ -39,8 +39,8 @@ include_once('includes/init.php');
             <form action="action_login.php" method="post" id="sign-in">
                 <fieldset>
                     <legend>Log In</legend>
-                    Username: <input type="text" placeholder="username" name="username">
-                    Password: <input type="password" placeholder="password" name="password">
+                    Username: <input type="text" placeholder="username" name="username" required>
+                    Password: <input type="password" placeholder="password" name="password" required>
                     <input type="submit" value="Send">
                 </fieldset>
             </form>
@@ -49,10 +49,10 @@ include_once('includes/init.php');
             <form action="action_register.php" method="post" id="sign-up">
                 <fieldset>
                     <legend>Create an Account</legend>
-                    Username: <input type="text" placeholder="username" name="username">
-                    E-mail: <input type="text" placeholder="email" name="email">
-                    Password: <input type="password" placeholder="password" name="password">
-                    Repeat your Password: <input type="password" placeholder="password" name="password_check">
+                    Username: <input type="text" placeholder="username" name="username" required>
+                    E-mail: <input type="text" placeholder="email" name="email" required>
+                    Password: <input type="password" placeholder="password" name="password" required>
+                    Repeat your Password: <input type="password" placeholder="password" name="password_check" required>
                     <input type="submit" value="Send">
                 </fieldset>
             </form>
