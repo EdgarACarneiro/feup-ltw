@@ -32,9 +32,36 @@
     font-size: 1rem;
     border-radius: $round-border-radius;
     border-color: $riptide;
+
+    width: 15%;
+    transition: width 0.5s;
 }
 
-.fa-search {
+#search-bar:focus {
+    width: 70%;
+}
+
+.fa-search {   
     position: relative;
     left: 1.6em;
+}
+
+#info {
+
+    h1 {
+        font-size: 2em;
+        margin-left: 0;
+
+        a {
+            color:white;
+        }
+    }
+
+    > * {
+        margin: auto;
+    }
+}
+
+#user > * {
+    margin: auto;
 }

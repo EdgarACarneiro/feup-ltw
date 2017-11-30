@@ -138,7 +138,7 @@ table {
 }
 
 .fa.fa-rss, .fa.fa-user-circle {
-  font-size: x-large;
+  font-size: xx-large;
 }
 
 .fa.fa-search {
@@ -253,11 +253,34 @@ table {
   font-size: 1rem;
   border-radius: 1em;
   border-color: #80E3D1;
+  width: 15%;
+  transition: width 0.5s;
+}
+
+#search-bar:focus {
+  width: 70%;
 }
 
 .fa-search {
   position: relative;
   left: 1.6em;
+}
+
+#info h1 {
+  font-size: 2em;
+  margin-left: 0;
+}
+
+#info h1 a {
+  color: white;
+}
+
+#info > * {
+  margin: auto;
+}
+
+#user > * {
+  margin: auto;
 }
 
 .rnd-corners {
