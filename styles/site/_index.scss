@@ -40,18 +40,6 @@ body {
     z-index: 3000;
 }
 
-.nav-bar ul {
-    #info {
-        flex-grow: 1;
-    }
-    #search {
-        flex-grow: 3;
-    }
-    #user {
-        flex-grow: 1;
-    }
-}
-
 .feed-container {
     padding-top: $nav-height;
     min-height: calc(100vh - #{$nav-height} - #{$footer-height} - 1px);

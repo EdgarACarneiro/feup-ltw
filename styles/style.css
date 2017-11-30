@@ -137,6 +137,15 @@ table {
   color: #80E3D1;
 }
 
+.fa.fa-rss, .fa.fa-user-circle {
+  font-size: x-large;
+}
+
+.fa.fa-search {
+  font-size: larger;
+  color: #4e5068;
+}
+
 .btn-bar {
   display: flex;
   justify-content: space-around;
@@ -226,6 +235,31 @@ table {
   display: inline-block;
 }
 
+.nav-bar ul #info {
+  flex-grow: 1;
+}
+
+.nav-bar ul #search {
+  flex-grow: 3;
+}
+
+.nav-bar ul #user {
+  flex-grow: 1;
+}
+
+#search-bar {
+  height: 2em;
+  padding-left: 2.5em;
+  font-size: 1rem;
+  border-radius: 1em;
+  border-color: #80E3D1;
+}
+
+.fa-search {
+  position: relative;
+  left: 1.6em;
+}
+
 .rnd-corners {
   border-radius: 0.2em;
 }
@@ -266,18 +300,6 @@ body {
   top: 0;
   width: 100%;
   z-index: 3000;
-}
-
-.nav-bar ul #info {
-  flex-grow: 1;
-}
-
-.nav-bar ul #search {
-  flex-grow: 3;
-}
-
-.nav-bar ul #user {
-  flex-grow: 1;
 }
 
 .feed-container {
