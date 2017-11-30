@@ -1,5 +1,18 @@
 <?php
 
+function getAllTasksWithDueDate() {
+    global $dbh;
+
+    $stmt = $dbh->prepare(
+        "SELECT * FROM Task
+        WHERE duedate IS NOT NULL
+        ORDER BY duedate ASC, task_id DESC"
+    );
+    $stmt->execute();
+
+    return $stmt->fetchAll();
+}
+
 function getAllTasks() {
     global $dbh;
 

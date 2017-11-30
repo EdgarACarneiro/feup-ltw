@@ -151,60 +151,7 @@
         <section id="next-tasks">
             <h2>NEXTS TASKS</h2>
             <ul class="next-tasks">
-                <li class="next-tasks-item">
-                    <div class="date-of-next-taks">
-                        <p>12/12/17</p>
-                    </div>
-                    <ul>
-                        <li><h4>To-Do List 1 Title</h4>
-                        <h5>Project Associated</h5></li>
-                    </ul>
-                </li>
-                <li class="next-tasks-item">
-                    <div class="date-of-next-taks">
-                        <p>12/12/17</p>
-                    </div>
-                    <ul>
-                        <li><h4>To-Do List 1 Title</h4>
-                        <h5>Project Associated</h5></li>
-                    </ul>
-                </li>
-                <li class="next-tasks-item">
-                    <div class="date-of-next-taks">
-                        <p>12/12/17</p>
-                    </div>
-                    <ul>
-                        <li><h4>To-Do List 1 Title</h4>
-                        <h5>Project Associated</h5></li>
-                    </ul>
-                </li>
-                <li class="next-tasks-item">
-                    <div class="date-of-next-taks">
-                        <p>12/12/17</p>
-                    </div>
-                    <ul>
-                        <li><h4>To-Do List 1 Title</h4>
-                        <h5>Project Associated</h5></li>
-                    </ul>
-                </li>
-                <li class="next-tasks-item">
-                    <div class="date-of-next-taks">
-                        <p>12/12/17</p>
-                    </div>
-                    <ul>
-                        <li><h4>To-Do List 1 Title</h4>
-                        <h5>Project Associated</h5></li>
-                    </ul>
-                </li>
-                <li class="next-tasks-item">
-                    <div class="date-of-next-taks">
-                        <p>12/12/17</p>
-                    </div>
-                    <ul>
-                        <li><h4>To-Do List 1 Title</h4>
-                        <h5>Project Associated</h5></li>
-                    </ul>
-                </li>
+                <?php include_once('list_next_tasks.php'); ?>
             </ul>
         </section>
     </aside>
