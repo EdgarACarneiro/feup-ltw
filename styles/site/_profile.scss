@@ -18,6 +18,9 @@
     display: inline-block;
     width: auto;
     grid-area: image;
+    img {
+        border-radius: $round-border-radius;
+    }
 }
 
 .username-info {

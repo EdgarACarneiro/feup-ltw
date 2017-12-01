@@ -634,6 +634,10 @@ footer {
   grid-area: image;
 }
 
+.profile-pic img {
+  border-radius: 1em;
+}
+
 .username-info {
   grid-area: info;
   padding-left: 1em;
