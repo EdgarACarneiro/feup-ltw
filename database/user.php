@@ -5,7 +5,7 @@ function isLoginCorrect($username, $password) {
     $stmt = $dbh->prepare('SELECT * FROM user WHERE username = ? AND password = ?');
     $stmt->execute(array($username, sha1($password)));
     return $stmt->fetch() !== false;
-  }
+}
 
 function registerUser($username, $email, $password) {
   global $dbh;
@@ -16,6 +16,13 @@ function registerUser($username, $email, $password) {
 
   $stmt = $dbh->prepare('INSERT INTO User VALUES (?, ?, ?, NULL)');
   return $stmt->execute(array($username, $email, sha1($password)));
+}
+
+function getUserInfo($username) {
+  global $dbh;
+  $stmt = $dbh->prepare('SELECT * FROM user WHERE username = ?');
+  $stmt->execute(array($username));
+  return $stmt->fetch();
 }
 
 ?>
