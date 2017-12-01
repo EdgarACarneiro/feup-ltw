@@ -282,14 +282,17 @@ table {
 #info h1 {
   font-size: 2em;
   margin-left: 0;
+  margin-right: auto;
 }
 
 #info h1 a {
   color: white;
 }
 
-#info > * {
-  margin: auto;
+#info img {
+  margin-right: 0;
+  padding-right: 1em;
+  margin-left: auto;
 }
 
 #user > * {

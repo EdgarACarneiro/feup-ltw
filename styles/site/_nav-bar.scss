@@ -52,12 +52,15 @@
     h1 {
         font-size: 2em;
         margin-left: 0;
+        margin-right: auto;
         a {
             color: white;
         }
     }
-    >* {
-        margin: auto;
+    img {
+        margin-right: 0;
+        padding-right: 1em;
+        margin-left: auto;
     }
 }
 
