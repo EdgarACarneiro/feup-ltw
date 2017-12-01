@@ -6,7 +6,7 @@ include_once('templates/header.php');
 include_once('includes/init.php');
 ?>
 <script src="scripts/sign-in-up-switch.js"></script>
-<script src="scripts/login-nav.js"></script>
+<script src="scripts/login-nav.js" async></script>
 
 <body onload="loginNavDisplay()">
     
