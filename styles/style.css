@@ -611,6 +611,59 @@ footer {
 #sign-up {
   display: none;
 }
+
+.profile-container {
+  margin: 5%;
+  padding-top: 75px;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+  grid-template-areas: "image info" "edit edit";
+}
+
+@media (min-width: 1280px) {
+  .profile-container {
+    width: calc(100% - 350px - 10%);
+  }
+}
+
+.profile-pic {
+  margin: 1em;
+  display: inline-block;
+  width: auto;
+  grid-area: image;
+}
+
+.username-info {
+  grid-area: info;
+  padding-left: 1em;
+  padding-top: 2em;
+}
+
+.username-info h2 {
+  font-size: x-large;
+  font-weight: bold;
+  padding-bottom: 1em;
+  border-bottom: 2px solid #2b2e37;
+}
+
+.username-info h4 {
+  padding-top: 1em;
+  text-align: justify;
+  line-height: 1.5rem;
+}
+
+.edit-profile {
+  font-size: 1em;
+  margin-left: 60%;
+  border: none;
+  grid-area: edit;
+  text-align: center;
+}
+
+.edit-profile i {
+  font-size: x-large;
+}
  
 
  /*# sourceMappingURL= style.css.map */

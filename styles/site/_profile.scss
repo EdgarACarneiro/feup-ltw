@@ -1,0 +1,53 @@
+.profile-container {
+    margin: 5%;
+    padding-top: $nav-height;
+
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    grid-template-areas: "image info"
+                         "edit edit";
+
+    @media (min-width: #{$collapse-xl}) {
+        width: calc(100% - #{$calendar-width} - 10%);
+    }
+}
+
+.profile-pic {
+    margin: $default-margin;
+    display: inline-block;
+    width: auto;
+    grid-area: image;
+}
+
+.username-info {
+    grid-area: info;
+    padding-left: $default-padding;
+    padding-top: 2em;
+
+    h2 {
+        font-size: x-large;
+        font-weight: bold;
+        padding-bottom: $default-padding;
+        border-bottom: 2px solid $grey;
+    }
+
+    h4 {
+        padding-top: $default-padding;
+        text-align: justify;
+        line-height: 1.5rem;
+    }
+}
+
+.edit-profile {
+    font-size: 1em;
+    margin-left: 60%;
+    border: none;
+    grid-area: edit;
+    text-align: center;
+
+    i {
+        font-size: x-large;
+    }
+    
+}
