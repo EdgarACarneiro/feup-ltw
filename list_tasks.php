@@ -14,7 +14,7 @@ function listToDoList($task) {
     }
 
     echo '</ul>';
-    echo '<a href="action_add_item.php>';
+    echo '<a href="action_add_item.php">';
     echo '<i class="fa fa-plus-circle"></i>Add Item</a>';
     echo '</article>';
 }
