@@ -6,6 +6,8 @@ checkUserSession();
 include_once('templates/header.php');
 ?>
 
+<script src="scripts/edit_profile.js"></script>"
+
 <body onload="initCalendar()">
 
     <?php

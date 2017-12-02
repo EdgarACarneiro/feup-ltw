@@ -35,7 +35,7 @@ include_once('includes/init.php');
                 <fieldset>
                     <legend>Create an Account</legend>
                     Username: <input type="text" placeholder="username" name="username" required>
-                    E-mail: <input type="text" placeholder="email" name="email" required>
+                    E-mail: <input type="e-mail" placeholder="email" name="email" required>
                     Password: <input type="password" placeholder="password" name="password" required>
                     Repeat your Password: <input type="password" placeholder="password" name="password_check" required>
                     <input type="submit" value="Send">
