@@ -1,22 +1,32 @@
 <?php
 include_once('database/connection.php');
 include_once('database/tasks.php');
+?>
+<script type="text/javascript" src="database/ajax.js"></script>
 
+<?php
 $projects = getParentTasks();
 
 function listToDoList($task) {
-    echo '<article class="rnd-corners">';
-    echo '<h4>' . $task['title'] . '</h4>';
-    echo '<ul>';
+    ?>
+    <article class="rnd-corners">
+    <?php echo '<h4>'.$task['title'].'</h4>' ?>
+    <ul>
 
+    <?php
     foreach (getTasksItems($task['task_id']) as $item) {
         echo '<li>' . $item['description'] . '</li>';
     }
+    ?>
+    </ul>
+        <form <?php echo 'id="addItem@'.$task['task_id'].'" onsubmit="return addItemToTask('.$task['task_id'].')">' ?>
+            <input type="text" placeholder="Grab bananas" name="description" required>
+            <input type="submit" value="Add Item">
+        </form>
+    </article>
 
-    echo '</ul>';
-    echo '<a href="action_add_item.php">';
-    echo '<i class="fa fa-plus-circle"></i>Add Item</a>';
-    echo '</article>';
+    <?php
+    // echo '<button onclick="addItem(' . $task['task_id'] . ')"><i class="fa fa-plus-circle"></i> Add Item</button>';
 }
 
 function listProject($project) {
@@ -35,8 +45,7 @@ function listProject($project) {
         listToDoList($subtask);
     }
 
-    echo '<a href="action_add_task.php">';
-    echo '<i class="fa fa-plus-circle"></i>Add To-Do List</a>';
+    echo '<button><i class="fa fa-plus-circle"></i> Add To-Do List</button>';
     echo '</article>';
     echo '</div>';
 }
