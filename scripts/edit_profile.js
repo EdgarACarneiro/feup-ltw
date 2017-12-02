@@ -26,6 +26,9 @@ function changeToEdition() {
     upload_form.appendChild(input_file);
     profile_container.appendChild(upload_form);
 
+    //Eliminating edit-button
+    profile_container.removeChild(document.getElementsByClassName("edit-profile")[0]);
+
     //Adding Save changes button
     let save_btn = document.createElement("button");
     save_btn.setAttribute('type', "button");
@@ -40,10 +43,6 @@ function changeToEdition() {
     save_icon.appendChild(btn_label);
     save_btn.appendChild(save_icon);
     profile_container.appendChild(save_btn);
-    
-
-    //Eliminating edit-button
-    profile_container.removeChild(document.getElementsByClassName("edit-profile")[0]);
 }
 
 function changeToView() {
