@@ -7,42 +7,35 @@ include_once('database/tasks.php');
 <?php
 $projects = getParentTasks();
 
-function listToDoList($task) {
-    ?>
-    <article class="rnd-corners">
-    <?php echo '<h4>'.$task['title'].'</h4>' ?>
-    <ul>
-
-    <?php
+function listToDoList($task, $nested = true) {
+    if ($nested) {
+        echo '<article class="rnd-corners"><h4>'.$task['title'].'</h4>';
+    } else {
+        echo '<h2>'.$task['title'].'</h2>';
+    }    
+    
+    echo '<ul>';
     foreach (getTasksItems($task['task_id']) as $item) {
         echo '<li>' . $item['description'] . '</li>';
     }
-    ?>
-    </ul>
-        <form <?php echo 'id="addItem@'.$task['task_id'].'" onsubmit="return addItemToTask('.$task['task_id'].')">' ?>
-            <input type="text" placeholder="Grab bananas" name="description" required>
-            <input type="submit" value="Add Item">
-        </form>
-    </article>
 
-    <?php
-    // echo '<button onclick="addItem(' . $task['task_id'] . ')"><i class="fa fa-plus-circle"></i> Add Item</button>';
+    echo "<li><form onsubmit=\"return addItemToTask(this)\">";
+        echo '<input type="text" id="input@' . $task['task_id'] . '" placeholder="Grab bananas" name="description" required>';
+        echo '<input type="submit" value="Add Item">';
+    echo '</form></li>';
+    echo '</ul>';
+
+    if ($nested) echo '</article>';
 }
 
 function listProject($project) {
     echo '<div class="masonry-item shadow-cards rnd-corners">';
     echo '<article class="rnd-corners">';
-    echo '<h2>' . $project['title'] . '</h2>';
-    echo '<ul>';
-    
-    $items = getTasksItems($project['task_id']);
-    foreach ($items as $item) {
-        echo '<li>' . $item['description'] . '</li>';
-    }
-    echo '</ul>';
+
+    listToDoList($project, false);
 
     foreach (getChildTasks($project['task_id']) as $subtask) {
-        listToDoList($subtask);
+        listToDoList($subtask, true);
     }
 
     echo '<button><i class="fa fa-plus-circle"></i> Add To-Do List</button>';

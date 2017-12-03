@@ -136,7 +136,7 @@ function addItem($task_id, $description) {
         (task_id, description) VALUES
         (?, ?)"
     );
-    
+
     return $stmt->execute(array($task_id, $description));
 }
 
