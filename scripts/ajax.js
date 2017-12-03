@@ -5,27 +5,28 @@ function encodeForAjax(data) {
 }
 
 function requestListener () {
-    console.log(this.responseText);
+    if (this.status == 200) {
+        document.getElementsByTagName('html').innerHTML = this.responseText;
+        console.log(this.responseText);
+    }
 }
 
 function addItemToTask(form) {
     let input = form.firstChild;
-    let description = input.value.trim();
-    if (description.length == 0) {
+    let itemText = input.value.trim();
+    if (itemText.length == 0) {
         return false;
     }
 
-    let task_id = input.id.match(/@(\d+)/)[1]; // regex FTW
+    let task = input.id.match(/@(\d+)/)[1]; // regex FTW
 
     let request = new XMLHttpRequest();
     request.onload = requestListener;
-    let url = "action_add_item.php";
-    url += "?task_id=" + task_id;
-    url += "&description=" + description;
-    request.open("POST", url, true);
-    request.send();
+    request.open("post", "action_add_item.php", true);
+    request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    request.send(encodeForAjax({task_id: task, description: itemText}));
 
-    console.log({description, task_id});
+    console.log({itemText, task});
     return false; // preventing event from bubbling up
 }
 
