@@ -35,7 +35,7 @@
     font-size: 1rem;
     border-radius: $round-border-radius;
     border-color: $riptide;
-    background-color: $riptide;    
+    background-color: $riptide-faded;
     width: 15%;
     transition: width 0.5s;
 }
@@ -72,4 +72,14 @@
 .logout-btn {
     background: none;
     border: 0;
+}
+
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome and Opera */
 }

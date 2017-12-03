@@ -215,7 +215,7 @@ table {
   font-size: 1rem;
   border-radius: 1em;
   border-color: #80E3D1;
-  background-color: #80E3D1;
+  background-color: #78d4c3;
   width: 15%;
   transition: width 0.5s; }
 
@@ -243,6 +243,21 @@ table {
 .logout-btn {
   background: none;
   border: 0; }
+
+.unselectable {
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
+     supported by Chrome and Opera */ }
 
 .rnd-corners {
   border-radius: 0.2em; }

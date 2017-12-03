@@ -2,7 +2,7 @@
 include_once('database/connection.php');
 include_once('database/tasks.php');
 ?>
-<script type="text/javascript" src="database/ajax.js"></script>
+<script type="text/javascript" src="scripts/ajax.js"></script>
 
 <?php
 $projects = getParentTasks();
