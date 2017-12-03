@@ -1,3 +1,5 @@
+<script type="text/javascript" src="database/ajax.js"></script>
+
 <nav id="top-bar" class="nav-bar">
     <ul>
         <li id="info">
@@ -6,7 +8,7 @@
         </li>
         <li id="search">
             <i class="fa fa-search"></i>
-            <input type="text" id="search-bar" placeholder="Search" name="search">
+            <input type="text" id="search-bar" placeholder="Search" name="search" onkeyup="showSearchResult(this.value)">
         </li>
         <li id="user">
             <a href="index.php"><i class="fa fa-rss"></i></a>
