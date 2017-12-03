@@ -128,4 +128,16 @@ function getUsersTasks($username) {
     return $stmt->fetchAll();
 }
 
+function addItem($task_id, $description) {
+    global $dbh;
+
+    $stmt = $dbh->prepare(
+        "INSERT INTO Item
+        (task_id, description) VALUES
+        (?, ?)"
+    );
+    
+    return $stmt->execute(array($task_id, $description));
+}
+
 ?>
