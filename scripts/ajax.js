@@ -4,22 +4,21 @@ function encodeForAjax(data) {
     }).join('&');
 }
 
-function requestListener () {
+function requestListener() {
     if (this.status == 200) {
-        document.getElementsByTagName('html').innerHTML = this.responseText;
-        console.log(this.responseText);
+        document.getElementsByTagName('html')[0].innerHTML = this.responseText;
+        // console.log(JSON.parse(this.responseText));
+        // JSON.parse does not parse html
     }
 }
 
 function addItemToTask(form) {
-    let input = form.firstChild;
-    let itemText = input.value.trim();
+    let task = form.id.match(/@(\d+)/)[1]; // regex FTW
+    let itemText = form.firstChild.value.trim();
     if (itemText.length == 0) {
         return false;
     }
-
-    let task = input.id.match(/@(\d+)/)[1]; // regex FTW
-
+    
     let request = new XMLHttpRequest();
     request.onload = requestListener;
     request.open("post", "action_add_item.php", true);

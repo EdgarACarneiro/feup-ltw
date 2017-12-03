@@ -14,13 +14,13 @@ function listToDoList($task, $nested = true) {
         echo '<h2>'.$task['title'].'</h2>';
     }    
     
-    echo '<ul>';
+    echo '<ul id="ul@' . $task['task_id'] . '">';
     foreach (getTasksItems($task['task_id']) as $item) {
         echo '<li>' . $item['description'] . '</li>';
     }
 
-    echo "<li><form onsubmit=\"return addItemToTask(this)\">";
-        echo '<input type="text" id="input@' . $task['task_id'] . '" placeholder="Grab bananas" name="description" required>';
+    echo '<li><form id="form@' . $task['task_id'] . "\" onsubmit=\"return addItemToTask(this)\">";
+        echo '<input type="text" placeholder="Grab bananas" name="description" required>';
         echo '<input type="submit" value="Add Item">';
     echo '</form></li>';
     echo '</ul>';
