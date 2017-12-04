@@ -1,0 +1,18 @@
+/* The Modal (background) */
+
+.modal {
+    display: block;
+    position: absolute;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    height: calc(100% - 30vh);
+    width: 35%;
+    padding-top: 30vh;
+    padding-left: 32.5%;
+    padding-right: 32.5%;
+    margin: 0;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    transition-duration: 0.3s;
+}

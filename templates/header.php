@@ -11,5 +11,5 @@
     <link href="styles/style.css" rel="stylesheet">
     <link href="styles/fonts.css" rel="stylesheet">
     <link href="styles/fonts/font-awesome/sass/font-awesome.css" rel="stylesheet">
-    <script src="scripts/calendar.js"></script>
+    <script type="text/javascript" src="scripts/calendar.js"></script>
 </head>

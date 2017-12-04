@@ -16,16 +16,33 @@
 
 .nav-bar ul {
     #info {
+        flex-grow: 1;
         #logo-img {
             width: 60px;
         }
-        flex-grow: 1;
+        h1 {
+            font-size: 2em;
+            margin-left: 0;
+            margin-right: auto;
+            a {
+                color: white;
+            }
+        }
+        img {
+            margin-right: 0;
+            padding-right: 1em;
+            margin-left: auto;
+        }
     }
     #search {
         flex-grow: 3;
     }
     #user {
-        flex-grow: 1;
+        width: 13em;
+        >* {
+            align-content: center;
+            width: 4em;
+        }
     }
 }
 
@@ -35,7 +52,7 @@
     font-size: 1rem;
     border-radius: $round-border-radius;
     border-color: $riptide;
-    background-color: $riptide-faded;
+    //background-color: $riptide-faded;
     width: 15%;
     transition: width 0.5s;
 }
@@ -49,37 +66,23 @@
     left: 1.6em;
 }
 
-#info {
-    h1 {
-        font-size: 2em;
-        margin-left: 0;
-        margin-right: auto;
-        a {
-            color: white;
-        }
-    }
-    img {
-        margin-right: 0;
-        padding-right: 1em;
-        margin-left: auto;
-    }
-}
-
-#user>* {
-    margin: auto;
-}
-
 .logout-btn {
     background: none;
     border: 0;
 }
 
 .noselect {
-    -webkit-touch-callout: none; /* iOS Safari */
-      -webkit-user-select: none; /* Safari */
-       -khtml-user-select: none; /* Konqueror HTML */
-         -moz-user-select: none; /* Firefox */
-          -ms-user-select: none; /* Internet Explorer/Edge */
-              user-select: none; /* Non-prefixed version, currently
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently
                                     supported by Chrome and Opera */
 }
