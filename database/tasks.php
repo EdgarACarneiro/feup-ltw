@@ -137,7 +137,20 @@ function addItem($task_id, $description) {
         (?, ?)"
     );
 
-    return $stmt->execute(array($task_id, $description));
+    $stmt->execute(array($task_id, $description));
+
+    return getLastItem();
+}
+
+function getLastItem() {
+    global $dbh;
+
+    $stmt = $dbh->prepare(
+        "SELECT * FROM Item
+        ORDER BY item_id DESC LIMIT 1"
+    );
+    $stmt->execute();
+    return $stmt->fetch();
 }
 
 ?>

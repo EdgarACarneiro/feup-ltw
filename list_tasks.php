@@ -16,7 +16,7 @@ function listToDoList($task, $nested = true) {
     
     echo '<ul id="ul@' . $task['task_id'] . '">';
     foreach (getTasksItems($task['task_id']) as $item) {
-        echo '<li>' . $item['description'] . '</li>';
+        echo '<li id="li' . $item['item_id'] . '">' . $item['description'] . '</li>';
     }
 
     echo '<li><form id="form@' . $task['task_id'] . "\" onsubmit=\"return addItemToTask(this)\">";
