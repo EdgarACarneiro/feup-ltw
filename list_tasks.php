@@ -30,7 +30,6 @@ function listToDoList($task, $nested = true) {
 
 function listProject($project) {
     echo '<div class="masonry-item">';
-    echo '<div>';
     echo '<article class="rnd-corners shadow-cards">';
 
     listToDoList($project, false);
@@ -41,7 +40,6 @@ function listProject($project) {
 
     echo '<button><i class="fa fa-plus-circle"></i> Add To-Do List</button>';
     echo '</article>';
-    echo '</div>';
     echo '</div>';
 }
 
