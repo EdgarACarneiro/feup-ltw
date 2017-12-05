@@ -38,14 +38,29 @@ function listProject($project) {
         listToDoList($subtask, true);
     }
 
-    echo '<button><i class="fa fa-plus-circle"></i> Add To-Do List</button>';
+    echo '<button><i class="fa fa-plus-circle"></i> Add Sub-List</button>';
     echo '</article>';
     echo '</div>';
+}
+
+function listAddTaskButton() {
+    ?>
+
+    <div class="masonry-item" onclick="return addBlankTask('<?php echo $_SESSION['username']; ?>')">
+    <article class="rnd-corners shadow-cards">
+        <h1>ADD TASK</h1>
+        <i class="fa fa-plus-square-o fa-5x"></i>
+    </article>
+    </div>
+
+    <?php
 }
 
 foreach ($projects as $project) {
     listProject($project);
 }
+
+listAddTaskButton();
 
 ?>
 <script type="text/javascript" src="scripts/modal.js"></script>

@@ -28,7 +28,7 @@ function getAllTasks() {
 // Projects are Tasks that have no parent Task
 function getParentTasks($username) {
     global $dbh;
-    
+
     $stmt = $dbh->prepare(
         "SELECT T.task_id, T.title, T.category,
             T.priority, T.duedate, T.creator, T.parent_task
@@ -151,6 +151,31 @@ function getLastItem() {
     $stmt = $dbh->prepare(
         "SELECT * FROM Item
         ORDER BY item_id DESC LIMIT 1"
+    );
+    $stmt->execute();
+    return $stmt->fetch();
+}
+
+function addTask($creator) {
+    global $dbh;
+
+    $stmt = $dbh->prepare(
+        "INSERT INTO Task
+        (creator) VALUES
+        (?)"
+    );
+
+    $stmt->execute(array($creator));
+
+    return getLastTask();
+}
+
+function getLastTask() {
+    global $dbh;
+    
+    $stmt = $dbh->prepare(
+        "SELECT * FROM Task
+        ORDER BY task_id DESC LIMIT 1"
     );
     $stmt->execute();
     return $stmt->fetch();

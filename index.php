@@ -29,7 +29,7 @@ include_once('templates/header.php');
             </div>
         </div>
 
-        <div class="masonry">
+        <div class="masonry" id="tasks-list">
             <?php include_once('list_tasks.php'); ?>
         </div>
 
