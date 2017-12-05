@@ -5,7 +5,7 @@ include_once('database/tasks.php');
 <script type="text/javascript" src="scripts/ajax.js"></script>
 
 <?php
-$projects = getParentTasks();
+$projects = getParentTasks($_SESSION['username']);
 
 function listToDoList($task, $nested = true) {
     if ($nested) {

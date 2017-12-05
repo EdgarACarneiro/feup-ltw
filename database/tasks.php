@@ -26,15 +26,18 @@ function getAllTasks() {
 }
 
 // Projects are Tasks that have no parent Task
-function getParentTasks() {
+function getParentTasks($username) {
     global $dbh;
-
+    
     $stmt = $dbh->prepare(
-        "SELECT * FROM Task
-        WHERE parent_task IS NULL
-        ORDER BY task_id DESC"
+        "SELECT T.task_id, T.title, T.category,
+            T.priority, T.duedate, T.creator, T.parent_task
+        FROM Task T, UserTask UT
+        WHERE T.task_id = UT.task_id AND
+            (UT.username like ? OR T.creator like ?)"
     );
-    $stmt->execute();
+
+    $stmt->execute(array($username));
 
     return $stmt->fetchAll();
 }
