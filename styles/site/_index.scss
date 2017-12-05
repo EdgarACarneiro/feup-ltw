@@ -92,6 +92,7 @@ body {
     margin-top: calc(#{$masonry-gap} / 2);
     margin-bottom: calc(#{$masonry-gap} / 2);
     article {
+        z-index: 10;
         padding: $default-padding;
         background-color: $cards;
         /* TO-DO Lists inside Projects */
