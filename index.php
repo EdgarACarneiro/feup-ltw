@@ -29,6 +29,8 @@ include_once('templates/header.php');
             </div>
         </div>
 
+        <div id="modal" class="modal"></div>
+
         <div class="masonry">
             <?php include_once('list_tasks.php'); ?>
         </div>
