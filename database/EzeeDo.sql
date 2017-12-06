@@ -13,7 +13,6 @@ CREATE TABLE Task (
 	category VARCHAR,
 	priority INTEGER,
 	duedate DATE,
-	creator VARCHAR REFERENCES User NOT NULL,
 	parent_task INTEGER REFERENCES Task,
 	
 	CHECK(priority between 1 and 3)
@@ -74,18 +73,18 @@ INSERT INTO User VALUES (
 	'CEO of Microsoft, joined in June 1980, becoming Microsoft’s 30th employee. Billionaire.'
 );
 
-INSERT INTO Task VALUES (1, 'Revolutionary', 'tech', 2, '2017-12-15', 6, NULL);
-INSERT INTO Task VALUES (2, 'New Website', 'web', 1, '2018-06-13', 4, NULL);
-INSERT INTO Task VALUES (3, 'EzeeDo', 'ltw', 3, '2017-12-11', 1, NULL);
-INSERT INTO Task VALUES (4, 'RCOM', 'FEUP', 2, '2017-12-16', 4, NULL);
-INSERT INTO Task VALUES (5, 'Profile Page', 'FEUP', 1, '2017-12-09', 3, 3);
-INSERT INTO Task VALUES (6, 'Login Page', 'FEUP', 1, '2017-12-05', 3, 3);
-INSERT INTO Task VALUES (7, 'Main Page', 'FEUP', 1, '2017-12-08', 7, 3);
-INSERT INTO Task VALUES (8, 'Improve AI', 'Google', 2, NULL, 1, NULL);
-INSERT INTO Task VALUES (9, 'Prevent AI from killing humans', 'Google', 3, NULL, 2, 1);
-INSERT INTO Task VALUES (10, 'Supermarket List', 'shopping', 1, NULL, 1, NULL);
-INSERT INTO Task VALUES (11, 'Vacations', NULL, 1, NULL, 4, NULL);
-INSERT INTO Task VALUES (12, 'Get user Feedback', 'web', NULL, NULL, 2, NULL);
+INSERT INTO Task VALUES (1, 'Revolutionary', 'tech', 2, '2017-12-15', NULL);
+INSERT INTO Task VALUES (2, 'New Website', 'web', 1, '2018-06-13', NULL);
+INSERT INTO Task VALUES (3, 'EzeeDo', 'ltw', 3, '2017-12-11', NULL);
+INSERT INTO Task VALUES (4, 'RCOM', 'FEUP', 2, '2017-12-16', NULL);
+INSERT INTO Task VALUES (5, 'Profile Page', 'FEUP', 1, '2017-12-09', 3);
+INSERT INTO Task VALUES (6, 'Login Page', 'FEUP', 1, '2017-12-05', 3);
+INSERT INTO Task VALUES (7, 'Main Page', 'FEUP', 1, '2017-12-08', 3);
+INSERT INTO Task VALUES (8, 'Improve AI', 'Google', 2, NULL, NULL);
+INSERT INTO Task VALUES (9, 'Prevent AI from killing humans', 'Google', 3, NULL, 1);
+INSERT INTO Task VALUES (10, 'Supermarket List', 'shopping', 1, NULL, NULL);
+INSERT INTO Task VALUES (11, 'Vacations', NULL, 1, NULL, NULL);
+INSERT INTO Task VALUES (12, 'Get user Feedback', 'web', NULL, NULL, NULL);
 
 INSERT INTO Item VALUES (1, 2, NULL, 4, 1, 'Implement communication protocol', 1);
 INSERT INTO Item VALUES (2, NULL, NULL, NULL, 1, 'Make UI user enjoyable', 0);

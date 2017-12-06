@@ -61,9 +61,8 @@ function listProject($project) {
     echo '</div>';
 }
 
-function listAddTaskButton() {
+function listAddTaskButton() { // TODO
     ?>
-
     <div class="masonry-item" onclick="return addBlankTask('<?php echo $_SESSION['username']; ?>')">
     <article class="rnd-corners shadow-cards">
         <h1>ADD TASK</h1>
@@ -77,8 +76,6 @@ function listAddTaskButton() {
 foreach ($projects as $project) {
     listProject($project);
 }
-
-listAddTaskButton();
 
 ?>
 <script type="text/javascript" src="scripts/modal.js"></script>

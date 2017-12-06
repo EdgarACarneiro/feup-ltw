@@ -5,14 +5,15 @@ function getAllTasksWithDueDate($username) {
 
     $stmt = $dbh->prepare(
         "SELECT
-            T.task_id, T.title, T.category, T.priority,
-            T.duedate, T.creator, T.parent_task
+            T.task_id, T.title, T.category,
+            T.priority, T.duedate, T.parent_task
         FROM Task T, UserTask UT
         WHERE
-            T.task_id = UT.task_id AND T.duedate IS NOT NULL AND
-            (UT.username like ? OR T.creator like ?)"
+            T.task_id = UT.task_id AND
+            T.duedate IS NOT NULL AND
+            UT.username like ?"
     );
-    $stmt->execute(array($username, $username));
+    $stmt->execute(array($username));
     
     return $stmt->fetchAll();
 }
@@ -35,14 +36,32 @@ function getParentTasks($username) {
 
     $stmt = $dbh->prepare(
         "SELECT
-            T.task_id, T.title, T.category, T.priority,
-            T.duedate, T.creator, T.parent_task
+            T.task_id, T.title, T.category,
+            T.priority, T.duedate, T.parent_task
         FROM Task T, UserTask UT
         WHERE
-            T.task_id = UT.task_id AND T.parent_task IS NULL AND
-            (UT.username like ? OR T.creator like ?)"
+            T.task_id = UT.task_id AND
+            T.parent_task IS NOT NULL AND
+            UT.username like ?"
     );
-    $stmt->execute(array($username, $username));
+    $stmt->execute(array($username));
+
+    return $stmt->fetchAll();
+}
+
+function getUsersTasks($username) {
+    global $dbh;
+    
+    $stmt = $dbh->prepare(
+        "SELECT
+            T.task_id, T.title, T.category,
+            T.priority, T.duedate, T.parent_task
+        FROM Task T, UserTask UT
+        WHERE
+            T.task_id = UT.task_id AND
+            UT.username like ?"
+    );
+    $stmt->execute(array($username));
 
     return $stmt->fetchAll();
 }
@@ -121,21 +140,6 @@ function getTasksItems($task_id) {
     return $stmt->fetchAll();
 }
 
-function getUsersTasks($username) {
-    global $dbh;
-    
-    $stmt = $dbh->prepare(
-        "SELECT * FROM Task
-        WHERE task_id in (
-            SELECT task_id FROM UserTask
-            WHERE username = ?
-        )"
-    );
-    $stmt->execute(array($username));
-
-    return $stmt->fetchAll();
-}
-
 function addItem($task_id, $description) {
     global $dbh;
 
@@ -159,20 +163,6 @@ function getLastItem() {
     );
     $stmt->execute();
     return $stmt->fetch();
-}
-
-function addTask($creator) {
-    global $dbh;
-
-    $stmt = $dbh->prepare(
-        "INSERT INTO Task
-        (creator) VALUES
-        (?)"
-    );
-
-    $stmt->execute(array($creator));
-
-    return getLastTask();
 }
 
 function getLastTask() {
