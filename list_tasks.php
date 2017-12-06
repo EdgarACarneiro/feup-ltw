@@ -16,19 +16,7 @@ function listToDoList($task, $nested = true) {
     
     echo '<ul id="ul@' . $task['task_id'] . '">';
     foreach (getTasksItems($task['task_id']) as $item) {
-        ?><li class="todo">
-        <input class="todo__state" type="checkbox" <?php if ($item['completed'] == 1) echo "checked"; ?>/>
-        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 25 25" class="todo__icon">
-            <use xlink:href="#todo__box" class="todo__box"></use>
-            <use xlink:href="#todo__check" class="todo__check"></use>
-            <use xlink:href="#todo__circle" class="todo__circle"></use>
-        </svg>
-        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 200 10" class="todo__icon todo__icon_line">
-        <use xlink:href="#todo__line" class="todo__line"></use>
-        </svg>
-        <div id="li@<?php echo $item['item_id']; ?>" class="todo__text" ><?php echo $item['description']; ?></div>
-        </li>
-        <?php
+        listItem($item);
     }
 
     ?>
@@ -40,6 +28,22 @@ function listToDoList($task, $nested = true) {
 
     <?php
     if ($nested) echo '</article>';
+}
+
+function listItem($item) {
+    ?><li class="todo">
+    <input class="todo__state" type="checkbox" <?php if ($item['completed'] == 1) echo "checked"; ?>/>
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 25 25" class="todo__icon">
+        <use xlink:href="#todo__box" class="todo__box"></use>
+        <use xlink:href="#todo__check" class="todo__check"></use>
+        <use xlink:href="#todo__circle" class="todo__circle"></use>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 200 10" class="todo__icon todo__icon_line">
+    <use xlink:href="#todo__line" class="todo__line"></use>
+    </svg>
+    <div id="li@<?php echo $item['item_id']; ?>" class="todo__text" ><?php echo $item['description']; ?></div>
+    </li>
+    <?php
 }
 
 function listProject($project) {
