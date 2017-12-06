@@ -1,15 +1,19 @@
 <?php
 
-function getAllTasksWithDueDate() {
+function getAllTasksWithDueDate($username) {
     global $dbh;
 
     $stmt = $dbh->prepare(
-        "SELECT * FROM Task
-        WHERE duedate IS NOT NULL
-        ORDER BY duedate ASC, task_id DESC"
+        "SELECT
+            T.task_id, T.title, T.category, T.priority,
+            T.duedate, T.creator, T.parent_task
+        FROM Task T, UserTask UT
+        WHERE
+            T.task_id = UT.task_id AND T.duedate IS NOT NULL AND
+            (UT.username like ? OR T.creator like ?)"
     );
-    $stmt->execute();
-
+    $stmt->execute(array($username, $username));
+    
     return $stmt->fetchAll();
 }
 
@@ -30,14 +34,15 @@ function getParentTasks($username) {
     global $dbh;
 
     $stmt = $dbh->prepare(
-        "SELECT T.task_id, T.title, T.category,
-            T.priority, T.duedate, T.creator, T.parent_task
+        "SELECT
+            T.task_id, T.title, T.category, T.priority,
+            T.duedate, T.creator, T.parent_task
         FROM Task T, UserTask UT
-        WHERE T.task_id = UT.task_id AND
+        WHERE
+            T.task_id = UT.task_id AND T.parent_task IS NULL AND
             (UT.username like ? OR T.creator like ?)"
     );
-
-    $stmt->execute(array($username));
+    $stmt->execute(array($username, $username));
 
     return $stmt->fetchAll();
 }

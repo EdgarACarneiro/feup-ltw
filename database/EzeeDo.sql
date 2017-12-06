@@ -26,8 +26,10 @@ CREATE TABLE Item (
 	assigneduser VARCHAR REFERENCES User,
 	task_id INTEGER REFERENCES Task NOT NULL,
 	description VARCHAR NOT NULL,
+	completed BOOLEAN,
 	
-	CHECK(priority between 0 and 3)
+	CHECK(priority between 0 and 3),
+	CHECK(completed between 0 and 1)	
 );
 
 CREATE TABLE UserTask (
@@ -85,35 +87,35 @@ INSERT INTO Task VALUES (10, 'Supermarket List', 'shopping', 1, NULL, 1, NULL);
 INSERT INTO Task VALUES (11, 'Vacations', NULL, 1, NULL, 4, NULL);
 INSERT INTO Task VALUES (12, 'Get user Feedback', 'web', NULL, NULL, 2, NULL);
 
-INSERT INTO Item VALUES (1, 2, NULL, 4, 1, 'Implement communication protocol');
-INSERT INTO Item VALUES (2, NULL, NULL, NULL, 1, 'Make UI user enjoyable');
-INSERT INTO Item VALUES (3, 1, 1, 5, 1, 'Gather all the statistics for the report');
-INSERT INTO Item VALUES (4, 2, 6, 1, 5, 'Add a background for User profiles');
-INSERT INTO Item VALUES (5, NULL, 7, NULL, 5, 'Implment PHP reading from database for User information');
-INSERT INTO Item VALUES (6, NULL, NULL, NULL, 6, 'Get error message if email is repeated');
-INSERT INTO Item VALUES (7, NULL, NULL, NULL, 3, 'Add a animation to the page, making it more visually pleasant');
-INSERT INTO Item VALUES (8, 3, 8, 7, 6, 'Eror on User sign in: fix');
-INSERT INTO Item VALUES (9, NULL, 3, NULL, 3, 'Change page main color - CSS');
-INSERT INTO Item VALUES (10, 1, 2, NULL, 3, 'Change icone in the page header');
-INSERT INTO Item VALUES (11, NULL, NULL, NULL, 4, 'Make the flow design more smooth');
-INSERT INTO Item VALUES (12, 3, 1, NULL, 4, 'Error: Projects not getting their respective color correctly');
-INSERT INTO Item VALUES (13, NULL, NULL, NULL, 5, 'AI performance is really bad. Please look at the code boysss');
-INSERT INTO Item VALUES (14, NULL, NULL, 6, 6, 'AI try to murder people when they hear specific sentences');
-INSERT INTO Item VALUES (15, 2, NULL, 7, 6, 'Make AIs unable to harm humans, under any circumstance');
-INSERT INTO Item VALUES (16, NULL, NULL, NULL, 10, 'apples');
-INSERT INTO Item VALUES (17, NULL, NULL, NULL, 10, 'bananas');
-INSERT INTO Item VALUES (18, NULL, NULL, NULL, 10, 'rice');
-INSERT INTO Item VALUES (19, NULL, NULL, NULL, 10, 'toilet paper');
-INSERT INTO Item VALUES (20, NULL, NULL, NULL, 10, 'chocolate');
-INSERT INTO Item VALUES (21, NULL, NULL, NULL, 10, 'bread');
-INSERT INTO Item VALUES (22, NULL, NULL, NULL, 10, 'water');
-INSERT INTO Item VALUES (23, NULL, NULL, NULL, 10, 'milk');
-INSERT INTO Item VALUES (24, NULL, NULL, NULL, 10, 'aftershave');
-INSERT INTO Item VALUES (25, 3, NULL, NULL, 8, 'See price of flights to Oporto');
-INSERT INTO Item VALUES (26, NULL, 6, NULL, 8, 'Confirm dinner with Steve in 3rd March');
-INSERT INTO Item VALUES (27, NULL, 7, NULL, 9, 'Try a survey online about the site aspect');
-INSERT INTO Item VALUES (28, NULL, 7, NULL, 9, 'Bring people on to try the beta');
-INSERT INTO Item VALUES (29, NULL, 6, NULL, 9, 'Make online survey about how they would want a site like ours to look like');
+INSERT INTO Item VALUES (1, 2, NULL, 4, 1, 'Implement communication protocol', 1);
+INSERT INTO Item VALUES (2, NULL, NULL, NULL, 1, 'Make UI user enjoyable', 0);
+INSERT INTO Item VALUES (3, 1, 1, 5, 1, 'Gather all the statistics for the report', 1);
+INSERT INTO Item VALUES (4, 2, 6, 1, 5, 'Add a background for User profiles', 0);
+INSERT INTO Item VALUES (5, NULL, 7, NULL, 5, 'Implment PHP reading from database for User information', 0);
+INSERT INTO Item VALUES (6, NULL, NULL, NULL, 6, 'Get error message if email is repeated', 0);
+INSERT INTO Item VALUES (7, NULL, NULL, NULL, 3, 'Add a animation to the page, making it more visually pleasant', 0);
+INSERT INTO Item VALUES (8, 3, 8, 7, 6, 'Eror on User sign in: fix', 0);
+INSERT INTO Item VALUES (9, NULL, 3, NULL, 3, 'Change page main color - CSS', 0);
+INSERT INTO Item VALUES (10, 1, 2, NULL, 3, 'Change icone in the page header', 0);
+INSERT INTO Item VALUES (11, NULL, NULL, NULL, 4, 'Make the flow design more smooth', 0);
+INSERT INTO Item VALUES (12, 3, 1, NULL, 4, 'Error: Projects not getting their respective color correctly', 0);
+INSERT INTO Item VALUES (13, NULL, NULL, NULL, 5, 'AI performance is really bad. Please look at the code boysss', 0);
+INSERT INTO Item VALUES (14, NULL, NULL, 6, 6, 'AI try to murder people when they hear specific sentences', 0);
+INSERT INTO Item VALUES (15, 2, NULL, 7, 6, 'Make AIs unable to harm humans, under any circumstance', 0);
+INSERT INTO Item VALUES (16, NULL, NULL, NULL, 10, 'apples', 0);
+INSERT INTO Item VALUES (17, NULL, NULL, NULL, 10, 'bananas', 0);
+INSERT INTO Item VALUES (18, NULL, NULL, NULL, 10, 'rice', 0);
+INSERT INTO Item VALUES (19, NULL, NULL, NULL, 10, 'toilet paper', 0);
+INSERT INTO Item VALUES (20, NULL, NULL, NULL, 10, 'chocolate', 0);
+INSERT INTO Item VALUES (21, NULL, NULL, NULL, 10, 'bread', 0);
+INSERT INTO Item VALUES (22, NULL, NULL, NULL, 10, 'water', 0);
+INSERT INTO Item VALUES (23, NULL, NULL, NULL, 10, 'milk', 0);
+INSERT INTO Item VALUES (24, NULL, NULL, NULL, 10, 'aftershave', 0);
+INSERT INTO Item VALUES (25, 3, NULL, NULL, 8, 'See price of flights to Oporto', 0);
+INSERT INTO Item VALUES (26, NULL, 6, NULL, 8, 'Confirm dinner with Steve in 3rd March', 0);
+INSERT INTO Item VALUES (27, NULL, 7, NULL, 9, 'Try a survey online about the site aspect', 0);
+INSERT INTO Item VALUES (28, NULL, 7, NULL, 9, 'Bring people on to try the beta', 0);
+INSERT INTO Item VALUES (29, NULL, 6, NULL, 9, 'Make online survey about how they would want a site like ours to look like', 0);
 
 INSERT INTO UserTask VALUES ('SherylSandberg', 2);
 INSERT INTO UserTask VALUES ('SherylSandberg', 3);
