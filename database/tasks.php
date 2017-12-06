@@ -41,7 +41,7 @@ function getParentTasks($username) {
         FROM Task T, UserTask UT
         WHERE
             T.task_id = UT.task_id AND
-            T.parent_task IS NOT NULL AND
+            T.parent_task IS NULL AND
             UT.username like ?"
     );
     $stmt->execute(array($username));
