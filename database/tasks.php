@@ -176,4 +176,18 @@ function getLastTask() {
     return $stmt->fetch();
 }
 
+function setItemCompleted($item_id, $completed) {
+    global $dbh;
+    
+    $stmt = $dbh->prepare(
+        "UPDATE Item
+        SET completed = ?
+        WHERE item_id = ?"
+    );
+
+    $stmt->execute(array($completed, $item_id));
+
+    return getItemById($item_id);
+}
+
 ?>

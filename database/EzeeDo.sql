@@ -15,7 +15,7 @@ CREATE TABLE Task (
 	duedate DATE,
 	parent_task INTEGER REFERENCES Task,
 	
-	CHECK(priority between 1 and 3)
+	CHECK(priority between 0 and 3)
 );
 
 CREATE TABLE Item (

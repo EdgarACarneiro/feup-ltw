@@ -6,7 +6,7 @@ function encodeForAjax(data) {
 
 function addItemToTask(form) {
     let task = form.id.match(/@(\d+)/)[1];
-    let inputNode = form.firstChild;
+    let inputNode = form.lastElementChild;
     let itemText = inputNode.value.trim();
     if (itemText.length == 0) {
         return false;
@@ -34,9 +34,27 @@ function addItemListener() {
     }
 }
 
+function setItemCompleted(checkbox) {
+    let lastSibling = checkbox.parentNode.lastChild.previousSibling;
+    let id = lastSibling.id.match(/@(\d+)/)[1];
+    let checked = checkbox.checked;
+
+    let request = new XMLHttpRequest();
+    request.onload = logThisItem;
+    request.open("post", "action_check_item.php", true);
+    request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    request.send(encodeForAjax({item_id: id, completed: checked ? 1 : 0}));
+
+    return true;
+}
+
+function logThisItem() {
+    console.log(JSON.parse(this.responseText));
+}
+
 function createItemNode(item) {
     let node = document.createElement("li");
-    node.classList.add('todo');
+    node.classList.add('todo'); // TODO
     listItem.innerHTML = item.description;
 }
 
