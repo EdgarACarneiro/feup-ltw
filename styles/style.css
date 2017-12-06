@@ -195,9 +195,20 @@ input[type=button],
 input[type=text],
 input[type=file],
 textarea,
-form.image-uploader,
 button {
   font-family: 'Montserrat', sans-serif;
+}
+
+button:focus,
+input:focus {
+  outline: 0;
+}
+
+input[type=text],
+input[type=password],
+input[type=e-mail] {
+  border-radius: 0.2em;
+  border-style: initial;
 }
 
 .btn-bar {
@@ -331,6 +342,7 @@ button {
   padding-left: 2.5em;
   font-size: 1rem;
   border-radius: 1em;
+  border-style: inset;
   border-color: #80E3D1;
   background-color: #78d4c3;
   width: 15%;
@@ -708,6 +720,12 @@ textarea {
   width: 100%;
   height: 40%;
   border-color: #2b2e37;
+  border-radius: 0.2em;
+  resize: none;
+}
+
+textarea:focus {
+  outline-color: #80E3D1;
 }
 
 .image-uploader {

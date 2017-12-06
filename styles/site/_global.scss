@@ -33,13 +33,23 @@ body {
     border-radius: 50%;
 }
 
-
 input[type=submit],
 input[type=button],
 input[type=text],
 input[type=file],
 textarea,
-form.image-uploader,
 button {
     font-family: 'Montserrat', sans-serif;
+}
+
+button:focus, 
+input:focus {
+    outline:0;
+}
+
+input[type=text],
+input[type=password],
+input[type=e-mail] {
+    border-radius: $border-radius;
+    border-style: initial;
 }
