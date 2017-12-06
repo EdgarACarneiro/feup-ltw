@@ -2,8 +2,9 @@
 include_once('includes/init.php');
 include_once('database/tasks.php');
 
-// TODO
-// add item with AJAX?
+if ( NULL != ($task = addTask($_POST['creator'])) ) {
+    // log error ?
+}
 
-header('Location: ' . $_SERVER['HTTP_REFERER']);
+echo json_encode($task);
 ?>
