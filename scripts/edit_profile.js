@@ -35,13 +35,16 @@ function changeToEdition() {
     save_btn.setAttribute('class', "btn save-changes");
     save_btn.setAttribute('onclick', ""); //TODO ADD FUNCTION
 
+    let save_btn_content = document.createElement("span");
+
     let save_icon = document.createElement("i");
     save_icon.setAttribute('class', "fa fa-floppy-o");
 
     let btn_label = document.createTextNode(" Save!");
 
-    save_icon.appendChild(btn_label);
-    save_btn.appendChild(save_icon);
+    save_btn_content.appendChild(save_icon);
+    save_btn_content.appendChild(btn_label);
+    save_btn.appendChild(save_btn_content);
     profile_container.appendChild(save_btn);
 }
 
