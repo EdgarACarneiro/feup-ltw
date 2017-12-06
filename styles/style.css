@@ -732,7 +732,6 @@ textarea {
   position: relative;
   padding: 0.4em 1em 0.4em 16%;
   margin: 0 auto;
-  cursor: pointer;
   border-bottom: solid 1px #ddd;
 }
 
@@ -745,6 +744,11 @@ textarea {
   top: 0;
   left: 0;
   opacity: 0;
+  z-index: 2;
+  width: 25px;
+  height: 100%;
+  margin: 0;
+  cursor: pointer;
 }
 
 .todo__text {
@@ -757,7 +761,7 @@ textarea {
   top: 0;
   bottom: 0;
   left: 0;
-  width: 200px;
+  width: 25px;
   height: auto;
   margin: auto;
   fill: none;
