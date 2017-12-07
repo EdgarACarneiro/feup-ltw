@@ -1,41 +1,45 @@
 // human-readable month name
-var months_labels = ['January', 'February', 'March', 'April',
+let months_labels = ['January', 'February', 'March', 'April',
     'May', 'June', 'July', 'August', 'September',
     'October', 'November', 'December'
 ];
 
 // number of days for each month
-var days_in_month = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+let days_in_month = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
-var current_Date = new Date();
+let current_Date = new Date();
 
-var current_Year;
-var current_Month;
-var current_Day;
+let current_Year;
+let current_Month;
+let current_Day;
 
-var draw_Year;
-var draw_Month;
+let draw_Year;
+let draw_Month;
 
-var active_row_id;
+let active_row_id;
+
+function updateLeapYear() {
+    if (draw_Year % 4 == 0 && draw_Month == 1) {
+        days_in_month[draw_Month] = 29;
+    } else if (draw_Month == 1) {
+        days_in_month[draw_Month] = 28;
+    }
+}
 
 function drawCalendar() {
     document.getElementById("label-year").textContent = draw_Year;
     document.getElementById("label-month").textContent = months_labels[draw_Month];
-    let monthToDisplay = new Date(draw_Year, draw_Month, 1);
 
-    let i, index = monthToDisplay.getDay();
+    let i, index = (new Date(draw_Year, draw_Month, 1)).getDay();
     for (i = 0; i < index; i++) {
         document.getElementById(i.toString()).textContent = "";
     }
     for (i = 1; i <= days_in_month[draw_Month]; i++) {
         let currentCell = document.getElementById(index.toString());
         currentCell.textContent = i;
-        if (i == current_Day && draw_Month == current_Month && draw_Year == current_Year) {
-            currentCell.classList.add("calendar-today");
-            active_row_id = currentCell.parentElement.parentElement.id;
-        } else {
-            currentCell.classList.remove("calendar-today");
-        }
+
+        addTaskNotification(currentCell, i);
+        updateTodayState(currentCell, i);
         index++;
     }
     for (; index < 37; index++) {
@@ -49,6 +53,7 @@ function initCalendar() {
     current_Month = current_Date.getMonth();
     draw_Month = current_Month;
     current_Day = current_Date.getDate();
+    readNextTasks();
     drawCalendar();
 }
 
@@ -58,6 +63,7 @@ function nextMonth() {
         draw_Month = 0;
         draw_Year++;
     }
+    updateLeapYear();
     drawCalendar();
 }
 
@@ -67,6 +73,7 @@ function prevMonth() {
         draw_Month = 11;
         draw_Year--;
     }
+    updateLeapYear();
     drawCalendar();
 }
 
@@ -100,4 +107,53 @@ function maximizeCalendar() {
     }
     document.getElementById("minimize").style.visibility = "inline-block";
     document.getElementById("maximize").style.visibility = "node";
+}
+
+function updateTodayState(currentCell, day) {
+    if (day == current_Day && draw_Month == current_Month && draw_Year == current_Year) {
+        currentCell.classList.add("calendar-today");
+        active_row_id = currentCell.parentElement.parentElement.id;
+    } else {
+        currentCell.classList.remove("calendar-today");
+    }
+}
+
+var nextTasksMap = new Map();
+
+function readNextTasks() {
+    let nextTasks = document.getElementById('next-tasks').lastElementChild;
+    Array.from(nextTasks.children).forEach(function(element) {
+        nextTasksMap.set(element.children[0].children[0].innerText, element.children[1].className);
+    });
+}
+
+function getDateKey(day) {
+    let date;
+    let dayString = day.toString();
+    let monthString = (draw_Month + 1).toString();
+    if (day < 10) {
+        dayString = "0" + day.toString();
+    }
+    if (draw_Month < 9) {
+        monthString = "0" + (draw_Month + 1).toString();
+    }
+    date = draw_Year.toString() + "-" + monthString + "-" + dayString;
+    return date;
+}
+
+function addTaskNotification(currentCell, day) {
+    if (nextTasksMap.has(getDateKey(day))) {
+        if (currentCell.parentElement.childElementCount == 1) {
+            let circle = document.createElement("i");
+            circle.classList.add("fa");
+            circle.classList.add("fa-circle");
+            circle.classList.add(nextTasksMap.get(getDateKey(day)));
+            currentCell.parentElement.appendChild(circle);
+        } else {
+            currentCell.parentElement.lastChild.classList.remove(currentCell.parentElement.lastChild.classList.item(2));
+            currentCell.parentElement.lastChild.classList.add(nextTasksMap.get(getDateKey(day)));
+        }
+    } else if (currentCell.parentElement.childElementCount > 1) {
+        currentCell.parentElement.removeChild(currentCell.parentElement.lastChild);
+    }
 }

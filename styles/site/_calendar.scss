@@ -43,12 +43,32 @@
             height: calc((#{$calendar-width} - #{$default-margin} * 2) / 7);
             text-align: center;
             vertical-align: middle;
+            position: relative;
             p {
                 line-height: 2;
                 border-radius: 50%;
                 height: 2em;
                 width: 2em;
                 margin: auto;
+            }
+            i.fa-circle {
+                position: absolute;
+                bottom: 5px;
+                left: 0;
+                width: 100%;
+                font-size: 0.3em;
+            }
+            i.fa-circle.priority-0 {
+                color: $priority-0;
+            }
+            i.fa-circle.priority-1 {
+                color: $priority-1;
+            }
+            i.fa-circle.priority-2 {
+                color: $priority-2;
+            }
+            i.fa-circle.priority-3 {
+                color: $priority-3;
             }
         }
         .calendar-today {
@@ -100,6 +120,18 @@
             margin-right: $default-margin;
             margin-top: 0.5em;
             color: $riptide;
+        }
+        ul.priority-0:before {
+            color: $priority-0;
+        }
+        ul.priority-1:before {
+            color: $priority-1;
+        }
+        ul.priority-2:before {
+            color: $priority-2;
+        }
+        ul.priority-3:before {
+            color: $priority-3;
         }
     }
 }

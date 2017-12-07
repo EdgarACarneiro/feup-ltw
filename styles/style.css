@@ -287,13 +287,13 @@ table {
   font-size: 1rem;
   border-radius: 1em;
   border-color: #80E3D1;
-  background-color: #78d4c3;
   width: 15%;
   transition: width 0.5s;
 }
 
 #search-bar:focus {
   width: 70%;
+  outline: none;
 }
 
 .fa-search {
@@ -500,6 +500,7 @@ footer {
   height: calc((350px - 1em * 2) / 7);
   text-align: center;
   vertical-align: middle;
+  position: relative;
 }
 
 .calendar-widget #cal-frame td p,
@@ -509,6 +510,35 @@ footer {
   height: 2em;
   width: 2em;
   margin: auto;
+}
+
+.calendar-widget #cal-frame td i.fa-circle,
+.calendar-widget #cal-frame th i.fa-circle {
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  width: 100%;
+  font-size: 0.3em;
+}
+
+.calendar-widget #cal-frame td i.fa-circle.priority-0,
+.calendar-widget #cal-frame th i.fa-circle.priority-0 {
+  color: #cfd8dc;
+}
+
+.calendar-widget #cal-frame td i.fa-circle.priority-1,
+.calendar-widget #cal-frame th i.fa-circle.priority-1 {
+  color: #43a047;
+}
+
+.calendar-widget #cal-frame td i.fa-circle.priority-2,
+.calendar-widget #cal-frame th i.fa-circle.priority-2 {
+  color: #ffeb3b;
+}
+
+.calendar-widget #cal-frame td i.fa-circle.priority-3,
+.calendar-widget #cal-frame th i.fa-circle.priority-3 {
+  color: #f4511e;
 }
 
 .calendar-widget #cal-frame .calendar-today {
@@ -567,6 +597,22 @@ footer {
   margin-right: 1em;
   margin-top: 0.5em;
   color: #80E3D1;
+}
+
+#next-tasks .next-tasks-item ul.priority-0:before {
+  color: #cfd8dc;
+}
+
+#next-tasks .next-tasks-item ul.priority-1:before {
+  color: #43a047;
+}
+
+#next-tasks .next-tasks-item ul.priority-2:before {
+  color: #ffeb3b;
+}
+
+#next-tasks .next-tasks-item ul.priority-3:before {
+  color: #f4511e;
 }
 
 .main {
