@@ -2,7 +2,7 @@
 include_once('includes/init.php');
 include_once('database/tasks.php');
 
-if ( NULL != ($item = addItem($_POST['task_id'], $_POST['description'])) ) {
+if ( NULL != ($item = addItem($_POST['task_id'], htmlspecialchars($_POST['description']))) ) {
     // log error ?
 }
 

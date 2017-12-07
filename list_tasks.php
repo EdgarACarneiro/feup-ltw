@@ -22,7 +22,6 @@ function listToDoList($task, $nested = true) {
     ?>
     <li><form id="form@<?php echo $task['task_id']; ?>" onsubmit="return addItemToTask(this)">
     <input type="text" placeholder="Grab bananas" name="description" required>
-    <!-- <input type="submit" value="Add Item"> -->
     </form></li>
     </ul>
 
@@ -61,21 +60,10 @@ function listProject($project) {
     echo '</div>';
 }
 
-function listAddTaskButton() { // TODO
-    ?>
-    <div class="masonry-item" onclick="return addBlankTask('<?php echo $_SESSION['username']; ?>')">
-    <article class="rnd-corners shadow-cards">
-        <h1>ADD TASK</h1>
-        <i class="fa fa-plus-square-o fa-5x"></i>
-    </article>
-    </div>
-
-    <?php
-}
-
 foreach ($projects as $project) {
     listProject($project);
 }
 
 ?>
+
 <script type="text/javascript" src="scripts/modal.js"></script>
