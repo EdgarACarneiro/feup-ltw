@@ -398,6 +398,33 @@ input[type=e-mail] {
   }
 }
 
+#addItem {
+  background-color: #fafafa;
+  width: 50%;
+  height: 2.5em;
+  margin: 2.5em auto;
+  display: flex;
+}
+
+#addItem form {
+  height: 100%;
+  width: 100%;
+}
+
+#addItem form input {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+}
+
+#addItem form #submit {
+  display: none;
+}
+
+#addItem input:focus {
+  background-color: red;
+}
+
 .btn-group > a {
   border-right-style: solid;
   border-right-width: 2px;
@@ -846,7 +873,9 @@ textarea:focus {
 }
 
 .todo__icon_line {
-  width: 100%;
+  width: 90%;
+  z-index: -1;
+  margin-left: 10%;
 }
 
 .todo__line,
@@ -922,6 +951,10 @@ textarea:focus {
 
 .todo__state:checked ~ .todo__icon .todo__circle {
   animation-name: explode;
+}
+
+.todo__state:checked ~ .todo__icon_line {
+  z-index: 0;
 }
  
 

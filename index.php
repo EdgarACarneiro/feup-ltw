@@ -20,7 +20,7 @@ include_once('templates/header.php');
         <stop offset="100%"  stop-color="#80E3D1"/>
         </linearGradient>
 
-        <path id="todo__line" stroke="url(#lineGradient)" d="M21 5h168v0.1z"></path>
+        <path id="todo__line" stroke="url(#lineGradient)" d="M4 5h168v0.01z"></path>
         <path id="todo__box" stroke="url(#boxGradient)" d="M21 12.7v5c0 1.3-1 2.3-2.3 2.3H8.3C7 20 6 19 6 17.7V7.3C6 6 7 5 8.3 5h10.4C20 5 21 6 21 7.3v5.4"></path>
         <path id="todo__check" stroke="url(#boxGradient)" d="M10 13l2 2 5-5"></path>
         <circle id="todo__circle" cx="13.5" cy="12.5" r="10"></circle>
@@ -33,19 +33,11 @@ include_once('templates/header.php');
     ?>
     
     <section class="feed-container" id="feed">
-        <div class="btn-bar">
-            <div class="btn btn-group shadow-cards">
-                <a href="projects.php">Projects</a>
-                <a href="action_add_task.php">
-                    <i class="fa fa-plus circle-box"></i>
-                </a>
-            </div>
-            <div class="btn btn-group shadow-cards">
-                <a href="todoLists.php">To-Do Lists</a>
-                <a href="action_add_task.php">
-                    <i class="fa fa-plus circle-box"></i>
-                </a>
-            </div>
+        <div id="addItem" class="rnd-corners shadow-cards">
+            <form action="addTask.php">
+                <input type="text" name="lname" placeholder="Add Task">
+                <input id="submit" type="submit" value="Submit">
+            </form>
         </div>
 
         <div id="modal" class="modal"></div>
