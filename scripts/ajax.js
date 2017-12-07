@@ -67,6 +67,24 @@ function createItemNode(item) {
     return node;
 }
 
+function editItem(itemDiv) {
+    let text = itemDiv.innerHTML;
+    let id = itemDiv.id.match(/@(\d+)/)[1];
+
+    let inputNode = document.createElement('input');
+    inputNode.value = text;
+    inputNode.onsubmit = () => console.log(this);
+    
+    let formNode = document.createElement('form');
+    formNode.appendChild(inputNode);
+
+    itemDiv.innerHTML = "";
+    itemDiv.appendChild(formNode);
+
+    return true;
+}
+
+
 function addBlankTask(username) {
     let request = new XMLHttpRequest();
     request.onload = addTaskListener;
@@ -76,7 +94,6 @@ function addBlankTask(username) {
 
     return false; // preventing event from bubbling up
 }
-
 function addTaskListener() {
     if (this.status == 200) {
         let tasksList = document.getElementById('tasks-list');
@@ -88,7 +105,6 @@ function addTaskListener() {
         console.log(task);
     }
 }
-
 function createTaskNode() {
     let task = document.createElement('div');
     task.classList.add('masonry-item');
