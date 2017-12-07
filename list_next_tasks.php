@@ -1,7 +1,7 @@
 <?php
 include_once('database/connection.php');
 include_once('database/tasks.php');
-$tasks = getAllTasksWithDueDate();
+$tasks = getAllTasksWithDueDate($_SESSION['username']);
 
 function listNextTask($task) {
     echo '<li class="next-tasks-item">';

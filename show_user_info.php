@@ -21,7 +21,7 @@ function showInformation($user) {
     echo '<h4>' . $about . '</h4>';
     echo '</div>';
     echo '<button type="button" class="btn edit-profile" onclick="changeToEdition()">
-            <i class="fa fa-pencil"> Edit Profile</i></button>';
+            <span><i class="fa fa-pencil"></i>Edit Profile</span></button>';
     echo '</section>';
 }
 

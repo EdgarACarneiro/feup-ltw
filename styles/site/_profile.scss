@@ -66,6 +66,12 @@ textarea {
     width: 100%;
     height: 40%;
     border-color: $grey;
+    border-radius: $border-radius;
+    resize: none;
+}
+
+textarea:focus {
+    outline-color: $riptide;
 }
 
 .image-uploader {
