@@ -20,7 +20,7 @@ include_once('templates/header.php');
         <stop offset="100%"  stop-color="#80E3D1"/>
         </linearGradient>
 
-        <path id="todo__line" stroke="url(#lineGradient)" d="M21 5h168v0.1z"></path>
+        <path id="todo__line" stroke="url(#lineGradient)" d="M21 5h158v0.1z"></path>
         <path id="todo__box" stroke="url(#boxGradient)" d="M21 12.7v5c0 1.3-1 2.3-2.3 2.3H8.3C7 20 6 19 6 17.7V7.3C6 6 7 5 8.3 5h10.4C20 5 21 6 21 7.3v5.4"></path>
         <path id="todo__check" stroke="url(#boxGradient)" d="M10 13l2 2 5-5"></path>
         <circle id="todo__circle" cx="13.5" cy="12.5" r="10"></circle>

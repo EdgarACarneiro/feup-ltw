@@ -40,7 +40,7 @@ function listItem($item) {
     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 200 10" class="todo__icon todo__icon_line">
     <use xlink:href="#todo__line" class="todo__line"></use>
     </svg>
-    <div id="li@<?php echo $item['item_id']; ?>" class="todo__text" ><?php echo $item['description']; ?></div>
+    <div id="li@<?php echo $item['item_id']; ?>" class="todo__text" onclick"alert('clicked li');"><?php echo $item['description']; ?></div>
     </li>
     <?php
 }
