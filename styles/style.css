@@ -194,6 +194,8 @@ input[type=submit],
 input[type=button],
 input[type=text],
 input[type=file],
+input[type=e-mail],
+input[type=password],
 textarea,
 button {
   font-family: 'Montserrat', sans-serif;
@@ -209,6 +211,7 @@ input[type=password],
 input[type=e-mail] {
   border-radius: 0.2em;
   border-style: initial;
+  padding-left: 4px;
 }
 
 .btn-bar {
@@ -729,24 +732,28 @@ footer {
 }
 
 .main {
-  margin: calc(75px + 7%) 20% 7%;
-  border-radius: 0.2em;
+  margin: calc(75px + 7%) auto 7%;
+  border-radius: 0.5em;
   display: flex;
   flex-direction: row-reverse;
+  max-width: calc(300px * 2);
+  align-content: center;
 }
 
 .site-description {
   flex: 1;
   padding: 2em;
-  border-radius: 0.2em 0 0 0.2em;
+  border-radius: 0.5em 0 0 0.5em;
   background: linear-gradient(#80E3D1, #53C5B9);
+  max-width: 300px;
 }
 
 .sign-user {
   flex: 1;
   padding: 2em;
-  border-radius: 0 0.2em 0.2em 0;
+  border-radius: 0 0.5em 0.5em 0;
   background: linear-gradient(#3C3E52, #232539);
+  max-width: 300px;
 }
 
 .switch-btn {
@@ -767,7 +774,7 @@ footer {
   border: 0;
   background: none;
   color: #FFFFFF;
-  font-size: 80%;
+  font-size: 12px;
 }
 
 .switch-btn .sign-in-btn {
@@ -781,9 +788,65 @@ footer {
 
 #sign-in,
 #sign-up {
-  padding-top: 3em;
+  padding-top: 2em;
   color: #FFFFFF;
   display: inline-block;
+}
+
+#sign-in fieldset,
+#sign-up fieldset {
+  font-size: 12px;
+}
+
+#sign-in legend,
+#sign-up legend {
+  text-align: center;
+  margin-bottom: 2em;
+  font-size: 15px;
+}
+
+#sign-in input[type=text],
+#sign-in input[type=password],
+#sign-in input[type=e-mail],
+#sign-up input[type=text],
+#sign-up input[type=password],
+#sign-up input[type=e-mail] {
+  color: #FFFFFF;
+  background-color: transparent;
+  width: 100%;
+  padding-bottom: 4px;
+  margin-bottom: 1.8em;
+  margin-top: 0.8em;
+  width: 100%;
+  border-bottom: 2px solid #4e5068;
+  transition: border-color 0.8s;
+}
+
+#sign-in input[type=text]:focus,
+#sign-in input[type=password]:focus,
+#sign-in input[type=e-mail]:focus,
+#sign-up input[type=text]:focus,
+#sign-up input[type=password]:focus,
+#sign-up input[type=e-mail]:focus {
+  border-color: #80E3D1;
+}
+
+#sign-in input[type=submit],
+#sign-up input[type=submit] {
+  float: right;
+  margin-top: 1em;
+  padding: 0.8em;
+  border: 0;
+  border-radius: 1em;
+  font-size: 12px;
+  color: #FFFFFF;
+  background: #4e5068;
+  transition: background 1s;
+}
+
+#sign-in input[type=submit]:hover,
+#sign-up input[type=submit]:hover {
+  background: #80E3D1;
 }
 
 #sign-up {

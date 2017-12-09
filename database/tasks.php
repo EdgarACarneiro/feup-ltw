@@ -192,4 +192,17 @@ function setItemCompleted($item_id, $completed) {
     return getItemById($item_id);
 }
 
+function changeItemDescription($item_id, $description) {
+    global $dbh;
+
+    $stmt = $dbh->prepare(
+        "UPDATE Item
+        SET description = ?
+        WHERE item_id = ?"
+    );
+    $stmt->execute(array($description, $item_id));
+
+    return getItemById($item_id);
+}
+
 ?>

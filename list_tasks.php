@@ -21,7 +21,7 @@ function listToDoList($task, $nested = true) {
 
     ?>
     <li><form id="form@<?php echo $task['task_id']; ?>" onsubmit="return addItemToTask(this)">
-    <input type="text" placeholder="Grab bananas" name="description" required>
+    <input type="text" placeholder="Grab bananas" name="description" required />
     </form></li>
     </ul>
 
@@ -40,7 +40,10 @@ function listItem($item) {
     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 200 10" class="todo__icon todo__icon_line">
     <use xlink:href="#todo__line" class="todo__line"></use>
     </svg>
-    <div id="li@<?php echo $item['item_id']; ?>" class="todo__text" onclick="return editItem(this)"><?php echo $item['description']; ?></div>
+    <div id="li@<?php echo $item['item_id']; ?>" class="todo__text">
+        <span class="li-item-display"><?php echo $item['description']; ?></span>
+        <input type="text" class="li-item-edit" style="display:none" onchange="console.log('Changed!')" />
+    </div>
     </li>
     <?php
 }
@@ -67,3 +70,4 @@ foreach ($projects as $project) {
 ?>
 
 <script type="text/javascript" src="scripts/modal.js"></script>
+<script type="text/javascript" src="scripts/edit.js"></script>
