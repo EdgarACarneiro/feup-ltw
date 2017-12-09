@@ -23,22 +23,22 @@ include_once('includes/init.php');
 
             <form action="action_login.php" method="post" id="sign-in">
                 <fieldset>
-                    <legend>Log In</legend>
-                    Username: <input type="text" placeholder="username" name="username" required>
-                    Password: <input type="password" placeholder="password" name="password" required>
-                    <input type="submit" value="Send">
+                    <legend>LOG IN</legend>
+                    USERNAME<input type="text" placeholder="Username" name="username" required>
+                    PASSWORD<input type="password" placeholder="Password" name="password" required>
+                    <input type="submit" value="SIGN-IN">
                 </fieldset>
             </form>
         
 
             <form action="action_register.php" method="post" id="sign-up">
                 <fieldset>
-                    <legend>Create an Account</legend>
-                    Username: <input type="text" placeholder="username" name="username" required>
-                    E-mail: <input type="e-mail" placeholder="email" name="email" required>
-                    Password: <input type="password" placeholder="password" name="password" required>
-                    Repeat your Password: <input type="password" placeholder="password" name="password_check" required>
-                    <input type="submit" value="Send">
+                    <legend>CREATE AN ACCOUNT</legend>
+                    USERNAME<input type="text" placeholder="What should we call you?" name="username" required>
+                    E-MAIL<input type="e-mail" placeholder="Your e-mail goes here" name="email" required>
+                    PASSWORD<input type="password" placeholder="Secret password here!" name="password" required>
+                    REPEAT YOUR PASSWORD<input type="password" placeholder="Do it again!" name="password_check" required>
+                    <input type="submit" value="SIGN-UP">
                 </fieldset>
             </form>
         </div>

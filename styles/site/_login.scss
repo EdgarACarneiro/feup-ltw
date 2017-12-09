@@ -1,22 +1,26 @@
 .main {
-    margin: calc(#{$nav-height} + 7%) 20% 7%;
-    border-radius: $border-radius;
+    margin: calc(#{$nav-height} + 7%) auto 7%;
+    border-radius: $medium-border-radius;
     display: flex;
     flex-direction: row-reverse;
+    max-width: calc(#{$block-width} * 2);
+    align-content: center;
 }
 
 .site-description {
     flex: 1;
     padding: 2em;
-    border-radius: $border-radius 0 0 $border-radius;
+    border-radius: $medium-border-radius 0 0 $medium-border-radius;
     background: $gradient-turqoise;
+    max-width: 300px;
 }
 
 .sign-user {
     flex: 1;
     padding: 2em;
-    border-radius: 0 $border-radius $border-radius 0;    
-    background: $gradient-grey; 
+    border-radius: 0 $medium-border-radius $medium-border-radius 0;    
+    background: $gradient-grey;
+    max-width: 300px;
 }
 
 .switch-btn {
@@ -37,7 +41,7 @@
         border: 0;
         background: none;
         color: $white;
-        font-size: 80%;
+        font-size: 12px;
     }
 
     .sign-in-btn {
@@ -52,9 +56,57 @@
 
 #sign-in,
 #sign-up {
-    padding-top: 3em;
+    padding-top: 2em;
     color: $white;
     display: inline-block;
+
+    fieldset {
+        font-size: 12px;
+    }
+
+    legend {
+        text-align: center;
+        margin-bottom: 2em;
+        font-size: 15px;
+    }
+    
+    input[type=text],
+    input[type=password],
+    input[type=e-mail] {
+        color: $white;
+        background-color: transparent;
+        width: 100%; //TODO - meter isto a aumantar lindinho
+
+        padding-bottom: 4px;
+        margin-bottom: 1.8em;
+        margin-top: 0.8em;
+        width: 100%;
+        
+        border-bottom: 2px solid $payne-s-grey-lighter;
+        transition: border-color 0.8s;
+    }
+
+    input[type=text]:focus,
+    input[type=password]:focus,
+    input[type=e-mail]:focus {
+        border-color: $riptide;
+    }
+
+    input[type=submit] {
+        float: right;
+        margin-top: 1em;
+        padding: 0.8em;
+        border: 0;
+        border-radius: $round-border-radius;
+        font-size: 12px;
+        color: $white;
+        background: $payne-s-grey-lighter;
+        transition: background 1s;
+    }
+    
+    input[type=submit]:hover {
+        background: $riptide;
+    }
 }
 
 #sign-up {
