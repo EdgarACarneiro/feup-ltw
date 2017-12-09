@@ -33,11 +33,20 @@ include_once('templates/header.php');
     ?>
     
     <section class="feed-container" id="feed">
-        <div id="addItem" class="rnd-corners shadow-cards">
-            <form action="addTask.php">
-                <input type="text" name="lname" placeholder="Add Task">
-                <input id="submit" type="submit" value="Submit">
+        <div id="addTask" class="rnd-corners shadow-cards">
+            <form contenteditable action="">
+                <input id="addTask_name" type="text" name="AddTask_Name" placeholder="Name">
+                <input id="addTask_Item" type="text" name="AddTask_Item" placeholder="Add Task...">
+                <input type="submit" value="Submit">
+                <input type="date" name="AddTask_DueDate">
+                <nav id="select_priority">
+                    <i class="fa fa-circle priority-0 active" aria-hidden="true"></i>
+                    <i class="fa fa-circle priority-1" aria-hidden="true"></i>
+                    <i class="fa fa-circle priority-2" aria-hidden="true"></i>
+                    <i class="fa fa-circle priority-3" aria-hidden="true"></i>
+                </nav>
             </form>
+            <script type="text/javascript" src="scripts/addTask.js"></script>
         </div>
 
         <div id="modal" class="modal"></div>

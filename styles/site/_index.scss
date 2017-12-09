@@ -14,28 +14,79 @@
     }
 }
 
-#addItem {
+#addTask {
     background-color: $cards;
     width: 50%;
-    height: 2.5em;
     margin: 2.5em auto;
     display: flex;
     form {
-        height: 100%;
         width: 100%;
+        outline: none;
         input {
-            width: 100%;
-            height: 100%;
+            display: none;
+            float: right;
+            height: 3em;
+            margin: 0;
+            border: none;
+        }
+        input[type=text] {
+            background-color: $cards;
+            width: calc(100% - 2 * #{$default-padding});
             padding: 0 $default-padding;
         }
-        #submit {
+        input[type=date] {
+            background-color: $cards;
+        }
+        input[type=submit] {
+            color: $grey;
+            width: 10em;
+            float: right;
+            border: none;
+        }
+        nav {
             display: none;
+            float: right;
+            height: 40px;
+            overflow: hidden;
+            width: 30px;
+            -webkit-transition: width .5s;
+            transition: width .5s;
+            i {
+                display: none;
+                margin: 2px;
+                font-size: 24px;
+                line-height: 40px;
+                vertical-align: middle;
+            }
+            i.active {
+                display: inline-block;
+            }
+            i.priority-0 {
+                color: $priority-0;
+            }
+            i.priority-1 {
+                color: $priority-1;
+            }
+            i.priority-2 {
+                color: $priority-2;
+            }
+            i.priority-3 {
+                color: $priority-3;
+            }
+        }
+        nav:hover {
+            width: 116px;
+            i {
+                display: inline-block;
+            }
+        }
+        #addTask_name::placeholder {
+            font-weight: bold;
+        }
+        #addTask_Item {
+            display: block;
         }
     }
-}
-
-#addItem input:focus {
-    background-color: red;
 }
 
 .btn-group {
