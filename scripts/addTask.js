@@ -14,7 +14,6 @@ document.getElementById("addTask").firstElementChild.onmouseout = function() {
 
 Array.from(document.getElementById("addTask").firstElementChild.children).forEach(element => {
     element.onfocus = function() {
-        element.parentElement.style.height = "7.5em";
         Array.from(element.parentElement.children).forEach(element => {
             element.style.display = "block";
         });

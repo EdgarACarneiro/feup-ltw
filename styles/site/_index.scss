@@ -114,7 +114,7 @@
     @media (min-width: 1374px), (min-width: 1008px) and (max-width: #{$collapse-xl}) {
         margin: 0 auto;
     }
-    @media (max-width: #{$collapse-s}) {
+    @media (max-width: #{$collapse-m}) {
         column-count: 2;
         -webkit-column-count: 2;
         -moz-column-count: 2;

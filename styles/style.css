@@ -521,7 +521,7 @@ input[type=e-mail] {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 960px) {
   .masonry {
     column-count: 2;
     -webkit-column-count: 2;
@@ -1082,6 +1082,30 @@ textarea:focus {
 
 .todo__state:checked ~ .todo__icon_line {
   z-index: 0;
+}
+
+.todo:hover a {
+  opacity: 1;
+}
+
+.todo a {
+  transition: .5s;
+  opacity: 0;
+  position: absolute;
+  right: -10px;
+  top: calc(50% - 12.5px);
+  background-color: #e1e1e1;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.todo a i {
+  font-size: 1em;
+  color: #3C3E52;
 }
  
 

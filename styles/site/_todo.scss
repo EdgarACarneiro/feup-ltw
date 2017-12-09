@@ -133,3 +133,26 @@ $duration-check_box: 0.8s;
         z-index: 0;
     }
 }
+
+.todo:hover a {
+    opacity: 1;
+}
+
+.todo a {
+    transition: .5s;
+    opacity: 0;
+    position: absolute;
+    right: -10px;
+    top: calc(50% - 12.5px);
+    background-color: $grey-light;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    i {
+        font-size: 1em;
+        color: $payne-s-grey;
+    }
+}
