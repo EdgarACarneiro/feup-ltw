@@ -6,6 +6,8 @@ checkUserSession();
 include_once('templates/header.php');
 ?>
 
+<script type="text/javascript" src="scripts/addTaskAjax.js"></script>
+
 <body onload="initCalendar()">
 
 <svg viewBox="0 0 0 0" style="position: absolute; z-index: -1; opacity: 0;">
@@ -34,11 +36,11 @@ include_once('templates/header.php');
     
     <section class="feed-container" id="feed">
         <div id="addTask" class="rnd-corners shadow-cards">
-            <form contenteditable action="">
-                <input id="addTask_name" type="text" name="AddTask_Name" placeholder="Name">
-                <input id="addTask_Item" type="text" name="AddTask_Item" placeholder="Add Task...">
+            <form contenteditable onsubmit="return submitTask('<?php echo $_SESSION['username']; ?>', this)" action="">
+                <input id="addTask_title" type="text" name="AddTask_Title" placeholder="Name">
+                <input id="addTask_item" type="text" name="AddTask_Item" placeholder="Add Task...">
                 <input type="submit" value="Submit">
-                <input type="date" name="AddTask_DueDate">
+                <input id="addTask_date" type="date" name="AddTask_DueDate">
                 <nav id="select_priority">
                     <i class="fa fa-circle priority-0 active" aria-hidden="true"></i>
                     <i class="fa fa-circle priority-1" aria-hidden="true"></i>
