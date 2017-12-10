@@ -238,4 +238,15 @@ function addUserToTask($username, $task_id) {
     return $stmt->execute(array($username, $task_id));
 }
 
+function deleteItem($item_id) {
+    global $dbh;
+    
+    $stmt = $dbh->prepare(
+        "DELETE FROM Item
+        WHERE item_id = ?"
+    );
+
+    return $stmt->execute(array($item_id));
+}
+
 ?>

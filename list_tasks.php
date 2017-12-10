@@ -46,7 +46,7 @@ function listItem($item) {
             <span class="li-item-display"><?php echo $item['description']; ?></span>
             <input type="text" class="li-item-edit" style="display:none"/>
         </div>
-        <a class="fa-circular-grey" href="">
+        <a id="delete-item@<?php echo $item['item_id']; ?>" class="fa-circular-grey" href="">
             <i class="fa fa-trash" aria-hidden="true"></i>
         </a>
     </li>
