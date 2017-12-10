@@ -5,6 +5,7 @@ export function encodeForAjax(data) {
 }
 
 export function logServerResponse() {
+    console.log("Server Response:");
     console.log(JSON.parse(this.responseText));
 }
 

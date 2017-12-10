@@ -30,17 +30,12 @@ function switchToDisplay() {
 
 function changeItemDescription(itemId, itemText) {
     let request = new XMLHttpRequest();
-    request.onload = logRequestResponse;
+    request.onload = logServerResponse;
     request.open("post", "action_change_item.php", true);
     request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    request.send(commons.encodeForAjax({
+    request.send(encodeForAjax({
         item_id: itemId, description: itemText
     }));
-}
-
-function logRequestResponse() {
-    console.log("Ajax request response:");
-    console.log(JSON.parse(this.responseText));
 }
 
 window.addEventListener('load', function () {
