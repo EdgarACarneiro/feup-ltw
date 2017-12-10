@@ -1,5 +1,6 @@
-import { encodeForAjax, createTaskNode, createItemNode } from './ajax_commons.js';
 var encodeForAjax = require('./ajax_commons.js').encodeForAjax;
+var createTaskNode = require('./ajax_commons.js').createTaskNode;
+var createItemNode = require('./ajax_commons.js').createItemNode;
 
 
 function show(element) {

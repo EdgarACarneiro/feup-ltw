@@ -1,14 +1,14 @@
-export function encodeForAjax(data) {
+function encodeForAjax(data) {
     return Object.keys(data).map(function(k) {
         return encodeURIComponent(k) + '=' + encodeURIComponent(data[k])
     }).join('&');
 }
 
-export function logServerResponse() {
+function logServerResponse() {
     console.log(JSON.parse(this.responseText));
 }
 
-export function createItemNode(item) {
+function createItemNode(item) {
     let node = document.createElement("li");
     node.classList.add('todo');
     let str = '<input class="todo__state" type="checkbox"/>';
@@ -24,7 +24,7 @@ export function createItemNode(item) {
     return node;
 }
 
-export function createTaskNode(task) {
+function createTaskNode(task) {
     // echo '<div class="masonry-item">';
     // echo '<article class="rnd-corners shadow-cards">';
 
@@ -46,4 +46,11 @@ export function createTaskNode(task) {
     // TODO
 
     return node;
+}
+
+module.exports = {
+    encodeForAjax: encodeForAjax,
+    logServerResponse: logServerResponse,
+    createItemNode: createItemNode,
+    createTaskNode: createTaskNode
 }
