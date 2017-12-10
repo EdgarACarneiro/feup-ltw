@@ -9,7 +9,7 @@ include_once('database/tasks.php');
 <?php
 $projects = getParentTasks($_SESSION['username']);
 
-function listToDoList($task, $nested = true) {
+function listToDoList($task, &$users, $nested = true) {
     if ($nested) {
         echo '<article class="rnd-corners"><h4>'.$task['title'].'</h4>';
     } else {
@@ -18,12 +18,15 @@ function listToDoList($task, $nested = true) {
     
     echo '<ul id="ul@' . $task['task_id'] . '">';
     foreach (getTasksItems($task['task_id']) as $item) {
+        if($item['assigneduser'] != NULL && !in_array($item['assigneduser'], $users)){
+            array_push($users, $item['assigneduser']);
+        }
         listItem($item);
     }
 
     ?>
     <li class="todo"><form id="form@<?php echo $task['task_id']; ?>">
-    <input class="todo_input" type="text" placeholder="Add Item..." name="description" required />
+        <input type="text" placeholder="Add Item..." name="description" required />
     </form></li>
     </ul>
 
@@ -32,7 +35,10 @@ function listToDoList($task, $nested = true) {
 }
 
 function listItem($item) {
-    ?><li class="todo">
+    ?><li
+        <?php if($item['assigneduser'] != NULL){
+            echo 'id="' . $item['assigneduser'] . '@' . $item['item_id'] . '"';
+        }?> class="todo">
         <input class="todo__state" type="checkbox" <?php if ($item['completed'] == 1) echo "checked"; ?>/>
         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 25 25" class="todo__icon">
             <use xlink:href="#todo__box" class="todo__box"></use>
@@ -57,13 +63,23 @@ function listProject($project) {
     echo '<div class="masonry-item">';
     echo '<article class="rnd-corners shadow-cards">';
 
-    listToDoList($project, false);
+    $users = array();
+
+    listToDoList($project, $users, false);
 
     foreach (getChildTasks($project['task_id']) as $subtask) {
-        listToDoList($subtask, true);
+        listToDoList($subtask, $users, true);
     }
 
-    echo '<button><i class="fa fa-plus-circle"></i> Add Sub-List</button>';
+    echo '<nav id="info-nav">';
+    foreach ($users as $user){
+        ?>
+            <a id="<?php echo $user?>" href="" class="fa-circular-grey">
+                <i class="fa fa-user" aria-hidden="true"></i>
+            </a>
+        <?php   
+    }
+    echo '<button class="addSubList"><i class="fa fa-plus-circle"></i> Add Sub-List</button></nav>';
     echo '</article>';
     echo '<a href="" class="shadow-cards fa-circular-grey">
             <i class="fa fa-times" aria-hidden="true"></i></a>';
@@ -75,3 +91,5 @@ foreach ($projects as $project) {
 }
 
 ?>
+
+<script type="text/javascript" src="scripts/collaborators.js"></script>

@@ -83,7 +83,7 @@
                 display: inline-block;
             }
         }
-        #addTask_name::placeholder {
+        #addTask_title::placeholder {
             font-weight: bold;
         }
         #addTask_item {
@@ -135,6 +135,7 @@
     margin-top: calc(#{$masonry-gap} / 2);
     margin-bottom: calc(#{$masonry-gap} / 2);
     position: relative;
+    transition: .5s;
     article {
         z-index: 10;
         padding: $default-padding;
@@ -147,9 +148,44 @@
             background-color: $background;
             width: calc(100% - 2.5em);
         }
+        >#info-nav {
+            display: flex;
+            justify-content: flex-end;
+            opacity: 0;
+            transition: .5s;
+            @media (max-width: #{$collapse-xs}) {
+                opacity: 1;
+            }
+            a {
+                box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+                margin: 1px 2px;
+                -moz-transition: 0.2s ease-in-out;
+                transition: border-width 0.2s ease-in-out;
+                -webkit-padding-before: 1.5px;
+                -webkit-padding-end: 1.5px;
+                -webkit-padding-after: 1.5px;
+                -webkit-padding-start: 1.5px;
+                border-style: solid;
+                border-radius: 50%;
+                border-width: 0px;
+                border-color: $payne-s-grey;
+            }
+            a.active,
+            a:hover {
+                padding: 0;
+                border-width: 1.5px;
+            }
+        }
+        .addSubList {
+            border-style: none;
+            background-color: $cards;
+            color: $payne-s-grey;
+            i:before {
+                color: $payne-s-grey;
+            }
+        }
     }
     >a {
-        transition: .5s;
         opacity: 0;
         position: absolute;
         right: calc(0px - 6.25px);
@@ -160,9 +196,12 @@
     }
 }
 
-.masonry-item:hover>a {
-    opacity: 1;
-    @media (max-width: #{$collapse-xs}) {
+.masonry-item:hover {
+    transition: .5s;
+    article>#info-nav {
+        opacity: 1;
+    }
+    >a {
         opacity: 1;
     }
 }

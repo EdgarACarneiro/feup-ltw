@@ -16,6 +16,13 @@ $duration-check_box: 0.8s;
     &:last-child {
         border-bottom: none;
     }
+    input[type=text] {
+        background-color: $cards;
+        width: 100%;
+        font-size: 100%;
+        border-radius: 0 !important;
+        padding: 0 !important;
+    }
 }
 
 .todo__state {
@@ -33,6 +40,7 @@ $duration-check_box: 0.8s;
 .todo__text {
     color: $grey;
     transition: all $duration-check_box/2 linear $duration-check_box/2;
+    height: 100%;
 }
 
 .todo__icon {
@@ -132,12 +140,6 @@ $duration-check_box: 0.8s;
     ~.todo__icon_line {
         z-index: 0;
     }
-}
-
-.todo_input {
-    background-color: $cards;
-    width: 100%;
-    font-size: 100%;
 }
 
 .todo:hover a {
