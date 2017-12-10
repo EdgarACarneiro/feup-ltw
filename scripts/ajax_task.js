@@ -1,6 +1,5 @@
-var encodeForAjax = require('./ajax_commons.js').encodeForAjax;
-var createTaskNode = require('./ajax_commons.js').createTaskNode;
-var createItemNode = require('./ajax_commons.js').createItemNode;
+import { encodeForAjax } from './ajax_commons';
+
 
 function submitTask(user, form) {
     form.blur();
