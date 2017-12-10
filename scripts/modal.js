@@ -37,8 +37,11 @@ function closeModal() {
     }
 }
 
-Array.from(masonry_item_class).forEach(function(element) {
-    if (window.innerWidth > 768) {
-        element.lastChild.addEventListener('click', openModal);
-    }
-});
+document.onload = () => {
+    Array.from(masonry_item_class).forEach(function(element) {
+        if (window.innerWidth > 768) {
+            element.lastChild.addEventListener('click', openModal);
+        }
+    });
+}
+

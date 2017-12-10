@@ -1,6 +1,3 @@
-var list_items_display = document.getElementsByClassName('li-item-display');
-var list_items_edit = document.getElementsByClassName('li-item-edit');
-
 function encodeForAjax(data) {
     return Object.keys(data).map(function(k){
       return encodeURIComponent(k) + '=' + encodeURIComponent(data[k])
@@ -47,10 +44,15 @@ function logRequestResponse() {
     console.log(JSON.parse(this.responseText));
 }
 
-Array.from(list_items_display).forEach(function(element) {
-    element.onclick = switchToEdit.bind(element);
-});
+document.onload = function () {
+    var list_items_display = document.getElementsByClassName('li-item-display');
+    var list_items_edit = document.getElementsByClassName('li-item-edit');
 
-Array.from(list_items_edit).forEach(function(element) {
-    element.addEventListener('focusout', switchToDisplay.bind(element));
-});
+    Array.from(list_items_display).forEach(function(element) {
+        element.onclick = switchToEdit.bind(element);
+    });
+    
+    Array.from(list_items_edit).forEach(function(element) {
+        element.addEventListener('focusout', switchToDisplay.bind(element));
+    });
+}
