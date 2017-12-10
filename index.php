@@ -6,7 +6,7 @@ checkUserSession();
 include_once('templates/header.php');
 ?>
 
-<script type="text/javascript" src="scripts/addTaskAjax.js"></script>
+<script type="text/javascript" src="scripts/ajax_task.js"></script>
 
 <body onload="initCalendar()">
 

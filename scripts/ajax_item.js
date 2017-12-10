@@ -35,8 +35,8 @@ function addItemListener() {
 }
 
 function setItemCompleted(checkbox) {
-    let lastSibling = checkbox.parentNode.lastChild.previousSibling;
-    let id = lastSibling.id.match(/@(\d+)/)[1];
+    let textDiv = checkbox.parentNode.getElementsByClassName('todo__text')[0];
+    let id = textDiv.id.match(/@(\d+)/)[1];
     let checked = checkbox.checked;
 
     let request = new XMLHttpRequest();
