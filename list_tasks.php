@@ -42,11 +42,11 @@ function listItem($item) {
         </svg>
         <div id="li@<?php echo $item['item_id']; ?>" class="todo__text">
             <span class="li-item-display"><?php echo $item['description']; ?></span>
-            <input type="text" class="li-item-edit" style="display:none" onchange="console.log('Changed!')" />
+            <input type="text" class="li-item-edit" style="display:none" onchange="console.log('Changed!')"/>
         </div>
         <a href="">
             <i class="fa fa-trash" aria-hidden="true"></i>
-        </a>'
+        </a>
     </li>
     <?php
 }

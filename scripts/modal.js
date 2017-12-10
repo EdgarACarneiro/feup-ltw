@@ -38,5 +38,7 @@ function closeModal() {
 }
 
 Array.from(masonry_item_class).forEach(function(element) {
-    element.lastChild.addEventListener('click', openModal);
+    if (window.innerWidth > 768) {
+        element.lastChild.addEventListener('click', openModal);
+    }
 });

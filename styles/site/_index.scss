@@ -19,6 +19,9 @@
     width: 50%;
     margin: 2.5em auto;
     display: flex;
+    @media (max-width: #{$collapse-xs}) {
+        width: calc(100% - 2 * #{$default-margin)};
+    }
     form {
         width: 100%;
         outline: none;

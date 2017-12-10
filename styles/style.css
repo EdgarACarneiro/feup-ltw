@@ -408,6 +408,12 @@ input[type=e-mail] {
   display: flex;
 }
 
+@media (max-width: 640px) {
+  #addTask {
+    width: calc(100% - 2 * 1em);
+  }
+}
+
 #addTask form {
   width: 100%;
   outline: none;
@@ -1106,6 +1112,12 @@ textarea:focus {
 .todo a i {
   font-size: 1em;
   color: #3C3E52;
+}
+
+@media (max-width: 640px) {
+  .todo a {
+    opacity: 1;
+  }
 }
  
 

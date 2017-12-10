@@ -155,4 +155,7 @@ $duration-check_box: 0.8s;
         font-size: 1em;
         color: $payne-s-grey;
     }
+    @media (max-width: #{$collapse-xs}) {
+        opacity: 1;
+    }
 }
