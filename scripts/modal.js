@@ -5,6 +5,7 @@ var feed_container = document.getElementById('feed');
 var opened_Model;
 
 function openModal() {
+    console.log(this);
     this.parentElement.style.height = this.clientHeight.toString() + "px";
     this.style.position = "absolute";
     this.style.top = this.offsetTop;
@@ -15,7 +16,8 @@ function openModal() {
     this.style.transform = "translate(" +
         translateX.toString() + "px , " +
         translateY.toString() + "px )";
-    this.style.width = "500px";
+    this.style.width = "550px";
+    this.style.zIndex = "10";
     document.getElementById('modal').style.zIndex = "5";
     document.getElementById('modal').style.opacity = "1";
     document.getElementById('modal').addEventListener("click", closeModal);
@@ -32,15 +34,14 @@ function closeModal() {
         opened_Model.style.width = "";
         opened_Model.style.transform = "";
         opened_Model.style.transition = "";
+        opened_Model.style.zIndex = "";
         opened_Model.addEventListener("click", openModal);
         opened_Model = null;
     }
 }
 
-window.addEventListener('load', function() {
-    Array.from(masonry_item_class).forEach(function(element) {
-        if (window.innerWidth > 768) {
-            element.lastChild.addEventListener('click', openModal);
-        }
-    });
+Array.from(masonry_item_class).forEach(function(element) {
+    if (window.innerWidth > 768) {
+        element.firstElementChild.addEventListener('click', openModal);
+    }
 });

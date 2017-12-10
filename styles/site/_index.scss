@@ -134,10 +134,9 @@
     width: 100%;
     margin-top: calc(#{$masonry-gap} / 2);
     margin-bottom: calc(#{$masonry-gap} / 2);
-    position: relative;
     transition: .5s;
     article {
-        z-index: 10;
+        position: relative;
         padding: $default-padding;
         background-color: $cards;
         /* TO-DO Lists inside Projects */
@@ -159,8 +158,7 @@
             a {
                 box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
                 margin: 1px 2px;
-                -moz-transition: 0.2s ease-in-out;
-                transition: border-width 0.2s ease-in-out;
+                transition: 0.2s;
                 -webkit-padding-before: 1.5px;
                 -webkit-padding-end: 1.5px;
                 -webkit-padding-after: 1.5px;
@@ -184,25 +182,27 @@
                 color: $payne-s-grey;
             }
         }
-    }
-    >a {
-        opacity: 0;
-        position: absolute;
-        right: calc(0px - 6.25px);
-        top: calc(0px - 6.25px);
-        @media (max-width: #{$collapse-xs}) {
-            opacity: 1;
+        >a {
+            opacity: 0;
+            position: absolute;
+            right: calc(0px - 6.25px);
+            top: calc(0px - 6.25px);
+            @media (max-width: #{$collapse-xs}) {
+                opacity: 1;
+            }
         }
     }
 }
 
 .masonry-item:hover {
     transition: .5s;
-    article>#info-nav {
-        opacity: 1;
-    }
-    >a {
-        opacity: 1;
+    article {
+        >#info-nav {
+            opacity: 1;
+        }
+        >a {
+            opacity: 1;
+        }
     }
 }
 

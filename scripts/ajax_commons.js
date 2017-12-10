@@ -19,7 +19,7 @@ export function logServerResponse() {
 export function getCurrentUser() {
     let request = new XMLHttpRequest();
     let username;
-    request.onload = function () {
+    request.onload = function() {
         username = JSON.parse(this.responseText);
     }
     request.open("post", "action_get_username.php", false); // false -> not async
@@ -38,18 +38,21 @@ export function createItemNode(item) {
     str = str.concat('<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 200 10" class="todo__icon todo__icon_line">');
     str = str.concat('<use xlink:href="#todo__line" class="todo__line"></use></svg>');
     str = str.concat('<div id="li@' + item.item_id + '" class="todo__text" >');
-    str = str.concat('<span class="li-item-display">' + item.description + '</span>');    
+    str = str.concat('<span class="li-item-display">' + item.description + '</span>');
     str = str.concat('<input type="text" class="li-item-edit" style="display:none"/></div>');
     str = str.concat('<a id="delete-item@' + item.item_id + '" class="fa-circular-grey"><i class="fa fa-trash" aria-hidden="true"></i></a>');
 
     node.innerHTML = str;
-    
+
     addListenersToItemNode(node, item);
 
     return node;
 }
 
 function addListenersToItemNode(node, item) {
+    let checkboxNode = node.getElementsByClassName('todo__state')[0];
+    checkboxNode.onclick = setItemCompleted.bind(checkboxNode);
+
     let displayNode = node.getElementsByClassName('li-item-display')[0];
     displayNode.onclick = switchToEdit.bind(displayNode);
 
@@ -84,16 +87,32 @@ export function createTaskNode(task, items) {
         ulNode.appendChild(itemNode);
     }
 
+    // Add Form to Add Item
+    let addItemFormNode = document.createElement('li');
+    addItemFormNode.classList.add("todo");
+    let formNode = document.createElement('form');
+    formNode.id = "form@" + task.task_id;
+    formNode.innerHTML = '<input type="text" placeholder="Add Item..." name="description" required="">';
+    formNode.onsubmit = addItemToTask.bind(formNode);
+    addItemFormNode.appendChild(formNode);
+    ulNode.appendChild(addItemFormNode);
+
+    // Add Nav
+    let navNode = document.createElement('nav');
+    navNode.id = "info-nav";
+    articleNode.appendChild(navNode);
+
     // Add Task Button
     let buttonNode = document.createElement('button');
+    buttonNode.classList.add("addSubList");
     buttonNode.innerHTML = '<i class="fa fa-plus-circle"></i> Add Sub-List';
-    articleNode.appendChild(buttonNode);
+    navNode.appendChild(buttonNode);
 
     // Add Close Anchor/Button
     let anchorNode = document.createElement('a');
     anchorNode.classList.add('shadow-cards', 'fa-circular-grey');
     anchorNode.innerHTML = '<i class="fa fa-times" aria-hidden="true"></i>';
-    divNode.appendChild(anchorNode);
+    articleNode.appendChild(anchorNode);
 
     return divNode;
 }
