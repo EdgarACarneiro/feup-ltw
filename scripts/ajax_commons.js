@@ -4,11 +4,11 @@ export function encodeForAjax(data) {
     }).join('&');
 }
 
-function logServerResponse() {
+export function logServerResponse() {
     console.log(JSON.parse(this.responseText));
 }
 
-function createItemNode(item) {
+export function createItemNode(item) {
     let node = document.createElement("li");
     node.classList.add('todo');
     let str = '<input class="todo__state" type="checkbox"/>';
@@ -24,7 +24,7 @@ function createItemNode(item) {
     return node;
 }
 
-function createTaskNode(task) {
+export function createTaskNode(task) {
     // echo '<div class="masonry-item">';
     // echo '<article class="rnd-corners shadow-cards">';
 

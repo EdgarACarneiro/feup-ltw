@@ -1,4 +1,4 @@
-import { encodeForAjax } from './ajax_commons';
+import { encodeForAjax, logServerResponse, createItemNode, createTaskNode } from './ajax_commons';
 
 
 function addItemToTask(form) {
@@ -15,7 +15,7 @@ function addItemToTask(form) {
     request.onload = addItemListener;
     request.open("post", "action_add_item.php", true);
     request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    request.send(commons.encodeForAjax({ task_id: task, description: itemText }));
+    request.send(encodeForAjax({ task_id: task, description: itemText }));
 
     return false; // preventing event from bubbling up
 }
@@ -24,7 +24,7 @@ function addItemListener() {
     if (this.status == 200) {
         let item = JSON.parse(this.responseText);
         let list = document.getElementById("ul@" + item.task_id);
-        let listItem = commons.createItemNode(item);
+        let listItem = createItemNode(item);
         list.insertBefore(listItem, list.lastElementChild);
     } else {
         console.log("Error receiving response text from server");
@@ -37,7 +37,7 @@ function setItemCompleted(checkbox) {
     let checked = checkbox.checked;
 
     let request = new XMLHttpRequest();
-    request.onload = commons.logServerResponse;
+    request.onload = logServerResponse;
     request.open("post", "action_check_item.php", true);
     request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     request.send(encodeForAjax({ item_id: id, completed: checked ? 1 : 0 }));

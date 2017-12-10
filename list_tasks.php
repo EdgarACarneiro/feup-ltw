@@ -2,9 +2,9 @@
 include_once('database/connection.php');
 include_once('database/tasks.php');
 ?>
-<script type="text/javascript" src="scripts/ajax_item.js"></script>
-<script type="text/javascript" src="scripts/modal.js" async></script>
-<script type="text/javascript" src="scripts/ajax_item_edit.js" async></script>
+<script type="module" src="scripts/ajax_item.js"></script>
+<script type="module" src="scripts/modal.js" async></script>
+<script type="module" src="scripts/ajax_item_edit.js" async></script>
 
 <?php
 $projects = getParentTasks($_SESSION['username']);
