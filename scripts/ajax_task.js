@@ -1,8 +1,5 @@
-function encodeForAjax(data) {
-    return Object.keys(data).map(function(k){
-      return encodeURIComponent(k) + '=' + encodeURIComponent(data[k])
-    }).join('&');
-}
+import { encodeForAjax, logServerResponse, createItemNode, createTaskNode } from './ajax_commons.js';
+
 
 function submitTask(user, form) {
     form.blur();
@@ -23,7 +20,7 @@ function addTask(user, title, priority, duedate, description) {
     request.onload = addTaskListener;
     request.open("post", "action_add_task.php", true);
     request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    request.send(encodeForAjax({
+    request.send(commons.encodeForAjax({
         creator: user, title: title,
         priority: priority, date: duedate,
         description: description

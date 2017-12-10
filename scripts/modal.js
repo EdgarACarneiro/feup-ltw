@@ -37,11 +37,10 @@ function closeModal() {
     }
 }
 
-document.onload = () => {
+window.addEventListener('load', function() {
     Array.from(masonry_item_class).forEach(function(element) {
         if (window.innerWidth > 768) {
             element.lastChild.addEventListener('click', openModal);
         }
     });
-}
-
+});

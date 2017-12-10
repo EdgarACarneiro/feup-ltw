@@ -1,8 +1,5 @@
-function encodeForAjax(data) {
-    return Object.keys(data).map(function(k){
-      return encodeURIComponent(k) + '=' + encodeURIComponent(data[k])
-    }).join('&');
-}
+import { encodeForAjax, logServerResponse, createItemNode, createTaskNode } from './ajax_commons.js';
+
 
 function show(element) {
     element.style.display = 'block';
@@ -36,7 +33,9 @@ function changeItemDescription(itemId, itemText) {
     request.onload = logRequestResponse;
     request.open("post", "action_change_item.php", true);
     request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    request.send(encodeForAjax({item_id: itemId, description: itemText}));
+    request.send(commons.encodeForAjax({
+        item_id: itemId, description: itemText
+    }));
 }
 
 function logRequestResponse() {
@@ -44,7 +43,7 @@ function logRequestResponse() {
     console.log(JSON.parse(this.responseText));
 }
 
-document.onload = function () {
+window.addEventListener('load', function () {
     var list_items_display = document.getElementsByClassName('li-item-display');
     var list_items_edit = document.getElementsByClassName('li-item-edit');
 
@@ -55,4 +54,4 @@ document.onload = function () {
     Array.from(list_items_edit).forEach(function(element) {
         element.addEventListener('focusout', switchToDisplay.bind(element));
     });
-}
+});
