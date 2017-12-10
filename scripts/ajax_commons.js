@@ -60,7 +60,8 @@ export function createTaskNode(task, items) {
     articleNode.appendChild(ulNode);
 
     // List's items
-    for (let item in items) {
+    for (let i = 0; i < items.length; i++) {
+        let item = items[i];
         let itemNode = createItemNode(item);
         ulNode.appendChild(itemNode);
     }
