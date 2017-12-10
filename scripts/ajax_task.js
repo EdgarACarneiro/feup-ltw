@@ -35,9 +35,6 @@ function addTaskListener() {
     let tasksListNode = document.getElementById('tasks-list');
 
     tasksListNode.appendChild(taskNode);
-
-    console.log(taskNode);
-    console.log(items);
 }
 
 window.addEventListener('load', function() {

@@ -41,7 +41,6 @@ export function createItemNode(item) {
     return node;
 }
 
-// TODO
 export function createTaskNode(task, items) {
     let divNode = document.createElement('div');
     divNode.classList.add('masonry-item');
