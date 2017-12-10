@@ -48,7 +48,7 @@ include_once('templates/header.php');
                     <i class="fa fa-circle priority-3" aria-hidden="true"></i>
                 </nav>
             </form>
-            <script type="text/javascript" src="scripts/addTask.js"></script>
+            <script type="text/javascript" src="scripts/addTask.js" async></script>
         </div>
 
         <div id="modal" class="modal"></div>

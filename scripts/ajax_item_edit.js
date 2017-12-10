@@ -43,7 +43,7 @@ function logRequestResponse() {
     console.log(JSON.parse(this.responseText));
 }
 
-document.onload = function () {
+window.addEventListener('load', function () {
     var list_items_display = document.getElementsByClassName('li-item-display');
     var list_items_edit = document.getElementsByClassName('li-item-edit');
 
@@ -54,4 +54,4 @@ document.onload = function () {
     Array.from(list_items_edit).forEach(function(element) {
         element.addEventListener('focusout', switchToDisplay.bind(element));
     });
-}
+});
