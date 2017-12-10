@@ -33,14 +33,14 @@ function changeToEdition() {
     let save_btn = document.createElement("button");
     save_btn.setAttribute('type', "button");
     save_btn.setAttribute('class', "btn save-changes");
-    save_btn.setAttribute('onclick', ""); //TODO ADD FUNCTION
+    save_btn.setAttribute('onclick', "changeToView()");
 
     let save_btn_content = document.createElement("span");
 
     let save_icon = document.createElement("i");
     save_icon.setAttribute('class', "fa fa-floppy-o");
 
-    let btn_label = document.createTextNode(" Save!");
+    let btn_label = document.createTextNode("Save!");
 
     save_btn_content.appendChild(save_icon);
     save_btn_content.appendChild(btn_label);
@@ -48,19 +48,49 @@ function changeToEdition() {
     profile_container.appendChild(save_btn);
 }
 
+function saveChanges() {
+
+	changeToView;
+}
+
 function changeToView() {
 
-    //fazer reload da pagina aqui?
+	let profile_container = document.getElementsByClassName("profile-container")[0];
+	
+	//Eliminating h4
+	let info_container = document.getElementsByClassName("username-info")[0];
+	let edited_text = document.getElementsByTagName("textarea")[0];
+	info_container.removeChild(edited_text);
+	console.log(edited_text);
 
-    /**
-     *     //Edition elements
-    echo '<form action="update_img.php" class="image-uploader" 
-            method="post" enctype="multipart/form-data">';
-    echo '<input type="file" name="file">';
-    echo '</form>';
-    echo '<textarea>' . $about . '</textarea>';
-    echo '<button type="button" class="btn save-changes">
-            <i class="fa fa-floppy-o" onclick=>  Save</i></button>';
-    echo '</section>';
-     */
+	//Adding about_text
+	let aboutText = document.createElement("h4");
+	let userAbout = document.createTextNode(edited_text.value);
+	console.log(userAbout);
+	aboutText.appendChild(userAbout);
+	info_container.appendChild(aboutText);
+
+	//Deleting upload button
+	profile_container.removeChild(document.getElementsByClassName("image-uploader")[0]);
+
+	//Eliminating save changes button
+	profile_container.removeChild(document.getElementsByClassName("save-changes")[0]);
+
+	//Adding Edit button
+	let edit_btn = document.createElement("button");
+	edit_btn.setAttribute('type', "button");
+	edit_btn.setAttribute('class', "btn edit-profile");
+	edit_btn.setAttribute('onclick', "changeToEdition()");
+
+	let edit_btn_content = document.createElement("span");
+
+	let edit_icon = document.createElement("i");
+	edit_icon.setAttribute('class', "fa fa-pencil");
+
+	let btn_label = document.createTextNode("Edit Profile");
+
+	edit_btn_content.appendChild(edit_icon);
+	edit_btn_content.appendChild(btn_label);
+	edit_btn.appendChild(edit_btn_content);
+	profile_container.appendChild(edit_btn);
 }

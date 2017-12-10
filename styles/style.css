@@ -698,7 +698,6 @@ footer {
   background: #4e5068;
   margin: 0;
   float: right;
-  float: top;
   border-radius: 1em;
 }
 
@@ -753,7 +752,6 @@ footer {
   padding-bottom: 4px;
   margin-bottom: 1.8em;
   margin-top: 0.8em;
-  width: 100%;
   border-bottom: 2px solid #4e5068;
   transition: border-color 0.8s;
 }

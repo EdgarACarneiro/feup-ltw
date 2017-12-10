@@ -30,7 +30,6 @@
     background: $payne-s-grey-lighter;
     margin: 0;
     float: right;
-    float: top;
     border-radius: $round-border-radius;
 
     .sign-in-btn,
@@ -80,7 +79,6 @@
         padding-bottom: 4px;
         margin-bottom: 1.8em;
         margin-top: 0.8em;
-        width: 100%;
         
         border-bottom: 2px solid $payne-s-grey-lighter;
         transition: border-color 0.8s;
