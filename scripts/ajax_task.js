@@ -2,7 +2,6 @@ import { encodeForAjax, logServerResponse, createItemNode, createTaskNode } from
 
 
 function submitTask() {
-    this.blur();
     let title = document.getElementById('addTask_title').value;
     let description = document.getElementById('addTask_item').value;
     let duedate = document.getElementById('addTask_date').value;
@@ -11,7 +10,10 @@ function submitTask() {
     let priority = priorityNode.className.match(/priority-(\d)/)[1];
 
     addTask(title, priority, duedate, description);
-    
+
+    this.blur();
+    clearAddTaskForm(this);
+
     return false;
 }
 
@@ -37,7 +39,18 @@ function addTaskListener() {
     tasksListNode.appendChild(taskNode);
 }
 
+function clearAddTaskForm(form) {
+    document.getElementById('addTask_title').value = "";
+    document.getElementById('addTask_item').value = "";
+    document.getElementById('addTask_date').value = "";
+
+    let priorityNode = form.getElementsByClassName('priority-0')[0];
+    priorityNode.click();
+}
+
 window.addEventListener('load', function() {
     var form = document.getElementById('addTask').getElementsByTagName('form')[0];
     form.onsubmit = submitTask.bind(form);
+
+    // form.addEventListener('focusout', clearAddTaskForm.bind(this, form));
 });

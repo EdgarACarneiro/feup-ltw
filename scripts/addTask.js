@@ -34,7 +34,7 @@ Array.from(document.getElementById("addTask").firstElementChild.children).forEac
     };
 });
 
-Array.from(document.getElementsByTagName("i")).forEach(element => {
+Array.from(document.getElementById('select_priority').getElementsByTagName("i")).forEach(element => {
     element.onclick = function() {
         document.getElementById("select_priority").getElementsByClassName("active").item(0).classList.remove("active");
         element.classList.add("active");
