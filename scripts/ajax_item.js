@@ -1,4 +1,4 @@
-import { encodeForAjax, logServerResponse, createItemNode, createTaskNode } from './ajax_commons';
+import { encodeForAjax, logServerResponse, createItemNode, createTaskNode } from './ajax_commons.js';
 
 
 function addItemToTask(form) {
