@@ -1,8 +1,6 @@
-function encodeForAjax(data) {
-    return Object.keys(data).map(function(k){
-      return encodeURIComponent(k) + '=' + encodeURIComponent(data[k])
-    }).join('&');
-}
+import { encodeForAjax, createTaskNode, createItemNode } from './ajax_commons.js';
+var encodeForAjax = require('./ajax_commons.js').encodeForAjax;
+
 
 function show(element) {
     element.style.display = 'block';
@@ -36,7 +34,9 @@ function changeItemDescription(itemId, itemText) {
     request.onload = logRequestResponse;
     request.open("post", "action_change_item.php", true);
     request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    request.send(encodeForAjax({item_id: itemId, description: itemText}));
+    request.send(commons.encodeForAjax({
+        item_id: itemId, description: itemText
+    }));
 }
 
 function logRequestResponse() {
