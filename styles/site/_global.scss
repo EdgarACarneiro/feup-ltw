@@ -44,9 +44,9 @@ button {
     font-family: 'Montserrat', sans-serif;
 }
 
-button:focus, 
+button:focus,
 input:focus {
-    outline:0;
+    outline: 0;
 }
 
 input[type=text],
@@ -55,4 +55,11 @@ input[type=e-mail] {
     border-radius: $border-radius;
     border-style: initial;
     padding-left: 4px;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-transition: background-color 1s linear 99999s, color 1s linear 99999s !important;
 }

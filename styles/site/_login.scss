@@ -18,23 +18,21 @@
 .sign-user {
     flex: 1;
     padding: 2em;
-    border-radius: 0 $medium-border-radius $medium-border-radius 0;    
+    border-radius: 0 $medium-border-radius $medium-border-radius 0;
     background: $gradient-grey;
     max-width: 300px;
 }
 
 .switch-btn {
-    
     height: 2em;
     width: 8em;
     background: $payne-s-grey-lighter;
     margin: 0;
     float: right;
     border-radius: $round-border-radius;
-
     .sign-in-btn,
     .sign-up-btn {
-        flex: auto; 
+        flex: auto;
         margin: 0;
         padding: 0;
         border: 0;
@@ -42,12 +40,10 @@
         color: $white;
         font-size: 12px;
     }
-
     .sign-in-btn {
         border-radius: $border-radius 0 0 $border-radius;
         background: $gradient-turqoise;
     }
-
     .sign-up-btn {
         border-radius: 0 $border-radius $border-radius 0;
     }
@@ -58,38 +54,32 @@
     padding-top: 2em;
     color: $white;
     display: inline-block;
-
     fieldset {
         font-size: 12px;
     }
-
     legend {
         text-align: center;
         margin-bottom: 2em;
         font-size: 15px;
     }
-    
     input[type=text],
     input[type=password],
     input[type=e-mail] {
         color: $white;
         background-color: transparent;
         width: 100%; //TODO - meter isto a aumantar lindinho
-
         padding-bottom: 4px;
         margin-bottom: 1.8em;
         margin-top: 0.8em;
-        
         border-bottom: 2px solid $payne-s-grey-lighter;
+        -webkit-transition: border-color 0.8s, background-color 1s linear 99999s, color 1s linear 99999s !important;
         transition: border-color 0.8s;
     }
-
     input[type=text]:focus,
     input[type=password]:focus,
     input[type=e-mail]:focus {
         border-color: $riptide;
     }
-
     input[type=submit] {
         float: right;
         margin-top: 1em;
@@ -101,7 +91,6 @@
         background: $payne-s-grey-lighter;
         transition: background 1s;
     }
-    
     input[type=submit]:hover {
         background: $riptide;
     }
