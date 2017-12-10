@@ -2,7 +2,7 @@
 include_once('database/connection.php');
 include_once('database/tasks.php');
 ?>
-<script type="text/javascript" src="scripts/ajax.js"></script>
+<script type="text/javascript" src="scripts/addItemAjax.js"></script>
 
 <?php
 $projects = getParentTasks($_SESSION['username']);
@@ -73,4 +73,4 @@ foreach ($projects as $project) {
 ?>
 
 <script type="text/javascript" src="scripts/modal.js"></script>
-<script type="text/javascript" src="scripts/edit.js"></script>
+<script type="text/javascript" src="scripts/editItemAjax.js"></script>

@@ -1,4 +1,4 @@
-<script type="text/javascript" src="scripts/ajax.js"></script>
+<script type="text/javascript" src="scripts/searchBarAjax.js"></script>
 
 <nav id="top-bar" class="nav-bar">
     <ul>

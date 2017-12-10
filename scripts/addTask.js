@@ -5,7 +5,7 @@ document.getElementById("addTask").firstElementChild.onmouseover = function() {
 };
 
 document.getElementById("addTask").firstElementChild.onfocus = function() {
-    document.getElementById("addTask_Item").focus();
+    document.getElementById("addTask_item").focus();
 };
 
 document.getElementById("addTask").firstElementChild.onmouseout = function() {

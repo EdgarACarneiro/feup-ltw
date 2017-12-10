@@ -494,7 +494,7 @@ input[type=e-mail] {
   font-weight: bold;
 }
 
-#addTask form #addTask_Item {
+#addTask form #addTask_item {
   display: block;
 }
 
@@ -865,7 +865,8 @@ footer {
   display: grid;
   grid-template-columns: 40% 60%;
   grid-template-rows: auto auto;
-  grid-template-areas: "image info" "uploader edit";
+  grid-template-areas: "image info"
+ "uploader edit";
 }
 
 @media (min-width: 1280px) {
