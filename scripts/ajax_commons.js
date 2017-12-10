@@ -41,26 +41,40 @@ export function createItemNode(item) {
     return node;
 }
 
-export function createTaskNode(task) {
-    // echo '<div class="masonry-item">';
-    // echo '<article class="rnd-corners shadow-cards">';
+// TODO
+export function createTaskNode(task, items) {
+    let divNode = document.createElement('div');
+    divNode.classList.add('masonry-item');
+    let articleNode = document.createElement('article');
+    articleNode.classList.add('rnd-corners', 'shadow-cards');
+    divNode.appendChild(articleNode);
 
-    // listToDoList($project, false);
+    // Task's title
+    let titleNode = document.createElement('h2');
+    titleNode.appendChild(document.createTextNode(task.title));
+    articleNode.appendChild(titleNode);
 
-    // foreach (getChildTasks($project['task_id']) as $subtask) {
-    //     listToDoList($subtask, true);
-    // }
+    // Task's list
+    let ulNode = document.createElement('ul');
+    ulNode.id = "ul@" + task.task_id;
+    articleNode.appendChild(ulNode);
 
-    // echo '<button><i class="fa fa-plus-circle"></i> Add Sub-List</button>';
-    // echo '</article>';
-    // echo '<a href="" class="shadow-cards fa-circular-grey">
-    //         <i class="fa fa-times" aria-hidden="true"></i></a>';
-    // echo '</div>';
+    // List's items
+    for (let item in items) {
+        let itemNode = createItemNode(item);
+        ulNode.appendChild(itemNode);
+    }
 
-    let node = document.createElement("div");
-    node.classList.add('masonry-item');
+    // Add Task Button
+    let buttonNode = document.createElement('button');
+    buttonNode.innerHTML = '<i class="fa fa-plus-circle"></i> Add Sub-List';
+    articleNode.appendChild(buttonNode);
 
-    // TODO
+    // Add Close Anchor/Button
+    let anchorNode = document.createElement('a');
+    anchorNode.classList.add('shadow-cards', 'fa-circular-grey');
+    anchorNode.innerHTML = '<i class="fa fa-times" aria-hidden="true"></i>';
+    divNode.appendChild(anchorNode);
 
-    return node;
+    return divNode;
 }

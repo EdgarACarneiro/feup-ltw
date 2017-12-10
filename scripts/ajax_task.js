@@ -31,8 +31,13 @@ function addTask(title, priority, duedate, description) {
 function addTaskListener() {
     let [task, items] = JSON.parse(this.responseText);
 
-    console.log(task);
-    console.log(items);    
+    let taskNode = createTaskNode(task, items);
+    let tasksListNode = document.getElementById('tasks-list');
+
+    tasksListNode.appendChild(taskNode);
+
+    console.log(taskNode);
+    console.log(items);
 }
 
 window.addEventListener('load', function() {

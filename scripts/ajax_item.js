@@ -21,14 +21,10 @@ function addItemToTask() {
 }
 
 function addItemListener() {
-    if (this.status == 200) {
-        let item = JSON.parse(this.responseText);
-        let list = document.getElementById("ul@" + item.task_id);
-        let listItem = createItemNode(item);
-        list.insertBefore(listItem, list.lastElementChild);
-    } else {
-        console.log("Error receiving response text from server");
-    }
+    let item = JSON.parse(this.responseText);
+    let list = document.getElementById("ul@" + item.task_id);
+    let listItem = createItemNode(item);
+    list.insertBefore(listItem, list.lastElementChild);
 }
 
 function setItemCompleted() {
