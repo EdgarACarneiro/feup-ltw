@@ -61,7 +61,7 @@ function createItemNode(item) {
     str = str.concat('<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 200 10" class="todo__icon todo__icon_line">');
     str = str.concat('<use xlink:href="#todo__line" class="todo__line"></use></svg>');
     str = str.concat('<div id="li@' + item.item_id + '" class="todo__text" >' + item.description + '</div>');
-    str = str.concat('<a href=""><i class="fa fa-trash" aria-hidden="true"></i></a>');
+    str = str.concat('<a class="fa-circular-grey" href=""><i class="fa fa-trash" aria-hidden="true"></i></a>');
 
     node.innerHTML = str;
 

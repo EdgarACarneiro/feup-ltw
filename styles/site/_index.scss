@@ -20,7 +20,7 @@
     margin: 2.5em auto;
     display: flex;
     @media (max-width: #{$collapse-xs}) {
-        width: calc(100% - 2 * #{$default-margin)};
+        width: calc(100% - 2 * #{$default-margin});
     }
     form {
         width: 100%;
@@ -134,6 +134,7 @@
     width: 100%;
     margin-top: calc(#{$masonry-gap} / 2);
     margin-bottom: calc(#{$masonry-gap} / 2);
+    position: relative;
     article {
         z-index: 10;
         padding: $default-padding;
@@ -146,6 +147,23 @@
             background-color: $background;
             width: calc(100% - 2.5em);
         }
+    }
+    >a {
+        transition: .5s;
+        opacity: 0;
+        position: absolute;
+        right: calc(0px - 6.25px);
+        top: calc(0px - 6.25px);
+        @media (max-width: #{$collapse-xs}) {
+            opacity: 1;
+        }
+    }
+}
+
+.masonry-item:hover>a {
+    opacity: 1;
+    @media (max-width: #{$collapse-xs}) {
+        opacity: 1;
     }
 }
 

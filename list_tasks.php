@@ -20,8 +20,8 @@ function listToDoList($task, $nested = true) {
     }
 
     ?>
-    <li><form id="form@<?php echo $task['task_id']; ?>" onsubmit="return addItemToTask(this)">
-    <input type="text" placeholder="Grab bananas" name="description" required />
+    <li class="todo"><form id="form@<?php echo $task['task_id']; ?>" onsubmit="return addItemToTask(this)">
+    <input class="todo_input" type="text" placeholder="Add Item..." name="description" required />
     </form></li>
     </ul>
 
@@ -44,7 +44,7 @@ function listItem($item) {
             <span class="li-item-display"><?php echo $item['description']; ?></span>
             <input type="text" class="li-item-edit" style="display:none" onchange="console.log('Changed!')"/>
         </div>
-        <a href="">
+        <a class="fa-circular-grey" href="">
             <i class="fa fa-trash" aria-hidden="true"></i>
         </a>
     </li>
@@ -63,6 +63,8 @@ function listProject($project) {
 
     echo '<button><i class="fa fa-plus-circle"></i> Add Sub-List</button>';
     echo '</article>';
+    echo '<a href="" class="shadow-cards fa-circular-grey">
+            <i class="fa fa-times" aria-hidden="true"></i></a>';
     echo '</div>';
 }
 

@@ -19,3 +19,17 @@
     font-size: larger;
     color: $payne-s-grey-lighter;
 }
+
+.fa-circular-grey {
+    background-color: $grey-light;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    i {
+        font-size: 1em;
+        color: $payne-s-grey;
+    }
+}
