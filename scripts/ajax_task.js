@@ -12,7 +12,7 @@ function submitTask() {
     addTask(title, priority, duedate, description);
 
     this.blur();
-    clearAddTaskForm(this);
+    clearAddTaskForm();
 
     return false;
 }
@@ -39,18 +39,16 @@ function addTaskListener() {
     tasksListNode.appendChild(taskNode);
 }
 
-function clearAddTaskForm(form) {
+function clearAddTaskForm() {
     document.getElementById('addTask_title').value = "";
     document.getElementById('addTask_item').value = "";
     document.getElementById('addTask_date').value = "";
 
-    let priorityNode = form.getElementsByClassName('priority-0')[0];
+    let priorityNode = document.getElementById('select_priority').getElementsByClassName('priority-0')[0];
     priorityNode.click();
 }
 
 window.addEventListener('load', function() {
     var form = document.getElementById('addTask').getElementsByTagName('form')[0];
     form.onsubmit = submitTask.bind(form);
-
-    // form.addEventListener('focusout', clearAddTaskForm.bind(this, form));
 });
