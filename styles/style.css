@@ -229,6 +229,13 @@ input[type=e-mail] {
   padding-left: 4px;
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-transition: background-color 1s linear 99999s, color 1s linear 99999s !important;
+}
+
 .btn-bar {
   display: flex;
   justify-content: space-around;
@@ -863,6 +870,7 @@ footer {
   margin-bottom: 1.8em;
   margin-top: 0.8em;
   border-bottom: 2px solid #4e5068;
+  -webkit-transition: border-color 0.8s, background-color 1s linear 99999s, color 1s linear 99999s !important;
   transition: border-color 0.8s;
 }
 
