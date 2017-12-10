@@ -220,9 +220,11 @@ function addTask($username, $title, $priority, $duedate, $description) {
     $task = getLastTask();
 
     addUserToTask($username, $task['task_id']);
-    addItem($task['task_id'], $description);
+    if (! empty(trim($description)) ) {
+        addItem($task['task_id'], $description);
+    }
 
-    return $task;  
+    return $task;
 }
 
 function addUserToTask($username, $task_id) {

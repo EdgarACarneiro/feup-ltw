@@ -28,7 +28,8 @@ CREATE TABLE Item (
 	completed BOOLEAN,
 	
 	CHECK(priority between 0 and 3),
-	CHECK(completed between 0 and 1)	
+	CHECK(completed between 0 and 1),
+	CHECK((length(trim(description)) > 0))
 );
 
 CREATE TABLE UserTask (
@@ -84,7 +85,7 @@ INSERT INTO Task VALUES (8, 'Improve AI', 'Google', 2, NULL, NULL);
 INSERT INTO Task VALUES (9, 'Prevent AI from killing humans', 'Google', 3, NULL, 1);
 INSERT INTO Task VALUES (10, 'Supermarket List', 'shopping', 1, NULL, NULL);
 INSERT INTO Task VALUES (11, 'Vacations', NULL, 1, NULL, NULL);
-INSERT INTO Task VALUES (12, 'Get user Feedback', 'web', NULL, NULL, NULL);
+INSERT INTO Task VALUES (12, 'Get user Feedback', 'web', 0, NULL, NULL);
 
 INSERT INTO Item VALUES (1, 2, NULL, 4, 1, 'Implement communication protocol', 1);
 INSERT INTO Item VALUES (2, NULL, NULL, NULL, 1, 'Make UI user enjoyable', 0);

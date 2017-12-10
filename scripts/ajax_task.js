@@ -21,7 +21,7 @@ function submitTask(user, form) {
 function addTask(user, title, priority, duedate, description) {
     let request = new XMLHttpRequest();
     request.onload = addTaskListener;
-    request.open("post", "action_add_item.php", true);
+    request.open("post", "action_add_task.php", true);
     request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     request.send(encodeForAjax({
         creator: user, title: title,
@@ -31,5 +31,8 @@ function addTask(user, title, priority, duedate, description) {
 }
 
 function addTaskListener() {
-    console.log(this.responseText);
+    let [task, items] = JSON.parse(this.responseText);
+
+    console.log(task);
+    console.log(items);    
 }
