@@ -17,7 +17,7 @@ function addItemToTask() {
     request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     request.send(encodeForAjax({ task_id: task, description: itemText }));
 
-    return false; // preventing event from bubbling up
+    return false; // preventing browser default
 }
 
 function addItemListener() {

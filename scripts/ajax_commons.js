@@ -9,6 +9,22 @@ export function logServerResponse() {
     console.log(JSON.parse(this.responseText));
 }
 
+/**
+ * @deprecated sync requests
+ */
+export function getCurrentUser() {
+    let request = new XMLHttpRequest();
+    let username;
+    request.onload = function () {
+        username = JSON.parse(this.responseText);
+    }
+    request.open("post", "action_get_username.php", false); // false -> not async
+    request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    request.send(); // TODO check better way to do sync request
+
+    return username;
+}
+
 export function createItemNode(item) {
     let node = document.createElement("li");
     node.classList.add('todo');

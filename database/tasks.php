@@ -213,9 +213,8 @@ function addTask($username, $title, $priority, $duedate, $description) {
         (title, priority, duedate)
         VALUES (?, ?, ?)"
     );
-    if (! $stmt->execute(array($title, $priority, $duedate))) {
+    if (! $stmt->execute(array($title, $priority, empty($duedate) ? NULL : $duedate)))
         return false;
-    }
 
     $task = getLastTask();
 

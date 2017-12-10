@@ -17,4 +17,11 @@ function checkUserSession() {
 
 }
 
+function getCurrentUser() {
+  if (isset($_SESSION['username']))
+    return $_SESSION['username'];
+
+  return NULL;
+}
+
 ?>
