@@ -155,6 +155,21 @@ table {
   color: #4e5068;
 }
 
+.fa-circular-grey {
+  background-color: #e1e1e1;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.fa-circular-grey i {
+  font-size: 1em;
+  color: #3C3E52;
+}
+
 a {
   text-decoration: none;
 }
@@ -401,31 +416,101 @@ input[type=e-mail] {
   }
 }
 
-#addItem {
+#addTask {
   background-color: #fafafa;
   width: 50%;
-  height: 2.5em;
   margin: 2.5em auto;
   display: flex;
 }
 
-#addItem form {
-  height: 100%;
-  width: 100%;
+@media (max-width: 640px) {
+  #addTask {
+    width: calc(100% - 2 * 1em);
+  }
 }
 
-#addItem form input {
+#addTask form {
   width: 100%;
-  height: 100%;
-  padding: 0;
+  outline: none;
 }
 
-#addItem form #submit {
+#addTask form input {
   display: none;
+  float: right;
+  height: 3em;
+  margin: 0;
+  border: none;
 }
 
-#addItem input:focus {
-  background-color: red;
+#addTask form input[type=text] {
+  background-color: #fafafa;
+  width: calc(100% - 2 * 1em);
+  padding: 0 1em;
+}
+
+#addTask form input[type=date] {
+  background-color: #fafafa;
+}
+
+#addTask form input[type=submit] {
+  color: #2b2e37;
+  width: 10em;
+  float: right;
+  border: none;
+}
+
+#addTask form nav {
+  display: none;
+  float: right;
+  height: 40px;
+  overflow: hidden;
+  width: 30px;
+  -webkit-transition: width .5s;
+  transition: width .5s;
+}
+
+#addTask form nav i {
+  display: none;
+  margin: 2px;
+  font-size: 24px;
+  line-height: 40px;
+  vertical-align: middle;
+}
+
+#addTask form nav i.active {
+  display: inline-block;
+}
+
+#addTask form nav i.priority-0 {
+  color: #cfd8dc;
+}
+
+#addTask form nav i.priority-1 {
+  color: #43a047;
+}
+
+#addTask form nav i.priority-2 {
+  color: #ffeb3b;
+}
+
+#addTask form nav i.priority-3 {
+  color: #f4511e;
+}
+
+#addTask form nav:hover {
+  width: 116px;
+}
+
+#addTask form nav:hover i {
+  display: inline-block;
+}
+
+#addTask form #addTask_name::placeholder {
+  font-weight: bold;
+}
+
+#addTask form #addTask_item {
+  display: block;
 }
 
 .btn-group > a {
@@ -457,7 +542,7 @@ input[type=e-mail] {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 960px) {
   .masonry {
     column-count: 2;
     -webkit-column-count: 2;
@@ -478,6 +563,7 @@ input[type=e-mail] {
   width: 100%;
   margin-top: calc(1em / 2);
   margin-bottom: calc(1em / 2);
+  position: relative;
 }
 
 .masonry-item article {
@@ -493,6 +579,30 @@ input[type=e-mail] {
   margin: calc(1em / 2);
   background-color: #e8e8e8;
   width: calc(100% - 2.5em);
+}
+
+.masonry-item > a {
+  transition: .5s;
+  opacity: 0;
+  position: absolute;
+  right: calc(0px - 6.25px);
+  top: calc(0px - 6.25px);
+}
+
+@media (max-width: 640px) {
+  .masonry-item > a {
+    opacity: 1;
+  }
+}
+
+.masonry-item:hover > a {
+  opacity: 1;
+}
+
+@media (max-width: 640px) {
+  .masonry-item:hover > a {
+    opacity: 1;
+  }
 }
 
 footer {
@@ -894,7 +1004,7 @@ textarea:focus {
   position: relative;
   padding: 0.4em 1em 0.4em 16%;
   margin: 0 auto;
-  border-bottom: solid 1px #ddd;
+  border-bottom: solid 1px #e1e1e1;
 }
 
 .todo:last-child {
@@ -914,7 +1024,7 @@ textarea:focus {
 }
 
 .todo__text {
-  color: #135156;
+  color: #2b2e37;
   transition: all 0.4s linear 0.4s;
 }
 
@@ -1016,6 +1126,30 @@ textarea:focus {
 
 .todo__state:checked ~ .todo__icon_line {
   z-index: 0;
+}
+
+.todo_input {
+  background-color: #fafafa;
+  width: 100%;
+  font-size: 100%;
+}
+
+.todo:hover a {
+  opacity: 1;
+}
+
+.todo a {
+  transition: .5s;
+  opacity: 0;
+  position: absolute;
+  right: -10px;
+  top: calc(50% - 12.5px);
+}
+
+@media (max-width: 640px) {
+  .todo a {
+    opacity: 1;
+  }
 }
  
 

@@ -14,28 +14,82 @@
     }
 }
 
-#addItem {
+#addTask {
     background-color: $cards;
     width: 50%;
-    height: 2.5em;
     margin: 2.5em auto;
     display: flex;
+    @media (max-width: #{$collapse-xs}) {
+        width: calc(100% - 2 * #{$default-margin});
+    }
     form {
-        height: 100%;
         width: 100%;
+        outline: none;
         input {
-            width: 100%;
-            height: 100%;
-            padding: 0;
-        }
-        #submit {
             display: none;
+            float: right;
+            height: 3em;
+            margin: 0;
+            border: none;
+        }
+        input[type=text] {
+            background-color: $cards;
+            width: calc(100% - 2 * #{$default-padding});
+            padding: 0 $default-padding;
+        }
+        input[type=date] {
+            background-color: $cards;
+        }
+        input[type=submit] {
+            color: $grey;
+            width: 10em;
+            float: right;
+            border: none;
+        }
+        nav {
+            display: none;
+            float: right;
+            height: 40px;
+            overflow: hidden;
+            width: 30px;
+            -webkit-transition: width .5s;
+            transition: width .5s;
+            i {
+                display: none;
+                margin: 2px;
+                font-size: 24px;
+                line-height: 40px;
+                vertical-align: middle;
+            }
+            i.active {
+                display: inline-block;
+            }
+            i.priority-0 {
+                color: $priority-0;
+            }
+            i.priority-1 {
+                color: $priority-1;
+            }
+            i.priority-2 {
+                color: $priority-2;
+            }
+            i.priority-3 {
+                color: $priority-3;
+            }
+        }
+        nav:hover {
+            width: 116px;
+            i {
+                display: inline-block;
+            }
+        }
+        #addTask_name::placeholder {
+            font-weight: bold;
+        }
+        #addTask_item {
+            display: block;
         }
     }
-}
-
-#addItem input:focus {
-    background-color: red;
 }
 
 .btn-group {
@@ -63,7 +117,7 @@
     @media (min-width: 1374px), (min-width: 1008px) and (max-width: #{$collapse-xl}) {
         margin: 0 auto;
     }
-    @media (max-width: #{$collapse-s}) {
+    @media (max-width: #{$collapse-m}) {
         column-count: 2;
         -webkit-column-count: 2;
         -moz-column-count: 2;
@@ -80,6 +134,7 @@
     width: 100%;
     margin-top: calc(#{$masonry-gap} / 2);
     margin-bottom: calc(#{$masonry-gap} / 2);
+    position: relative;
     article {
         z-index: 10;
         padding: $default-padding;
@@ -92,6 +147,23 @@
             background-color: $background;
             width: calc(100% - 2.5em);
         }
+    }
+    >a {
+        transition: .5s;
+        opacity: 0;
+        position: absolute;
+        right: calc(0px - 6.25px);
+        top: calc(0px - 6.25px);
+        @media (max-width: #{$collapse-xs}) {
+            opacity: 1;
+        }
+    }
+}
+
+.masonry-item:hover>a {
+    opacity: 1;
+    @media (max-width: #{$collapse-xs}) {
+        opacity: 1;
     }
 }
 

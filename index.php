@@ -6,6 +6,8 @@ checkUserSession();
 include_once('templates/header.php');
 ?>
 
+<script type="text/javascript" src="scripts/addTaskAjax.js"></script>
+
 <body onload="initCalendar()">
 
 <svg viewBox="0 0 0 0" style="position: absolute; z-index: -1; opacity: 0;">
@@ -20,7 +22,7 @@ include_once('templates/header.php');
         <stop offset="100%"  stop-color="#80E3D1"/>
         </linearGradient>
 
-        <path id="todo__line" stroke="url(#lineGradient)" d="M4 5h168v0.01z"></path>
+        <path id="todo__line" stroke="url(#lineGradient)" d="M4 5h180v0.01z"></path>
         <path id="todo__box" stroke="url(#boxGradient)" d="M21 12.7v5c0 1.3-1 2.3-2.3 2.3H8.3C7 20 6 19 6 17.7V7.3C6 6 7 5 8.3 5h10.4C20 5 21 6 21 7.3v5.4"></path>
         <path id="todo__check" stroke="url(#boxGradient)" d="M10 13l2 2 5-5"></path>
         <circle id="todo__circle" cx="13.5" cy="12.5" r="10"></circle>
@@ -33,11 +35,20 @@ include_once('templates/header.php');
     ?>
     
     <section class="feed-container" id="feed">
-        <div id="addItem" class="rnd-corners shadow-cards">
-            <form action="addTask.php">
-                <input type="text" name="lname" placeholder="Add Task">
-                <input id="submit" type="submit" value="Submit">
+        <div id="addTask" class="rnd-corners shadow-cards">
+            <form contenteditable onsubmit="return submitTask('<?php echo $_SESSION['username']; ?>', this)" action="">
+                <input id="addTask_title" type="text" name="AddTask_Title" placeholder="Name">
+                <input id="addTask_item" type="text" name="AddTask_Item" placeholder="Add Task...">
+                <input type="submit" value="Submit">
+                <input id="addTask_date" type="date" name="AddTask_DueDate">
+                <nav id="select_priority">
+                    <i class="fa fa-circle priority-0 active" aria-hidden="true"></i>
+                    <i class="fa fa-circle priority-1" aria-hidden="true"></i>
+                    <i class="fa fa-circle priority-2" aria-hidden="true"></i>
+                    <i class="fa fa-circle priority-3" aria-hidden="true"></i>
+                </nav>
             </form>
+            <script type="text/javascript" src="scripts/addTask.js"></script>
         </div>
 
         <div id="modal" class="modal"></div>
@@ -45,9 +56,6 @@ include_once('templates/header.php');
         <div class="masonry" id="tasks-list">
             <?php include_once('list_tasks.php'); ?>
         </div>
-</div>
-
-        </main>
     </section>
 
     <footer>

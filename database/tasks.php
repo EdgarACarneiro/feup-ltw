@@ -147,8 +147,8 @@ function addItem($task_id, $description) {
 
     $stmt = $dbh->prepare(
         "INSERT INTO Item
-        (task_id, description) VALUES
-        (?, ?)"
+        (task_id, description)
+        VALUES (?, ?)"
     );
 
     $stmt->execute(array($task_id, $description));
@@ -203,6 +203,38 @@ function changeItemDescription($item_id, $description) {
     $stmt->execute(array($description, $item_id));
 
     return getItemById($item_id);
+}
+
+function addTask($username, $title, $priority, $duedate, $description) {
+    global $dbh;
+
+    $stmt = $dbh->prepare(
+        "INSERT INTO Task
+        (title, priority, duedate)
+        VALUES (?, ?, ?)"
+    );
+    if (! $stmt->execute(array($title, $priority, $duedate))) {
+        return false;
+    }
+
+    $task = getLastTask();
+
+    addUserToTask($username, $task['task_id']);
+    addItem($task['task_id'], $description);
+
+    return $task;  
+}
+
+function addUserToTask($username, $task_id) {
+    global $dbh;
+    
+    $stmt = $dbh->prepare(
+        "INSERT INTO UserTask
+        (username, task_id)
+        VALUES (?, ?)"
+    );
+
+    return $stmt->execute(array($username, $task_id));
 }
 
 ?>

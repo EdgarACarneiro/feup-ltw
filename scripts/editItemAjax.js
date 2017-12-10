@@ -52,14 +52,5 @@ Array.from(list_items_display).forEach(function(element) {
 });
 
 Array.from(list_items_edit).forEach(function(element) {
-    element.onchange = switchToDisplay.bind(element);
+    element.addEventListener('focusout', switchToDisplay.bind(element));
 });
-
-// $("#display").click(function() {
-//     $(this).hide();
-//     $(this).siblings("#edit").show().val($(this).text()).focus();
-//   });
-  
-//   $("#edit").focusout(function(){
-//   $(this).hide();  $(this).siblings("#display").show().text($(this).val());
-//   });
