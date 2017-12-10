@@ -29,4 +29,16 @@ function getUserInfo($username) {
   return $stmt->fetch();
 }
 
+function changeUserAbout($username, $about) {
+  global $dbh;
+
+  $stmt = $dbh->prepare(
+    "UPDATE User
+    SET about = ?
+    WHERE username = ?"
+  );
+
+  return $stmt->execute(array($about, $username));
+}
+
 ?>

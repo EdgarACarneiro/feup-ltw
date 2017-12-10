@@ -1,3 +1,9 @@
+function encodeForAjax(data) {
+    return Object.keys(data).map(function(k){
+      return encodeURIComponent(k) + '=' + encodeURIComponent(data[k])
+    }).join('&');
+}
+
 function changeToEdition() {
 
     let profile_container = document.getElementsByClassName("profile-container")[0];
@@ -33,7 +39,7 @@ function changeToEdition() {
     let save_btn = document.createElement("button");
     save_btn.setAttribute('type', "button");
     save_btn.setAttribute('class', "btn save-changes");
-    save_btn.setAttribute('onclick', "changeToView()");
+    save_btn.setAttribute('onclick', "saveChanges()");
 
     let save_btn_content = document.createElement("span");
 
@@ -49,8 +55,22 @@ function changeToEdition() {
 }
 
 function saveChanges() {
+	let aboutText = document.getElementsByTagName("textarea")[0].value;
+	changeCurrUserAbout(aboutText);
 
-	changeToView;
+	//alterar fotos - TODO
+	return false;
+}
+
+function changeCurrUserAbout(aboutText) {
+
+	let request = new XMLHttpRequest();
+	request.onload = console.log(this.responseText);
+	request.open("post", "action_save_profile.php", true);
+	request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+	request.send(encodeForAjax({ about: aboutText }))
+
+	changeToView();
 }
 
 function changeToView() {
