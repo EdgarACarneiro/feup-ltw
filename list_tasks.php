@@ -3,8 +3,8 @@ include_once('database/connection.php');
 include_once('database/tasks.php');
 ?>
 <script type="module" src="scripts/ajax_item.js"></script>
-<script type="module" src="scripts/modal.js" async></script>
-<script type="module" src="scripts/ajax_item_edit.js" async></script>
+<script type="module" src="scripts/modal.js"></script>
+<script type="module" src="scripts/ajax_item_edit.js"></script>
 
 <?php
 $projects = getParentTasks($_SESSION['username']);
@@ -22,7 +22,7 @@ function listToDoList($task, $nested = true) {
     }
 
     ?>
-    <li class="todo"><form id="form@<?php echo $task['task_id']; ?>" onsubmit="return addItemToTask(this)">
+    <li class="todo"><form id="form@<?php echo $task['task_id']; ?>">
     <input class="todo_input" type="text" placeholder="Add Item..." name="description" required />
     </form></li>
     </ul>
@@ -33,7 +33,7 @@ function listToDoList($task, $nested = true) {
 
 function listItem($item) {
     ?><li class="todo">
-        <input class="todo__state" type="checkbox" onclick="return setItemCompleted(this)" <?php if ($item['completed'] == 1) echo "checked"; ?>/>
+        <input class="todo__state" type="checkbox" <?php if ($item['completed'] == 1) echo "checked"; ?>/>
         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 25 25" class="todo__icon">
             <use xlink:href="#todo__box" class="todo__box"></use>
             <use xlink:href="#todo__check" class="todo__check"></use>
@@ -44,7 +44,7 @@ function listItem($item) {
         </svg>
         <div id="li@<?php echo $item['item_id']; ?>" class="todo__text">
             <span class="li-item-display"><?php echo $item['description']; ?></span>
-            <input type="text" class="li-item-edit" style="display:none" onchange="console.log('Changed!')"/>
+            <input type="text" class="li-item-edit" style="display:none"/>
         </div>
         <a class="fa-circular-grey" href="">
             <i class="fa fa-trash" aria-hidden="true"></i>
