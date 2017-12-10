@@ -1,3 +1,7 @@
+import { addItemToTask, setItemCompleted, deleteItem } from './ajax_item.js';
+import { switchToEdit, switchToDisplay } from './ajax_item_edit.js';
+
+
 export function encodeForAjax(data) {
     return Object.keys(data).map(function(k) {
         return encodeURIComponent(k) + '=' + encodeURIComponent(data[k])
@@ -33,12 +37,27 @@ export function createItemNode(item) {
     str = str.concat('<use xlink:href="#todo__box" class="todo__box"></use><use xlink:href="#todo__check" class="todo__check"></use><use xlink:href="#todo__circle" class="todo__circle"></use></svg>');
     str = str.concat('<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 200 10" class="todo__icon todo__icon_line">');
     str = str.concat('<use xlink:href="#todo__line" class="todo__line"></use></svg>');
-    str = str.concat('<div id="li@' + item.item_id + '" class="todo__text" >' + item.description + '</div>');
-    str = str.concat('<a class="fa-circular-grey" href=""><i class="fa fa-trash" aria-hidden="true"></i></a>');
+    str = str.concat('<div id="li@' + item.item_id + '" class="todo__text" >');
+    str = str.concat('<span class="li-item-display">' + item.description + '</span>');    
+    str = str.concat('<input type="text" class="li-item-edit" style="display:none"/></div>');
+    str = str.concat('<a id="delete-item@' + item.item_id + '" class="fa-circular-grey"><i class="fa fa-trash" aria-hidden="true"></i></a>');
 
     node.innerHTML = str;
+    
+    addListenersToItemNode(node, item);
 
     return node;
+}
+
+function addListenersToItemNode(node, item) {
+    let displayNode = node.getElementsByClassName('li-item-display')[0];
+    displayNode.onclick = switchToEdit.bind(displayNode);
+
+    let inputNode = node.getElementsByClassName('li-item-edit')[0];
+    inputNode.addEventListener('focusout', switchToDisplay.bind(inputNode));
+
+    let deleteNode = node.querySelector("a[id^='delete-item@" + item.item_id + "']");
+    deleteNode.onclick = deleteItem.bind(deleteNode);
 }
 
 export function createTaskNode(task, items) {

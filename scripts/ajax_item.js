@@ -1,7 +1,7 @@
 import { encodeForAjax, logServerResponse, createItemNode, createTaskNode } from './ajax_commons.js';
 
 
-function addItemToTask() {
+export function addItemToTask() {
     let task = this.id.match(/@(\d+)/)[1];
     let inputNode = this.lastElementChild;
     let itemText = inputNode.value.trim();
@@ -27,7 +27,7 @@ function addItemListener() {
     list.insertBefore(listItem, list.lastElementChild);
 }
 
-function setItemCompleted() {
+export function setItemCompleted() {
     let textDiv = this.parentNode.getElementsByClassName('todo__text')[0];
     let id = textDiv.id.match(/@(\d+)/)[1];
     let checked = this.checked;
@@ -41,7 +41,7 @@ function setItemCompleted() {
     return true; // allow default action
 }
 
-function deleteItem(event) {
+export function deleteItem(event) {
     let id = this.id.match(/^delete-item@(\d+)/)[1];
     event.preventDefault();
     this.parentNode.remove();

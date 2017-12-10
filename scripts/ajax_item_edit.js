@@ -9,7 +9,7 @@ function hide(element) {
     element.style.display = 'none';
 }
 
-function switchToEdit() {
+export function switchToEdit() {
     hide(this);
     let inputNode = this.nextSibling.nextSibling;
     show(inputNode);
@@ -17,7 +17,7 @@ function switchToEdit() {
     inputNode.focus();
 }
 
-function switchToDisplay() {
+export function switchToDisplay() {
     hide(this);
     let displayNode = this.previousSibling.previousSibling;
     show(displayNode);
