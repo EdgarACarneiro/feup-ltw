@@ -213,9 +213,8 @@ function addTask($username, $title, $priority, $duedate, $description) {
         (title, priority, duedate)
         VALUES (?, ?, ?)"
     );
-    if (! $stmt->execute(array($title, $priority, $duedate))) {
+    if (! $stmt->execute(array($title, $priority, empty($duedate) ? NULL : $duedate)))
         return false;
-    }
 
     $task = getLastTask();
 
@@ -237,6 +236,17 @@ function addUserToTask($username, $task_id) {
     );
 
     return $stmt->execute(array($username, $task_id));
+}
+
+function deleteItem($item_id) {
+    global $dbh;
+    
+    $stmt = $dbh->prepare(
+        "DELETE FROM Item
+        WHERE item_id = ?"
+    );
+
+    return $stmt->execute(array($item_id));
 }
 
 ?>

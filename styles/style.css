@@ -176,6 +176,7 @@ a {
 
 html {
   font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
   min-width: 320px;
 }
 
@@ -781,7 +782,7 @@ footer {
 
 #next-tasks .next-tasks {
   flex-grow: 1;
-  overflow: overlay;
+  overflow: auto;
 }
 
 #next-tasks .next-tasks-item:hover {

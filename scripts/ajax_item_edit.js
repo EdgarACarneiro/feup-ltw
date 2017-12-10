@@ -9,7 +9,7 @@ function hide(element) {
     element.style.display = 'none';
 }
 
-function switchToEdit() {
+export function switchToEdit() {
     hide(this);
     let inputNode = this.nextSibling.nextSibling;
     show(inputNode);
@@ -17,7 +17,7 @@ function switchToEdit() {
     inputNode.focus();
 }
 
-function switchToDisplay() {
+export function switchToDisplay() {
     hide(this);
     let displayNode = this.previousSibling.previousSibling;
     show(displayNode);
@@ -30,17 +30,12 @@ function switchToDisplay() {
 
 function changeItemDescription(itemId, itemText) {
     let request = new XMLHttpRequest();
-    request.onload = logRequestResponse;
+    request.onload = logServerResponse;
     request.open("post", "action_change_item.php", true);
     request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    request.send(commons.encodeForAjax({
+    request.send(encodeForAjax({
         item_id: itemId, description: itemText
     }));
-}
-
-function logRequestResponse() {
-    console.log("Ajax request response:");
-    console.log(JSON.parse(this.responseText));
 }
 
 window.addEventListener('load', function () {
