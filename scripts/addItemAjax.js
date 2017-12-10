@@ -1,6 +1,6 @@
 function encodeForAjax(data) {
-    return Object.keys(data).map(function(k){
-      return encodeURIComponent(k) + '=' + encodeURIComponent(data[k])
+    return Object.keys(data).map(function(k) {
+        return encodeURIComponent(k) + '=' + encodeURIComponent(data[k])
     }).join('&');
 }
 
@@ -13,12 +13,12 @@ function addItemToTask(form) {
     }
 
     inputNode.value = "";
-    
+
     let request = new XMLHttpRequest();
     request.onload = addItemListener;
     request.open("post", "action_add_item.php", true);
     request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    request.send(encodeForAjax({task_id: task, description: itemText}));
+    request.send(encodeForAjax({ task_id: task, description: itemText }));
 
     return false; // preventing event from bubbling up
 }
@@ -43,7 +43,7 @@ function setItemCompleted(checkbox) {
     request.onload = logThis;
     request.open("post", "action_check_item.php", true);
     request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    request.send(encodeForAjax({item_id: id, completed: checked ? 1 : 0}));
+    request.send(encodeForAjax({ item_id: id, completed: checked ? 1 : 0 }));
 
     return true;
 }
@@ -58,9 +58,10 @@ function createItemNode(item) {
     let str = '<input class="todo__state" type="checkbox"/>';
     str = str.concat('<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 25 25" class="todo__icon">');
     str = str.concat('<use xlink:href="#todo__box" class="todo__box"></use><use xlink:href="#todo__check" class="todo__check"></use><use xlink:href="#todo__circle" class="todo__circle"></use></svg>');
-    str = str.concat('<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 200 10" class="todo__icon todo__icon_line">');    
-    str = str.concat('<use xlink:href="#todo__line" class="todo__line"></use></svg>');    
+    str = str.concat('<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 200 10" class="todo__icon todo__icon_line">');
+    str = str.concat('<use xlink:href="#todo__line" class="todo__line"></use></svg>');
     str = str.concat('<div id="li@' + item.item_id + '" class="todo__text" >' + item.description + '</div>');
+    str = str.concat('<a href=""><i class="fa fa-trash" aria-hidden="true"></i></a>');
 
     node.innerHTML = str;
 
