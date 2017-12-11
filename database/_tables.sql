@@ -13,7 +13,7 @@ CREATE TABLE Task (
 	category VARCHAR,
 	priority INTEGER,
 	duedate DATE,
-	parent_task INTEGER REFERENCES Task,
+	parent_task INTEGER REFERENCES Task ON DELETE CASCADE,
 	
 	CHECK(priority between 0 and 3)
 );
@@ -21,9 +21,9 @@ CREATE TABLE Task (
 CREATE TABLE Item (
 	item_id INTEGER PRIMARY KEY,
 	priority INTEGER,
-	dependency INTEGER REFERENCES Item,
-	assigneduser VARCHAR REFERENCES User,
-	task_id INTEGER REFERENCES Task NOT NULL,
+	dependency INTEGER REFERENCES Item ON DELETE SET NULL,
+	assigneduser VARCHAR REFERENCES User ON DELETE SET NULL,
+	task_id INTEGER REFERENCES Task ON DELETE CASCADE NOT NULL,
 	description VARCHAR NOT NULL,
 	completed BOOLEAN,
 	
@@ -33,7 +33,7 @@ CREATE TABLE Item (
 );
 
 CREATE TABLE UserTask (
-	username REFERENCES User,
-	task_id REFERENCES Task,
+	username REFERENCES User ON DELETE CASCADE,
+	task_id REFERENCES Task ON DELETE CASCADE,
 	CONSTRAINT UserTask PRIMARY KEY (username, task_id)
 );

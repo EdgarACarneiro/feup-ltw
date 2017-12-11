@@ -249,4 +249,15 @@ function deleteItem($item_id) {
     return $stmt->execute(array($item_id));
 }
 
+function deleteTask($task_id) {
+    global $dbh;
+    
+    $stmt = $dbh->prepare(
+        "DELETE FROM Task
+        WHERE task_id = ?"
+    );
+
+    return $stmt->execute(array($task_id));
+}
+
 ?>
