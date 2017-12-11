@@ -1,14 +1,29 @@
 <?php
 
     include_once('includes/init.php');
-
     $currUser = $_SESSION['username'];
 
-    // Move the uploaded file to its final destination
-    //move_uploaded_file($_FILES['image'], $mediumFileName);
+    function addThumbnail($original, $newFileName, $newSize, $width, $height, $square) {
+        
+        $thumbnail = imagecreatetruecolor($newSize, $newSize);
+        imagecopyresized($thumbnail, $original, 0, 0,
+                        ($width > $square)? ($width - $square)/2 : 0,
+                        ($height > $square)? ($height - $square)/2 : 0,
+                        $newSize, $newSize, $square, $square);
+        imagejpeg($thumbnail, $newFileName);
+    }
 
-    // Create an image representation of the original image
-    //$original = imagecreatefromjpeg($_FILES['image']);
+    function createImageFromType($image) {
+        switch ($image['type']) {
+            case 'image/jpg':
+            case 'image/jpeg':
+                return imagecreatefromjpeg($image['tmp_name']);
+            case 'image/png':
+                return imagecreatefrompng($image['tmp_name']);
+            default:
+                return FALSE;
+        }
+    }
 
     //If an image was uploaded
     if($_FILES['image']['name'])
@@ -18,11 +33,21 @@
         {
             // Generate filenames for original, small and medium files
             $profileFileName = "images/user/profile/$currUser.jpg";
-            $smallFileName = "images/user/thumbs_small/$currUser.jpg";
+            $smallFileName = "images/user/thumbnails/$currUser.jpg";
 
-            //move it to where we want it to be
-            move_uploaded_file($_FILES['image']['tmp_name'], $profileFileName);
-            $message = 'Congratulations!  Your file was accepted.';
+            // Create an image representation of the original image
+            if ( !($original = createImageFromType($_FILES['image'])) ) {
+                //Error message here and go on - $message = 'Received wrong file type. Please use jpeg or png'
+                return FALSE;
+            }
+            $width = imagesx($original);     // width of the original image
+            $height = imagesy($original);    // height of the original image
+            $square = min($width, $height);  // size length of the maximum square
+
+            addThumbnail($original, $profileFileName, 300, $width, $height, $square);
+            addThumbnail($original, $smallFileName, 100, $width, $height, $square);
+
+            //$message = 'File succesfully loaded';
         }
         //Errors detected   
         else {
@@ -30,32 +55,5 @@
         }
     }
 
-/*
-    $width = imagesx($original);     // width of the original image
-    $height = imagesy($original);    // height of the original image
-    $square = min($width, $height);  // size length of the maximum square
-
-    //Create and save the profile square thumbnail -> TODO METER ISTO COMO FUNCAO GENERICA QUE RECEBE O TAMANHO e o file name
-    $profile = imagecreatetruecolor(300, 300);
-    imagecopyresized($small, $original, 0, 0, ($width>$square)?($width-$square)/2:0, ($height>$square)?($height-$square)/2:0, 300, 300, $square, $square);
-    imagejpeg($small, $smallFileName);
-
-    // Create and save a small square thumbnail
-    /*$small = imagecreatetruecolor(100, 100);
-    imagecopyresized($small, $original, 0, 0, ($width>$square)?($width-$square)/2:0, ($height>$square)?($height-$square)/2:0, 100, 100, $square, $square);
-    imagejpeg($small, $smallFileName);
-
-    // Calculate width and height of medium sized image (max width: 400)
-    /*$mediumwidth = $width;
-    $mediumheight = $height;
-    if ($mediumwidth > 400) {
-    $mediumwidth = 400;
-    $mediumheight = $mediumheight * ( $mediumwidth / $width );
-    }
-
-    // Create and save a medium image
-    $medium = imagecreatetruecolor($mediumwidth, $mediumheight);
-    imagecopyresized($medium, $original, 0, 0, 0, 0, $mediumwidth, $mediumheight, $width, $height);
-    imagejpeg($medium, $mediumFileName);*/
-
+    header("Location: profile.php"); //-> meter em ajax sem redericeionamento, SOMEHOW
 ?>
