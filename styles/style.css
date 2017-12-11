@@ -1260,6 +1260,7 @@ textarea:focus {
 .todo__icon_line {
   width: 90%;
   margin-left: 10%;
+  z-index: -1;
 }
 
 .todo__line,
@@ -1335,6 +1336,10 @@ textarea:focus {
 
 .todo__state:checked ~ .todo__icon .todo__circle {
   animation-name: explode;
+}
+
+.todo__state:checked ~ .todo__icon_line {
+  z-index: 0;
 }
 
 .todo:hover a {
