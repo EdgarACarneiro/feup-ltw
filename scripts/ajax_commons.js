@@ -32,7 +32,7 @@ export function getCurrentUser() {
     }
     request.open("post", "action_get_username.php", false); // false -> not async
     request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    request.send(); // TODO check better way to do sync request
+    request.send(); // TODO change to Promise ?
 
     return username;
 }
