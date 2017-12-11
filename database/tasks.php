@@ -205,6 +205,19 @@ function changeItemDescription($item_id, $description) {
     return getItemById($item_id);
 }
 
+function changeTaskTitle($task_id, $title) {
+    global $dbh;
+    
+    $stmt = $dbh->prepare(
+        "UPDATE Task
+        SET title = ?
+        WHERE task_id = ?"
+    );
+    $stmt->execute(array($title, $task_id));
+
+    return getTaskById($task_id);
+}
+
 function addTask($username, $title, $priority, $duedate, $description) {
     global $dbh;
 
@@ -247,6 +260,17 @@ function deleteItem($item_id) {
     );
 
     return $stmt->execute(array($item_id));
+}
+
+function deleteTask($task_id) {
+    global $dbh;
+    
+    $stmt = $dbh->prepare(
+        "DELETE FROM Task
+        WHERE task_id = ?"
+    );
+
+    return $stmt->execute(array($task_id));
 }
 
 ?>

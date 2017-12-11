@@ -1,4 +1,4 @@
-import { encodeForAjax, logServerResponse, createItemNode, createTaskNode } from './ajax_commons.js';
+import { encodeForAjax, logServerResponse, createItemNode } from './ajax_commons.js';
 
 
 export function addItemToTask() {
@@ -27,7 +27,7 @@ function addItemListener() {
     list.insertBefore(listItem, list.lastElementChild);
 }
 
-export function setItemCompleted() {
+export function setItemCompleted(e) {
     let textDiv = this.parentNode.getElementsByClassName('todo__text')[0];
     let id = textDiv.id.match(/@(\d+)/)[1];
     let checked = this.checked;
@@ -38,6 +38,7 @@ export function setItemCompleted() {
     request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     request.send(encodeForAjax({ item_id: id, completed: checked ? 1 : 0 }));
 
+    e.stopPropagation();
     return true; // allow default action
 }
 
@@ -51,6 +52,8 @@ export function deleteItem(event) {
     request.open("post", "action_delete_item.php", true);
     request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     request.send(encodeForAjax({ item_id: id }));
+
+    event.stopPropagation();
 }
 
 window.addEventListener('load', function() {

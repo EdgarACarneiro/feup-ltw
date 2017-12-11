@@ -64,3 +64,13 @@ input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
     -webkit-transition: background-color 1s linear 99999s, color 1s linear 99999s !important;
 }
+
+.thumbnail-circular {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    object-fit: cover;
+}

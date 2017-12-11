@@ -3,18 +3,22 @@ include_once('database/connection.php');
 include_once('database/tasks.php');
 ?>
 <script type="module" src="scripts/ajax_item.js"></script>
-<script type="module" src="scripts/ajax_item_edit.js"></script>
+<script type="module" src="scripts/ajax_text_edit.js"></script>
 
 <?php
 $projects = getParentTasks($_SESSION['username']);
 
 function listToDoList($task, &$users, $nested = true) {
     if ($nested) {
-        echo '<article class="rnd-corners"><h4>'.$task['title'].'</h4>';
-    } else {
-        echo '<h2>'.$task['title'].'</h2>';
-    }    
+        echo '<article class="rnd-corners">';
+    }?>
+
+    <div id="update-title@<?php echo $task['task_id']; ?>" class="todo__title">
+    <span class="item-display"><?php echo $task['title']; ?></span>
+    <input type="text" class="item-edit" style="display:none"/>
+    </div>
     
+    <?php
     echo '<ul id="ul@' . $task['task_id'] . '">';
     foreach (getTasksItems($task['task_id']) as $item) {
         if($item['assigneduser'] != NULL && !in_array($item['assigneduser'], $users)){
@@ -28,6 +32,8 @@ function listToDoList($task, &$users, $nested = true) {
         <input type="text" placeholder="Add Item..." name="description" required />
     </form></li>
     </ul>
+    <a id="delete-task@<?php echo $task['task_id']; ?>" class="shadow-cards fa-circular-grey" href="">
+        <i class="fa fa-times" aria-hidden="true"></i></a>
 
     <?php
     if ($nested) echo '</article>';
@@ -48,8 +54,8 @@ function listItem($item) {
             <use xlink:href="#todo__line" class="todo__line"></use>
         </svg>
         <div id="li@<?php echo $item['item_id']; ?>" class="todo__text">
-            <span class="li-item-display"><?php echo $item['description']; ?></span>
-            <input type="text" class="li-item-edit" style="display:none"/>
+            <span class="item-display"><?php echo $item['description']; ?></span>
+            <input type="text" class="item-edit" style="display:none"/>
         </div>
         <a id="delete-item@<?php echo $item['item_id']; ?>" class="fa-circular-grey" href="">
             <i class="fa fa-trash" aria-hidden="true"></i>
@@ -73,14 +79,12 @@ function listProject($project) {
     echo '<nav id="info-nav">';
     foreach ($users as $user){
         ?>
-            <a id="<?php echo $user?>" href="" class="fa-circular-grey">
-                <img src= <?php getUserThumbnail($user); ?> alt="Contributor Thumbnail">
+            <a id="<?php echo $user?>" href="">
+                <img src= <?php getUserThumbnail($user); ?> alt="Contributor Thumbnail" class="thumbnail-circular">
             </a>
         <?php   
     }
     echo '<button class="addSubList"><i class="fa fa-plus-circle"></i> Add Sub-List</button></nav>';
-    echo '<a href="" class="shadow-cards fa-circular-grey">
-            <i class="fa fa-times" aria-hidden="true"></i></a>';
     echo '</div>';
     echo '</article>';
 }
@@ -91,5 +95,5 @@ foreach ($projects as $project) {
 
 ?>
 
-<script type="text/javascript" src="scripts/modal.js"></script>
-<script type="text/javascript" src="scripts/collaborators.js"></script>
+<script type="text/javascript" src="scripts/modal.js" defer></script>
+<script type="text/javascript" src="scripts/collaborators.js" defer></script>

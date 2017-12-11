@@ -1,5 +1,4 @@
-import { encodeForAjax, logServerResponse, createItemNode, createTaskNode } from './ajax_commons.js';
-
+import { encodeForAjax, logServerResponse, createTaskNode } from './ajax_commons.js';
 
 function submitTask() {
     let title = document.getElementById('addTask_title').value;
@@ -48,7 +47,26 @@ function clearAddTaskForm() {
     priorityNode.click();
 }
 
+export function deleteTask(event) {
+    let id = this.id.match(/^delete-task@(\d+)/)[1];
+    event.preventDefault();
+    this.parentNode.remove();
+
+    let request = new XMLHttpRequest();
+    request.onload = logServerResponse;
+    request.open("post", "action_delete_task.php", true);
+    request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    request.send(encodeForAjax({ task_id: id }));
+
+    event.stopPropagation();
+}
+
 window.addEventListener('load', function() {
     var form = document.getElementById('addTask').getElementsByTagName('form')[0];
     form.onsubmit = submitTask.bind(form);
+
+    var deleteTaskIcons = document.querySelectorAll("a[id^='delete-task@']");
+    Array.from(deleteTaskIcons).forEach(element => {
+        element.onclick = deleteTask.bind(element);
+    });
 });
