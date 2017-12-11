@@ -3,7 +3,7 @@
     echo('UUBUBUBUUBUUBBUUB');
 
     // Generate filenames for original, small and medium files
-    $originalFileName = "images/user/profile$id.jpg";
+    $originalFileName = "images/user/profile/$id.jpg";
     $smallFileName = "images/user/thumbs_small/$id.jpg";
 
     // Move the uploaded file to its final destination

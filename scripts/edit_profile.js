@@ -1,8 +1,4 @@
-function encodeForAjax(data) {
-    return Object.keys(data).map(function(k){
-      return encodeURIComponent(k) + '=' + encodeURIComponent(data[k])
-    }).join('&');
-}
+import { encodeForAjax, logServerResponse, createItemNode, createTaskNode } from './ajax_commons.js';
 
 function changeToEdition() {
 
@@ -33,13 +29,17 @@ function changeToEdition() {
     profile_container.appendChild(upload_form);
 
     //Eliminating edit-button
-    profile_container.removeChild(document.getElementsByClassName("edit-profile")[0]);
+	profile_container.removeChild(document.getElementsByClassName("edit-profile")[0]);
+	
+	//onclick.stopPropagation();
+	console.log(event);
+	event.stopPropagation();
 
     //Adding Save changes button
     let save_btn = document.createElement("button");
     save_btn.setAttribute('type', "button");
-    save_btn.setAttribute('class', "btn save-changes");
-    save_btn.setAttribute('onclick', "saveChanges()");
+	save_btn.setAttribute('class', "btn save-changes");
+	save_btn.onclick = saveChanges.bind(save_btn);
 
     let save_btn_content = document.createElement("span");
 
@@ -51,24 +51,23 @@ function changeToEdition() {
     save_btn_content.appendChild(save_icon);
     save_btn_content.appendChild(btn_label);
     save_btn.appendChild(save_btn_content);
-    profile_container.appendChild(save_btn);
+	profile_container.appendChild(save_btn);
 }
 
 function saveChanges() {
 	let aboutText = document.getElementsByTagName("textarea")[0].value;
 	changeCurrUserAbout(aboutText);
 
-	//alterar fotos - TODO
 	return false;
 }
 
 function changeCurrUserAbout(aboutText) {
 
 	let request = new XMLHttpRequest();
-	request.onload = console.log(this.responseText);
+	//request.onload = console.log(this.responseText);
 	request.open("post", "action_save_profile.php", true);
 	request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-	request.send(encodeForAjax({ about: aboutText }))
+	request.send(encodeForAjax({ about: aboutText }));
 
 	changeToView();
 }
@@ -100,7 +99,7 @@ function changeToView() {
 	let edit_btn = document.createElement("button");
 	edit_btn.setAttribute('type', "button");
 	edit_btn.setAttribute('class', "btn edit-profile");
-	edit_btn.setAttribute('onclick', "changeToEdition()");
+	edit_btn.onclick = changeToEdition.bind(edit_btn);
 
 	let edit_btn_content = document.createElement("span");
 
@@ -114,3 +113,8 @@ function changeToView() {
 	edit_btn.appendChild(edit_btn_content);
 	profile_container.appendChild(edit_btn);
 }
+
+window.addEventListener('load', function() {
+    var edit_btn = document.getElementsByClassName("edit-profile")[0];
+    edit_btn.onclick = changeToEdition.bind(edit_btn);
+});
