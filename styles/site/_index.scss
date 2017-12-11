@@ -150,6 +150,7 @@
         >#info-nav {
             display: flex;
             justify-content: flex-end;
+            flex-wrap: wrap;
             opacity: 0;
             transition: .5s;
             @media (max-width: #{$collapse-xs}) {
