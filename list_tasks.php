@@ -3,18 +3,22 @@ include_once('database/connection.php');
 include_once('database/tasks.php');
 ?>
 <script type="module" src="scripts/ajax_item.js"></script>
-<script type="module" src="scripts/ajax_item_edit.js"></script>
+<script type="module" src="scripts/ajax_text_edit.js"></script>
 
 <?php
 $projects = getParentTasks($_SESSION['username']);
 
 function listToDoList($task, &$users, $nested = true) {
     if ($nested) {
-        echo '<article class="rnd-corners"><h4>'.$task['title'].'</h4>';
-    } else {
-        echo '<h2>'.$task['title'].'</h2>';
-    }    
+        echo '<article class="rnd-corners">';
+    }?>
+
+    <div id="update-title@<?php echo $task['task_id']; ?>" class="todo__title">
+    <span class="item-display"><?php echo $task['title']; ?></span>
+    <input type="text" class="item-edit" style="display:none"/>
+    </div>
     
+    <?php
     echo '<ul id="ul@' . $task['task_id'] . '">';
     foreach (getTasksItems($task['task_id']) as $item) {
         if($item['assigneduser'] != NULL && !in_array($item['assigneduser'], $users)){
@@ -50,8 +54,8 @@ function listItem($item) {
             <use xlink:href="#todo__line" class="todo__line"></use>
         </svg>
         <div id="li@<?php echo $item['item_id']; ?>" class="todo__text">
-            <span class="li-item-display"><?php echo $item['description']; ?></span>
-            <input type="text" class="li-item-edit" style="display:none"/>
+            <span class="item-display"><?php echo $item['description']; ?></span>
+            <input type="text" class="item-edit" style="display:none"/>
         </div>
         <a id="delete-item@<?php echo $item['item_id']; ?>" class="fa-circular-grey" href="">
             <i class="fa fa-trash" aria-hidden="true"></i>
@@ -91,5 +95,5 @@ foreach ($projects as $project) {
 
 ?>
 
-<script type="text/javascript" src="scripts/modal.js"></script>
-<script type="text/javascript" src="scripts/collaborators.js"></script>
+<script type="text/javascript" src="scripts/modal.js" defer></script>
+<script type="text/javascript" src="scripts/collaborators.js" defer></script>

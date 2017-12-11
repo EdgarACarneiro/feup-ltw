@@ -1,7 +1,6 @@
 import { addItemToTask, setItemCompleted, deleteItem } from './ajax_item.js';
-import { switchToEdit, switchToDisplay } from './ajax_item_edit.js';
+import { switchToEdit, switchToDisplay } from './ajax_text_edit.js';
 import { deleteTask } from './ajax_task.js';
-
 
 export function encodeForAjax(data) {
     return Object.keys(data).map(function(k) {
@@ -12,6 +11,14 @@ export function encodeForAjax(data) {
 export function logServerResponse() {
     console.log("Server Response:");
     console.log(JSON.parse(this.responseText));
+}
+
+export function show(element) {
+    element.style.display = 'block';
+}
+
+export function hide(element) {
+    element.style.display = 'none';
 }
 
 /**
@@ -39,8 +46,8 @@ export function createItemNode(item) {
     str = str.concat('<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 200 10" class="todo__icon todo__icon_line">');
     str = str.concat('<use xlink:href="#todo__line" class="todo__line"></use></svg>');
     str = str.concat('<div id="li@' + item.item_id + '" class="todo__text" >');
-    str = str.concat('<span class="li-item-display">' + item.description + '</span>');
-    str = str.concat('<input type="text" class="li-item-edit" style="display:none"/></div>');
+    str = str.concat('<span class="item-display">' + item.description + '</span>');
+    str = str.concat('<input type="text" class="item-edit" style="display:none"/></div>');
     str = str.concat('<a id="delete-item@' + item.item_id + '" class="fa-circular-grey"><i class="fa fa-trash" aria-hidden="true"></i></a>');
 
     node.innerHTML = str;
@@ -54,10 +61,10 @@ function addListenersToItemNode(node, item) {
     let checkboxNode = node.getElementsByClassName('todo__state')[0];
     checkboxNode.onclick = setItemCompleted.bind(checkboxNode);
 
-    let displayNode = node.getElementsByClassName('li-item-display')[0];
+    let displayNode = node.getElementsByClassName('item-display')[0];
     displayNode.onclick = switchToEdit.bind(displayNode);
 
-    let inputNode = node.getElementsByClassName('li-item-edit')[0];
+    let inputNode = node.getElementsByClassName('item-edit')[0];
     inputNode.addEventListener('focusout', switchToDisplay.bind(inputNode));
 
     let deleteNode = node.querySelector("a[id^='delete-item@" + item.item_id + "']");
