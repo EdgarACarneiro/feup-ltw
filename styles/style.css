@@ -340,8 +340,10 @@ input:-webkit-autofill:active {
   flex-grow: 1;
 }
 
-.nav-bar ul #info #logo-img {
-  width: 60px;
+@media (max-width: 640px) {
+  .nav-bar ul #info {
+    flex-grow: 0;
+  }
 }
 
 .nav-bar ul #info h1 {
@@ -354,23 +356,48 @@ input:-webkit-autofill:active {
   color: white;
 }
 
+@media (max-width: 640px) {
+  .nav-bar ul #info h1 {
+    display: none;
+  }
+}
+
 .nav-bar ul #info img {
+  width: 60px;
   margin-right: 0;
   padding-right: 1em;
   margin-left: auto;
+}
+
+@media (max-width: 640px) {
+  .nav-bar ul #info img {
+    display: none;
+  }
 }
 
 .nav-bar ul #search {
   flex-grow: 3;
 }
 
+@media (max-width: 640px) {
+  .nav-bar ul #search {
+    flex-grow: 1;
+  }
+}
+
 .nav-bar ul #user {
-  width: 13em;
+  width: 20%;
 }
 
 .nav-bar ul #user > * {
   align-content: center;
   width: 4em;
+}
+
+@media (max-width: 640px) {
+  .nav-bar ul #user {
+    width: 40%;
+  }
 }
 
 #search-bar {
@@ -384,9 +411,27 @@ input:-webkit-autofill:active {
   transition: width 0.5s;
 }
 
+@media (max-width: 960px) {
+  #search-bar {
+    width: 40%;
+  }
+}
+
+@media (max-width: 640px) {
+  #search-bar {
+    width: 50%;
+  }
+}
+
 #search-bar:focus {
   width: 70%;
   outline: none;
+}
+
+@media (max-width: 640px) {
+  #search-bar:focus {
+    width: 50%;
+  }
 }
 
 .fa-search {
@@ -422,6 +467,55 @@ input:-webkit-autofill:active {
   user-select: none;
   /* Non-prefixed version, currently
     supported by Chrome and Opera */
+}
+
+.anon-nav-bar {
+  background-color: #2b2e37;
+  height: 75px;
+  display: flex;
+}
+
+.anon-nav-bar h1 {
+  flex: 1;
+  font-size: 2em;
+  margin-left: 0;
+  margin: auto;
+  width: auto;
+}
+
+.anon-nav-bar h1 a {
+  color: white;
+}
+
+@media (max-width: 420px) {
+  .anon-nav-bar h1 {
+    flex: 0;
+    display: none;
+  }
+}
+
+.anon-nav-bar div {
+  flex: 1;
+  margin: auto;
+  align-items: right;
+}
+
+.anon-nav-bar div img {
+  float: right;
+  max-width: 60px;
+  padding-right: 1em;
+}
+
+@media (max-width: 420px) {
+  .anon-nav-bar div {
+    align-items: center;
+    flex: 0;
+  }
+  .anon-nav-bar div img {
+    max-width: 80px;
+    padding: 0;
+    margin-top: 8px;
+  }
 }
 
 #top-bar {

@@ -12,6 +12,7 @@ include_once('templates/header.php');
 
     <?php
         include_once('templates/nav-bar.php');
+        userNavBar();
         include_once('templates/calendar.php');
         include_once('show_user_info.php');
     ?>

@@ -1,9 +1,13 @@
+<?php
+
+function userNavBar() {
+ ?>
 <script type="module" src="scripts/ajax_search.js"></script>
 
 <nav id="top-bar" class="nav-bar">
     <ul>
         <li id="info">
-            <img id="logo-img" src="images/site/smallLogo.png" alt="The website logo">
+            <img src="images/site/smallLogo.png" alt="The website logo">
             <h1><a href="index.php">EzeeDo</a></h1>
         </li>
         <li id="search">
@@ -26,3 +30,15 @@
         </li>
     </ul>
 </nav>
+<?php }
+
+function anonymousNavBar() {
+?>
+<nav id="top-bar" class="anon-nav-bar">
+    <div>
+        <img src="images/site/smallLogo.png" alt="The website logo">
+    </div>
+    <h1><a href="index.php">EzeeDo</a></h1>
+</nav>
+<?php }
+?>
