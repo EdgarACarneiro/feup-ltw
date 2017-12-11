@@ -1,5 +1,6 @@
 import { addItemToTask, setItemCompleted, deleteItem } from './ajax_item.js';
 import { switchToEdit, switchToDisplay } from './ajax_item_edit.js';
+import { deleteTask } from './ajax_task.js';
 
 
 export function encodeForAjax(data) {
@@ -110,9 +111,17 @@ export function createTaskNode(task, items) {
 
     // Add Close Anchor/Button
     let anchorNode = document.createElement('a');
+    anchorNode.id = "delete-task@" + task.task_id;
     anchorNode.classList.add('shadow-cards', 'fa-circular-grey');
     anchorNode.innerHTML = '<i class="fa fa-times" aria-hidden="true"></i>';
     articleNode.appendChild(anchorNode);
 
+    addListenersToTaskNode(divNode, task);
+
     return divNode;
+}
+
+function addListenersToTaskNode(node, task) {
+    let iconNode = node.querySelector("a[id^='delete-task@']");
+    iconNode.onclick = deleteTask.bind(iconNode);
 }
