@@ -1,27 +1,36 @@
-<section class="profile-container" id="profile">
-    <div class="profile-pic">
+<?php
+function displayCurrUserInfo() {
+    include_once('database/connection.php');
+    include_once('database/user.php');
 
-        <?php
-        include_once('database/connection.php');
-        include_once('database/user.php');
+    $user = getUserInfo($_SESSION['username']);
+    $username = $user['username'];
+    $about = $user['about'];
+    $imgPath = ("images/user/profile/" . $username . ".jpg");
 
-        $user = getUserInfo($_SESSION['username']);
-        $username = $user['username'];
-        $about = $user['about'];
-        $imgPath = ("images/user/profile/" . $username . ".jpg");
+    echo '<div class="profile-pic">';
+    echo '<img src=' . 
+        (file_exists($imgPath) ? 
+        $imgPath : "images/user/profile/default.jpg").
+        ' alt="user profile picture">';
+    echo '</div>';
+    echo '<div class="username-info">';
+    echo '<h2>' . $username . '</h2>';
+    echo '<h4>' . $about . '</h4>';
+    echo '</div>';
+}
 
-            echo '<img src=' . 
-                (file_exists($imgPath) ? 
-                $imgPath : "images/user/profile/default.jpg").
-                ' alt="user profile picture">';
-            echo '</div>';
-            echo '<div class="username-info">';
-            echo '<h2>' . $username . '</h2>';
-            echo '<h4>' . $about . '</h4>';
-        ?>
-        
-    </div>
-    <button type="button" class="btn edit-profile" >
-        <span><i class="fa fa-pencil"></i>Edit Profile</span>
-    </button>
-</section>
+function getUserThumbnail($user) {
+    $imgPath = ("images/user/thumbnails/" . $user . ".jpg");
+
+    if (file_exists($imgPath))
+        echo '"' . $imgPath . '"';
+    else
+        echo '"images/user/thumbnails/default.jpg"';
+}
+
+function getCurrUserThumbnail() {
+    include_once('includes/session.php');
+    getUserThumbnail(getCurrentUser());
+}
+?>

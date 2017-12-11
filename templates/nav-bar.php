@@ -14,15 +14,11 @@
             <a href="index.php"><i class="fa fa-rss"></i></a>
             <a href="profile.php">
                 <img class="mini-profile" src=
-
                 <?php 
-                include_once('includes/session.php');
-                $imgPath = 'images/user/thumbnails/' . getCurrentUser() . '.jpg';
-
-                echo ((file_exists($imgPath) ? 
-                    '"' . $imgPath . '"' : '"images/user/thumbnails/default.jpg"'));
+                include_once('show_user_info.php');
+                getCurrUserThumbnail();
                 ?>
-                alt="User Profile thumbnail">
+                alt="User Thumbnail">
             </a>
             <form action="action_logout.php" method="post">
                 <button type="submit" class="logout-btn"><i class="fa fa-sign-out"></i>

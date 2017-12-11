@@ -74,7 +74,7 @@ function listProject($project) {
     foreach ($users as $user){
         ?>
             <a id="<?php echo $user?>" href="" class="fa-circular-grey">
-                <i class="fa fa-user" aria-hidden="true"></i>
+                <img src= <?php getUserThumbnail($user); ?> alt="Contributor Thumbnail">
             </a>
         <?php   
     }
