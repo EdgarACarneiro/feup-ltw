@@ -1,6 +1,7 @@
 // Default Measure
 $default-margin: 1em;
 $default-padding: 1em;
+$collapse-phone: 420px;
 $collapse-xs: 640px;
 $collapse-s: 768px;
 $collapse-m: 960px;
@@ -25,3 +26,6 @@ $masonry-max-width: 60em;
 $masonry-gap: 1em;
 //Login Page
 $block-width: 300px;
+//Images
+$profile-image-size: 300px;
+$thumbnail-image-size: 30px;

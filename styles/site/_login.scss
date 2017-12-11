@@ -5,22 +5,50 @@
     flex-direction: row-reverse;
     max-width: calc(#{$block-width} * 2);
     align-content: center;
+
+    @media (max-width: #{$collapse-xs}) {
+        margin: $nav-height 0 0;
+        max-width: none;
+        flex-direction: column-reverse;
+        border-radius: 0;
+        background: $gradient-grey-to-blue;
+    }
 }
 
 .site-description {
-    flex: 1;
-    padding: 2em;
     border-radius: $medium-border-radius 0 0 $medium-border-radius;
-    background: $gradient-turqoise;
-    max-width: 300px;
+    background: $gradient-turquoise;
+
+    p {
+        @media (max-width: #{$collapse-xs}) {
+            text-align: center;
+        }
+    }
 }
 
 .sign-user {
-    flex: 1;
-    padding: 2em;
     border-radius: 0 $medium-border-radius $medium-border-radius 0;
     background: $gradient-grey;
-    max-width: 300px;
+}
+
+.site-description,
+.sign-user {
+    flex: 1;
+    padding: 2em;
+    max-width: $block-width;
+
+    @media (max-width: #{$collapse-xs}) and (min-width: #{$collapse-phone}) {
+        max-width: none;
+        border-radius: 0;
+        padding-left: 20%;
+        padding-right: 20%;
+        background: none;
+    }
+
+    @media (max-width: #{$collapse-phone}) {
+        max-width: none;
+        border-radius: 0;
+    }
 }
 
 .switch-btn {
@@ -42,7 +70,7 @@
     }
     .sign-in-btn {
         border-radius: $border-radius 0 0 $border-radius;
-        background: $gradient-turqoise;
+        background: $gradient-turquoise;
     }
     .sign-up-btn {
         border-radius: 0 $border-radius $border-radius 0;

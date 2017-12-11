@@ -15,6 +15,18 @@ $info-width: 60%;
         width: calc(100% - #{$calendar-width} - 10%);
     }
 
+    @media (max-width: #{$collapse-m}) {
+        grid-template-columns: 100%;
+        grid-template-rows: auto auto auto;
+        grid-template-areas: "info"
+                             "image"
+                             "edit";
+    }
+
+    @media (max-width: #{$collapse-phone}) {
+        margin: 5% 0;
+    }
+
 }
 
 .profile-pic {
@@ -26,19 +38,38 @@ $info-width: 60%;
     img {
         border-radius: $round-border-radius;
     }
+
+    @media (max-width: #{$collapse-m}) {
+        margin: 0 auto 160px;
+        position: relative;
+    }
 }
 
 .username-info {
     width: auto;
-    grid-area: info;
     padding-left: $default-padding;
     padding-top: 2em;
+
+    @media (min-width: #{$collapse-m}) {
+        grid-area: info;
+    }
+
+    @media (max-width: #{$collapse-m}) {
+        padding: 0 10%;
+        height: 50px;
+    }
 
     h2 {
         font-size: x-large;
         font-weight: bold;
         padding-bottom: $default-padding;
         border-bottom: 2px solid $grey;
+
+        @media (max-width: #{$collapse-m}) {
+            border: 0;
+            padding-top: 0;
+            text-align: center;
+        }
     }
 
     h4 {
@@ -48,10 +79,21 @@ $info-width: 60%;
     }
 }
 
+.username-info {
+    h4 ,
+    textarea {
+        @media (max-width: #{$collapse-m}) {
+            grid-area: about;
+            position: relative;
+            top: $profile-image-size;
+            height: 100px;
+        }
+    }
+}
+
 .edit-profile,
 .save-changes {
     font-size: 1em;
-    //text-align: right;
     margin-left: $photo-width;
     border: none;
     grid-area: edit;
@@ -60,7 +102,18 @@ $info-width: 60%;
         width: auto;
         align-self: center;
         font-size: x-large;
-    }   
+    }
+
+    @media (max-width: #{$collapse-xs}) and (min-width: #{$collapse-phone}) {
+        width: 70%;
+        border-radius: $border-radius;
+    }
+}
+
+.edit-profile {
+    @media (max-width: #{$collapse-m}) {
+        margin: 0 auto 0;
+    }
 }
 
 .save-changes {
@@ -68,6 +121,13 @@ $info-width: 60%;
     left: $photo-width * ($info-width / 100%);
     bottom: 21px;
     text-align: center;
+
+    @media (max-width: #{$collapse-xs}) {
+        margin: 0 auto 0;
+        left: 0;
+        bottom: 0;
+        top: 30px;
+    }
 }
 
 //Css for edition elements
@@ -86,10 +146,20 @@ textarea:focus {
 
 .updater {
     grid-area: uploader / uploader / uploader / edit;
+
+    @media (max-width: #{$collapse-m}) {
+        grid-area: edit;
+        height: 100px;
+    }
 }
 
 .image-uploader {
     grid-area: uploader;
     padding-left: 5%;
+
+    @media (max-width: #{$collapse-xs}) {
+        width: 100%;
+        padding-left: 12%;
+    }
 }
 
