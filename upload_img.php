@@ -39,5 +39,5 @@
     imagecopyresized($medium, $original, 0, 0, 0, 0, $mediumwidth, $mediumheight, $width, $height);
     imagejpeg($medium, $mediumFileName);*/
 
-    header("Location: profile.php");
+    header("Location: index.php");
 ?>

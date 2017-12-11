@@ -999,7 +999,6 @@ footer {
 .edit-profile,
 .save-changes {
   font-size: 1em;
-  text-align: right;
   margin-left: 40%;
   border: none;
   grid-area: edit;
@@ -1010,6 +1009,13 @@ footer {
   width: auto;
   align-self: center;
   font-size: x-large;
+}
+
+.save-changes {
+  position: relative;
+  left: 24%;
+  bottom: 21px;
+  text-align: center;
 }
 
 textarea {
@@ -1023,6 +1029,10 @@ textarea {
 
 textarea:focus {
   outline-color: #80E3D1;
+}
+
+.updater {
+  grid-area: uploader / uploader / uploader / edit;
 }
 
 .image-uploader {

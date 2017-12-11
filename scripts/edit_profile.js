@@ -1,4 +1,4 @@
-import { encodeForAjax, logServerResponse, createItemNode, createTaskNode } from './ajax_commons.js';
+import { encodeForAjax } from './ajax_commons.js';
 
 function changeToEdition() {
 
@@ -15,29 +15,25 @@ function changeToEdition() {
     texteditor.appendChild(userAbout);
     info_container.appendChild(texteditor);
 
-    //Adding upload button
+    //Adding upload Form
     let upload_form = document.createElement("form");
-    upload_form.setAttribute('action', "update_img.php");
-    upload_form.setAttribute('class', "image-uploader");
+    upload_form.action = "upload_img.php";
+    upload_form.setAttribute('class', "updater");
     upload_form.setAttribute('method', "post");
     upload_form.setAttribute('ecntype', "multipart/form-data");
 
     let input_file = document.createElement("input");
     input_file.setAttribute('type', "file");
-    input_file.setAttribute('name', "file");
+	input_file.setAttribute('name', "file");
+	input_file.setAttribute('class', "image-uploader");
     upload_form.appendChild(input_file);
-    profile_container.appendChild(upload_form);
 
     //Eliminating edit-button
 	profile_container.removeChild(document.getElementsByClassName("edit-profile")[0]);
-	
-	//onclick.stopPropagation();
-	console.log(event);
-	event.stopPropagation();
 
     //Adding Save changes button
     let save_btn = document.createElement("button");
-    save_btn.setAttribute('type', "button");
+    save_btn.setAttribute('type', "submit");
 	save_btn.setAttribute('class', "btn save-changes");
 	save_btn.onclick = saveChanges.bind(save_btn);
 
@@ -50,26 +46,11 @@ function changeToEdition() {
 
     save_btn_content.appendChild(save_icon);
     save_btn_content.appendChild(btn_label);
-    save_btn.appendChild(save_btn_content);
-	profile_container.appendChild(save_btn);
-}
-
-function saveChanges() {
-	let aboutText = document.getElementsByTagName("textarea")[0].value;
-	changeCurrUserAbout(aboutText);
-
-	return false;
-}
-
-function changeCurrUserAbout(aboutText) {
-
-	let request = new XMLHttpRequest();
-	//request.onload = console.log(this.responseText);
-	request.open("post", "action_save_profile.php", true);
-	request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-	request.send(encodeForAjax({ about: aboutText }));
-
-	changeToView();
+	save_btn.appendChild(save_btn_content);
+	
+	//Need to add button to form to trigger action
+	upload_form.appendChild(save_btn);
+	profile_container.appendChild(upload_form);
 }
 
 function changeToView() {
@@ -112,6 +93,23 @@ function changeToView() {
 	edit_btn_content.appendChild(btn_label);
 	edit_btn.appendChild(edit_btn_content);
 	profile_container.appendChild(edit_btn);
+}
+
+function saveChanges() {
+	let aboutText = document.getElementsByTagName("textarea")[0].value;
+	changeCurrUserAbout(aboutText);
+
+	//Handle pictures
+
+	changeToView();
+}
+
+function changeCurrUserAbout(aboutText) {
+
+	let request = new XMLHttpRequest();
+	request.open("post", "action_save_profile.php", true);
+	request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+	request.send(encodeForAjax({ about: aboutText }));
 }
 
 window.addEventListener('load', function() {

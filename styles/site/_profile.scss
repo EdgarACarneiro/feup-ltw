@@ -1,9 +1,12 @@
+$photo-width: 40%;
+$info-width: 60%;
+
 .profile-container {
     margin: 5%;
     padding-top: $nav-height;
 
     display: grid;
-    grid-template-columns: 40% 60%;
+    grid-template-columns: $photo-width $info-width;
     grid-template-rows: auto auto;
     grid-template-areas: "image info"
                          "uploader edit";
@@ -48,8 +51,8 @@
 .edit-profile,
 .save-changes {
     font-size: 1em;
-    text-align: right;
-    margin-left: 40%;
+    //text-align: right;
+    margin-left: $photo-width;
     border: none;
     grid-area: edit;
 
@@ -58,6 +61,13 @@
         align-self: center;
         font-size: x-large;
     }   
+}
+
+.save-changes {
+    position: relative;
+    left: $photo-width * ($info-width / 100%);
+    bottom: 21px;
+    text-align: center;
 }
 
 //Css for edition elements
@@ -72,6 +82,10 @@ textarea {
 
 textarea:focus {
     outline-color: $riptide;
+}
+
+.updater {
+    grid-area: uploader / uploader / uploader / edit;
 }
 
 .image-uploader {
