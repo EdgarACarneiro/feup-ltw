@@ -82,7 +82,7 @@ export function createTaskNode(task, items) {
     let titleNode = document.createElement('div');
     titleNode.id = "update-title@" + task.task_id;
     titleNode.classList.add('todo__title');
-    let titleInnerHtml = '<span class="item-display">' + task.title + '</span>';
+    let titleInnerHtml = '<span class="item-display">' + (task.title ? task.title : "Add Title...") + '</span>';
     titleInnerHtml = titleInnerHtml.concat('<input type="text" class="item-edit" style="display:none"/>');
     titleNode.innerHTML = titleInnerHtml;
     articleNode.appendChild(titleNode);
