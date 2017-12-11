@@ -50,7 +50,7 @@ function clearAddTaskForm() {
 export function deleteTask(event) {
     let id = this.id.match(/^delete-task@(\d+)/)[1];
     event.preventDefault();
-    this.parentNode.remove();
+    this.parentNode.parentNode.remove();
 
     let request = new XMLHttpRequest();
     request.onload = logServerResponse;
