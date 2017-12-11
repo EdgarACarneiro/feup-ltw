@@ -61,6 +61,7 @@ $duration-check_box: 0.8s;
 .todo__icon_line {
     width: 90%;
     margin-left: 10%;
+    z-index: -1;
 }
 
 .todo__line,
@@ -135,6 +136,9 @@ $duration-check_box: 0.8s;
     }
     ~.todo__icon .todo__circle {
         animation-name: explode;
+    }
+    ~.todo__icon_line {
+        z-index: 0;
     }
 }
 
