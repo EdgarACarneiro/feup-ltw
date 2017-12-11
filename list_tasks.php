@@ -73,7 +73,7 @@ function listProject($project) {
     echo '<nav id="info-nav">';
     foreach ($users as $user){
         ?>
-            <a id="<?php echo $user?>" href="" class="fa-circular-grey">
+            <a id="<?php echo $user?>" href="" class="thumbnail-circular">
                 <img src= <?php getUserThumbnail($user); ?> alt="Contributor Thumbnail">
             </a>
         <?php   
