@@ -36,7 +36,7 @@ include_once('templates/header.php');
     
     <section class="feed-container" id="feed">
         <div id="addTask" class="rnd-corners shadow-cards">
-            <form contenteditable action="">
+            <form contenteditable>
                 <input id="addTask_title" type="text" name="AddTask_Title" placeholder="Name">
                 <input id="addTask_item" type="text" name="AddTask_Item" placeholder="Add Task...">
                 <input type="submit" value="Submit">

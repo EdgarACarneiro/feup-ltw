@@ -3,7 +3,6 @@ include_once('database/connection.php');
 include_once('database/tasks.php');
 ?>
 <script type="module" src="scripts/ajax_item.js"></script>
-<script type="module" src="scripts/modal.js"></script>
 <script type="module" src="scripts/ajax_item_edit.js"></script>
 
 <?php
@@ -80,10 +79,10 @@ function listProject($project) {
         <?php   
     }
     echo '<button class="addSubList"><i class="fa fa-plus-circle"></i> Add Sub-List</button></nav>';
-    echo '</article>';
     echo '<a href="" class="shadow-cards fa-circular-grey">
             <i class="fa fa-times" aria-hidden="true"></i></a>';
     echo '</div>';
+    echo '</article>';
 }
 
 foreach ($projects as $project) {
@@ -92,4 +91,5 @@ foreach ($projects as $project) {
 
 ?>
 
+<script type="text/javascript" src="scripts/modal.js"></script>
 <script type="text/javascript" src="scripts/collaborators.js"></script>
