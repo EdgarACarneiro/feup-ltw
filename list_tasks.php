@@ -28,6 +28,8 @@ function listToDoList($task, &$users, $nested = true) {
         <input type="text" placeholder="Add Item..." name="description" required />
     </form></li>
     </ul>
+    <a id="delete-task@<?php echo $task['task_id']; ?>" class="shadow-cards fa-circular-grey" href="">
+        <i class="fa fa-times" aria-hidden="true"></i></a>
 
     <?php
     if ($nested) echo '</article>';
@@ -79,8 +81,6 @@ function listProject($project) {
         <?php   
     }
     echo '<button class="addSubList"><i class="fa fa-plus-circle"></i> Add Sub-List</button></nav>';
-    echo '<a href="" class="shadow-cards fa-circular-grey">
-            <i class="fa fa-times" aria-hidden="true"></i></a>';
     echo '</div>';
     echo '</article>';
 }
