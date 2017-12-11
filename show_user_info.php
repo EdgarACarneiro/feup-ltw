@@ -8,11 +8,11 @@
         $user = getUserInfo($_SESSION['username']);
         $username = $user['username'];
         $about = $user['about'];
-        $imgPath = ("images/user/" . $username . ".png");
+        $imgPath = ("images/user/profile/" . $username . ".jpg");
 
             echo '<img src=' . 
                 (file_exists($imgPath) ? 
-                $imgPath : "images/user/default.png").
+                $imgPath : "images/user/profile/default.jpg").
                 ' alt="user profile picture">';
             echo '</div>';
             echo '<div class="username-info">';

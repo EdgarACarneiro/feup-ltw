@@ -20,11 +20,11 @@ function changeToEdition() {
     upload_form.action = "upload_img.php";
     upload_form.setAttribute('class', "updater");
     upload_form.setAttribute('method', "post");
-    upload_form.setAttribute('ecntype', "multipart/form-data");
+    upload_form.setAttribute('enctype', "multipart/form-data");
 
     let input_file = document.createElement("input");
     input_file.setAttribute('type', "file");
-	input_file.setAttribute('name', "file");
+	input_file.setAttribute('name', "image");
 	input_file.setAttribute('class', "image-uploader");
     upload_form.appendChild(input_file);
 
