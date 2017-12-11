@@ -68,6 +68,15 @@
     left: 1.6em;
 }
 
+.mini-profile {
+    border-radius: 50%;
+    transition: transform 0.1s;
+}
+
+.mini-profile:hover {
+    transform: scale(1.2);
+}
+
 .logout-btn {
     background: none;
     border: 0;

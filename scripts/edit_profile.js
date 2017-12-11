@@ -99,7 +99,7 @@ function saveChanges() {
 	let aboutText = document.getElementsByTagName("textarea")[0].value;
 	changeCurrUserAbout(aboutText);
 
-	//Handle pictures
+	//Handle pictures when ajax implemented
 
 	changeToView();
 }

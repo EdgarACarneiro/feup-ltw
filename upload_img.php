@@ -45,7 +45,7 @@
             $square = min($width, $height);  // size length of the maximum square
 
             addThumbnail($original, $profileFileName, 300, $width, $height, $square);
-            addThumbnail($original, $smallFileName, 100, $width, $height, $square);
+            addThumbnail($original, $smallFileName, 30, $width, $height, $square);
 
             //$message = 'File succesfully loaded';
         }
@@ -55,5 +55,5 @@
         }
     }
 
-    header("Location: profile.php"); //-> meter em ajax sem redericeionamento, SOMEHOW
+    header("Location: profile.php"); //-> TODO: meter em ajax sem redericeionamento, SOMEHOW
 ?>

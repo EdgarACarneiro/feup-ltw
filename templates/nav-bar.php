@@ -12,7 +12,18 @@
         </li>
         <li id="user">
             <a href="index.php"><i class="fa fa-rss"></i></a>
-            <a href="profile.php"><i class="fa fa-user-circle"></i></a>
+            <a href="profile.php">
+                <img class="mini-profile" src=
+
+                <?php 
+                include_once('includes/session.php');
+                $imgPath = 'images/user/thumbnails/' . getCurrentUser() . '.jpg';
+
+                echo ((file_exists($imgPath) ? 
+                    '"' . $imgPath . '"' : '"images/user/thumbnails/default.jpg"'));
+                ?>
+                alt="User Profile thumbnail">
+            </a>
             <form action="action_logout.php" method="post">
                 <button type="submit" class="logout-btn"><i class="fa fa-sign-out"></i>
             </form>
