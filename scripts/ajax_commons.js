@@ -1,5 +1,5 @@
 import { addItemToTask, setItemCompleted, deleteItem } from './ajax_item.js';
-import { switchToEdit, switchToDisplay } from './ajax_text_edit.js';
+import { switchToEdit, switchToDisplay, changeItemDescription, changeTaskTitle } from './ajax_text_edit.js';
 import { deleteTask } from './ajax_task.js';
 
 export function encodeForAjax(data) {
@@ -65,8 +65,8 @@ function addListenersToItemNode(node, item) {
     displayNode.onclick = switchToEdit.bind(displayNode);
 
     let inputNode = node.getElementsByClassName('item-edit')[0];
-    inputNode.addEventListener('focusout', switchToDisplay.bind(inputNode));
-
+    inputNode.addEventListener('focusout', switchToDisplay.bind(inputNode, changeItemDescription));
+    
     let deleteNode = node.querySelector("a[id^='delete-item@" + item.item_id + "']");
     deleteNode.onclick = deleteItem.bind(deleteNode);
 }
@@ -79,8 +79,12 @@ export function createTaskNode(task, items) {
     divNode.appendChild(articleNode);
 
     // Task's title
-    let titleNode = document.createElement('h2');
-    titleNode.appendChild(document.createTextNode(task.title));
+    let titleNode = document.createElement('div');
+    titleNode.id = "update-title@" + task.task_id;
+    titleNode.classList.add('todo__title');
+    let titleInnerHtml = '<span class="item-display">' + task.title + '</span>';
+    titleInnerHtml = titleInnerHtml.concat('<input type="text" class="item-edit" style="display:none"/>');
+    titleNode.innerHTML = titleInnerHtml;
     articleNode.appendChild(titleNode);
 
     // Task's list
@@ -131,4 +135,10 @@ export function createTaskNode(task, items) {
 function addListenersToTaskNode(node, task) {
     let iconNode = node.querySelector("a[id^='delete-task@']");
     iconNode.onclick = deleteTask.bind(iconNode);
+
+    let titleDisplayNode = node.querySelector("div.todo__title .item-display");
+    titleDisplayNode.onclick = switchToEdit.bind(titleDisplayNode);
+    
+    let titleEditNode = node.querySelector("div.todo__title .item-edit");
+    titleEditNode.addEventListener('focusout', switchToDisplay.bind(titleEditNode, changeTaskTitle));    
 }

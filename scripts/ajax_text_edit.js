@@ -19,7 +19,7 @@ export function switchToDisplay(updateFunction) {
     updateFunction(item_id, this.value);
 }
 
-function changeItemDescription(id, itemText) {
+export function changeItemDescription(id, itemText) {
     let request = new XMLHttpRequest();
     request.onload = logServerResponse;
     request.open("post", "action_change_item.php", true);
@@ -29,7 +29,7 @@ function changeItemDescription(id, itemText) {
     }));
 }
 
-function changeTaskTitle(id, title) {
+export function changeTaskTitle(id, title) {
     let request = new XMLHttpRequest();
     request.onload = logServerResponse;
     request.open("post", "action_change_task.php", true);
