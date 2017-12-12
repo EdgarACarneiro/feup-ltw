@@ -13,7 +13,8 @@ function listToDoList($task, &$users, $nested = true) {
         echo '<article class="rnd-corners">';
     }?>
 
-    <div id="update-title@<?php echo $task['task_id']; ?>" class="todo__title">
+    <div id="update-title@<?php echo $task['task_id']; ?>"
+        class="todo__title priority-<?php echo $task['priority']; ?>">
     <span class="item-display"><?php echo ($task['title'] ? $task['title'] : "Add title..."); ?></span>
     <input type="text" class="item-edit" style="display:none"/>
     </div>

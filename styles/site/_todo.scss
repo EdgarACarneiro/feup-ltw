@@ -142,6 +142,32 @@ $duration-check_box: 0.8s;
     }
 }
 
+.todo__title {
+    font-weight: bold;
+}
+
+.todo__title.priority-0::before {
+    content: "\f111";
+    font-family: "FontAwesome";
+    color: $priority-0;
+}
+.todo__title.priority-1::before {
+    content: "\f111";
+    font-family: "FontAwesome";
+    color: $priority-1;
+}
+.todo__title.priority-2::before {
+    content: "\f111";
+    font-family: "FontAwesome";
+    color: $priority-2;
+}
+.todo__title.priority-3::before {
+    content: "\f111";
+    font-family: "FontAwesome";
+    color: $priority-3;
+}
+
+
 .todo:hover a {
     opacity: 1;
 }
