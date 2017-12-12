@@ -107,7 +107,7 @@
     }
     input[type=text],
     input[type=password],
-    input[type=e-mail] {
+    input[type=email] {
         color: $white;
         background-color: transparent;
         width: 100%;
@@ -115,8 +115,9 @@
         margin-bottom: 1.8em;
         margin-top: 0.8em;
         border-bottom: 2px solid $payne-s-grey-lighter;
-        -webkit-transition: border-color 0.8s, background-color 1s linear 99999s, color 1s linear 99999s !important;
+        // -webkit-transition: border-color 0.8s, background-color 1s linear 99999s, color 1s linear 99999s !important;
         transition: border-color 0.8s;
+        border: 0;
     }
     input[type=text]:focus,
     input[type=password]:focus,
