@@ -210,7 +210,7 @@ input[type=submit],
 input[type=button],
 input[type=text],
 input[type=file],
-input[type=e-mail],
+input[type=email],
 input[type=password],
 textarea,
 button {
@@ -224,7 +224,7 @@ input:focus {
 
 input[type=text],
 input[type=password],
-input[type=e-mail] {
+input[type=email] {
   border-radius: 0.2em;
   border-style: initial;
   padding-left: 4px;

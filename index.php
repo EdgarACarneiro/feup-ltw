@@ -4,10 +4,10 @@ include_once('includes/session.php');
 checkUserSession();
 
 include_once('templates/header.php');
+headerIndex();
 ?>
 
 <body onload="initCalendar()">
-<script type="module" src="scripts/ajax_task.js" async></script>
 
 <svg viewBox="0 0 0 0" style="position: absolute; z-index: -1; opacity: 0;">
     <defs>

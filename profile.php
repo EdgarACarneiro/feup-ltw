@@ -4,6 +4,7 @@ include_once('includes/session.php');
 checkUserSession();
 
 include_once('templates/header.php');
+headerProfile();
 
 function displayProfile($user = null) {
 ?>

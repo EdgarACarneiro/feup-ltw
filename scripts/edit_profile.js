@@ -111,5 +111,5 @@ function changeCurrUserAbout(aboutText) {
 
 window.addEventListener('load', function() {
     var edit_btn = document.getElementsByClassName("edit-profile")[0];
-    edit_btn.onclick = changeToEdition.bind(edit_btn);
+    edit_btn.addEventListener('click', changeToEdition);
 });

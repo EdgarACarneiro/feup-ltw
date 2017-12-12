@@ -15,3 +15,11 @@ function showSignUp() {
     document.getElementsByClassName("sign-in-btn")[0].style.background = "none";
     document.getElementsByClassName("sign-up-btn")[0].style.background = grad_color;
 }
+
+window.addEventListener('load', function() {
+    var sign_in_btn = document.getElementsByClassName("sign-in-btn")[0];
+    sign_in_btn.addEventListener('click', showSignUp);
+
+    var sign_up_btn = document.getElementsByClassName("sign-up-btn")[0];
+    sign_up_btn.addEventListener('click', showSignIn);
+});

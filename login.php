@@ -3,9 +3,9 @@ include_once('includes/session.php');
 checkUserSession();
 
 include_once('templates/header.php');
+headerLogin();
 include_once('includes/init.php');
 ?>
-<script src="scripts/sign-in-up-switch.js"></script>
 
 <body>
     
@@ -17,8 +17,8 @@ include_once('includes/init.php');
     <section class="main rnd-corners shadow-boxes" />
         <div class="sign-user">
             <div class="switch-btn btn">
-               <input type="button" class="sign-in-btn" value="Sign-in" onclick="showSignIn()">
-               <input type="button" class="sign-up-btn" value="Sign-up" onclick="showSignUp()"> 
+               <input type="button" class="sign-in-btn" value="Sign-in">
+               <input type="button" class="sign-up-btn" value="Sign-up"> 
             </div>
 
             <form action="action_login.php" method="post" id="sign-in">
