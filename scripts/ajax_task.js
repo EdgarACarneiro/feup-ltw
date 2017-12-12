@@ -51,7 +51,11 @@ function clearAddTaskForm() {
 export function deleteTask(event) {
     let id = this.id.match(/^delete-task@(\d+)/)[1];
     event.preventDefault();
-    this.parentNode.parentNode.remove();
+    if (this.parentNode.parentNode.tagName == 'DIV') {
+        this.parentNode.parentNode.remove();
+    } else {
+        this.parentNode.remove();        
+    }
 
     let request = new XMLHttpRequest();
     request.onload = logServerResponse;
