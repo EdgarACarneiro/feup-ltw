@@ -21,11 +21,8 @@ function displayProfile($user = null) {
         <?php $user? getUserProfile($user) : displayCurrUserInfo(); ?>
     </section>
 
-    <footer>
-        &copy; 2017 EzeeDo
-    </footer>
+<?php include_once('templates/footer.php') ?>
 
-</body>
 <?php
 }
 

@@ -28,7 +28,7 @@ function displayCurrUserInfo() {
     displayUserInfo($_SESSION['username']);
 
     ?>
-    <button type="button" class="btn edit-profile" >
+    <button type="button" class="btn" id="edit-profile" >
         <span><i class="fa fa-pencil"></i>Edit Profile</span>
     </button>
     <?php
