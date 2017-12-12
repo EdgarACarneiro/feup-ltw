@@ -40,5 +40,4 @@ function anonymousNavBar() {
     </div>
     <h1><a href="index.php">EzeeDo</a></h1>
 </nav>
-<?php }
-?>
+<?php } ?>
