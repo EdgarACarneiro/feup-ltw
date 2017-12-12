@@ -58,10 +58,9 @@ include_once('includes/init.php');
                         required>
                     E-MAIL
                     <input
-                        type="e-mail"
+                        type="email"
                         placeholder="Your e-mail goes here"
                         name="email"
-                        pattern="[a-zA-Z0-9]+@\w+\.\w+"
                         title="Please use a valid email address."
                         required>
                     PASSWORD
