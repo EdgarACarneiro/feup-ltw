@@ -37,7 +37,7 @@ function headerProfile() {
 function headerLogin() {
     commonHeader();
     ?>
-        <script src="scripts/sign-in-up-switch.js" asinc></script>
+        <script src="scripts/sign-in-up-switch.js" async></script>
     </head>
     <?php
 }

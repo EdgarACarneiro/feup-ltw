@@ -8,7 +8,8 @@ include_once('includes/init.php');
 ?>
 
 <body>
-    
+    <script type="module" src="scripts/ajax_register.js" async></script>
+
     <?php
         include_once('templates/nav-bar.php');
         anonymousNavBar();
@@ -17,8 +18,8 @@ include_once('includes/init.php');
     <section class="main rnd-corners shadow-boxes" />
         <div class="sign-user">
             <div class="switch-btn btn">
-               <input type="button" class="sign-in-btn" value="Sign-in">
-               <input type="button" class="sign-up-btn" value="Sign-up"> 
+               <input type="button" id="sign-in-btn" value="Sign-in">
+               <input type="button" id="sign-up-btn" value="Sign-up"> 
             </div>
 
             <form action="action_login.php" method="post" id="sign-in">
@@ -45,7 +46,7 @@ include_once('includes/init.php');
             </form>
         
 
-            <form action="action_register.php" method="post" id="sign-up">
+            <form id="sign-up">
                 <fieldset>
                     <legend>CREATE AN ACCOUNT</legend>
                     USERNAME

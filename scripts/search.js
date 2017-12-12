@@ -29,7 +29,7 @@ function getTextData(taskNode) {
 
 function isMatch(query, taskNode) {
     let textData = getTextData(taskNode).toLowerCase();
-    return textData.indexOf(query) !== -1;
+    return textData.indexOf(query.toLowerCase()) !== -1;
 }
 
 function getAllTaskNodes() {

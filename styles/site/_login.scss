@@ -73,8 +73,8 @@
     margin: 0;
     float: right;
     border-radius: $round-border-radius;
-    .sign-in-btn,
-    .sign-up-btn {
+    #sign-in-btn,
+    #sign-up-btn {
         flex: auto;
         margin: 0;
         padding: 0;
@@ -83,11 +83,11 @@
         color: $white;
         font-size: 12px;
     }
-    .sign-in-btn {
+    #sign-in-btn {
         border-radius: $border-radius 0 0 $border-radius;
         background: $gradient-turquoise;
     }
-    .sign-up-btn {
+    #sign-up-btn {
         border-radius: 0 $border-radius $border-radius 0;
     }
 }

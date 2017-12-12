@@ -3,8 +3,8 @@ function showSignIn() {
 
     document.getElementById("sign-up").style.display = "none";
     document.getElementById("sign-in").style.display = "inline-block";
-    document.getElementsByClassName("sign-up-btn")[0].style.background = "none";
-    document.getElementsByClassName("sign-in-btn")[0].style.background = grad_color;
+    document.getElementById("sign-up-btn").style.background = "none";
+    document.getElementById("sign-in-btn").style.background = grad_color;
 }
 
 function showSignUp() {
@@ -12,14 +12,14 @@ function showSignUp() {
 
     document.getElementById("sign-in").style.display = "none";
     document.getElementById("sign-up").style.display = "inline-block";
-    document.getElementsByClassName("sign-in-btn")[0].style.background = "none";
-    document.getElementsByClassName("sign-up-btn")[0].style.background = grad_color;
+    document.getElementById("sign-in-btn").style.background = "none";
+    document.getElementById("sign-up-btn").style.background = grad_color;
 }
 
 window.addEventListener('load', function() {
-    var sign_in_btn = document.getElementsByClassName("sign-in-btn")[0];
-    sign_in_btn.addEventListener('click', showSignUp);
+    var sign_in_btn = document.getElementById("sign-in-btn");
+    sign_in_btn.addEventListener('click', showSignIn);
 
-    var sign_up_btn = document.getElementsByClassName("sign-up-btn")[0];
-    sign_up_btn.addEventListener('click', showSignIn);
+    var sign_up_btn = document.getElementById("sign-up-btn");
+    sign_up_btn.addEventListener('click', showSignUp);
 });
