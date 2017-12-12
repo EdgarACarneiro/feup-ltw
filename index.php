@@ -35,6 +35,7 @@ headerIndex();
     ?>
     
     <section class="feed-container" id="feed">
+        <?php include_once('templates/messages.php'); ?>
         <div id="addTask" class="rnd-corners shadow-cards">
             <form contenteditable>
                 <input id="addTask_title" type="text" name="AddTask_Title" placeholder="Name">
@@ -49,6 +50,7 @@ headerIndex();
                 </nav>
             </form>
             <script src="scripts/addTask.js" async></script>
+            <script src="scripts/log_messages.js" async></script>            
         </div>
 
         <div id="modal" class="modal"></div>

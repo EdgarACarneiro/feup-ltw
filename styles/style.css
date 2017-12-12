@@ -402,6 +402,11 @@ footer {
           padding: 0;
           margin-top: 8px; } }
 
+#success-messages {
+  background-color: #14f014;
+  transition: 0.5s;
+  transition-delay: 5s; }
+
 #top-bar {
   position: fixed;
   top: 0;
