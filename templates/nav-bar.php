@@ -2,7 +2,7 @@
 
 function userNavBar() {
  ?>
-<script type="module" src="scripts/ajax_search.js"></script>
+<script type="module" src="scripts/search.js" defer></script>
 
 <nav id="top-bar" class="nav-bar">
     <ul>

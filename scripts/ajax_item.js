@@ -1,5 +1,5 @@
-import { encodeForAjax, logServerResponse, createItemNode } from './ajax_commons.js';
-
+import { encodeForAjax, logServerResponse } from './utils.js';
+import { createItemNode } from './nodes.js';
 
 export function addItemToTask() {
     let task = this.id.match(/@(\d+)/)[1];

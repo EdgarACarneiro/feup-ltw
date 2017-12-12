@@ -1,4 +1,4 @@
-import { encodeForAjax, logServerResponse, hide, show } from './ajax_commons.js';
+import { encodeForAjax, logServerResponse, hide, show } from './utils.js';
 
 export function switchToEdit() {
     hide(this);

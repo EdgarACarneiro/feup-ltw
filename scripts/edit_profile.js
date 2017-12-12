@@ -1,4 +1,4 @@
-import { encodeForAjax } from './ajax_commons.js';
+import { encodeForAjax } from './utils.js';
 
 function changeToEdition() {
 
