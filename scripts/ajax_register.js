@@ -1,21 +1,39 @@
-import { encodeForAjax, logServerResponse } from './utils.js';
+import { encodeForAjax } from './utils.js';
 
 function registerUser() {
     let username = this.querySelector('input[type="text"]').value;
+    let email = this.querySelector('input[type="email"]').value;
+
+    let passwordNodes = this.querySelectorAll('input[type="password"]');
+    let password = passwordNodes[0].value;
+    if (password == passwordNodes[1].value) {
+        registerUserRequest(username, email, password);
+    }
     
-    // return false;
+    return false;
 }
 
-function registerUserRequest(username, password, email) {
+function registerUserRequest(username, email, password) {
     let request = new XMLHttpRequest();
-    request.onload = logServerResponse;
-    request.open("post", "action_register_user.php", true);
+    request.onload = processRegisterStatus;
+    request.open("post", "action_register.php", true);
     request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     request.send(encodeForAjax({
         username: username,
-        password: password,
-        email: email
+        email: email,
+        password: password
     }));
+}
+
+function processRegisterStatus() {
+    let response = JSON.parse(this.responseText);
+
+    if (response.indexOf("SUCCESS") === 0) {
+        window.location.replace("index.php");
+        return true;
+    } else {
+        return false;
+    }
 }
 
 window.addEventListener('load', function() {
