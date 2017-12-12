@@ -32,6 +32,7 @@ function listToDoList($task, &$users, $nested = true) {
     <li class="todo"><form id="form@<?php echo $task['task_id']; ?>">
         <input type="text" placeholder="Add Item..." name="description" required />
     </form></li>
+    <?php echo ($nested? '<span class="category">' . $task['category'] . '</span>' : ''); ?>
     </ul>
     <a id="delete-task@<?php echo $task['task_id']; ?>" class="shadow-cards fa-circular-grey" href="">
         <i class="fa fa-times" aria-hidden="true"></i></a>
@@ -86,6 +87,7 @@ function listProject($project) {
         <?php   
     }
     echo '<button class="addSubList"><i class="fa fa-plus-circle"></i> Add Sub-List</button></nav>';
+    echo ($project['category']? '<span class="category">' . $project['category'] . '</span>' : '');
     echo '</div>';
     echo '</article>';
 }
