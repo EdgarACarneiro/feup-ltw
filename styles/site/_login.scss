@@ -117,11 +117,10 @@
         border-bottom: 2px solid $payne-s-grey-lighter;
         // -webkit-transition: border-color 0.8s, background-color 1s linear 99999s, color 1s linear 99999s !important;
         transition: border-color 0.8s;
-        border: 0;
     }
     input[type=text]:focus,
     input[type=password]:focus,
-    input[type=e-mail]:focus {
+    input[type=email]:focus {
         border-color: $riptide;
     }
     input[type=submit] {

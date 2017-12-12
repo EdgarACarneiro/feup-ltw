@@ -1080,15 +1080,14 @@ footer {
   margin-top: 0.8em;
   border-bottom: 2px solid #4e5068;
   transition: border-color 0.8s;
-  border: 0;
 }
 
 #sign-in input[type=text]:focus,
 #sign-in input[type=password]:focus,
-#sign-in input[type=e-mail]:focus,
+#sign-in input[type=email]:focus,
 #sign-up input[type=text]:focus,
 #sign-up input[type=password]:focus,
-#sign-up input[type=e-mail]:focus {
+#sign-up input[type=email]:focus {
   border-color: #80E3D1;
 }
 
@@ -1120,8 +1119,7 @@ footer {
   display: grid;
   grid-template-columns: 40% 60%;
   grid-template-rows: auto auto;
-  grid-template-areas: "image info"
- "uploader edit";
+  grid-template-areas: "image info" "uploader edit";
 }
 
 @media (min-width: 1280px) {
@@ -1134,9 +1132,7 @@ footer {
   .profile-container {
     grid-template-columns: 100%;
     grid-template-rows: auto auto auto;
-    grid-template-areas: "info"
- "image"
- "edit";
+    grid-template-areas: "info" "image" "edit";
   }
 }
 
