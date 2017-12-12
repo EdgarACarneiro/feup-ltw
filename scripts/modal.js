@@ -5,7 +5,6 @@ var feed_container = document.getElementById('feed');
 var opened_Model;
 
 function openModal() {
-    console.log(this);
     this.parentElement.style.height = this.clientHeight.toString() + "px";
     this.style.position = "absolute";
     this.style.top = this.offsetTop;

@@ -2,20 +2,17 @@ import { show, hide } from './utils.js';
 
 function showSearchResult() {
     let searchQuery = this.value;
-    let nodesArray = [].slice.call(getAllTaskNodes());    
-    if (searchQuery.trim().length == 0) {
-        showAllNodes(nodesArray);
-    }
+    let nodesArray = [].slice.call(getAllTaskNodes());
 
     nodesArray.forEach(taskNode => {
         if (isMatch(searchQuery, taskNode)) {
-            show(taskNode);
+            taskNode.style.display = "";
         } else {
             hide(taskNode);
         }
     });
 
-    console.log('Searched for:');    
+    console.log('Searched for:');
     console.log(searchQuery);
 }
 
@@ -26,12 +23,6 @@ function getTitle(taskNode) {
 function isMatch(query, taskNode) {
     let title = getTitle(taskNode).toLowerCase();
     return title.indexOf(query) !== -1;
-}
-
-function showAllNodes(nodesArray) {
-    nodesArray.forEach(element => {
-        hide(element);
-    });
 }
 
 function getAllTaskNodes() {
