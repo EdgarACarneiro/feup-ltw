@@ -12,7 +12,7 @@ function userNavBar() {
         </li>
         <li id="search">
             <i class="fa fa-search"></i>
-            <input class="no-select" type="text" id="search-bar" placeholder="Search" name="search" onkeyup="showSearchResult(this.value)">
+            <input class="no-select" type="text" id="search-bar" placeholder="Search" name="search">
         </li>
         <li id="user">
             <a href="index.php"><i class="fa fa-rss"></i></a>
