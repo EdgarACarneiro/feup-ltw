@@ -74,3 +74,8 @@ input:-webkit-autofill:active {
     border-radius: 50%;
     object-fit: cover;
 }
+
+footer {
+    background: $gradient-footer;
+    padding: 1em 3em 1em;
+}

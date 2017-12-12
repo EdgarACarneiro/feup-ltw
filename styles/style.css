@@ -247,6 +247,11 @@ input:-webkit-autofill:active {
   object-fit: cover;
 }
 
+footer {
+  background: linear-gradient(to right, #c3e0d9, #e8e8e8, #e8e8e8);
+  padding: 1em 3em 1em;
+}
+
 .btn-bar {
   display: flex;
   justify-content: space-around;
@@ -769,10 +774,6 @@ input:-webkit-autofill:active {
   opacity: 1;
 }
 
-footer {
-  background-color: #D1E8E2;
-}
-
 .sidebar-calendar {
   display: none;
   position: fixed;
@@ -947,7 +948,6 @@ footer {
   display: flex;
   flex-direction: row-reverse;
   max-width: calc(300px * 2);
-  align-content: center;
 }
 
 @media (max-width: 640px) {
@@ -963,12 +963,24 @@ footer {
 .site-description {
   border-radius: 0.5em 0 0 0.5em;
   background: linear-gradient(#80E3D1, #53C5B9);
+  line-height: 200%;
+  text-align: center;
 }
 
-@media (max-width: 640px) {
-  .site-description p {
-    text-align: center;
+@media (min-width: 640px) {
+  .site-description h3 {
+    padding-top: 2em;
   }
+}
+
+.site-description h3 {
+  font-size: 20px;
+  font-weight: bold;
+  padding-bottom: 2em;
+}
+
+.site-description h4 {
+  font-size: 18px;
 }
 
 .sign-user {
@@ -981,6 +993,7 @@ footer {
   flex: 1;
   padding: 2em;
   max-width: 300px;
+  height: 450px;
 }
 
 @media (max-width: 640px) and (min-width: 420px) {
@@ -991,6 +1004,7 @@ footer {
     padding-left: 20%;
     padding-right: 20%;
     background: none;
+    height: auto;
   }
 }
 
@@ -998,7 +1012,9 @@ footer {
   .site-description,
   .sign-user {
     max-width: none;
+    background: none;
     border-radius: 0;
+    height: auto;
   }
 }
 

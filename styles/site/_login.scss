@@ -4,7 +4,6 @@
     display: flex;
     flex-direction: row-reverse;
     max-width: calc(#{$block-width} * 2);
-    align-content: center;
 
     @media (max-width: #{$collapse-xs}) {
         margin: $nav-height 0 0;
@@ -18,11 +17,23 @@
 .site-description {
     border-radius: $medium-border-radius 0 0 $medium-border-radius;
     background: $gradient-turquoise;
+    line-height: 200%;
+    text-align: center;
 
-    p {
-        @media (max-width: #{$collapse-xs}) {
-            text-align: center;
+    @media (min-width: #{$collapse-xs}) {
+        h3 {
+            padding-top: 2em;
         }
+    }
+
+    h3 {
+        font-size: 20px;
+        font-weight: bold;            
+        padding-bottom: 2em;
+    }
+
+    h4 {
+        font-size: 18px;
     }
 }
 
@@ -36,6 +47,7 @@
     flex: 1;
     padding: 2em;
     max-width: $block-width;
+    height: $block-height;
 
     @media (max-width: #{$collapse-xs}) and (min-width: #{$collapse-phone}) {
         max-width: none;
@@ -43,11 +55,14 @@
         padding-left: 20%;
         padding-right: 20%;
         background: none;
+        height: auto;
     }
 
     @media (max-width: #{$collapse-phone}) {
         max-width: none;
+        background: none; //Delete for boxes display
         border-radius: 0;
+        height: auto;
     }
 }
 

@@ -45,14 +45,15 @@ include_once('includes/init.php');
 
         <div class="site-description">
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut libero tincidunt, pharetra libero a, molestie felis. 
-                Etiam vehicula lacus vel imperdiet sagittis. Curabitur accumsan a lacus sed accumsan. 
-                Nulla nulla justo, bibendum sit amet aliquet faucibus, fringilla vel ex. 
-                Sed ac lacus sed sapien euismod tempus sit amet ac purus. 
-                Mauris ac sapien efficitur, tristique velit ut, semper lectus. 
-                Proin et congue ipsum. Vestibulum faucibus ex egestas, malesuada augue nec, vehicula purus. 
-                Sed et risus sit amet lectus rhoncus consequat. Nam sagittis sapien risus, vitae vestibulum risus bibendum quis. 
-                Aenean faucibus vulputate suscipit. Vivamus eleifend vel leo varius molestie. Donec semper nisl quis volutpat mollis.
+                <h3>
+                    Ezee Plan.<br>
+                    Ezee Do.<br>
+                    Ezee Accomplish.
+                </h3><h4>
+                    EzeeDo is a management platform with the objective of
+                    making it easier for you to excel. From planning your shopping list
+                    to managing your big next project, EzeeDo helps you in all.
+                </h4> 
             </p>
         </div>
     </section>
