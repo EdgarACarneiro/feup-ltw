@@ -49,10 +49,7 @@ $info-width: 60%;
     width: auto;
     padding-left: $default-padding;
     padding-top: 2em;
-
-    @media (min-width: #{$collapse-m}) {
-        grid-area: info;
-    }
+    grid-area: info;
 
     @media (max-width: #{$collapse-m}) {
         padding: 0 10%;
@@ -158,7 +155,7 @@ textarea:focus {
     padding-left: 5%;
 
     @media (max-width: #{$collapse-xs}) {
-        width: 100%;
+        width: auto;
         padding-left: 12%;
     }
 }

@@ -70,11 +70,8 @@ function changeToView() {
 	aboutText.appendChild(userAbout);
 	info_container.appendChild(aboutText);
 
-	//Deleting upload button
-	profile_container.removeChild(document.getElementsByClassName("image-uploader")[0]);
-
-	//Eliminating save changes button
-	profile_container.removeChild(document.getElementsByClassName("save-changes")[0]);
+	//Deleting uploader button and save changes button
+	profile_container.removeChild(document.getElementsByClassName("updater")[0]);
 
 	//Adding Edit button
 	let edit_btn = document.createElement("button");
