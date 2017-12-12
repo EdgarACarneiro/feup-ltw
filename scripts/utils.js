@@ -32,3 +32,13 @@ export function getCurrentUser() {
 
     return username;
 }
+
+export function getElementsByXPath(xpath, context = document) {
+  let nodes = [];
+  let query = document.evaluate(xpath, context,
+      null, XPathResult.ORDERED_NODE_SNAPSHOT_TYPE, null);
+  for (let i = 0, length=query.snapshotLength; i<length; ++i) {
+    nodes.push(query.snapshotItem(i));
+  }
+  return nodes;
+}

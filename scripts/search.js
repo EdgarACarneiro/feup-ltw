@@ -1,4 +1,4 @@
-import { hide } from './utils.js';
+import { hide, getElementsByXPath } from './utils.js';
 
 function showSearchResult() {
     let searchQuery = this.value;
@@ -17,9 +17,19 @@ function getTitle(taskNode) {
     return taskNode.querySelector('.todo__title span').innerHTML;
 }
 
+function getTextData(taskNode) {
+    let nodes = getElementsByXPath('.//span/text()', taskNode);
+    let res = "";
+    for (let i = 0; i < nodes.length; i++) {
+        res += nodes[i].data + " ";
+    }
+
+    return res;
+}
+
 function isMatch(query, taskNode) {
-    let title = getTitle(taskNode).toLowerCase();
-    return title.indexOf(query) !== -1;
+    let textData = getTextData(taskNode).toLowerCase();
+    return textData.indexOf(query) !== -1;
 }
 
 function getAllTaskNodes() {
