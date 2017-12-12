@@ -2,7 +2,7 @@
 
 function userNavBar() {
  ?>
-<script type="module" src="scripts/search.js" defer></script>
+<script type="module" src="scripts/search.js" async></script>
 
 <nav id="top-bar" class="nav-bar">
     <ul>
@@ -25,7 +25,7 @@ function userNavBar() {
                 alt="User Thumbnail">
             </a>
             <form action="action_logout.php" method="post">
-                <button type="submit" class="logout-btn"><i class="fa fa-sign-out"></i>
+                <button type="submit" class="logout-btn"><i class="fa fa-sign-out"></i></button>
             </form>
         </li>
     </ul>

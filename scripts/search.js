@@ -1,4 +1,4 @@
-import { show, hide } from './utils.js';
+import { hide } from './utils.js';
 
 function showSearchResult() {
     let searchQuery = this.value;
@@ -11,9 +11,6 @@ function showSearchResult() {
             hide(taskNode);
         }
     });
-
-    console.log('Searched for:');
-    console.log(searchQuery);
 }
 
 function getTitle(taskNode) {

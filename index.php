@@ -6,9 +6,8 @@ checkUserSession();
 include_once('templates/header.php');
 ?>
 
-<script type="module" src="scripts/ajax_task.js"></script>
-
 <body onload="initCalendar()">
+<script type="module" src="scripts/ajax_task.js" async></script>
 
 <svg viewBox="0 0 0 0" style="position: absolute; z-index: -1; opacity: 0;">
     <defs>
@@ -49,7 +48,7 @@ include_once('templates/header.php');
                     <i class="fa fa-circle priority-3" aria-hidden="true"></i>
                 </nav>
             </form>
-            <script type="text/javascript" src="scripts/addTask.js" async></script>
+            <script src="scripts/addTask.js" async></script>
         </div>
 
         <div id="modal" class="modal"></div>
