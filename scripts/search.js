@@ -1,7 +1,4 @@
 function showSearchResult(searchQuery) {
-
-}
-
-function getSearchResult(searchQuery) {
-
+    console.log('Searched for:');    
+    console.log(searchQuery);
 }

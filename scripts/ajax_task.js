@@ -1,4 +1,5 @@
-import { encodeForAjax, logServerResponse, createTaskNode } from './ajax_commons.js';
+import { encodeForAjax, logServerResponse } from './utils.js';
+import { createTaskNode } from './nodes.js';
 
 function submitTask() {
     let title = document.getElementById('addTask_title').value;
