@@ -58,10 +58,4 @@ headerIndex();
         </div>
     </section>
 
-    <footer>
-        &copy; 2017 EzeeDo
-    </footer>
-
-</body>
-
-</html>
+<?php include_once('templates/footer.php') ?>

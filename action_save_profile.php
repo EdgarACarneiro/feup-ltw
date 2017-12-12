@@ -4,7 +4,7 @@ include_once('database/user.php');
 
 $currUser = $_SESSION['username'];
 
-if ( NULL != ($user = changeUserAbout($currUser, $_POST['about'])) ) {
+if ( NULL != ($user = changeUserAbout($currUser, htmlspecialchars($_POST['about']))) ) {
     // log error ?
 }
 

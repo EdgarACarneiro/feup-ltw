@@ -29,12 +29,13 @@ function changeToEdition() {
     upload_form.appendChild(input_file);
 
     //Eliminating edit-button
-	profile_container.removeChild(document.getElementsByClassName("edit-profile")[0]);
+	profile_container.removeChild(document.getElementById("edit-profile"));
 
     //Adding Save changes button
     let save_btn = document.createElement("button");
     save_btn.setAttribute('type', "submit");
-	save_btn.setAttribute('class', "btn save-changes");
+	save_btn.setAttribute('class', "btn");
+	save_btn.id = 'save-changes';
 	save_btn.addEventListener('click', saveChanges);
 
     let save_btn_content = document.createElement("span");
@@ -76,7 +77,8 @@ function changeToView() {
 	//Adding Edit button
 	let edit_btn = document.createElement("button");
 	edit_btn.setAttribute('type', "button");
-	edit_btn.setAttribute('class', "btn edit-profile");
+	edit_btn.setAttribute('class', "btn");
+	edit_btn.id = 'edit-profile';
 	edit_btn.addEventListener('click', changeToEdition);
 
 	let edit_btn_content = document.createElement("span");
@@ -110,6 +112,6 @@ function changeCurrUserAbout(aboutText) {
 }
 
 window.addEventListener('load', function() {
-    var edit_btn = document.getElementsByClassName("edit-profile")[0];
+    var edit_btn = document.getElementById("edit-profile");
     edit_btn.addEventListener('click', changeToEdition);
 });
