@@ -1210,7 +1210,7 @@ footer {
 }
 
 #edit-profile,
-.save-changes {
+#save-changes {
   font-size: 1em;
   margin-left: 40%;
   border: none;
@@ -1218,7 +1218,7 @@ footer {
 }
 
 #edit-profile i,
-.save-changes i {
+#save-changes i {
   width: auto;
   align-self: center;
   font-size: x-large;
@@ -1226,7 +1226,7 @@ footer {
 
 @media (max-width: 640px) and (min-width: 420px) {
   #edit-profile,
-  .save-changes {
+  #save-changes {
     width: 70%;
     border-radius: 0.2em;
   }
@@ -1238,7 +1238,7 @@ footer {
   }
 }
 
-.save-changes {
+#save-changes {
   position: relative;
   left: 24%;
   bottom: 21px;
@@ -1246,7 +1246,7 @@ footer {
 }
 
 @media (max-width: 640px) {
-  .save-changes {
+  #save-changes {
     margin: 0 auto 0;
     left: 0;
     bottom: 0;

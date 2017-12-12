@@ -89,7 +89,7 @@ $info-width: 60%;
 }
 
 #edit-profile,
-.save-changes {
+#save-changes {
     font-size: 1em;
     margin-left: $photo-width;
     border: none;
@@ -113,7 +113,7 @@ $info-width: 60%;
     }
 }
 
-.save-changes {
+#save-changes {
     position: relative;
     left: $photo-width * ($info-width / 100%);
     bottom: 21px;
