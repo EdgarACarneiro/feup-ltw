@@ -35,7 +35,7 @@ function changeToEdition() {
     let save_btn = document.createElement("button");
     save_btn.setAttribute('type', "submit");
 	save_btn.setAttribute('class', "btn save-changes");
-	save_btn.onclick = saveChanges.bind(save_btn);
+	save_btn.addEventListener('click', saveChanges);
 
     let save_btn_content = document.createElement("span");
 
@@ -80,7 +80,7 @@ function changeToView() {
 	let edit_btn = document.createElement("button");
 	edit_btn.setAttribute('type', "button");
 	edit_btn.setAttribute('class', "btn edit-profile");
-	edit_btn.onclick = changeToEdition.bind(edit_btn);
+	edit_btn.addEventListener('click', changeToEdition);
 
 	let edit_btn_content = document.createElement("span");
 
