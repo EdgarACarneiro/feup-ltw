@@ -4,10 +4,9 @@ include_once('includes/session.php');
 checkUserSession();
 
 include_once('templates/header.php');
+
+function displayProfile($user = null) {
 ?>
-
-<script type="module" src="scripts/edit_profile.js"></script>"
-
 <body onload="initCalendar()">
 
     <?php
@@ -18,10 +17,7 @@ include_once('templates/header.php');
     ?>
 
     <section class="profile-container" id="profile">
-        <?php displayCurrUserInfo(); ?>
-        <button type="button" class="btn edit-profile" >
-            <span><i class="fa fa-pencil"></i>Edit Profile</span>
-        </button>
+        <?php $user? getUserProfile($user) : displayCurrUserInfo(); ?>
     </section>
 
     <footer>
@@ -29,3 +25,8 @@ include_once('templates/header.php');
     </footer>
 
 </body>
+<?php
+}
+
+displayProfile($_GET['user']);
+?>
