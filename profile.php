@@ -26,5 +26,8 @@ function displayProfile($user = null) {
 <?php
 }
 
-displayProfile($_GET['user']);
+if (isset($_GET['user']))
+    displayProfile($_GET['user']);
+else
+    displayProfile();
 ?>

@@ -24,7 +24,7 @@ function displayUserInfo($displayUser) {
 
 function displayCurrUserInfo() {
     
-    ?> <script type="module" src="scripts/edit_profile.js"></script>" <?php
+    ?> <script type="module" src="scripts/edit_profile.js"></script> <?php
     displayUserInfo($_SESSION['username']);
 
     ?>
