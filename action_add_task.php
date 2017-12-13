@@ -7,7 +7,8 @@ if ( NULL == ($task = addTask($_SESSION['username'],
     (int) $_POST['priority'],
     htmlspecialchars($_POST['category']),
     $_POST['date'],
-    htmlspecialchars($_POST['description']))) ) {
+    htmlspecialchars($_POST['description']),
+    $_POST['parent_task'])) ) {
     echo json_encode("ERROR adding new task");
     die;
 }

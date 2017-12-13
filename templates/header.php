@@ -21,6 +21,7 @@ function headerIndex() {
     commonHeader();
     ?>
         <script src="scripts/calendar.js"></script>
+        <script src="scripts/addSubList.js" defer></script>
         <script type="module" src="scripts/ajax_task.js" async></script>
     </head>
     <?php
