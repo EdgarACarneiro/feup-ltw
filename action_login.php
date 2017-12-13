@@ -10,6 +10,6 @@ if (isLoginCorrect($_POST['username'], $_POST['password'])) {
   die;
 }
 
-setSuccessMessage("ERROR: login unsuccessful.");  
+setErrorMessage("ERROR: login unsuccessful.");  
 header('Location: ' . $_SERVER['HTTP_REFERER']);
 ?>

@@ -231,15 +231,15 @@ function changePriorityOfTask($task_id, $priority) {
     return getTaskById($task_id);
 }
 
-function addTask($username, $title, $priority, $category, $duedate, $description) {
+function addTask($username, $title, $priority, $category, $duedate, $description, $parent_task) {
     global $dbh;
 
     $stmt = $dbh->prepare(
         "INSERT INTO Task
-        (title, priority, category, duedate)
-        VALUES (?, ?, ?, ?)"
+        (title, priority, category, duedate, parent_task)
+        VALUES (?, ?, ?, ?, ?)"
     );
-    if (! $stmt->execute(array($title, $priority, $category, empty($duedate) ? NULL : $duedate)))
+    if (! $stmt->execute(array($title, $priority, $category, empty($duedate) ? NULL : $duedate, $parent_task == "undefined" || empty($parent_task) || $parent_task == "null" ? NULL : $parent_task)))
         return false;
 
     $task = getLastTask();

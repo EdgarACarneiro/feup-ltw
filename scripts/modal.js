@@ -20,7 +20,6 @@ function openModal() {
     document.getElementById('modal').style.zIndex = "5";
     document.getElementById('modal').style.opacity = "1";
     document.getElementById('modal').addEventListener("click", closeModal);
-    this.removeEventListener("click", openModal);
     opened_Model = this;
 }
 
@@ -34,7 +33,6 @@ function closeModal() {
         opened_Model.style.transform = "";
         opened_Model.style.transition = "";
         opened_Model.style.zIndex = "";
-        opened_Model.addEventListener("click", openModal);
         opened_Model = null;
     }
 }

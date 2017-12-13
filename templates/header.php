@@ -13,7 +13,6 @@ function commonHeader() {
     <link href="styles/style.css" rel="stylesheet">
     <link href="styles/fonts.css" rel="stylesheet">
     <link href="styles/fonts/font-awesome/sass/font-awesome.css" rel="stylesheet">
-
 <?php
 }
 
@@ -21,6 +20,7 @@ function headerIndex() {
     commonHeader();
     ?>
         <script src="scripts/calendar.js"></script>
+        <script src="scripts/addSubList.js" defer></script>
         <script type="module" src="scripts/ajax_task.js" async></script>
     </head>
     <?php

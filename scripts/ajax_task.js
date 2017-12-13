@@ -10,15 +10,14 @@ function submitTask() {
     let priorityNode = this.getElementsByClassName('active')[0];
     let priority = priorityNode.className.match(/priority-(\d)/)[1];
 
-    addTask(title, priority, category, duedate, description);
+    addTask(title, priority, category, duedate, description, parentTask_ID);
 
-    this.blur();
     clearAddTaskForm();
 
     return false;
 }
 
-function addTask(title, priority, category, duedate, description) {
+function addTask(title, priority, category, duedate, description, parent_task) {
     let request = new XMLHttpRequest();
     request.onload = addTaskListener;
     request.open("post", "action_add_task.php", true);
@@ -28,7 +27,8 @@ function addTask(title, priority, category, duedate, description) {
         priority: priority,
         category: category,
         date: duedate,
-        description: description
+        description: description,
+        parent_task: parent_task
     }));
 }
 
@@ -36,16 +36,27 @@ function addTaskListener() {
     let [task, items] = JSON.parse(this.responseText);
 
     let taskNode = createTaskNode(task, items);
-    let tasksListNode = document.getElementById('tasks-list');
-
-    tasksListNode.appendChild(taskNode);
+    if (task.parent_task == null) {
+        let tasksListNode = document.getElementById('tasks-list');
+        tasksListNode.appendChild(taskNode);
+    } else {
+        let parentTaskNode = document.getElementById('update-title@' + task.parent_task).parentElement;
+        let articleTask = taskNode.firstChild;
+        articleTask.classList.remove("shadow-cards");
+        articleTask.children["info-nav"].remove();
+        parentTaskNode.insertBefore(articleTask, parentTaskNode.children["info-nav"]);
+    }
 }
 
 function clearAddTaskForm() {
-    document.getElementById('addTask_title').value = "";
-    document.getElementById('addTask_item').value = "";
-    document.getElementById('addTask_category').value = "";
-    document.getElementById('addTask_date').value = "";
+    Array.from(document.getElementById("addTask").children[0].children).forEach(element => {
+        if (element.type != "submit") {
+            element.value = "";
+        }
+        element.blur();
+    });
+    parentTask_ID = null;
+    hover_form = false;
 
     let priorityNode = document.getElementById('select_priority').getElementsByClassName('priority-0')[0];
     priorityNode.click();

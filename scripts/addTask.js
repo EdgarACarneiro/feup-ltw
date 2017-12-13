@@ -13,10 +13,14 @@ document.getElementById("addTask").firstElementChild.onmouseout = function() {
 };
 
 function clearAddTaskForm() {
-    document.getElementById('addTask_title').value = "";
-    document.getElementById('addTask_item').value = "";
-    document.getElementById('addTask_category').value= "";
-    document.getElementById('addTask_date').value = "";
+    Array.from(document.getElementById("addTask").children[0].children).forEach(element => {
+        if (element.type != "submit") {
+            element.value = "";
+        }
+        element.blur();
+    });
+    parentTask_ID = null;
+    hover_form = false;
 
     let priorityNode = document.getElementById('select_priority').getElementsByClassName('priority-0')[0];
     priorityNode.click();
@@ -24,6 +28,10 @@ function clearAddTaskForm() {
 
 Array.from(document.getElementById("addTask").firstElementChild.children).forEach(element => {
     element.onfocus = function() {
+        if (parentTask_ID != null) {
+            let formOpenModal = openModal.bind(element.parentNode);
+            formOpenModal();
+        }
         Array.from(element.parentElement.children).forEach(element => {
             element.style.display = "block";
         });
@@ -34,6 +42,10 @@ Array.from(document.getElementById("addTask").firstElementChild.children).forEac
             Array.from(element.parentElement.children).forEach(element => {
                 element.style.display = "";
             });
+            if (parentTask_ID != null) {
+                let formCloseModal = closeModal.bind(element.parentNode);
+                formCloseModal();
+            }
             clearAddTaskForm();
         }
     };

@@ -4,14 +4,25 @@
     }
 }
 
-.log-messages {
+#messages {
     overflow: hidden;
-    height: 1.5em;
+    height: 3em;
     vertical-align: middle;
     line-height: 1.5em;
     animation: hide 1.5s ease-in-out 5s forwards;
-}
 
-#success-messages {
-    background-color: rgb(20, 240, 20);
+    article {
+        text-align: center;
+        color: white;
+        p {
+            margin: 2px;
+            padding: 0.5em;
+        }
+    }
+    article.success {
+        background-color: #6D6;
+    }
+    article.error {
+        background-color: #F66;
+    }
 }
