@@ -4,7 +4,6 @@ function setParentTask(e) {
     parentTask_ID = this.offsetParent.children[0].id;
     parentTask_ID = parentTask_ID.substr(parentTask_ID.indexOf("@") + 1, parentTask_ID.length);
     console.log("Parent Task: ", parentTask_ID);
-    window.scrollTo(0, 0);
     document.getElementById("addTask_item").focus();
     e.stopPropagation();
 }

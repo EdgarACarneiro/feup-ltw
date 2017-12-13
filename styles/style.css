@@ -558,6 +558,8 @@ footer {
 #addTask form {
   width: 100%;
   outline: none;
+  border-radius: 0.2em;
+  background-color: #fafafa;
 }
 
 #addTask form input {

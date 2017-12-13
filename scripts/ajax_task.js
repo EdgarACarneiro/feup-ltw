@@ -12,8 +12,6 @@ function submitTask() {
 
     addTask(title, priority, category, duedate, description, parentTask_ID);
 
-    parentTask_ID = null;
-
     clearAddTaskForm();
 
     return false;
@@ -46,13 +44,15 @@ function addTaskListener() {
         let articleTask = taskNode.firstChild;
         articleTask.classList.remove("shadow-cards");
         articleTask.children["info-nav"].remove();
-        parentTaskNode.appendChild(articleTask);
+        parentTaskNode.insertBefore(articleTask, parentTaskNode.children["info-nav"]);
     }
 }
 
 function clearAddTaskForm() {
     Array.from(document.getElementById("addTask").children[0].children).forEach(element => {
-        element.value = "";
+        if (element.type != "submit") {
+            element.value = "";
+        }
         element.blur();
     });
     parentTask_ID = null;

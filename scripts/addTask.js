@@ -14,7 +14,9 @@ document.getElementById("addTask").firstElementChild.onmouseout = function() {
 
 function clearAddTaskForm() {
     Array.from(document.getElementById("addTask").children[0].children).forEach(element => {
-        element.value = "";
+        if (element.type != "submit") {
+            element.value = "";
+        }
         element.blur();
     });
     parentTask_ID = null;
@@ -26,6 +28,10 @@ function clearAddTaskForm() {
 
 Array.from(document.getElementById("addTask").firstElementChild.children).forEach(element => {
     element.onfocus = function() {
+        if (parentTask_ID != null) {
+            let formOpenModal = openModal.bind(element.parentNode);
+            formOpenModal();
+        }
         Array.from(element.parentElement.children).forEach(element => {
             element.style.display = "block";
         });
@@ -36,6 +42,10 @@ Array.from(document.getElementById("addTask").firstElementChild.children).forEac
             Array.from(element.parentElement.children).forEach(element => {
                 element.style.display = "";
             });
+            if (parentTask_ID != null) {
+                let formCloseModal = closeModal.bind(element.parentNode);
+                formCloseModal();
+            }
             clearAddTaskForm();
         }
     };
