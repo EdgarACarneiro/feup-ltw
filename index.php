@@ -49,8 +49,7 @@ headerIndex();
                     <i class="fa fa-circle priority-3" aria-hidden="true"></i>
                 </nav>
             </form>
-            <script src="scripts/addTask.js" async></script>
-            <script src="scripts/log_messages.js" async></script>            
+            <script src="scripts/addTask.js" async></script>          
         </div>
 
         <div id="modal" class="modal"></div>
