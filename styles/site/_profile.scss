@@ -107,6 +107,14 @@ $info-width: 60%;
     }
 }
 
+
+#save-changes-about {
+    font-size: 1em;
+    margin: -50px auto 0 auto;
+    border: none;
+}
+
+
 #edit-profile {
     @media (max-width: #{$collapse-m}) {
         margin: 0 auto 0;

@@ -1,4 +1,4 @@
-import { encodeForAjax } from './utils.js';
+import { encodeForAjax, logServerResponse } from './utils.js';
 
 function changeToEdition() {
 
@@ -32,27 +32,38 @@ function changeToEdition() {
 	profile_container.removeChild(document.getElementById("edit-profile"));
 
     //Adding Save changes button
-    let save_btn = document.createElement("button");
-    //save_btn.setAttribute('type', "submit");
-	save_btn.setAttribute('class', "btn");
-	save_btn.id = 'save-changes';
-	//save_btn.onclick = saveChanges.bind(save_btn);
-	//save_btn.addEventListener('click', saveChanges);
+    let saveImgBtn = document.createElement("button");
+    saveImgBtn.setAttribute('type', "submit");
+	saveImgBtn.setAttribute('class', "btn");
+	saveImgBtn.id = 'save-changes';
 
-    let save_btn_content = document.createElement("span");
+    let saveImgBtnContent = document.createElement("span");
 
     let save_icon = document.createElement("i");
     save_icon.setAttribute('class', "fa fa-floppy-o");
 
-    let btn_label = document.createTextNode("Save!");
+    let imgBtnLabel = document.createTextNode("Save Image");
 
-    save_btn_content.appendChild(save_icon);
-    save_btn_content.appendChild(btn_label);
-	save_btn.appendChild(save_btn_content);
-	
+    saveImgBtnContent.appendChild(save_icon);
+    saveImgBtnContent.appendChild(imgBtnLabel);
+	saveImgBtn.appendChild(saveImgBtnContent);
+
+	// Save About Button
+	let saveAboutBtn = document.createElement("button");
+	saveAboutBtn.setAttribute('class', "btn");
+	saveAboutBtn.id = 'save-changes-about';
+	let saveAboutBtnContent = document.createElement("span");
+	let aboutBtnLabel = document.createTextNode("Save About");
+	saveAboutBtnContent.appendChild(save_icon);
+	saveAboutBtnContent.appendChild(aboutBtnLabel);
+	saveAboutBtn.appendChild(saveAboutBtnContent);
+
+	saveAboutBtn.addEventListener('click', saveChanges);
+
 	//Need to add button to form to trigger action
-	upload_form.appendChild(save_btn);
+	upload_form.appendChild(saveImgBtn);
 	profile_container.appendChild(upload_form);
+	profile_container.appendChild(saveAboutBtn);
 }
 
 function changeToView() {
@@ -94,6 +105,9 @@ function changeToView() {
 	edit_btn_content.appendChild(btn_label);
 	edit_btn.appendChild(edit_btn_content);
 	profile_container.appendChild(edit_btn);
+
+	let saveAboutBtn = document.getElementById('save-changes-about');
+	saveAboutBtn.remove();
 }
 
 function saveChanges() {
@@ -108,6 +122,7 @@ function saveChanges() {
 function changeCurrUserAbout(aboutText) {
 
 	let request = new XMLHttpRequest();
+	request.onload = logServerResponse;
 	request.open("post", "action_save_profile.php", true);
 	request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 	request.send(encodeForAjax({ about: aboutText }));

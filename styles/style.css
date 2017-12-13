@@ -914,6 +914,11 @@ footer {
       width: 70%;
       border-radius: 0.2em; } }
 
+#save-changes-about {
+  font-size: 1em;
+  margin: -50px auto 0 auto;
+  border: none; }
+
 @media (max-width: 960px) {
   #edit-profile {
     margin: 0 auto 0; } }
