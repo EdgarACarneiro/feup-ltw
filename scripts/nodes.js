@@ -86,6 +86,12 @@ export function createTaskNode(task, items) {
     buttonNode.innerHTML = '<i class="fa fa-plus-circle"></i> Add Sub-List';
     navNode.appendChild(buttonNode);
 
+    //Add Category Span
+    let categorySpan = document.createElement('span');
+    categorySpan.classList.add("category");
+    categorySpan.innerHTML = task.category;
+    articleNode.appendChild(categorySpan);
+
     // Add Close Anchor/Button
     let anchorNode = document.createElement('a');
     anchorNode.id = "delete-task@" + task.task_id;

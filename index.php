@@ -40,6 +40,7 @@ headerIndex();
             <form contenteditable>
                 <input id="addTask_title" type="text" name="AddTask_Title" placeholder="Name">
                 <input id="addTask_item" type="text" name="AddTask_Item" placeholder="Add Task...">
+                <input id="addTask_category" type="text" name="AddTaskCategory" placeholder="category">
                 <input type="submit" value="Submit">
                 <input id="addTask_date" type="date" name="AddTask_DueDate">
                 <nav id="select_priority">

@@ -4,12 +4,13 @@ import { createTaskNode } from './nodes.js';
 function submitTask() {
     let title = document.getElementById('addTask_title').value;
     let description = document.getElementById('addTask_item').value;
+    let category = document.getElementById('addTask_category').value;
     let duedate = document.getElementById('addTask_date').value;
 
     let priorityNode = this.getElementsByClassName('active')[0];
     let priority = priorityNode.className.match(/priority-(\d)/)[1];
 
-    addTask(title, priority, duedate, description);
+    addTask(title, priority, category, duedate, description);
 
     this.blur();
     clearAddTaskForm();
@@ -17,7 +18,7 @@ function submitTask() {
     return false;
 }
 
-function addTask(title, priority, duedate, description) {
+function addTask(title, priority, category, duedate, description) {
     let request = new XMLHttpRequest();
     request.onload = addTaskListener;
     request.open("post", "action_add_task.php", true);
@@ -25,6 +26,7 @@ function addTask(title, priority, duedate, description) {
     request.send(encodeForAjax({
         title: title,
         priority: priority,
+        category: category,
         date: duedate,
         description: description
     }));
@@ -42,6 +44,7 @@ function addTaskListener() {
 function clearAddTaskForm() {
     document.getElementById('addTask_title').value = "";
     document.getElementById('addTask_item').value = "";
+    document.getElementById('addTask_category').value = "";
     document.getElementById('addTask_date').value = "";
 
     let priorityNode = document.getElementById('select_priority').getElementsByClassName('priority-0')[0];

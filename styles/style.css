@@ -631,8 +631,13 @@ footer {
   display: inline-block;
 }
 
-#addTask form #addTask_title::placeholder {
+#addTask form #addTask_title {
   font-weight: bold;
+}
+
+#addTask form #addTask_category {
+  font-size: 10px;
+  font-style: italic;
 }
 
 #addTask form #addTask_item {
@@ -1484,21 +1489,25 @@ textarea:focus {
 
 .todo__title i.priority-0::before {
   color: #cfd8dc;
+  padding-right: 4px;
 }
 
 .todo__title i.priority-1::before {
   color: #43a047;
+  padding-right: 4px;
 }
 
 .todo__title i.priority-2::before {
   color: #ffeb3b;
+  padding-right: 4px;
 }
 
 .todo__title i.priority-3::before {
   color: #f4511e;
+  padding-right: 4px;
 }
 
-.span:hover a {
+.todo:hover a {
   opacity: 1;
 }
 
