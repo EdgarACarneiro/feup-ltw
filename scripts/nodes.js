@@ -70,7 +70,8 @@ export function createTaskNode(task, items) {
     addItemFormNode.classList.add("todo");
     let formNode = document.createElement('form');
     formNode.id = "form@" + task.task_id;
-    formNode.innerHTML = '<input type="text" placeholder="Add Item..." name="description" required="">';
+    formNode.innerHTML = '<input type="text" placeholder="Add Item..." name="description" required="">' +
+                         '<input type="text" placeholder="Assigned User" name="assignedUser" />';
     formNode.onsubmit = addItemToTask.bind(formNode);
     addItemFormNode.appendChild(formNode);
     ulNode.appendChild(addItemFormNode);

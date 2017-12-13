@@ -3,19 +3,23 @@ import { createItemNode } from './nodes.js';
 
 export function addItemToTask() {
     let task = this.id.match(/@(\d+)/)[1];
-    let inputNode = this.lastElementChild;
+    let inputNode = this.childNodes[1];
+    let userNode = this.childNodes[3];
     let itemText = inputNode.value.trim();
     if (itemText.length == 0) {
         return false;
     }
 
+    let itemUser = userNode.value.trim();
+
     inputNode.value = "";
+    userNode.value="";
 
     let request = new XMLHttpRequest();
     request.onload = addItemListener;
     request.open("post", "action_add_item.php", true);
     request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    request.send(encodeForAjax({ task_id: task, description: itemText }));
+    request.send(encodeForAjax({ task_id: task, description: itemText, assignedUser: itemUser }));
 
     return false; // prevent default action
 }
@@ -65,6 +69,7 @@ window.addEventListener('load', function() {
     var inputItems = document.querySelectorAll("form[id^='form@']");
     [].slice.call(inputItems).forEach(element => {
         element.onsubmit = addItemToTask.bind(element);
+        console.log(element);
     });
 
     var trashIcons = document.querySelectorAll("a[id^='delete-item@']");

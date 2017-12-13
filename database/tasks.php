@@ -142,16 +142,16 @@ function getTasksItems($task_id) {
     return $stmt->fetchAll();
 }
 
-function addItem($task_id, $description) {
+function addItem($task_id, $description, $assignedUser) {
     global $dbh;
 
     $stmt = $dbh->prepare(
         "INSERT INTO Item
-        (task_id, description)
-        VALUES (?, ?)"
+        (task_id, description, assigneduser)
+        VALUES (?, ?, ?)"
     );
 
-    $stmt->execute(array($task_id, $description));
+    $stmt->execute(array($task_id, $description, $assignedUser));
 
     return getLastItem();
 }
