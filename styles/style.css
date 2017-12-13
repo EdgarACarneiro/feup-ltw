@@ -1481,24 +1481,28 @@ textarea:focus {
   content: "\f111";
   font-family: "FontAwesome";
   color: #cfd8dc;
+  padding-right: 4px;
 }
 
 .todo__title.priority-1::before {
   content: "\f111";
   font-family: "FontAwesome";
   color: #43a047;
+  padding-right: 4px;
 }
 
 .todo__title.priority-2::before {
   content: "\f111";
   font-family: "FontAwesome";
   color: #ffeb3b;
+  padding-right: 4px;
 }
 
 .todo__title.priority-3::before {
   content: "\f111";
   font-family: "FontAwesome";
   color: #f4511e;
+  padding-right: 4px;
 }
 
 .todo:hover a {

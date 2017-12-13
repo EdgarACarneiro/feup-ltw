@@ -150,21 +150,25 @@ $duration-check_box: 0.8s;
     content: "\f111";
     font-family: "FontAwesome";
     color: $priority-0;
+    padding-right: 4px;
 }
 .todo__title.priority-1::before {
     content: "\f111";
     font-family: "FontAwesome";
     color: $priority-1;
+    padding-right: 4px;
 }
 .todo__title.priority-2::before {
     content: "\f111";
     font-family: "FontAwesome";
     color: $priority-2;
+    padding-right: 4px;
 }
 .todo__title.priority-3::before {
     content: "\f111";
     font-family: "FontAwesome";
     color: $priority-3;
+    padding-right: 4px;
 }
 
 .todo:hover a {
