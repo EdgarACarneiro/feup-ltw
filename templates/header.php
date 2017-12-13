@@ -13,7 +13,6 @@ function commonHeader() {
     <link href="styles/style.css" rel="stylesheet">
     <link href="styles/fonts.css" rel="stylesheet">
     <link href="styles/fonts/font-awesome/sass/font-awesome.css" rel="stylesheet">
-
 <?php
 }
 
