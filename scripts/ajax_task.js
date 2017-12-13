@@ -38,6 +38,7 @@ function addTaskListener() {
     let taskNode = createTaskNode(task, items);
     if (task.parent_task == null) {
         let tasksListNode = document.getElementById('tasks-list');
+        taskNode.querySelector('article #info-nav button').onclick = setParentTask;
         tasksListNode.appendChild(taskNode);
     } else {
         let parentTaskNode = document.getElementById('update-title@' + task.parent_task).parentElement;
