@@ -1,6 +1,6 @@
 import { addItemToTask, setItemCompleted, deleteItem } from './ajax_item.js';
 import { switchToEdit, switchToDisplay, changeItemDescription, changeTaskTitle } from './ajax_text_edit.js';
-import { deleteTask } from './ajax_task.js';
+import { deleteTask, changeTaskPriority } from './ajax_task.js';
 
 export function createItemNode(item) {
     let node = document.createElement("li");
@@ -31,7 +31,7 @@ function addListenersToItemNode(node, item) {
 
     let inputNode = node.getElementsByClassName('item-edit')[0];
     inputNode.addEventListener('focusout', switchToDisplay.bind(inputNode, changeItemDescription));
-    
+
     let deleteNode = node.querySelector("a[id^='delete-item@" + item.item_id + "']");
     deleteNode.onclick = deleteItem.bind(deleteNode);
 }
@@ -47,7 +47,8 @@ export function createTaskNode(task, items) {
     let titleNode = document.createElement('div');
     titleNode.id = "update-title@" + task.task_id;
     titleNode.classList.add('todo__title');
-    let titleInnerHtml = '<span class="item-display">' + (task.title ? task.title : "Add Title...") + '</span>';
+    let titleInnerHtml = '<i class="fa fa-circle priority-' + task.priority + '" aria-hidden="true"></i>';
+    titleInnerHtml = titleInnerHtml.concat('<span class="item-display">' + (task.title ? task.title : "Add Title...") + '</span>');
     titleInnerHtml = titleInnerHtml.concat('<input type="text" class="item-edit" style="display:none"/>');
     titleNode.innerHTML = titleInnerHtml;
     articleNode.appendChild(titleNode);
@@ -103,7 +104,12 @@ function addListenersToTaskNode(node, task) {
 
     let titleDisplayNode = node.querySelector("div.todo__title .item-display");
     titleDisplayNode.onclick = switchToEdit.bind(titleDisplayNode);
-    
+
     let titleEditNode = node.querySelector("div.todo__title .item-edit");
-    titleEditNode.addEventListener('focusout', switchToDisplay.bind(titleEditNode, changeTaskTitle));    
+    titleEditNode.addEventListener('focusout', switchToDisplay.bind(titleEditNode, changeTaskTitle));
+
+    let categoryElements = node.querySelectorAll('div.todo__title i');
+    Array.from(categoryElements).forEach(element => {
+        element.onclick = changeTaskPriority.bind(element);
+    });
 }

@@ -25,7 +25,8 @@ export function changeItemDescription(id, itemText) {
     request.open("post", "action_change_item.php", true);
     request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     request.send(encodeForAjax({
-        item_id: id, description: itemText
+        item_id: id,
+        description: itemText
     }));
 }
 
@@ -35,11 +36,12 @@ export function changeTaskTitle(id, title) {
     request.open("post", "action_change_task.php", true);
     request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     request.send(encodeForAjax({
-        task_id: id, title: title
+        task_id: id,
+        title: title
     }));
 }
 
-window.addEventListener('load', function () {
+window.addEventListener('load', function() {
     var allDisplayElements = document.querySelectorAll('.item-display');
     var itemsEditElements = document.querySelectorAll('div.todo__text .item-edit');
     var titleEditElements = document.querySelectorAll('div.todo__title .item-edit');
@@ -47,7 +49,7 @@ window.addEventListener('load', function () {
     Array.from(allDisplayElements).forEach(function(element) {
         element.onclick = switchToEdit.bind(element);
     });
-    
+
     Array.from(itemsEditElements).forEach(function(element) {
         element.addEventListener('focusout', switchToDisplay.bind(element, changeItemDescription));
     });

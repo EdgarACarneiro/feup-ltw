@@ -218,6 +218,19 @@ function changeTaskTitle($task_id, $title) {
     return getTaskById($task_id);
 }
 
+function changePriorityOfTask($task_id, $priority) {
+    global $dbh;
+    
+    $stmt = $dbh->prepare(
+        "UPDATE Task
+        SET priority = ?
+        WHERE task_id = ?"
+    );
+    $stmt->execute(array($priority, $task_id));
+
+    return getTaskById($task_id);
+}
+
 function addTask($username, $title, $priority, $duedate, $description) {
     global $dbh;
 
