@@ -27,4 +27,8 @@ function setSuccessMessage($message) {
     $_SESSION['success_messages'][] = $message;
 }
 
+function areMessagesSet() {
+    return isset($_SESSION['success_messages']) || isset($_SESSION['error_messages']);
+}
+
 ?>

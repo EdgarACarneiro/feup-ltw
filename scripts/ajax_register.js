@@ -26,7 +26,13 @@ function registerUserRequest(username, email, password) {
 }
 
 function processRegisterStatus() {
-    let response = JSON.parse(this.responseText);
+    let response;
+    try {
+        response = JSON.parse(this.responseText);
+    } catch(e) {
+        console.log("Username already exists");
+        return false;
+    }
 
     if (response.indexOf("SUCCESS") === 0) {
         window.location.replace("index.php");
