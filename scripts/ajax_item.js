@@ -68,8 +68,7 @@ window.addEventListener('load', function() {
 
     var inputItems = document.querySelectorAll("form[id^='form@']");
     [].slice.call(inputItems).forEach(element => {
-        element.onsubmit = addItemToTask.bind(element);
-        console.log(element);
+        element.onclick = addItemToTask.bind(element);
     });
 
     var trashIcons = document.querySelectorAll("a[id^='delete-item@']");

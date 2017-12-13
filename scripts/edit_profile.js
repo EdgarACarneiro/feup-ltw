@@ -26,7 +26,8 @@ function changeToEdition() {
     input_file.setAttribute('type', "file");
 	input_file.setAttribute('name', "image");
 	input_file.setAttribute('class', "image-uploader");
-    upload_form.appendChild(input_file);
+	upload_form.appendChild(input_file);
+	profile_container.appendChild(upload_form);
 
     //Eliminating edit-button
 	profile_container.removeChild(document.getElementById("edit-profile"));
@@ -36,7 +37,7 @@ function changeToEdition() {
     save_btn.setAttribute('type', "submit");
 	save_btn.setAttribute('class', "btn");
 	save_btn.id = 'save-changes';
-	save_btn.addEventListener('click', saveChanges);
+	save_btn.onclick = saveChanges.bind(save_btn);
 
     let save_btn_content = document.createElement("span");
 
@@ -51,7 +52,6 @@ function changeToEdition() {
 	
 	//Need to add button to form to trigger action
 	upload_form.appendChild(save_btn);
-	profile_container.appendChild(upload_form);
 }
 
 function changeToView() {
@@ -62,12 +62,10 @@ function changeToView() {
 	let info_container = document.getElementsByClassName("username-info")[0];
 	let edited_text = document.getElementsByTagName("textarea")[0];
 	info_container.removeChild(edited_text);
-	console.log(edited_text);
 
 	//Adding about_text
 	let aboutText = document.createElement("h4");
 	let userAbout = document.createTextNode(edited_text.value);
-	console.log(userAbout);
 	aboutText.appendChild(userAbout);
 	info_container.appendChild(aboutText);
 

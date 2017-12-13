@@ -33,7 +33,7 @@ function listToDoList($task, &$users, $nested = true) {
     <li class="todo"><form id="form@<?php echo $task['task_id']; ?>">
         <input type="text" placeholder="Add Item..." name="description" required />
         <input type="text" placeholder="Assigned User" name="assignedUser" />
-        <input type="submit" />
+        <i class="fa fa-plus-circle" aria-hidden="true"></i>
     </form></li>
     <?php echo ($nested? '<span class="category">' . $task['category'] . '</span>' : ''); ?>
     </ul>
