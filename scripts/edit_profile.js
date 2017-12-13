@@ -17,10 +17,10 @@ function changeToEdition() {
 
     //Adding upload Form
     let upload_form = document.createElement("form");
-    upload_form.action = "upload_img.php";
+	upload_form.action = "upload_img.php";
     upload_form.setAttribute('class', "updater");
     upload_form.setAttribute('method', "post");
-    upload_form.setAttribute('enctype', "multipart/form-data");
+	upload_form.setAttribute('enctype', "multipart/form-data");
 
     let input_file = document.createElement("input");
     input_file.setAttribute('type', "file");
@@ -33,10 +33,11 @@ function changeToEdition() {
 
     //Adding Save changes button
     let save_btn = document.createElement("button");
-    save_btn.setAttribute('type', "submit");
+    //save_btn.setAttribute('type', "submit");
 	save_btn.setAttribute('class', "btn");
 	save_btn.id = 'save-changes';
-	save_btn.addEventListener('click', saveChanges);
+	//save_btn.onclick = saveChanges.bind(save_btn);
+	//save_btn.addEventListener('click', saveChanges);
 
     let save_btn_content = document.createElement("span");
 
@@ -79,7 +80,8 @@ function changeToView() {
 	edit_btn.setAttribute('type', "button");
 	edit_btn.setAttribute('class', "btn");
 	edit_btn.id = 'edit-profile';
-	edit_btn.addEventListener('click', changeToEdition);
+	edit_btn.onclick = changeToEdition.bind(edit_btn);
+	//edit_btn.addEventListener('click', changeToEdition);
 
 	let edit_btn_content = document.createElement("span");
 
