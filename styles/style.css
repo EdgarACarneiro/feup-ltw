@@ -631,8 +631,13 @@ footer {
   display: inline-block;
 }
 
-#addTask form #addTask_title::placeholder {
+#addTask form #addTask_title {
   font-weight: bold;
+}
+
+#addTask form #addTask_category {
+  font-size: 10px;
+  font-style: italic;
 }
 
 #addTask form #addTask_item {
@@ -1496,7 +1501,7 @@ textarea:focus {
   color: #f4511e;
 }
 
-.span:hover a {
+.todo:hover a {
   opacity: 1;
 }
 

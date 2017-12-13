@@ -15,6 +15,7 @@ document.getElementById("addTask").firstElementChild.onmouseout = function() {
 function clearAddTaskForm() {
     document.getElementById('addTask_title').value = "";
     document.getElementById('addTask_item').value = "";
+    document.getElementById('addTask_category').value= "";
     document.getElementById('addTask_date').value = "";
 
     let priorityNode = document.getElementById('select_priority').getElementsByClassName('priority-0')[0];

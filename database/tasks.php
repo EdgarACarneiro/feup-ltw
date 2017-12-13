@@ -218,15 +218,15 @@ function changeTaskTitle($task_id, $title) {
     return getTaskById($task_id);
 }
 
-function addTask($username, $title, $priority, $duedate, $description) {
+function addTask($username, $title, $priority, $category, $duedate, $description) {
     global $dbh;
 
     $stmt = $dbh->prepare(
         "INSERT INTO Task
-        (title, priority, duedate)
-        VALUES (?, ?, ?)"
+        (title, priority, category, duedate)
+        VALUES (?, ?, ?, ?)"
     );
-    if (! $stmt->execute(array($title, $priority, empty($duedate) ? NULL : $duedate)))
+    if (! $stmt->execute(array($title, $priority, $category, empty($duedate) ? NULL : $duedate)))
         return false;
 
     $task = getLastTask();

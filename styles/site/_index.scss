@@ -83,8 +83,12 @@
                 display: inline-block;
             }
         }
-        #addTask_title::placeholder {
+        #addTask_title {
             font-weight: bold;
+        }
+        #addTask_category {
+            font-size: 10px;
+            font-style: italic;
         }
         #addTask_item {
             display: block;
