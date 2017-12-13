@@ -144,7 +144,6 @@ $duration-check_box: 0.8s;
 
 .todo__title {
     font-weight: bold;
-<<<<<<< HEAD
     display: flex;
     i {
         margin-left: -0.5em;
@@ -165,33 +164,6 @@ $duration-check_box: 0.8s;
     i.priority-3::before {
         color: $priority-3;
     }
-=======
-}
-
-.todo__title.priority-0::before {
-    content: "\f111";
-    font-family: "FontAwesome";
-    color: $priority-0;
-    padding-right: 4px;
-}
-.todo__title.priority-1::before {
-    content: "\f111";
-    font-family: "FontAwesome";
-    color: $priority-1;
-    padding-right: 4px;
-}
-.todo__title.priority-2::before {
-    content: "\f111";
-    font-family: "FontAwesome";
-    color: $priority-2;
-    padding-right: 4px;
-}
-.todo__title.priority-3::before {
-    content: "\f111";
-    font-family: "FontAwesome";
-    color: $priority-3;
-    padding-right: 4px;
->>>>>>> 1d92d380a81c0817af839e1b32e4319e2c1e229c
 }
 
 .todo:hover a {
