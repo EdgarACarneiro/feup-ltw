@@ -3,7 +3,7 @@ import { createItemNode } from './nodes.js';
 
 export function addItemToTask() {
     let task = this.id.match(/@(\d+)/)[1];
-    let inputNode = this.lastElementChild;
+    let inputNode = this.querySelector('input[type="text"]');;
     let itemText = inputNode.value.trim();
     if (itemText.length == 0) {
         return false;
@@ -24,7 +24,9 @@ function addItemListener() {
     let item = JSON.parse(this.responseText);
     let list = document.getElementById("ul@" + item.task_id);
     let listItem = createItemNode(item);
-    list.insertBefore(listItem, list.lastElementChild);
+    let inputNode = list.querySelector('li.todo:last-of-type');;
+
+    list.insertBefore(listItem, inputNode);
 }
 
 export function setItemCompleted(e) {
