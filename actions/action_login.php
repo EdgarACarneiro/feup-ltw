@@ -1,7 +1,7 @@
 <?php
-include_once('includes/init.php');
-include_once('includes/messages.php');
-include_once('database/user.php');
+include_once(dirname(__DIR__) . '/includes/init.php');
+include_once(dirname(__DIR__) . '/includes/messages.php');
+include_once(dirname(__DIR__) . '/database/user.php');
 
 if (isLoginCorrect($_POST['username'], $_POST['password'])) {
   setCurrentUser($_POST['username']);

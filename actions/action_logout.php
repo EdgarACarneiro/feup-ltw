@@ -1,5 +1,5 @@
 <?php
-  include_once('includes/init.php');
+  include_once(dirname(__DIR__) . '/includes/init.php');
 
   session_destroy();
 

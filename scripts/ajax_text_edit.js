@@ -22,7 +22,7 @@ export function switchToDisplay(updateFunction) {
 export function changeItemDescription(id, itemText) {
     let request = new XMLHttpRequest();
     request.onload = logServerResponse;
-    request.open("post", "action_change_item.php", true);
+    request.open("post", "./actions/action_change_item.php", true);
     request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     request.send(encodeForAjax({
         item_id: id,
@@ -33,7 +33,7 @@ export function changeItemDescription(id, itemText) {
 export function changeTaskTitle(id, title) {
     let request = new XMLHttpRequest();
     request.onload = logServerResponse;
-    request.open("post", "action_change_task.php", true);
+    request.open("post", "./actions/action_change_task.php", true);
     request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     request.send(encodeForAjax({
         task_id: id,

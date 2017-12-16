@@ -22,7 +22,7 @@ include_once('includes/init.php');
                <input type="button" id="sign-up-btn" value="Sign-up"> 
             </div>
 
-            <form action="action_login.php" method="post" id="sign-in">
+            <form action="actions/action_login.php" method="post" id="sign-in">
                 <fieldset>
                     <legend>LOG IN</legend>
                     USERNAME

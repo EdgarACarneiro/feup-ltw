@@ -13,7 +13,7 @@ export function addItemToTask() {
 
     let request = new XMLHttpRequest();
     request.onload = addItemListener;
-    request.open("post", "action_add_item.php", true);
+    request.open("post", "./actions/action_add_item.php", true);
     request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     request.send(encodeForAjax({ task_id: task, description: itemText }));
 
@@ -36,7 +36,7 @@ export function setItemCompleted(e) {
 
     let request = new XMLHttpRequest();
     request.onload = logServerResponse;
-    request.open("post", "action_check_item.php", true);
+    request.open("post", "./actions/action_check_item.php", true);
     request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     request.send(encodeForAjax({ item_id: id, completed: checked ? 1 : 0 }));
 
@@ -51,7 +51,7 @@ export function deleteItem(event) {
 
     let request = new XMLHttpRequest();
     request.onload = logServerResponse;
-    request.open("post", "action_delete_item.php", true);
+    request.open("post", "./actions/action_delete_item.php", true);
     request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     request.send(encodeForAjax({ item_id: id }));
 

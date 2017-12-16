@@ -16,7 +16,7 @@ function registerUser() {
 function registerUserRequest(username, email, password) {
     let request = new XMLHttpRequest();
     request.onload = processRegisterStatus;
-    request.open("post", "action_register.php", true);
+    request.open("post", "./actions/action_register.php", true);
     request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     request.send(encodeForAjax({
         username: username,

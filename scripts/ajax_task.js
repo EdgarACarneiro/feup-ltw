@@ -20,7 +20,7 @@ function submitTask() {
 function addTask(title, priority, category, duedate, description, parent_task) {
     let request = new XMLHttpRequest();
     request.onload = addTaskListener;
-    request.open("post", "action_add_task.php", true);
+    request.open("post", "./actions/action_add_task.php", true);
     request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     request.send(encodeForAjax({
         title: title,
@@ -73,7 +73,7 @@ export function deleteTask(event) {
 
     let request = new XMLHttpRequest();
     request.onload = logServerResponse;
-    request.open("post", "action_delete_task.php", true);
+    request.open("post", "./actions/action_delete_task.php", true);
     request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     request.send(encodeForAjax({ task_id: id }));
 
@@ -103,7 +103,7 @@ export function changeTaskPriority() {
 
     let request = new XMLHttpRequest();
     request.onload = updateTaskPriority;
-    request.open("post", "action_update_priority.php", true);
+    request.open("post", "./actions/action_update_priority.php", true);
     request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     request.send(encodeForAjax({
         task_id: id,

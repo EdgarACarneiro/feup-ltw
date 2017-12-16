@@ -108,7 +108,7 @@ function saveChanges() {
 function changeCurrUserAbout(aboutText) {
 
 	let request = new XMLHttpRequest();
-	request.open("post", "action_save_profile.php", true);
+	request.open("post", "./actions/action_save_profile.php", true);
 	request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 	request.send(encodeForAjax({ about: aboutText }));
 }

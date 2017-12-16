@@ -1,5 +1,5 @@
 <?php
-include_once("includes/utils.php");
+include_once("./includes/utils.php");
 
 session_start();
 

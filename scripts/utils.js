@@ -26,7 +26,7 @@ export function getCurrentUser() {
     request.onload = function() {
         username = JSON.parse(this.responseText);
     }
-    request.open("post", "action_get_username.php", false); // false -> not async
+    request.open("post", "./actions/action_get_username.php", false); // false -> not async
     request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     request.send(); // TODO change to Promise ?
 

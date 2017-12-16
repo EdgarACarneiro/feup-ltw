@@ -24,7 +24,7 @@ function userNavBar() {
                 ?>
                 alt="User Thumbnail">
             </a>
-            <form action="action_logout.php" method="post">
+            <form action="./actions/action_logout.php" method="post">
                 <button type="submit" class="logout-btn"><i class="fa fa-sign-out"></i></button>
             </form>
         </li>

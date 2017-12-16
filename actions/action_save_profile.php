@@ -1,6 +1,6 @@
 <?php
-include_once('includes/init.php');
-include_once('database/user.php');
+include_once(dirname(__DIR__) . '/includes/init.php');
+include_once(dirname(__DIR__) . '/database/user.php');
 
 $currUser = $_SESSION['username'];
 
