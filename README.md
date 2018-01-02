@@ -1,6 +1,10 @@
 # FEUP-LTW
 This project was developed for "Web Languages and Technologies", a third year unit of the Master in Informatics and Computing Engineering, @FEUP.
 
+## GIFs
+  ![Task Menu](https://user-images.githubusercontent.com/13498941/34487504-831add20-efcc-11e7-8d41-0c788d9ca2f1.gif)
+  ![New Task](https://user-images.githubusercontent.com/13498941/34487401-10afbf94-efcc-11e7-9b30-4b5f2e2fd5ca.gif)
+
 ## Screenshots
 <p align="center">
 <img width="256" heigth="256" alt="sign-in 2" src="https://user-images.githubusercontent.com/13498941/34486609-941f4ad8-efc8-11e7-8184-a385c51cd1fb.png">
