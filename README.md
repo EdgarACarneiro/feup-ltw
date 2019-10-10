@@ -1,4 +1,4 @@
-# FEUP-LTW
+# feup-ltw
 This project was developed for "Web Languages and Technologies", a third year unit of the Master in Informatics and Computing Engineering, @FEUP.
 
 ## Set-up
@@ -27,6 +27,6 @@ Next, navigate to ```http://localhost:8000/login.php``` using your favourite bro
 </p>
 
 ## Authors
-* [@AndreFCruz](https://github.com/AndreFCruz)
+* [@AndreFCruz](https://github.com/andrefcruz)
 * [@EdgarACarneiro](https://github.com/edgaracarneiro)
 * [@JFLCarvalho](https://github.com/jflcarvalho)
